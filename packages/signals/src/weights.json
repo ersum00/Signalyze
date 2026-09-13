@@ -1,0 +1,16 @@
+{
+  "$comment": "Weights of each signal's unusualness in the 0-100 Signalyze Score. Weights are normalised over the signals that are available for a given place, so a missing signal never pulls the score in either direction. Rationale per signal in docs/METHODOLOGY.md.",
+  "version": "1.0.0",
+  "weights": {
+    "burst_ratio": 0.16,
+    "rating_polarity": 0.08,
+    "single_review_accounts": 0.14,
+    "no_photo_short_text": 0.08,
+    "text_similarity": 0.16,
+    "template_phrases": 0.08,
+    "rating_text_mismatch": 0.08,
+    "date_entropy": 0.08,
+    "local_guide_ratio": 0.06,
+    "owner_response_pattern": 0.08
+  }
+}

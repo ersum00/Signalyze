@@ -1,0 +1,275 @@
+{
+  "name": "small",
+  "seed": 105,
+  "now": "2026-06-01T00:00:00.000Z",
+  "placeId": "0xfixture:0xsmall",
+  "reviews": [
+    {
+      "reviewerHash": "e775efefef7b091c39dd56209382ec3f3daa2c5a8771d4396b45dd8424fa931e",
+      "rating": 5,
+      "date": "2024-02-25",
+      "text": "Found this place by accident and the terrace view over the river is lovely in the evening. Reservations recommended on weekends.",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "711b010d8a85cf640627dea7d50c0d9f2a55827b661178f4b47518ed930b5965",
+      "rating": 5,
+      "date": "2024-01-05",
+      "text": "We came here on a Saturday afternoon and the terrace view over the river is lovely in the evening. The lighting makes it hard to read the menu.",
+      "reviewerReviewCount": 0,
+      "photoCount": 4,
+      "localGuideLevel": 7,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "b625b47130b255b71c4ff7bdd86afcb202d31ed477d2b148cc1197a9a7edff9b",
+      "rating": 5,
+      "date": "2025-08-10",
+      "text": "Came for the brunch menu and the pastry case looked tempting. Reservations recommended on weekends.",
+      "reviewerReviewCount": 66,
+      "photoCount": 2,
+      "localGuideLevel": 5,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "09ae675b6338a3442564c36cf48566f25b0c9a99937e3e3ee6c94b99a4340a91",
+      "rating": 1,
+      "date": "2026-03-09",
+      "text": "The chicken was cold and the waiter was rude, never again.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "9a1b846723edb0e1985a6db1382109038b57f598d2fc4dd7d4c4c34388645a41",
+      "rating": 3,
+      "date": "2024-06-10",
+      "text": "Found this place by accident and parking nearby was tricky on a weekday. The lighting makes it hard to read the menu.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "cfce57b51965f8471a4ad8e70034c6a986ce1548b7deea47449fecc0faa60983",
+      "rating": 4,
+      "date": "2025-05-08",
+      "text": "Visited with my parents and the kids menu kept our daughter busy. Reservations recommended on weekends.",
+      "reviewerReviewCount": 46,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "ca8f61d17ecd323af8a0b1c09b923cb072b2c0af5982ad493fb8c9eda5d4380b",
+      "rating": 5,
+      "date": "2023-09-12",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thanks for visiting, hope to see you again soon.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "0afa4a27a4dc2bae1ae574e53d74592dcee632b14e3e827b4a4fdba74297087b",
+      "rating": 1,
+      "date": "2023-07-29",
+      "text": "",
+      "reviewerReviewCount": 109,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you, we are sorry about the wait that evening.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "17307913c11b13e6437271c485fa438f7178a1091a1ee56e729c940049a927f2",
+      "rating": 5,
+      "date": "2024-02-07",
+      "text": "Stopped by after work and the espresso had a pleasant bitter finish. Worth the detour if you are nearby.",
+      "reviewerReviewCount": 1,
+      "photoCount": 4,
+      "localGuideLevel": 8,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "3d2b88fff1d3781e10a7928b202705bcf322b9ebd1eb9757d06726d3cbf92013",
+      "rating": 1,
+      "date": "2024-01-02",
+      "text": "We waited forty minutes and the order was wrong twice.",
+      "reviewerReviewCount": 66,
+      "photoCount": 0,
+      "localGuideLevel": 5,
+      "ownerResponse": null,
+      "language": "en"
+    }
+  ],
+  "expected": {
+    "placeId": "0xfixture:0xsmall",
+    "score": null,
+    "status": "insufficient_data",
+    "reviewCount": 10,
+    "signals": [],
+    "monthly": [
+      {
+        "month": "2023-07",
+        "count": 1
+      },
+      {
+        "month": "2023-08",
+        "count": 0
+      },
+      {
+        "month": "2023-09",
+        "count": 1
+      },
+      {
+        "month": "2023-10",
+        "count": 0
+      },
+      {
+        "month": "2023-11",
+        "count": 0
+      },
+      {
+        "month": "2023-12",
+        "count": 0
+      },
+      {
+        "month": "2024-01",
+        "count": 2
+      },
+      {
+        "month": "2024-02",
+        "count": 2
+      },
+      {
+        "month": "2024-03",
+        "count": 0
+      },
+      {
+        "month": "2024-04",
+        "count": 0
+      },
+      {
+        "month": "2024-05",
+        "count": 0
+      },
+      {
+        "month": "2024-06",
+        "count": 1
+      },
+      {
+        "month": "2024-07",
+        "count": 0
+      },
+      {
+        "month": "2024-08",
+        "count": 0
+      },
+      {
+        "month": "2024-09",
+        "count": 0
+      },
+      {
+        "month": "2024-10",
+        "count": 0
+      },
+      {
+        "month": "2024-11",
+        "count": 0
+      },
+      {
+        "month": "2024-12",
+        "count": 0
+      },
+      {
+        "month": "2025-01",
+        "count": 0
+      },
+      {
+        "month": "2025-02",
+        "count": 0
+      },
+      {
+        "month": "2025-03",
+        "count": 0
+      },
+      {
+        "month": "2025-04",
+        "count": 0
+      },
+      {
+        "month": "2025-05",
+        "count": 1
+      },
+      {
+        "month": "2025-06",
+        "count": 0
+      },
+      {
+        "month": "2025-07",
+        "count": 0
+      },
+      {
+        "month": "2025-08",
+        "count": 1
+      },
+      {
+        "month": "2025-09",
+        "count": 0
+      },
+      {
+        "month": "2025-10",
+        "count": 0
+      },
+      {
+        "month": "2025-11",
+        "count": 0
+      },
+      {
+        "month": "2025-12",
+        "count": 0
+      },
+      {
+        "month": "2026-01",
+        "count": 0
+      },
+      {
+        "month": "2026-02",
+        "count": 0
+      },
+      {
+        "month": "2026-03",
+        "count": 1
+      }
+    ],
+    "ratingDistribution": {
+      "1": 3,
+      "2": 0,
+      "3": 1,
+      "4": 1,
+      "5": 5
+    },
+    "reviewerProfile": {
+      "singleReviewShare": 0.5,
+      "medianReviewCount": 23.5,
+      "localGuideShare": 0.4,
+      "withPhotosShare": 0.3
+    },
+    "source": "server",
+    "engineVersion": "1.0.0",
+    "computedAt": "2026-06-01T00:00:00.000Z"
+  }
+}

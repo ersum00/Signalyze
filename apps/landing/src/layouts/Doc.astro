@@ -1,0 +1,21 @@
+---
+import Base from './Base.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Repository path of the Markdown file this page is generated from. */
+  source: string;
+}
+
+const { title, description, source } = Astro.props;
+---
+
+<Base title={title} description={description}>
+  <main id="main" class="mx-auto max-w-3xl px-5 py-14 sm:px-8 sm:py-20">
+    <p class="eyebrow mb-8">source: {source}</p>
+    <article class="prose">
+      <slot />
+    </article>
+  </main>
+</Base>

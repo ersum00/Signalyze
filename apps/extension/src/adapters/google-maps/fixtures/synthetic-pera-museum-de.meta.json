@@ -1,0 +1,14 @@
+{
+  "url": "https://www.google.com/maps/place/Pera+Museum/@41.0318536,28.9750578,17z/data=!4m8!3m7!1s0x14cab9e0160d322d:0xd94762797dd716c9!8m2!3d41.0318536!4d28.9750578!9m1!1b1!16s%2Fm%2F026zy8h?hl=en&entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D",
+  "capturedAt": "2026-09-12T11:30:12.989Z",
+  "hl": "de",
+  "reviewCountLoaded": 40,
+  "reviewerCount": 40,
+  "businessNameReplaced": true,
+  "businessNamePlaceholder": "Business synthetic-pera-museum-de",
+  "headerIncluded": false,
+  "limitedView": false,
+  "synthetic": true,
+  "derivedFrom": "pera-museum",
+  "note": "UI strings rewritten into \"de\" from the real pera-museum capture; DOM structure unchanged. Re-capture with --hl de when a full session is available."
+}

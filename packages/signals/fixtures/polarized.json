@@ -1,0 +1,1930 @@
+{
+  "name": "polarized",
+  "seed": 103,
+  "now": "2026-06-01T00:00:00.000Z",
+  "placeId": "0xfixture:0xpolarized",
+  "reviews": [
+    {
+      "reviewerHash": "20138506ac9da89621f0d772c9141daea4253227ec46677046b77c97b1152a66",
+      "rating": 5,
+      "date": "2024-01-31",
+      "text": "Dropped in for a quick coffee and the terrace view over the river is lovely in the evening. Prices are fair for the area.",
+      "reviewerReviewCount": 29,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "71b7e6dcfd36fc8f877cf1bd10ccb1be9a6c0b9453062fb7e6a8892af9bf90e8",
+      "rating": 1,
+      "date": "2025-05-08",
+      "text": "We waited forty minutes and the order was wrong twice.",
+      "reviewerReviewCount": 42,
+      "photoCount": 0,
+      "localGuideLevel": 4,
+      "ownerResponse": "Thank you, hope to see you again soon.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "130615ccf13d75740c76c07c292dd9f26d8f326cd6337164cf6a10e57463b592",
+      "rating": 5,
+      "date": "2024-10-22",
+      "text": "",
+      "reviewerReviewCount": 8,
+      "photoCount": 0,
+      "localGuideLevel": 1,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "9c79c331b2a66a6f977735bf4d1eef83b710401ff4cd78617d1a05afd7421e16",
+      "rating": 5,
+      "date": "2024-07-23",
+      "text": "Stopped by after work and the kids menu kept our daughter busy. Reservations recommended on weekends.",
+      "reviewerReviewCount": 40,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "8a1452aeffa4069b39054c6a4708f46ee87a41d5549760b74a7631182aaec1c5",
+      "rating": 1,
+      "date": "2025-08-26",
+      "text": "",
+      "reviewerReviewCount": 3,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": "We appreciate the feedback, hope to see you again soon.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "c6194cbe1c1c6e7b09715f8e3231f746d0d4c8beb3b4ffebf018f6a277b711f3",
+      "rating": 1,
+      "date": "2024-04-03",
+      "text": "The chicken was cold and the waiter was rude, never again.",
+      "reviewerReviewCount": 3,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thanks for visiting, the terrace is open again from May.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "2e6a574b0307c22796b881e3ad4ff69c869d73711986233e217c5deb8f32dd0b",
+      "rating": 1,
+      "date": "2026-02-18",
+      "text": "Overpriced for what you get, the salad was stale.",
+      "reviewerReviewCount": 32,
+      "photoCount": 0,
+      "localGuideLevel": 3,
+      "ownerResponse": "Thanks for visiting, please ask for the seasonal menu next time.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "97d9292e475224f66b77ee9c09eb64a100b103e21ce2c18cfdfcd97e11fd9511",
+      "rating": 1,
+      "date": "2024-02-01",
+      "text": "Overpriced for what you get, the salad was stale.",
+      "reviewerReviewCount": 6,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Glad you came by, hope to see you again soon.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "c2e02045119ad137a28526a09202829de3cf0b2688d91ae9eec894495b909f4c",
+      "rating": 5,
+      "date": "2023-12-27",
+      "text": "Dropped in for a quick coffee and the pastry case looked tempting. Prices are fair for the area.",
+      "reviewerReviewCount": 16,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "926302217e573f2382eb20e7c624d4dfc129903b5911f2357a70e75677bfaf54",
+      "rating": 1,
+      "date": "2024-09-06",
+      "text": "",
+      "reviewerReviewCount": 46,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Glad you came by, the terrace is open again from May.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "8f467b1114aa5ca7b9b02812cffbc7f8762204527605d2fc560fee5134cf0f13",
+      "rating": 1,
+      "date": "2025-11-06",
+      "text": "The chicken was cold and the waiter was rude, never again.",
+      "reviewerReviewCount": 29,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Glad you came by, hope to see you again soon.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "82aecab56353dd1ee329c2165b6a16b32e73c7a2b4c767409b0fc639f5798a5b",
+      "rating": 5,
+      "date": "2024-03-20",
+      "text": "We came here on a Saturday afternoon and the portions were larger than we expected. The lighting makes it hard to read the menu.",
+      "reviewerReviewCount": 48,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "492bca273b523296022714e139dfad5e042d2190beea9b1a71f35074f171821f",
+      "rating": 1,
+      "date": "2024-01-01",
+      "text": "The chicken was cold and the waiter was rude, never again.",
+      "reviewerReviewCount": 44,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": "We appreciate the feedback, we will pass this on to the kitchen.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "7f468cc4f6c1ff5aae99c9396fb7338948840df02a379443ab822c3bb29c466d",
+      "rating": 1,
+      "date": "2024-09-25",
+      "text": "",
+      "reviewerReviewCount": 49,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you, we are sorry about the wait that evening.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "69b69bfa82db7b9ffd0c8812d0c1d7205c31be0ebad1224261778de1d4c13b98",
+      "rating": 1,
+      "date": "2026-04-02",
+      "text": "Dirty tables and slow service, very disappointing evening.",
+      "reviewerReviewCount": 60,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "We appreciate the feedback, we will pass this on to the kitchen.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "1d6841d68b7a61b6d17768e72b05c29104fd068871cd4a32f5d34ad340099361",
+      "rating": 5,
+      "date": "2024-04-06",
+      "text": "Stopped by after work and the pastry case looked tempting. Not sure about the new menu, the old one had more variety.",
+      "reviewerReviewCount": 36,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "5587e3778611707fa988bddc340ec99133b7240f0564a15a31e5d5582860ad4a",
+      "rating": 1,
+      "date": "2026-02-10",
+      "text": "Overpriced for what you get, the salad was stale.",
+      "reviewerReviewCount": 43,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": "We appreciate the feedback, the terrace is open again from May.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "8f4c7f34a70b0c811f82941f9c63fe4e62b841683b2e2dc0a690f9df3aeecaf3",
+      "rating": 5,
+      "date": "2025-08-10",
+      "text": "",
+      "reviewerReviewCount": 32,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "aaf56410305054717758622e73c983b243e49e3dca44a46033f434f4bba97ba5",
+      "rating": 5,
+      "date": "2026-04-20",
+      "text": "Found this place by accident and the bathroom could use some attention. The lighting makes it hard to read the menu.",
+      "reviewerReviewCount": 24,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "d309eae9e4f5a92503ed93177721b13c87e0e3e827ed7e807a7a04427e68a254",
+      "rating": 5,
+      "date": "2025-08-25",
+      "text": "Dropped in for a quick coffee and the soup of the day was surprisingly rich. The lighting makes it hard to read the menu.",
+      "reviewerReviewCount": 46,
+      "photoCount": 0,
+      "localGuideLevel": 4,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "cc497145a14d47bccd23fccac31fff32122d151498559ddb62e297c6dab5019d",
+      "rating": 5,
+      "date": "2026-02-19",
+      "text": "Dropped in for a quick coffee and the pastry case looked tempting. Prices are fair for the area.",
+      "reviewerReviewCount": 10,
+      "photoCount": 0,
+      "localGuideLevel": 5,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "4a4e0dcfe6695ef68fb63cb9bc857c469e4fc4dd4874080b6ff6944dc5e759a4",
+      "rating": 4,
+      "date": "2025-04-09",
+      "text": "Second time here and the bathroom could use some attention. Not sure about the new menu, the old one had more variety.",
+      "reviewerReviewCount": 60,
+      "photoCount": 0,
+      "localGuideLevel": 2,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "d114da5d6603dcd999e94debda25790f0af9ca600e24153d69af5f01bd41c136",
+      "rating": 5,
+      "date": "2024-03-21",
+      "text": "We came here on a Saturday afternoon and the terrace view over the river is lovely in the evening. Reservations recommended on weekends.",
+      "reviewerReviewCount": 41,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "872975d3d18032fc2e427442abe3ea473ee55b46a2921b1b72703106fc8d6aec",
+      "rating": 5,
+      "date": "2024-08-31",
+      "text": "",
+      "reviewerReviewCount": 51,
+      "photoCount": 0,
+      "localGuideLevel": 6,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "8fac2f9362c771e43e5e459c47dc8357f330819ec236045e86e5deead493bd19",
+      "rating": 1,
+      "date": "2025-04-17",
+      "text": "Overpriced for what you get, the salad was stale.",
+      "reviewerReviewCount": 32,
+      "photoCount": 0,
+      "localGuideLevel": 2,
+      "ownerResponse": "We appreciate the feedback, we will pass this on to the kitchen.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "9a58910fe823c801acdd9d0b87d1102a9ea89f666b63cf5e3202a8536c558e1c",
+      "rating": 1,
+      "date": "2024-08-27",
+      "text": "We waited forty minutes and the order was wrong twice.",
+      "reviewerReviewCount": 46,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "We appreciate the feedback, please ask for the seasonal menu next time.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "702fe95af5ec20c18644ea61ec3cf30094abd6ca913307ee4b242b76ee9ef33e",
+      "rating": 5,
+      "date": "2025-02-04",
+      "text": "Booked a table for four and the portions were larger than we expected. The owner came out to chat, which was a nice touch.",
+      "reviewerReviewCount": 36,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "4fa42306e71539c41e85eb34f59b3d115b5695ae25c108e276a8e93ffeb91c1e",
+      "rating": 1,
+      "date": "2025-08-28",
+      "text": "",
+      "reviewerReviewCount": 14,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you, our team will be happy to hear this.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "0356c2fc8b57c297477119b2a41799d3ce5185bf6b2991a70bada8f349c7cda2",
+      "rating": 5,
+      "date": "2024-08-09",
+      "text": "Came for the brunch menu and the espresso had a pleasant bitter finish. Not sure about the new menu, the old one had more variety.",
+      "reviewerReviewCount": 35,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "463ee1ab86e54a1193cf41779d1f99588a05d02c057bb4527cd325aaee76fd5d",
+      "rating": 5,
+      "date": "2025-04-11",
+      "text": "Visited with my parents and the kids menu kept our daughter busy. Prices are fair for the area.",
+      "reviewerReviewCount": 32,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "a34ce5b1756df2b875262117a7abd8a6852f2abf2318c579e4a43ceccb0e60df",
+      "rating": 1,
+      "date": "2025-11-17",
+      "text": "The chicken was cold and the waiter was rude, never again.",
+      "reviewerReviewCount": 40,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you, we are sorry about the wait that evening.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "c0984c8156fa60799fc5770b039ae9917ae56c3baf4625d0ac2603b6b169cf7f",
+      "rating": 1,
+      "date": "2024-06-13",
+      "text": "Dirty tables and slow service, very disappointing evening.",
+      "reviewerReviewCount": 48,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thanks for visiting, please ask for the seasonal menu next time.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "11456100aa9e24b98beef05f9ea80bc707e2e0c309eda7c333072d5d893f0f83",
+      "rating": 4,
+      "date": "2025-07-13",
+      "text": "",
+      "reviewerReviewCount": 42,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "de17dcbb8f6dd401eaf97cab8687455754236f7386b570667d70b23de27cdda2",
+      "rating": 5,
+      "date": "2025-03-19",
+      "text": "We came here on a Saturday afternoon and the espresso had a pleasant bitter finish. Prices are fair for the area.",
+      "reviewerReviewCount": 59,
+      "photoCount": 0,
+      "localGuideLevel": 3,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "0363eb1c906b2bef8d445722fb53a3ce79c6a6f6e8a01d400e8ee5fd1d88ecfc",
+      "rating": 5,
+      "date": "2025-08-08",
+      "text": "",
+      "reviewerReviewCount": 15,
+      "photoCount": 0,
+      "localGuideLevel": 5,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "e6ed17ca485d38675174f29ba6315c511e68bda479fb31329577ad953614dedf",
+      "rating": 5,
+      "date": "2026-01-11",
+      "text": "",
+      "reviewerReviewCount": 56,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "00a7d99a50326afae2037306a1a215b633d6fc1f2d347ada71f46658b8a5f4a5",
+      "rating": 5,
+      "date": "2026-04-15",
+      "text": "Came for the brunch menu and the terrace view over the river is lovely in the evening. Prices are fair for the area.",
+      "reviewerReviewCount": 51,
+      "photoCount": 0,
+      "localGuideLevel": 5,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "38005a24e76c6ccda7ad0b3bef10d321dc4c4988e96f31d399aed2c689a157a7",
+      "rating": 1,
+      "date": "2026-04-01",
+      "text": "Dirty tables and slow service, very disappointing evening.",
+      "reviewerReviewCount": 31,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": "Thanks for visiting, please ask for the seasonal menu next time.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "2087ff85f566f1406b4b9ba260d691ace0c4dc3824657c3e7c8b201f0f8d2f22",
+      "rating": 5,
+      "date": "2026-03-01",
+      "text": "",
+      "reviewerReviewCount": 43,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "19c45f8108668477ea77106f897384cb64791a291a84dfaafa15ccfc34ad45dd",
+      "rating": 1,
+      "date": "2025-01-07",
+      "text": "Dirty tables and slow service, very disappointing evening.",
+      "reviewerReviewCount": 45,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you, our team will be happy to hear this.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "9bd7b583e4ac1e84f292806c785cc0bc71038eebd75ab90c96a105f1775965d6",
+      "rating": 4,
+      "date": "2025-03-31",
+      "text": "Found this place by accident and the bathroom could use some attention. Not sure about the new menu, the old one had more variety.",
+      "reviewerReviewCount": 43,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "850b99bccbc72249aab59a750cb96324976f5eec0e47635008143596ab472e6e",
+      "rating": 5,
+      "date": "2025-03-11",
+      "text": "Came for the brunch menu but the music was a bit loud for a conversation. Prices are fair for the area.",
+      "reviewerReviewCount": 8,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "a5f7cf83f6f21af6f0f06d1043a5471bbf2541e3815d10d79532a03eb18be487",
+      "rating": 5,
+      "date": "2024-12-14",
+      "text": "",
+      "reviewerReviewCount": 25,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "d2c1190a7092d598dec0e8786c34f491419d7ae474bb96ecc7018eb5f8dd18c0",
+      "rating": 5,
+      "date": "2025-12-08",
+      "text": "Came for the brunch menu and parking nearby was tricky on a weekday. Service was slow but the staff apologised.",
+      "reviewerReviewCount": 40,
+      "photoCount": 0,
+      "localGuideLevel": 6,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "9cd54357d877eb546e9efe7dd15aa8f42b38c6f07168345386685f83c1fe24a7",
+      "rating": 5,
+      "date": "2025-10-15",
+      "text": "Stopped by after work and the soup of the day was surprisingly rich. Prices are fair for the area.",
+      "reviewerReviewCount": 55,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "0bbeabac40a8a80791081c55e5bf54871545961ac84b52bfe113d8bad08456d9",
+      "rating": 5,
+      "date": "2025-01-29",
+      "text": "Second time here and parking nearby was tricky on a weekday. Prices are fair for the area.",
+      "reviewerReviewCount": 33,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "6126bcc25e365370d443a45d391a868ab146957d343094369e69e2554e6a0b7b",
+      "rating": 1,
+      "date": "2025-07-28",
+      "text": "Dirty tables and slow service, very disappointing evening.",
+      "reviewerReviewCount": 49,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Glad you came by, we are sorry about the wait that evening.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "f342bebc346ad4ca0dc8e8f7499c76f9cfc4386aeac63c2357e6bf123934b69b",
+      "rating": 5,
+      "date": "2024-06-14",
+      "text": "Second time here but the music was a bit loud for a conversation. Reservations recommended on weekends.",
+      "reviewerReviewCount": 45,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "62a8629798cb73435645f9854b47d9a7400bf2977f4dc04c5e3ed02410a47343",
+      "rating": 1,
+      "date": "2024-12-01",
+      "text": "Dirty tables and slow service, very disappointing evening.",
+      "reviewerReviewCount": 50,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you, hope to see you again soon.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "01a3d5e5226d9e3ea976c123cfa033629804f4d717945e6caf7db7ab4604c6d3",
+      "rating": 5,
+      "date": "2024-09-20",
+      "text": "Visited with my parents and the waiter remembered our order from last month. The owner came out to chat, which was a nice touch.",
+      "reviewerReviewCount": 46,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "c71727dcc30860bdc59d7ab0aaedbf695bd60f16318afb69fcad07c29253d6c0",
+      "rating": 1,
+      "date": "2026-05-09",
+      "text": "Overpriced for what you get, the salad was stale.",
+      "reviewerReviewCount": 45,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thanks for visiting, please ask for the seasonal menu next time.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "57c7c85047b3eacf123be150d1fc3812b630442b8d4432ac581248d265319f63",
+      "rating": 5,
+      "date": "2026-03-25",
+      "text": "Found this place by accident and the terrace view over the river is lovely in the evening. The lighting makes it hard to read the menu.",
+      "reviewerReviewCount": 22,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "e50508ce238f274fea495594ecf6e8cd3775014e6dc345d354a9c24df6d4ae29",
+      "rating": 5,
+      "date": "2024-06-17",
+      "text": "",
+      "reviewerReviewCount": 54,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "51b13ddcc2901be962f2637f124ed7df1ccc4445a1e601a0750e897eed211302",
+      "rating": 5,
+      "date": "2025-10-06",
+      "text": "Booked a table for four but the music was a bit loud for a conversation. The owner came out to chat, which was a nice touch.",
+      "reviewerReviewCount": 3,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "96f667d26f2a4b07ae7ed002daf5c0659b6bfdc6c3acaed87958cde035d53377",
+      "rating": 5,
+      "date": "2025-04-26",
+      "text": "Found this place by accident and the pastry case looked tempting. The owner came out to chat, which was a nice touch.",
+      "reviewerReviewCount": 22,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "1791f79ca01b0de6b1fca27429d516d46694f97637f0061ae6a511ce5de5165c",
+      "rating": 5,
+      "date": "2026-05-23",
+      "text": "",
+      "reviewerReviewCount": 21,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "8b3c86ac75054c4d5b3873f3c88551d512e381c44bf41094ff85961410c2b660",
+      "rating": 1,
+      "date": "2024-03-26",
+      "text": "",
+      "reviewerReviewCount": 26,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you, the terrace is open again from May.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "fe56b8b6d2e2961470d2fb84fe208819d1f4591a12c2655f7934f435fc40bd86",
+      "rating": 1,
+      "date": "2024-09-23",
+      "text": "",
+      "reviewerReviewCount": 8,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thanks for visiting, we are sorry about the wait that evening.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "ad214ebcce6682ff9bc2214bb1a68fcf7a9504cd22822b78ab9e248aa84fd958",
+      "rating": 5,
+      "date": "2025-06-19",
+      "text": "Dropped in for a quick coffee and the portions were larger than we expected. Reservations recommended on weekends.",
+      "reviewerReviewCount": 19,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "c4aa6e91fd74b02243eeb2aaf63427718631fd19ac12388ba8086ff94436edc3",
+      "rating": 5,
+      "date": "2025-09-24",
+      "text": "Dropped in for a quick coffee and the soup of the day was surprisingly rich. Worth the detour if you are nearby.",
+      "reviewerReviewCount": 10,
+      "photoCount": 0,
+      "localGuideLevel": 5,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "1a35c31ee75760bd5ecb0a8662717990abb98abc0d0e2afbefc93c334b2d83bb",
+      "rating": 4,
+      "date": "2025-04-26",
+      "text": "Found this place by accident and the waiter remembered our order from last month. Reservations recommended on weekends.",
+      "reviewerReviewCount": 11,
+      "photoCount": 1,
+      "localGuideLevel": 3,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "f1c7790c70aeb5c8b7c039e8ffd2cbd990a01a43d12bbe0104577e5e36010ad3",
+      "rating": 5,
+      "date": "2024-11-20",
+      "text": "",
+      "reviewerReviewCount": 47,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "67d3c5b091b69eef7319e1f5e8bf8b92b65553ff76e56f7011a296e3a9cb0458",
+      "rating": 5,
+      "date": "2026-05-14",
+      "text": "",
+      "reviewerReviewCount": 42,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "f60307f45256b5f8745fad1c8bd235d43a19ac5361805dc86ba36cbb49be2140",
+      "rating": 5,
+      "date": "2024-12-25",
+      "text": "Dropped in for a quick coffee and the portions were larger than we expected. Would come back for the dessert alone.",
+      "reviewerReviewCount": 8,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "856e0cea406ec1983b48157a7a04089a95b18832448c5a936435d8b5ffaa5cf6",
+      "rating": 5,
+      "date": "2024-11-24",
+      "text": "",
+      "reviewerReviewCount": 43,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "acbc3d6e004b9869f4a39f2b75e92f6c8078e454a61aeafce07caa99fba0cc0c",
+      "rating": 1,
+      "date": "2025-05-05",
+      "text": "Dirty tables and slow service, very disappointing evening.",
+      "reviewerReviewCount": 44,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "We appreciate the feedback, we will pass this on to the kitchen.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "af19eef8184e37318197cdbf2e37f21563a6ce622a8a53f7c8b8c6a15f5eede6",
+      "rating": 5,
+      "date": "2025-12-11",
+      "text": "Visited with my parents and the waiter remembered our order from last month. Prices are fair for the area.",
+      "reviewerReviewCount": 51,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "c7fb7f5e21047e4253c4b4bac9faab53f27ed998fcae27d5b3afb16dcbf473eb",
+      "rating": 1,
+      "date": "2025-12-13",
+      "text": "",
+      "reviewerReviewCount": 55,
+      "photoCount": 1,
+      "localGuideLevel": 5,
+      "ownerResponse": "Thank you, our team will be happy to hear this.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "d73f3078d2000aa041093eb0849ac077bbe75e03f53e7728a11f81ca6f18a5ee",
+      "rating": 1,
+      "date": "2025-06-22",
+      "text": "Dirty tables and slow service, very disappointing evening.",
+      "reviewerReviewCount": 6,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "We appreciate the feedback, we are sorry about the wait that evening.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "8807172e718fd03f1272a3d345b265a24c6e3ea60818ab205518c1bbd7435544",
+      "rating": 5,
+      "date": "2024-02-28",
+      "text": "Second time here and parking nearby was tricky on a weekday. Service was slow but the staff apologised.",
+      "reviewerReviewCount": 10,
+      "photoCount": 0,
+      "localGuideLevel": 3,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "4c7c491bc380e87abac724ed7c166ae9e6ece34873018fdb8cbf144c6109da20",
+      "rating": 1,
+      "date": "2024-01-30",
+      "text": "Overpriced for what you get, the salad was stale.",
+      "reviewerReviewCount": 38,
+      "photoCount": 0,
+      "localGuideLevel": 3,
+      "ownerResponse": "Glad you came by, our team will be happy to hear this.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "d69d6c5b809134f810e7bb82693cc252ccc846c7f21316ce4a2a914f30742f59",
+      "rating": 5,
+      "date": "2024-08-11",
+      "text": "Dropped in for a quick coffee and parking nearby was tricky on a weekday. Prices are fair for the area.",
+      "reviewerReviewCount": 14,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "397f8f2ba486eec752c878f6775fb40db48039adfb817b4faa95223af1d86edf",
+      "rating": 5,
+      "date": "2024-01-20",
+      "text": "Came for the brunch menu and the bathroom could use some attention. Service was slow but the staff apologised.",
+      "reviewerReviewCount": 33,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "6ae5f5a98e916d68dba142e45cf5012dc2e8df3a06feb059d72bdf3afb6a38bc",
+      "rating": 5,
+      "date": "2024-11-03",
+      "text": "We came here on a Saturday afternoon and the espresso had a pleasant bitter finish. The owner came out to chat, which was a nice touch.",
+      "reviewerReviewCount": 42,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "9f364b8af74f76e545ba74222c2042e084716f590370b952211d13ad30f799a4",
+      "rating": 4,
+      "date": "2024-03-22",
+      "text": "Dropped in for a quick coffee but the music was a bit loud for a conversation. Would come back for the dessert alone.",
+      "reviewerReviewCount": 20,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "e1eaeeda392f26fc38c4f93bd3056569821349b270e3a6923f8e88b89c94f245",
+      "rating": 5,
+      "date": "2025-03-11",
+      "text": "Came for the brunch menu and the waiter remembered our order from last month. The lighting makes it hard to read the menu.",
+      "reviewerReviewCount": 22,
+      "photoCount": 0,
+      "localGuideLevel": 1,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "ae26b0b7f4d24b39f9a93ed030147c3692c9cd7508a75710bf141a727576b58d",
+      "rating": 5,
+      "date": "2024-07-14",
+      "text": "",
+      "reviewerReviewCount": 5,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "61fca5d5b1d18914b68aa32cdf27cb36081617541768ee17ff43c392f4cbbb44",
+      "rating": 5,
+      "date": "2026-02-06",
+      "text": "",
+      "reviewerReviewCount": 43,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "6fd0cb7f403022cf5dae5417131af084e89b6adc7376469ee0b7f136c99d50f6",
+      "rating": 5,
+      "date": "2024-06-11",
+      "text": "",
+      "reviewerReviewCount": 13,
+      "photoCount": 0,
+      "localGuideLevel": 6,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "4490b31eb1ac59f06b800879c65756ddeb2b83db8bee26c4e1b2e637429b2f12",
+      "rating": 1,
+      "date": "2023-12-19",
+      "text": "",
+      "reviewerReviewCount": 25,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "We appreciate the feedback, we will pass this on to the kitchen.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "8c8d2fca1d65527f436c4d207d6d2788eb7e372108c9386c0025c8b409901986",
+      "rating": 1,
+      "date": "2026-05-28",
+      "text": "",
+      "reviewerReviewCount": 2,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": "Glad you came by, we are sorry about the wait that evening.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "c3788bada56a46662f361f5865202bc6056b5b2fcf1004898bbd3cbd18c1567d",
+      "rating": 4,
+      "date": "2025-12-23",
+      "text": "Dropped in for a quick coffee but the music was a bit loud for a conversation. The owner came out to chat, which was a nice touch.",
+      "reviewerReviewCount": 16,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "d04ba36683dedfe2cced155cc28199deabccb5261ff610204b2fc97c2c5346c3",
+      "rating": 5,
+      "date": "2025-03-17",
+      "text": "Stopped by after work and the espresso had a pleasant bitter finish. Not sure about the new menu, the old one had more variety.",
+      "reviewerReviewCount": 35,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "1f5b8131198ba9a3358bdfbe76a07a6f1e180d2017816010d7fd410f5c71df0f",
+      "rating": 1,
+      "date": "2024-09-21",
+      "text": "We waited forty minutes and the order was wrong twice.",
+      "reviewerReviewCount": 47,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Glad you came by, our team will be happy to hear this.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "569011bc1319401b4b03c48365aab49419bcb90222bb994b3ced000ff51a42cf",
+      "rating": 4,
+      "date": "2025-03-27",
+      "text": "Stopped by after work and the pastry case looked tempting. Worth the detour if you are nearby.",
+      "reviewerReviewCount": 2,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "76bc633e0268d6f1c528de25e8f9eecd1bb462d68e5d3c1c8c7393d98b71db85",
+      "rating": 1,
+      "date": "2024-03-20",
+      "text": "We waited forty minutes and the order was wrong twice.",
+      "reviewerReviewCount": 3,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thanks for visiting, hope to see you again soon.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "872fd8283c33440db3c290c9655fd8bf14f33b8a25ddc41538ecad9d5fbab970",
+      "rating": 1,
+      "date": "2025-10-01",
+      "text": "",
+      "reviewerReviewCount": 42,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you, our team will be happy to hear this.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "92fd02dabb59f069b15b96e0d6b0d8261c55f5be7c0690985c3883a35fced72c",
+      "rating": 1,
+      "date": "2026-03-21",
+      "text": "We waited forty minutes and the order was wrong twice.",
+      "reviewerReviewCount": 51,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thanks for visiting, our team will be happy to hear this.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "db29b2408eb51c5df7ab6383ddcdc9da05d0e7c5bea6d73fcb4f0ac6b02e3124",
+      "rating": 5,
+      "date": "2024-03-08",
+      "text": "Booked a table for four and the bathroom could use some attention. Prices are fair for the area.",
+      "reviewerReviewCount": 55,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "eb97143a25187bb4c4739e7ae1217b236c69f143fc79f6b591735f51114eacdd",
+      "rating": 5,
+      "date": "2026-01-11",
+      "text": "",
+      "reviewerReviewCount": 31,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "bc56df484408fe29e6d49fb646f9392552f155df6f8a4e78f108fd0d3a0a62d1",
+      "rating": 5,
+      "date": "2025-12-10",
+      "text": "",
+      "reviewerReviewCount": 26,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "ad8afe295d6bbbf5677b5b0488a5b401b362e2b6b0782169369f8aec52532e0c",
+      "rating": 5,
+      "date": "2024-09-20",
+      "text": "Found this place by accident and the portions were larger than we expected. Prices are fair for the area.",
+      "reviewerReviewCount": 47,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "36ec8714c60e64c16a971afa65a5d14792c358d5681242e61f5422aa614f3b0f",
+      "rating": 5,
+      "date": "2024-03-18",
+      "text": "Second time here and the portions were larger than we expected. The owner came out to chat, which was a nice touch.",
+      "reviewerReviewCount": 29,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "1307bcf31c868a815526a6bb5d859ba00a1ffa04e4df18d24ee726d9880eb64b",
+      "rating": 5,
+      "date": "2025-12-19",
+      "text": "",
+      "reviewerReviewCount": 21,
+      "photoCount": 0,
+      "localGuideLevel": 6,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "0e5cd2e8f10af4e94af04c6093e9d6dae60e3cbf92061e3190e73dc645e1a362",
+      "rating": 1,
+      "date": "2024-10-13",
+      "text": "",
+      "reviewerReviewCount": 12,
+      "photoCount": 1,
+      "localGuideLevel": 6,
+      "ownerResponse": "Thank you, hope to see you again soon.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "ee96df892c1f0c430f198c6b085476e0c3a93ec63044653a571effc9d127ac1b",
+      "rating": 5,
+      "date": "2025-07-02",
+      "text": "",
+      "reviewerReviewCount": 59,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "3a2705df3f3a3d62b4fbce71ada386244cc3c4979462ff5ccd149d0d8bcfa0da",
+      "rating": 5,
+      "date": "2025-02-26",
+      "text": "",
+      "reviewerReviewCount": 47,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "1584386db9c1f69df4d31124a202915e8ea7865c6f6ce2aaf791775c34c6ab24",
+      "rating": 1,
+      "date": "2024-01-07",
+      "text": "We waited forty minutes and the order was wrong twice.",
+      "reviewerReviewCount": 32,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": "We appreciate the feedback, please ask for the seasonal menu next time.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "31b79bd6424475485bf85e4f4d91b56307b509e556201f59728d2567db3d0841",
+      "rating": 4,
+      "date": "2024-04-15",
+      "text": "",
+      "reviewerReviewCount": 38,
+      "photoCount": 0,
+      "localGuideLevel": 4,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "2028897e8c8bcaa4684ca852aaf84de94d7f625063db05030209e02923320457",
+      "rating": 5,
+      "date": "2026-05-07",
+      "text": "",
+      "reviewerReviewCount": 9,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "1948edb8aae72b6a834242c955c7847379c5041865022d32f7b3db35fb0c1790",
+      "rating": 1,
+      "date": "2025-07-30",
+      "text": "Overpriced for what you get, the salad was stale.",
+      "reviewerReviewCount": 11,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "We appreciate the feedback, our team will be happy to hear this.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "2486964df1a97742183cc07c4f0b2cf2f115ca65287348dc690a832f26f88fa7",
+      "rating": 1,
+      "date": "2024-06-30",
+      "text": "The chicken was cold and the waiter was rude, never again.",
+      "reviewerReviewCount": 9,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "We appreciate the feedback, hope to see you again soon.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "374e6ca5a9f69e6853897bf0de21511a53347de3e518d7e91c7d1845d8f14433",
+      "rating": 1,
+      "date": "2024-04-12",
+      "text": "Dirty tables and slow service, very disappointing evening.",
+      "reviewerReviewCount": 2,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Glad you came by, we are sorry about the wait that evening.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "823a841f430f0c5f712a4eb2f4323e656e4e604b01e34913649d280c0faa5425",
+      "rating": 5,
+      "date": "2024-03-07",
+      "text": "Visited with my parents and the soup of the day was surprisingly rich. Worth the detour if you are nearby.",
+      "reviewerReviewCount": 44,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "9035fdd654b04ad5c61a19a82b2f7eb509ed054a477f4f013c203c9c4d79e334",
+      "rating": 1,
+      "date": "2024-06-22",
+      "text": "",
+      "reviewerReviewCount": 19,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you, please ask for the seasonal menu next time.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "386ac552421f876782402f81bf565348655773f21026bab15b5552a0d63008ca",
+      "rating": 1,
+      "date": "2024-08-07",
+      "text": "The chicken was cold and the waiter was rude, never again.",
+      "reviewerReviewCount": 12,
+      "photoCount": 0,
+      "localGuideLevel": 4,
+      "ownerResponse": "Thank you, please ask for the seasonal menu next time.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "e190a424f1b82d8ad8b0aa922eb46261f8dfd5f3820475e001fa8ba82223ceae",
+      "rating": 5,
+      "date": "2024-12-26",
+      "text": "",
+      "reviewerReviewCount": 14,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "73a4616deb8835fe5228574e654f3e4074439f8e11468314aad507c4545a4131",
+      "rating": 5,
+      "date": "2024-08-26",
+      "text": "Stopped by after work and parking nearby was tricky on a weekday. Service was slow but the staff apologised.",
+      "reviewerReviewCount": 44,
+      "photoCount": 0,
+      "localGuideLevel": 4,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "75532ac11577b1c3d5fa97dcee4c886131192c9154709bd9b0334ad068a59fcb",
+      "rating": 4,
+      "date": "2025-09-29",
+      "text": "",
+      "reviewerReviewCount": 52,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "16251d2cd12905ec8d539ea3c35a4e1a54d8a19131b3311595de596e4fb522ce",
+      "rating": 5,
+      "date": "2025-05-09",
+      "text": "Dropped in for a quick coffee and the waiter remembered our order from last month. Reservations recommended on weekends.",
+      "reviewerReviewCount": 12,
+      "photoCount": 1,
+      "localGuideLevel": 2,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "9a17386f6f6fc9d37d3e4b161068a7b7cef3d5a1aaa103befe07c52b3fae5261",
+      "rating": 1,
+      "date": "2025-05-04",
+      "text": "",
+      "reviewerReviewCount": 8,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you, we will pass this on to the kitchen.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "b96579c853c5e0d19b0c30be31852f41750267395fffbb93b03d1ebf23a7092e",
+      "rating": 5,
+      "date": "2024-10-10",
+      "text": "",
+      "reviewerReviewCount": 26,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "3b78985102805e7fe02598a24b63544c53849de022fda72511a0b068eca6ff16",
+      "rating": 1,
+      "date": "2024-07-12",
+      "text": "Overpriced for what you get, the salad was stale.",
+      "reviewerReviewCount": 16,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "We appreciate the feedback, hope to see you again soon.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "8c7cce15b7feebc60c79d1692b3d953c1271c8e7e37aa6e5d33d21bd3a2517ff",
+      "rating": 1,
+      "date": "2024-07-15",
+      "text": "",
+      "reviewerReviewCount": 27,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Glad you came by, please ask for the seasonal menu next time.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "9f03df592f62140668f4279558d38e19893804e20fb278c09e0c845d9e1c86c2",
+      "rating": 5,
+      "date": "2025-08-01",
+      "text": "Found this place by accident and the espresso had a pleasant bitter finish. Would come back for the dessert alone.",
+      "reviewerReviewCount": 47,
+      "photoCount": 0,
+      "localGuideLevel": 6,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "b5e31efd2c014a0a5e9b7c35b0ff4e00ea3a60e62273420d07ff574701db8508",
+      "rating": 5,
+      "date": "2025-12-02",
+      "text": "",
+      "reviewerReviewCount": 53,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "e8cdbdf267848678c1595388cd80a842caed49f882f154d32686717704f0847b",
+      "rating": 5,
+      "date": "2026-01-11",
+      "text": "",
+      "reviewerReviewCount": 8,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "520e0cbc479c7ddd5ee81b196b212a9c55e12e7f4165a1efbfc52dfda2576bf1",
+      "rating": 4,
+      "date": "2025-04-01",
+      "text": "",
+      "reviewerReviewCount": 25,
+      "photoCount": 0,
+      "localGuideLevel": 1,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "2dc419a8b8b87479632e6e6bb0426c38d4733bf7455debf2fb5757e8c0cbe382",
+      "rating": 4,
+      "date": "2026-05-16",
+      "text": "Second time here and the kids menu kept our daughter busy. Reservations recommended on weekends.",
+      "reviewerReviewCount": 8,
+      "photoCount": 0,
+      "localGuideLevel": 2,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "ed02f71b65ee476de9dbf82db439b41775ff959645e50cc7c0c08d5feee3be76",
+      "rating": 5,
+      "date": "2024-08-31",
+      "text": "Found this place by accident but the music was a bit loud for a conversation. Service was slow but the staff apologised.",
+      "reviewerReviewCount": 13,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "005f60219582cca6ba782abcd037663dc40ba3321e8e794a7e4ea76ed14971dc",
+      "rating": 5,
+      "date": "2023-12-30",
+      "text": "Booked a table for four and the soup of the day was surprisingly rich. Would come back for the dessert alone.",
+      "reviewerReviewCount": 7,
+      "photoCount": 0,
+      "localGuideLevel": 3,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "6665ea29d8f0f0cd3905d615317edce7997ddff5faf9a2ed4b64daced07d79b2",
+      "rating": 1,
+      "date": "2024-09-25",
+      "text": "Overpriced for what you get, the salad was stale.",
+      "reviewerReviewCount": 15,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you, please ask for the seasonal menu next time.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "0542eaaf9e6a4e556bc3778be4114486d413a01575acee8997a13b2d8cbf5106",
+      "rating": 4,
+      "date": "2024-08-21",
+      "text": "Stopped by after work and the portions were larger than we expected. Prices are fair for the area.",
+      "reviewerReviewCount": 30,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "6e277b15d50fc58f040eedf2e075f9db0527dc02d76eb7b44b21c36ce7b5f076",
+      "rating": 5,
+      "date": "2024-12-16",
+      "text": "Booked a table for four and the terrace view over the river is lovely in the evening. Worth the detour if you are nearby.",
+      "reviewerReviewCount": 7,
+      "photoCount": 1,
+      "localGuideLevel": 5,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "af7d3e673ad42d9dfcc40b70066f90bec64c306bafbc80d435330f5e5807328a",
+      "rating": 4,
+      "date": "2026-02-17",
+      "text": "Booked a table for four and the espresso had a pleasant bitter finish. The lighting makes it hard to read the menu.",
+      "reviewerReviewCount": 15,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "aed1db5fa623c24e7d99b2a410ae23f599d6d91f008d16cd5a381315d6f1dedd",
+      "rating": 5,
+      "date": "2024-08-04",
+      "text": "We came here on a Saturday afternoon but the music was a bit loud for a conversation. Would come back for the dessert alone.",
+      "reviewerReviewCount": 33,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "7c231db1ede0f53b2e331000a730a1a6d0a7be57830f1d9eb8677ab0ea0b8069",
+      "rating": 4,
+      "date": "2025-04-23",
+      "text": "Dropped in for a quick coffee and parking nearby was tricky on a weekday. The lighting makes it hard to read the menu.",
+      "reviewerReviewCount": 50,
+      "photoCount": 0,
+      "localGuideLevel": 3,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "22d40f5b1861c877d1974110e18515a894ac18cca572fb22757adaa46e9175e6",
+      "rating": 1,
+      "date": "2025-06-02",
+      "text": "The chicken was cold and the waiter was rude, never again.",
+      "reviewerReviewCount": 54,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you, we are sorry about the wait that evening.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "1e021be5ddb058cde1204293be7dd57965e7d8343351db05f2cfe2a519c94531",
+      "rating": 1,
+      "date": "2024-03-23",
+      "text": "We waited forty minutes and the order was wrong twice.",
+      "reviewerReviewCount": 10,
+      "photoCount": 1,
+      "localGuideLevel": 1,
+      "ownerResponse": "Glad you came by, we will pass this on to the kitchen.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "bad726f6e979fc8ebf9d7be81031f49bc4ba346684ce36cedf4a8ebe67e5c56c",
+      "rating": 5,
+      "date": "2025-10-06",
+      "text": "",
+      "reviewerReviewCount": 7,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "99efa723483a31f16af9be4145135efff94378f767a23c84d6808a9fee25d626",
+      "rating": 1,
+      "date": "2026-02-24",
+      "text": "Overpriced for what you get, the salad was stale.",
+      "reviewerReviewCount": 38,
+      "photoCount": 0,
+      "localGuideLevel": 4,
+      "ownerResponse": "Thank you, hope to see you again soon.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "a7c21a74ada6ca1bba300f30128645fe88b9056cdf259b00122ee4aab3a761ef",
+      "rating": 5,
+      "date": "2024-01-15",
+      "text": "Came for the brunch menu and the terrace view over the river is lovely in the evening. The lighting makes it hard to read the menu.",
+      "reviewerReviewCount": 53,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "2e69779e9eb5c46df5eb9ea76d10aa99f3d5d0088c6e76594f9331287cd3bc8e",
+      "rating": 5,
+      "date": "2025-12-21",
+      "text": "",
+      "reviewerReviewCount": 27,
+      "photoCount": 1,
+      "localGuideLevel": 1,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "09cf282906bc54271533e9515518d57070098d7ecfa79c11ba6abf454a65480d",
+      "rating": 5,
+      "date": "2025-12-08",
+      "text": "",
+      "reviewerReviewCount": 50,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "c43bff2830f279ba2410c61a689eb462a256e345e085016ab33b333ac079ef0d",
+      "rating": 1,
+      "date": "2025-06-18",
+      "text": "",
+      "reviewerReviewCount": 17,
+      "photoCount": 0,
+      "localGuideLevel": 6,
+      "ownerResponse": "Glad you came by, we are sorry about the wait that evening.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "365fc7af7525915288591311c271a4b99808f264f60a87c9112f3178cf567c8d",
+      "rating": 5,
+      "date": "2025-04-04",
+      "text": "",
+      "reviewerReviewCount": 39,
+      "photoCount": 0,
+      "localGuideLevel": 5,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "7adb9cbc1821e12211659c925f7f27509a8edb4d86c72fefbf1dead764214925",
+      "rating": 5,
+      "date": "2025-01-04",
+      "text": "Stopped by after work and the portions were larger than we expected. The owner came out to chat, which was a nice touch.",
+      "reviewerReviewCount": 12,
+      "photoCount": 0,
+      "localGuideLevel": 2,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "1d947961e00578f2af0453fb0c3625485b8a47542e51435f4eb2d7f9dcc6f6cc",
+      "rating": 1,
+      "date": "2025-03-09",
+      "text": "Dirty tables and slow service, very disappointing evening.",
+      "reviewerReviewCount": 40,
+      "photoCount": 0,
+      "localGuideLevel": 6,
+      "ownerResponse": "Thanks for visiting, we are sorry about the wait that evening.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "868c0bf9ac6434be86a38200c027a599c15f02d2043d8155c607dcdd9bc2304c",
+      "rating": 1,
+      "date": "2024-02-03",
+      "text": "",
+      "reviewerReviewCount": 29,
+      "photoCount": 0,
+      "localGuideLevel": 6,
+      "ownerResponse": "We appreciate the feedback, the terrace is open again from May.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "3c55478e84efcefab08032f9b1cb04a3b19db6abcb79eecaea25862ab3d33017",
+      "rating": 5,
+      "date": "2025-11-24",
+      "text": "Came for the brunch menu and parking nearby was tricky on a weekday. Would come back for the dessert alone.",
+      "reviewerReviewCount": 47,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "e9d8752a5d81f7a65289ee8e0ba0f3907ba6d895c7fd63b3f13cc8b10f62f24d",
+      "rating": 5,
+      "date": "2026-05-15",
+      "text": "Stopped by after work and parking nearby was tricky on a weekday. Service was slow but the staff apologised.",
+      "reviewerReviewCount": 55,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "e5b842d75fc74f37361d99868aaec129d08dd998da629d4514abbf5552b21d9b",
+      "rating": 1,
+      "date": "2024-09-02",
+      "text": "The chicken was cold and the waiter was rude, never again.",
+      "reviewerReviewCount": 1,
+      "photoCount": 1,
+      "localGuideLevel": 5,
+      "ownerResponse": "Glad you came by, our team will be happy to hear this.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "a6393f5a54d7189c7b618e2b4783178ff75aaff8127895c3d9af8a35f805116f",
+      "rating": 5,
+      "date": "2024-02-26",
+      "text": "Dropped in for a quick coffee and the bathroom could use some attention. Prices are fair for the area.",
+      "reviewerReviewCount": 13,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "9945ced54c92297c49276e2ac186c439fdd2c23bc82b39e6860e097127180503",
+      "rating": 5,
+      "date": "2025-01-16",
+      "text": "Stopped by after work and the bathroom could use some attention. The lighting makes it hard to read the menu.",
+      "reviewerReviewCount": 50,
+      "photoCount": 0,
+      "localGuideLevel": 4,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "647b400811d2bdbf11d18cf66b863fe55c1a8423b7ccd7a263f84fe1fa393930",
+      "rating": 5,
+      "date": "2025-03-23",
+      "text": "Dropped in for a quick coffee and the kids menu kept our daughter busy. Service was slow but the staff apologised.",
+      "reviewerReviewCount": 4,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "94b632781dd7b558661f2653cf3e602581578ad0dc01ced39c065aa545f9c20d",
+      "rating": 5,
+      "date": "2025-08-28",
+      "text": "Came for the brunch menu and the bathroom could use some attention. Worth the detour if you are nearby.",
+      "reviewerReviewCount": 23,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "953f67c23184895e93fba6235f2be2f019ab9b17bad2193642b5521a84389a5d",
+      "rating": 5,
+      "date": "2024-09-05",
+      "text": "Stopped by after work and the soup of the day was surprisingly rich. The lighting makes it hard to read the menu.",
+      "reviewerReviewCount": 25,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "6330eeaede5c500370a340f5032ff70d7477b362e7f3b8276555443386016b64",
+      "rating": 5,
+      "date": "2025-11-29",
+      "text": "Second time here and the waiter remembered our order from last month. Not sure about the new menu, the old one had more variety.",
+      "reviewerReviewCount": 21,
+      "photoCount": 0,
+      "localGuideLevel": 6,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "eda76a19a6d5f4f7d0dbcbf0576de868b5f457e3a6ccba544dbd77fe80e84c37",
+      "rating": 5,
+      "date": "2024-11-19",
+      "text": "",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "e94b8beba6fff200e3ac391662d1e174641d87896d908033de799bdf70445b5e",
+      "rating": 5,
+      "date": "2024-03-14",
+      "text": "Stopped by after work and the waiter remembered our order from last month. Reservations recommended on weekends.",
+      "reviewerReviewCount": 0,
+      "photoCount": 1,
+      "localGuideLevel": 6,
+      "ownerResponse": null,
+      "language": "en"
+    }
+  ],
+  "expected": {
+    "placeId": "0xfixture:0xpolarized",
+    "score": 7,
+    "status": "ok",
+    "reviewCount": 150,
+    "signals": [
+      {
+        "id": "burst_ratio",
+        "unusualness": 0,
+        "value": 0.053333,
+        "details": {
+          "peakShare": 0.053333,
+          "peakCount": 8,
+          "peakWindowStart": "2024-03-14",
+          "peakWindowEnd": "2024-03-27",
+          "lifespanDays": 892,
+          "expectedShare": 0.015695,
+          "excess": 0.038238,
+          "windowDays": 14
+        },
+        "available": true
+      },
+      {
+        "id": "rating_polarity",
+        "unusualness": 0.619048,
+        "value": 0.906667,
+        "details": {
+          "share5": 0.566667,
+          "share1": 0.34,
+          "shareMid": 0.093333
+        },
+        "available": true
+      },
+      {
+        "id": "single_review_accounts",
+        "unusualness": 0,
+        "value": 0.02,
+        "details": {
+          "share": 0.02,
+          "known": 150,
+          "singles": 3
+        },
+        "available": true
+      },
+      {
+        "id": "no_photo_short_text",
+        "unusualness": 0,
+        "value": 0.233333,
+        "details": {
+          "share": 0.233333,
+          "count": 35,
+          "noTextCount": 50,
+          "shortTextChars": 40
+        },
+        "available": true
+      },
+      {
+        "id": "text_similarity",
+        "unusualness": 0.125874,
+        "value": 0.146969,
+        "details": {
+          "meanJaccard": 0.146969,
+          "highPairShare": 0.036364,
+          "highPairs": 180,
+          "pairs": 4950,
+          "maxPair": 1,
+          "eligible": 100
+        },
+        "available": true
+      },
+      {
+        "id": "template_phrases",
+        "unusualness": 0,
+        "value": 0,
+        "details": {
+          "share": 0,
+          "phraseBased": 0,
+          "withText": 100,
+          "anyPhraseShare": 0,
+          "topPhrases": ""
+        },
+        "available": true
+      },
+      {
+        "id": "rating_text_mismatch",
+        "unusualness": 0,
+        "value": 0.077922,
+        "details": {
+          "share": 0.077922,
+          "scored": 77,
+          "mismatches": 6
+        },
+        "available": true
+      },
+      {
+        "id": "date_entropy",
+        "unusualness": 0,
+        "value": 0.963345,
+        "details": {
+          "normalizedEntropy": 0.963345,
+          "monthsInSpan": 30,
+          "activeMonths": 29,
+          "busiestMonth": "2024-03",
+          "busiestMonthShare": 0.066667
+        },
+        "available": true
+      },
+      {
+        "id": "local_guide_ratio",
+        "unusualness": 0,
+        "value": 0.22,
+        "details": {
+          "share": 0.22,
+          "established": 33,
+          "exposed": 43,
+          "establishedLevel": 3
+        },
+        "available": true
+      },
+      {
+        "id": "owner_response_pattern",
+        "unusualness": 0,
+        "value": 0.54902,
+        "details": {
+          "identicalShare": 0.54902,
+          "responded": 51,
+          "responseRate": 0.34,
+          "distinctResponses": 23,
+          "largestGroupShare": 0.098039
+        },
+        "available": true
+      }
+    ],
+    "monthly": [
+      {
+        "month": "2023-12",
+        "count": 3
+      },
+      {
+        "month": "2024-01",
+        "count": 6
+      },
+      {
+        "month": "2024-02",
+        "count": 4
+      },
+      {
+        "month": "2024-03",
+        "count": 10
+      },
+      {
+        "month": "2024-04",
+        "count": 4
+      },
+      {
+        "month": "2024-05",
+        "count": 0
+      },
+      {
+        "month": "2024-06",
+        "count": 6
+      },
+      {
+        "month": "2024-07",
+        "count": 4
+      },
+      {
+        "month": "2024-08",
+        "count": 9
+      },
+      {
+        "month": "2024-09",
+        "count": 9
+      },
+      {
+        "month": "2024-10",
+        "count": 3
+      },
+      {
+        "month": "2024-11",
+        "count": 4
+      },
+      {
+        "month": "2024-12",
+        "count": 5
+      },
+      {
+        "month": "2025-01",
+        "count": 4
+      },
+      {
+        "month": "2025-02",
+        "count": 2
+      },
+      {
+        "month": "2025-03",
+        "count": 8
+      },
+      {
+        "month": "2025-04",
+        "count": 8
+      },
+      {
+        "month": "2025-05",
+        "count": 4
+      },
+      {
+        "month": "2025-06",
+        "count": 4
+      },
+      {
+        "month": "2025-07",
+        "count": 4
+      },
+      {
+        "month": "2025-08",
+        "count": 7
+      },
+      {
+        "month": "2025-09",
+        "count": 2
+      },
+      {
+        "month": "2025-10",
+        "count": 4
+      },
+      {
+        "month": "2025-11",
+        "count": 4
+      },
+      {
+        "month": "2025-12",
+        "count": 9
+      },
+      {
+        "month": "2026-01",
+        "count": 3
+      },
+      {
+        "month": "2026-02",
+        "count": 6
+      },
+      {
+        "month": "2026-03",
+        "count": 3
+      },
+      {
+        "month": "2026-04",
+        "count": 4
+      },
+      {
+        "month": "2026-05",
+        "count": 7
+      }
+    ],
+    "ratingDistribution": {
+      "1": 51,
+      "2": 0,
+      "3": 0,
+      "4": 14,
+      "5": 85
+    },
+    "reviewerProfile": {
+      "singleReviewShare": 0.02,
+      "medianReviewCount": 31,
+      "localGuideShare": 0.286667,
+      "withPhotosShare": 0.22
+    },
+    "source": "server",
+    "engineVersion": "1.0.0",
+    "computedAt": "2026-06-01T00:00:00.000Z"
+  }
+}

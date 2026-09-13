@@ -1,0 +1,24 @@
+{
+  "name": "@signalyze/signals",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Deterministic, explainable review-signal engine. Runs in the extension as offline fallback; the API has a byte-for-byte equivalent Python port checked by shared fixtures.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./weights.json": "./src/weights.json"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "fixtures:generate": "node --import tsx scripts/generate-fixtures.ts"
+  },
+  "dependencies": {
+    "@signalyze/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.0",
+    "vitest": "^5.0.0"
+  }
+}

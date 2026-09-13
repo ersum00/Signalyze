@@ -1,0 +1,31 @@
+{
+  "$comment": "Language policy: Signalyze describes measurable patterns, never accusations. Each pattern is a regex fragment valid in both JavaScript and Python. Matching is case-insensitive and must not be preceded by a letter/digit; word=true additionally requires no trailing letter/digit. See docs/LEGAL_NOTES.md.",
+  "entries": [
+    { "pattern": "fake", "word": false, "lang": "en" },
+    { "pattern": "fraud", "word": false, "lang": "en" },
+    { "pattern": "scam", "word": false, "lang": "en" },
+    { "pattern": "shill", "word": false, "lang": "en" },
+    { "pattern": "astroturf", "word": false, "lang": "en" },
+    { "pattern": "bots?", "word": true, "lang": "en" },
+    { "pattern": "manipul", "word": false, "lang": "en" },
+    { "pattern": "(purchased|bought|paid) (for )?(reviews?|ratings?)", "word": true, "lang": "en" },
+    { "pattern": "sahte", "word": false, "lang": "tr" },
+    { "pattern": "dolandırıc", "word": false, "lang": "tr" },
+    { "pattern": "dolandiric", "word": false, "lang": "tr" },
+    { "pattern": "manipül", "word": false, "lang": "tr" },
+    { "pattern": "satın alınmış", "word": false, "lang": "tr" },
+    { "pattern": "satin alinmis", "word": false, "lang": "tr" },
+    { "pattern": "paralı yorum", "word": false, "lang": "tr" },
+    { "pattern": "gefälscht", "word": false, "lang": "de" },
+    { "pattern": "fälschung", "word": false, "lang": "de" },
+    { "pattern": "betrug", "word": false, "lang": "de" },
+    { "pattern": "betrüg", "word": false, "lang": "de" },
+    { "pattern": "gekaufte[nrs]? (bewertung|rezension)", "word": false, "lang": "de" },
+    { "pattern": "fals[oa]s?", "word": true, "lang": "es" },
+    { "pattern": "falsificad", "word": false, "lang": "es" },
+    { "pattern": "fraude", "word": false, "lang": "es" },
+    { "pattern": "estafa", "word": false, "lang": "es" },
+    { "pattern": "comprad[oa]s? (reseñas?|opiniones?|valoraciones?)", "word": false, "lang": "es" },
+    { "pattern": "(reseñas?|opiniones?|valoraciones?) comprad", "word": false, "lang": "es" }
+  ]
+}

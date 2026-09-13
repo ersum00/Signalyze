@@ -1,0 +1,126 @@
+---
+import '../styles/global.css';
+import { SITE_NAME, STORE_URL, SUMMARY_SENTENCE } from '../lib/site';
+
+interface Props {
+  title: string;
+  description: string;
+  /** The home page uses a descriptive document title instead of "Home · Signalyze". */
+  home?: boolean;
+}
+
+const { title, description, home = false } = Astro.props;
+const pageTitle = home
+  ? `${SITE_NAME}: a statistical Review Profile for any Google Maps business`
+  : `${title} · ${SITE_NAME}`;
+// With `build.format: 'file'` the build-time pathname is "/privacy.html"; the
+// served URL is "/privacy" (nginx try_files), so canonical links drop the suffix.
+const path = Astro.url.pathname.replace(/\.html$/, '');
+const canonical = new URL(path, Astro.site).href;
+const ogImage = new URL('/icon/512.png', Astro.site).href;
+
+const nav = [
+  { href: '/methodology', label: 'Methodology' },
+  { href: '/privacy', label: 'Privacy' },
+  { href: '/changelog', label: 'Changelog' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/icon/180.png" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary" />
+  </head>
+  <body class="min-h-screen bg-white text-ink-900">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-sm focus:shadow"
+      >Skip to content</a
+    >
+    <header class="border-b border-line">
+      <nav
+        class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-4 sm:px-8"
+        aria-label="Main"
+      >
+        <a href="/" class="flex items-center gap-2 font-semibold tracking-tight">
+          <img src="/icon/32.png" alt="" width="24" height="24" />
+          {SITE_NAME}
+        </a>
+        <ul class="flex items-center gap-4 text-sm text-ink-600 sm:gap-6">
+          {
+            nav.map((item) => (
+              <li>
+                <a
+                  class="hover:text-ink-900 aria-[current=page]:text-ink-900 aria-[current=page]:font-medium"
+                  href={item.href}
+                  aria-current={path === item.href ? 'page' : undefined}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+          <li class="hidden sm:block">
+            <a
+              href={STORE_URL}
+              class="rounded-md border border-line px-3 py-1.5 font-medium text-ink-900 hover:border-brand-500 hover:text-brand-600"
+              >Add to Chrome</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <slot />
+
+    <footer class="mt-24 border-t border-line bg-paper">
+      <div class="mx-auto max-w-6xl px-5 py-12 sm:px-8">
+        <div class="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+          <div class="max-w-md">
+            <a href="/" class="flex items-center gap-2 font-semibold tracking-tight">
+              <img src="/icon/32.png" alt="" width="20" height="20" />
+              {SITE_NAME}
+            </a>
+            <p class="mt-4 text-sm text-ink-600">{SUMMARY_SENTENCE}</p>
+            <p class="mt-2 text-sm text-ink-600">
+              Signalyze makes no claim about the accuracy of any review and no claim about any
+              business or reviewer.
+            </p>
+          </div>
+          <ul class="grid grid-cols-2 gap-x-10 gap-y-3 text-sm sm:flex sm:gap-8">
+            {
+              nav.map((item) => (
+                <li>
+                  <a class="text-ink-700 hover:text-ink-900" href={item.href}>
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+            <li>
+              <a class="text-ink-700 hover:text-ink-900" href={STORE_URL}>Add to Chrome</a>
+            </li>
+          </ul>
+        </div>
+        <p class="mt-10 max-w-3xl text-xs text-ink-400">
+          Google Maps and Local Guide are trademarks of Google LLC and are mentioned only to
+          describe where the extension works. Signalyze is not affiliated with Google.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

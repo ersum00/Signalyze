@@ -1,0 +1,898 @@
+{
+  "name": "sparse",
+  "seed": 106,
+  "now": "2026-06-01T00:00:00.000Z",
+  "placeId": "0xfixture:0xsparse",
+  "reviews": [
+    {
+      "reviewerHash": "1c39cc019f272a7bf91943254e9357e8648304a8f0b6b550a98b968668697070",
+      "rating": 4,
+      "date": "2025-02-27",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "63515c4500f91d856c0f2b356556d469bd69dcb9342ceddefee69312482cbf98",
+      "rating": 5,
+      "date": "2025-06-13",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "aaaa271a1d601fdf37624e0657057e9f1ada2456534ee938fa573da6a41f4306",
+      "rating": 3,
+      "date": "2025-12-14",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "1c6f85c6118e1c3caffccf63c2e39c02c63f515a93106653156fc08f48fbbb52",
+      "rating": 1,
+      "date": "2025-10-08",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "a1c428a6c4850b1e53669494d74f63045093fcc71de4eea30985546d6eeea95a",
+      "rating": 2,
+      "date": "2024-07-03",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "457864a9a1d4219c003f263b5cfd84666d4e9ffe83a64aec4dd0ad5b81fd3ba1",
+      "rating": 1,
+      "date": "2025-05-13",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "1436e80359d69f2166ae2c5128b9aa7dced8f50bce4aa41afb770d7bfe01f344",
+      "rating": 1,
+      "date": "2026-05-26",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "499ff0848a5a0cb98b2966d995893d3cc7d185278430004390f5491d3bb13aa9",
+      "rating": 2,
+      "date": "2025-08-03",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "a66396537addd4853cfe2e5d71ccdbfb2900aaf1a5d375ddfb2c61a5fc588bf3",
+      "rating": 1,
+      "date": "2025-04-11",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "9bc423bd7839d33dc373bbdb8719e513d171ae062380c4626026c676acb31a72",
+      "rating": 5,
+      "date": "2025-10-27",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "e98ed02e1970d63873c3c7f4f5d01b413266badb0d1b6ec1eac306fd99633c2d",
+      "rating": 5,
+      "date": "2025-03-27",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "f57672fe09f948be79543c67385468fbd126e0f300ae165730339aba709e816c",
+      "rating": 5,
+      "date": "2026-05-27",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "6207cdfda7a6676ddb741b10eedc4270e285694ddde345c80e8d9277978a4bb0",
+      "rating": 2,
+      "date": "2026-01-16",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "0c14d5d919c45e1753e5e5d97b6d492684c720ea874906a9b912ba42a30a76d7",
+      "rating": 1,
+      "date": "2025-02-15",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "46b006dd95dfcf8cbb0858ee8d1989bfe51b4c5bab813ff7bb59e5580ecab246",
+      "rating": 3,
+      "date": "2024-10-04",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "357d2399ea246e36cf6cd182ab0dce7e9cd8dff61fad8b0888c1c9eca1165601",
+      "rating": 5,
+      "date": "2025-01-24",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "9dd515e2182009957127497850f59fe400fb1ad895f30a7bd83a7c4304062a8e",
+      "rating": 4,
+      "date": "2026-01-07",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "a3af358fc2b2ca058ee3ac1cac891305ee4e61679a76eb32dee99838031a0cfc",
+      "rating": 1,
+      "date": "2025-09-20",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "da0df89db3091a5548532bf6511bb5d4a32de27ec7ab51421a7962400081dcdc",
+      "rating": 3,
+      "date": "2025-12-08",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "58a095644a3f20a83abd1c602fc151925acd2224da4ed0166137fab381a3da09",
+      "rating": 3,
+      "date": "2024-10-05",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "dcd9ccac4d7a10557e28f5ac8984830a9edd1ca422a6069810b08825d1217a68",
+      "rating": 3,
+      "date": "2025-03-04",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "7f9f83f314569129982f0c12c05ed87a8f6c400130ac7de0b9a4bab75887826c",
+      "rating": 1,
+      "date": "2025-04-04",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "ba6e1a48aadedbcc0a20f6d87c0f661caa5f9229e789d75bf22cc89966667b34",
+      "rating": 5,
+      "date": "2025-07-31",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "99ae675e3fd41a54ed7d59207455e8049956eaf6866eb8de3288a26d14beb8ee",
+      "rating": 2,
+      "date": "2025-01-29",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "361afbb60b22e75808c6a9876f9c87e434042bf06d2cf77c3333a6b8ff3d7969",
+      "rating": 1,
+      "date": "2026-05-09",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "e68711e6b5025b40194d9657fc6a4eb4cc6aeb800ce9fa9dd5642e64c594fb5a",
+      "rating": 1,
+      "date": "2025-12-06",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "3488c8832f76da469869ef0bb93faf6641a58ebc55204696b94b5b75c1ce1d3a",
+      "rating": 3,
+      "date": "2025-09-05",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "d1058e479fa7470e9eeaaf55b7532a0b1a5302e36231b9d2e44f773212d47b43",
+      "rating": 1,
+      "date": "2025-09-16",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "c5b057c2e0dcdad272fd9d500119fb1eb81bddacca3f154afe5421efc42d81bd",
+      "rating": 4,
+      "date": "2026-05-10",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "d1d27bbca8a52736b47e8799b21067cf0464f4e8b84a062167acd6634839d094",
+      "rating": 3,
+      "date": "2025-05-29",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "90eaaaa5f0fb891a8708e7e656528ff55629b6e52021afd73cf67f90136e3214",
+      "rating": 5,
+      "date": "2025-10-05",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "3104eb6cb006af2c2316faf0aee14f56185f43b7cef3815a6a0feee816978baa",
+      "rating": 4,
+      "date": "2024-09-22",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "5b3b7e9270bc3cb845dc03d70e29447330ed9254158f3260b12ed6f615c0a696",
+      "rating": 3,
+      "date": "2024-11-22",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "e590f0429d8a1bd8355c40a3b50b060e435ec101cc3850c33ce1cbc28d629b79",
+      "rating": 2,
+      "date": "2024-10-11",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "2045ad163d50148a3dd5613d5731dfd202dca77b63d2346f0f2320309346a153",
+      "rating": 5,
+      "date": "2026-03-22",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "ed0d6529b90797e56abe52fd524275314ae938b4c7833e89781957a5d0d22ff4",
+      "rating": 3,
+      "date": "2025-12-23",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "a4e7868602c78aea3fafc0c37699b9ddb983cde90940d004396fe9473c1fc095",
+      "rating": 4,
+      "date": "2025-10-15",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "68de72ad778b189aebc4ad34bc4590310d0cf910073de0f2cede59384439f9ba",
+      "rating": 2,
+      "date": "2024-09-10",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "41d069c2a13a5094fa2a530cfb5362bb42cf90118f7b70ac258b3adf572baa1d",
+      "rating": 2,
+      "date": "2025-06-21",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "6d9f4546d870c2b6e3c85df2822a179158de4ce465f9dfa9895b3c06d875fe5e",
+      "rating": 3,
+      "date": "2024-10-08",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "0514879fb515cc3b40bf39fa8eacdc4779e5431d44a339a0c16b3db0f4b0ee42",
+      "rating": 5,
+      "date": "2025-07-01",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "83d8f1b894a312845f37e62507885873e694c236393941b1dd3833e52a6171e9",
+      "rating": 3,
+      "date": "2025-04-05",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "27317f43c3a59efa08fa62e4a02a2f00f26784f9485d31451e18482a8f718990",
+      "rating": 2,
+      "date": "2024-09-21",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "3e201dc0f3b8c8dde4edca983b0328f0472ea42bbcc9f373e4cd388ac7434ca1",
+      "rating": 5,
+      "date": "2024-10-18",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "09db115d1bc3fa081a3e160bc16cf032f8abe4ce411013b8750285a59482de1f",
+      "rating": 4,
+      "date": "2024-09-20",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "e877e23d5ff830ed81f4ad90ab760ad62d98d99932516a8aacd5eeb9389d16a8",
+      "rating": 5,
+      "date": "2025-06-08",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "9af99704dedafff67282d477b55dee302bb78d50baee6d3b9e3c4f3997230b08",
+      "rating": 5,
+      "date": "2025-07-28",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "c8d35772cf99bd0cfde4acc07b7b4612b6f2ab7eadba34121a7487bd232a131f",
+      "rating": 5,
+      "date": "2025-04-16",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "893cdc28ba53d369526bbf9a38bacb4240161eaabbea034f4282422ed6b3206a",
+      "rating": 2,
+      "date": "2024-09-13",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "7c4bb5203461f6fc074c59b100dec3934d072022bfeda755eb401e06be55413d",
+      "rating": 5,
+      "date": "2025-01-20",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "dda1612b2a7bdd8576e08d14eb0ee109a36cd299d72ae971cdf8edf26ff83a07",
+      "rating": 5,
+      "date": "2025-06-24",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "1ab73c650322c368dc4340325fac359a6e53f11a9a27dbe4c9afce45279f51f6",
+      "rating": 3,
+      "date": "2025-12-15",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "ed8f0b687b5dedf4fc031d937404e2a507ecd7e39dff585680af96b32bf77a05",
+      "rating": 1,
+      "date": "2024-09-26",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "26fc7494a55865faa294de8dcb76b3a6709cf2a5c4e0026ba193cbc11fb66fab",
+      "rating": 4,
+      "date": "2026-03-25",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "12d123a8871c1e793e6f8033fbabf5a6960c23510df1dbac8221837b20c1fb61",
+      "rating": 5,
+      "date": "2026-05-24",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "43492fe3bf476088d600b2d29f6b205228ac6d08a10a2c1a96fe200eed98ca04",
+      "rating": 1,
+      "date": "2025-10-03",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "9391346c1e5e2f86f220c6d1c77a23fb1f35bb8c9ddd6bf8055e456850df0798",
+      "rating": 3,
+      "date": "2025-04-29",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "81ac3b47c4e7633a3dec6c4909c5181fff5fe894fc14c73db91a778cd58be602",
+      "rating": 5,
+      "date": "2026-03-28",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "adcc90e1245fd9090ed4291982f2a4a46e82e675afb80238405a9c51c9205b51",
+      "rating": 3,
+      "date": "2024-07-17",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "a31eb69b9288f873af38d182249c19e29693d86ea5c57d99c349234a0818cbe4",
+      "rating": 5,
+      "date": "2025-10-26",
+      "text": "",
+      "reviewerReviewCount": null,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    }
+  ],
+  "expected": {
+    "placeId": "0xfixture:0xsparse",
+    "score": 21,
+    "status": "ok",
+    "reviewCount": 60,
+    "signals": [
+      {
+        "id": "burst_ratio",
+        "unusualness": 0.024101,
+        "value": 0.083333,
+        "details": {
+          "peakShare": 0.083333,
+          "peakCount": 5,
+          "peakWindowStart": "2024-09-10",
+          "peakWindowEnd": "2024-09-23",
+          "lifespanDays": 694,
+          "expectedShare": 0.020173,
+          "excess": 0.064461,
+          "windowDays": 14
+        },
+        "available": true
+      },
+      {
+        "id": "rating_polarity",
+        "unusualness": 0,
+        "value": 0.5,
+        "details": {
+          "share5": 0.3,
+          "share1": 0.2,
+          "shareMid": 0.5
+        },
+        "available": true
+      },
+      {
+        "id": "single_review_accounts",
+        "unusualness": 0,
+        "value": 0,
+        "details": {
+          "known": 0,
+          "minKnown": 15
+        },
+        "available": false
+      },
+      {
+        "id": "no_photo_short_text",
+        "unusualness": 1,
+        "value": 1,
+        "details": {
+          "share": 1,
+          "count": 60,
+          "noTextCount": 60,
+          "shortTextChars": 40
+        },
+        "available": true
+      },
+      {
+        "id": "text_similarity",
+        "unusualness": 0,
+        "value": 0,
+        "details": {
+          "eligible": 0,
+          "minEligible": 10
+        },
+        "available": false
+      },
+      {
+        "id": "template_phrases",
+        "unusualness": 0,
+        "value": 0,
+        "details": {
+          "withText": 0,
+          "minWithText": 10
+        },
+        "available": false
+      },
+      {
+        "id": "rating_text_mismatch",
+        "unusualness": 0,
+        "value": 0,
+        "details": {
+          "scored": 0,
+          "minScored": 10
+        },
+        "available": false
+      },
+      {
+        "id": "date_entropy",
+        "unusualness": 0,
+        "value": 0.884022,
+        "details": {
+          "normalizedEntropy": 0.884022,
+          "monthsInSpan": 23,
+          "activeMonths": 18,
+          "busiestMonth": "2024-09",
+          "busiestMonthShare": 0.1
+        },
+        "available": true
+      },
+      {
+        "id": "local_guide_ratio",
+        "unusualness": 0,
+        "value": 0,
+        "details": {
+          "levelExposed": false
+        },
+        "available": false
+      },
+      {
+        "id": "owner_response_pattern",
+        "unusualness": 0,
+        "value": 0,
+        "details": {
+          "responded": 0,
+          "responseRate": 0,
+          "minResponded": 5
+        },
+        "available": false
+      }
+    ],
+    "monthly": [
+      {
+        "month": "2024-07",
+        "count": 2
+      },
+      {
+        "month": "2024-08",
+        "count": 0
+      },
+      {
+        "month": "2024-09",
+        "count": 6
+      },
+      {
+        "month": "2024-10",
+        "count": 5
+      },
+      {
+        "month": "2024-11",
+        "count": 1
+      },
+      {
+        "month": "2024-12",
+        "count": 0
+      },
+      {
+        "month": "2025-01",
+        "count": 3
+      },
+      {
+        "month": "2025-02",
+        "count": 2
+      },
+      {
+        "month": "2025-03",
+        "count": 2
+      },
+      {
+        "month": "2025-04",
+        "count": 5
+      },
+      {
+        "month": "2025-05",
+        "count": 2
+      },
+      {
+        "month": "2025-06",
+        "count": 4
+      },
+      {
+        "month": "2025-07",
+        "count": 3
+      },
+      {
+        "month": "2025-08",
+        "count": 1
+      },
+      {
+        "month": "2025-09",
+        "count": 3
+      },
+      {
+        "month": "2025-10",
+        "count": 6
+      },
+      {
+        "month": "2025-11",
+        "count": 0
+      },
+      {
+        "month": "2025-12",
+        "count": 5
+      },
+      {
+        "month": "2026-01",
+        "count": 2
+      },
+      {
+        "month": "2026-02",
+        "count": 0
+      },
+      {
+        "month": "2026-03",
+        "count": 3
+      },
+      {
+        "month": "2026-04",
+        "count": 0
+      },
+      {
+        "month": "2026-05",
+        "count": 5
+      }
+    ],
+    "ratingDistribution": {
+      "1": 12,
+      "2": 9,
+      "3": 14,
+      "4": 7,
+      "5": 18
+    },
+    "reviewerProfile": {
+      "singleReviewShare": null,
+      "medianReviewCount": null,
+      "localGuideShare": null,
+      "withPhotosShare": 0
+    },
+    "source": "server",
+    "engineVersion": "1.0.0",
+    "computedAt": "2026-06-01T00:00:00.000Z"
+  }
+}

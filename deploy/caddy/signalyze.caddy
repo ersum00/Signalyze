@@ -1,0 +1,55 @@
+# >>> signalyze >>>
+# PROJE: Signalyze (signalyze.veriskor.com, api.signalyze.veriskor.com)
+# Managed by /opt/signalyze/deploy/deploy.sh. Everything between the
+# ">>> signalyze >>>" and "<<< signalyze <<<" markers is replaced on each deploy.
+# Containers live on the shared `web-proxy` network (deploy/docker-compose.yml).
+# Access logs mask client addresses (IPv4 /24, IPv6 /32); see docs/PRIVACY.md.
+signalyze.veriskor.com {
+	import ortak
+	reverse_proxy signalyze-web:80
+	log {
+		output stdout
+		format filter {
+			wrap console
+			fields {
+				request>remote_ip ip_mask {
+					ipv4 24
+					ipv6 32
+				}
+				request>client_ip ip_mask {
+					ipv4 24
+					ipv6 32
+				}
+			}
+		}
+	}
+}
+
+api.signalyze.veriskor.com {
+	import ortak
+	request_body {
+		max_size 2MB
+	}
+	reverse_proxy signalyze-api:8090 {
+		transport http {
+			read_timeout 30s
+		}
+	}
+	log {
+		output stdout
+		format filter {
+			wrap console
+			fields {
+				request>remote_ip ip_mask {
+					ipv4 24
+					ipv6 32
+				}
+				request>client_ip ip_mask {
+					ipv4 24
+					ipv6 32
+				}
+			}
+		}
+	}
+}
+# <<< signalyze <<<

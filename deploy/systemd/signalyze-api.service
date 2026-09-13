@@ -1,0 +1,25 @@
+# Bare-metal alternative (uvicorn under systemd). NOT used on the current server,
+# where the API runs as a Docker container (deploy/docker-compose.yml).
+# Install: cp deploy/systemd/signalyze-api.service /etc/systemd/system/ && systemctl daemon-reload && systemctl enable --now signalyze-api
+[Unit]
+Description=Signalyze API (uvicorn)
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/signalyze/apps/api
+EnvironmentFile=/opt/signalyze/apps/api/.env
+ExecStart=/opt/signalyze/apps/api/.venv/bin/uvicorn signalyze_api.main:app --host 127.0.0.1 --port ${PORT} --workers 2 --proxy-headers --forwarded-allow-ips 127.0.0.1 --no-access-log
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadOnlyPaths=/opt/signalyze
+MemoryMax=768M
+
+[Install]
+WantedBy=multi-user.target

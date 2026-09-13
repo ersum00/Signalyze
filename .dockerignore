@@ -1,0 +1,17 @@
+# Build context hygiene for deploy/web.Dockerfile (context = repo root)
+.git
+**/node_modules
+**/.venv
+**/dist
+**/.output
+**/.wxt
+**/.astro
+**/__pycache__
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+.env
+**/.env
+**/*.pem
+apps/extension/keys
+apps/extension/src/adapters/google-maps/fixtures

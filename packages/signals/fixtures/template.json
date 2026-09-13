@@ -1,0 +1,1830 @@
+{
+  "name": "template",
+  "seed": 104,
+  "now": "2026-06-01T00:00:00.000Z",
+  "placeId": "0xfixture:0xtemplate",
+  "reviews": [
+    {
+      "reviewerHash": "30fac88e6f69a0a39bf2af73d9cec116329c831f9fb121d041160dcfb588f174",
+      "rating": 3,
+      "date": "2026-03-05",
+      "text": "Stopped by after work and parking nearby was tricky on a weekday. Would come back for the dessert alone.",
+      "reviewerReviewCount": 35,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "c459e7a230295d3fe2f573025849bf3e30715c1f578777227027cd7ac538bc9e",
+      "rating": 5,
+      "date": "2026-03-09",
+      "text": "Great place, excellent service, will definitely come back.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "afaa4f50e5ba634e106b256de3ed008d12d3e73d05564d60321cb283f73e843e",
+      "rating": 5,
+      "date": "2026-02-06",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "46fe1b5924cf121378646f9dff2d897d1e62974774ea0b9824bc4ee65b3a87b4",
+      "rating": 3,
+      "date": "2026-05-04",
+      "text": "Found this place by accident and the terrace view over the river is lovely in the evening. Service was slow but the staff apologised.",
+      "reviewerReviewCount": 10,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "79d54849a31a9995dd820b4a308100482ac67527380707e6d4af8dde6fe7b661",
+      "rating": 5,
+      "date": "2026-02-26",
+      "text": "Second time here and the pastry case looked tempting. Would come back for the dessert alone.",
+      "reviewerReviewCount": 19,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "f3dc4337da861121406357b9d84b956adf28feef9148640365cdac087bc75340",
+      "rating": 5,
+      "date": "2026-02-17",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "c0e7d0ce4560a00cbf69ae90e4d1393ce6a4986731b804ef67bda0f2422b521f",
+      "rating": 5,
+      "date": "2026-03-04",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "45a63fdc10722248a9946b366cdfe6580021d7eba36bc66f26085f486d817d98",
+      "rating": 5,
+      "date": "2026-06-01",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "73cb1860289c11b73080b2a80a136f6253ee121814e8d8b21b7506de51399472",
+      "rating": 5,
+      "date": "2026-04-09",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "8756ea78b843235cd1ae1008b7dfaaa06ebd3c81bc661930e3e0877c5a25af9c",
+      "rating": 5,
+      "date": "2026-05-12",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "a19bd561eec1bc9e4111cae76f4b17dcf0f521bb9aa3f4561a646a3772a56b4a",
+      "rating": 5,
+      "date": "2026-05-02",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "8f38ef8dc4d430c0f9a7da7333f4768705db33f1942fc34fc6bfbb17b896d438",
+      "rating": 5,
+      "date": "2026-05-07",
+      "text": "Found this place by accident and parking nearby was tricky on a weekday. Reservations recommended on weekends.",
+      "reviewerReviewCount": 33,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "92fa92559df1ed3c2fd230c046fea2f35eba33b5d1246a55262ee8bf2a8f7d03",
+      "rating": 4,
+      "date": "2026-05-22",
+      "text": "Found this place by accident and the soup of the day was surprisingly rich. Prices are fair for the area.",
+      "reviewerReviewCount": 32,
+      "photoCount": 0,
+      "localGuideLevel": 6,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "dd4122c42c3132e4a5e5dfaab5480607b41dbd80e98b4965c7bc555b444e39f9",
+      "rating": 3,
+      "date": "2026-04-01",
+      "text": "Visited with my parents and the espresso had a pleasant bitter finish. Would come back for the dessert alone.",
+      "reviewerReviewCount": 24,
+      "photoCount": 0,
+      "localGuideLevel": 3,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "3d6aa6f5a181edae991566da58b4089e00b3cc78423fa9325bf28b6725e7b959",
+      "rating": 4,
+      "date": "2026-02-07",
+      "text": "Came for the brunch menu but the music was a bit loud for a conversation. Service was slow but the staff apologised.",
+      "reviewerReviewCount": 39,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "82dcf13f0a056ff145b4b1a4d7b5409adf378a3172a478adf78242a9e2ded8b7",
+      "rating": 5,
+      "date": "2026-05-27",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "217cf8f2080954ad4c8146585645ceed27d5ceb0a0b79228145c3e9327074d87",
+      "rating": 4,
+      "date": "2026-03-26",
+      "text": "We came here on a Saturday afternoon but the music was a bit loud for a conversation. Prices are fair for the area.",
+      "reviewerReviewCount": 30,
+      "photoCount": 0,
+      "localGuideLevel": 5,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "82f9d4636898e552c517abda9cd1fff8a5957f5186ff56fb0324117d6fbf300e",
+      "rating": 5,
+      "date": "2026-02-14",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "969c1e7a57faa77260ba52881908d6dfbca889f6355f2dc0574448e2effb87a4",
+      "rating": 5,
+      "date": "2026-03-23",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "a6339f1b40561a9ba32417953fc27dc167fa2ce8244e092186966ea1e18b0921",
+      "rating": 4,
+      "date": "2026-04-13",
+      "text": "Visited with my parents and the bathroom could use some attention. Worth the detour if you are nearby.",
+      "reviewerReviewCount": 35,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "0afef2be6474f72538cf12ea1e138191e5703e492494b57e8d1a6f3dad80e7c4",
+      "rating": 4,
+      "date": "2026-04-11",
+      "text": "Dropped in for a quick coffee and the espresso had a pleasant bitter finish. The owner came out to chat, which was a nice touch.",
+      "reviewerReviewCount": 3,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "834fd41cb0c9db1baa783845a16b8d5b47fad0c5873bf05efd3ac27863d3f63e",
+      "rating": 5,
+      "date": "2026-04-23",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "3b81ac7fddeb743bf912ad85f8c65a8e213bcd0652456c75b353711ebb416e88",
+      "rating": 5,
+      "date": "2026-03-17",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "d864876fe47b76f40fff0197f1572947cfa34e1d2a53cc88f5cff96e1f49fab6",
+      "rating": 4,
+      "date": "2026-03-22",
+      "text": "Visited with my parents and the soup of the day was surprisingly rich. Worth the detour if you are nearby.",
+      "reviewerReviewCount": 8,
+      "photoCount": 0,
+      "localGuideLevel": 4,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "15a693ecdc72924b41f1682114d99e2a25578e37b611eaa9e15fef4a21ed5298",
+      "rating": 5,
+      "date": "2026-04-18",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "4c97e3c828aa6f2fcdc58793de86cef35c9beefc0253258fe0cb96b2b4489f37",
+      "rating": 5,
+      "date": "2026-05-20",
+      "text": "Found this place by accident and the terrace view over the river is lovely in the evening. Would come back for the dessert alone.",
+      "reviewerReviewCount": 17,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "25e1ad1004a126771c1b5c2b483cee16310e4dbe5833a56802c11efbcf0e6879",
+      "rating": 5,
+      "date": "2026-03-21",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "23cda4dd837e5f4c3d311abc24be672da77b04e8732b239fdad1a155854edb38",
+      "rating": 5,
+      "date": "2026-04-06",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "8add9f7886fe9474749859b19a691f1fd7c787aee03033f604858890bfa2c6e9",
+      "rating": 5,
+      "date": "2026-04-25",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "5ffd25dbc4c5da92824c8312ec40053651752ab9190188b66f6ac4ae474218eb",
+      "rating": 5,
+      "date": "2026-03-18",
+      "text": "Booked a table for four but the music was a bit loud for a conversation. Worth the detour if you are nearby.",
+      "reviewerReviewCount": 24,
+      "photoCount": 0,
+      "localGuideLevel": 3,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "6141b18955c5f5890bde1f5fa51585a894ae53917b8a9dacf18f662af1416b26",
+      "rating": 5,
+      "date": "2026-02-04",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "c951bcc15672a29a1611973d93db2e7eaa490764f880d068c88a3e317783f876",
+      "rating": 5,
+      "date": "2026-05-04",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "352900790f156b0ee1455e129a48b19f48ade76389460f681ab5670ba82c67de",
+      "rating": 5,
+      "date": "2026-04-25",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "364f5c30775c390975ac3d860122474fe09ae89036969187e6170d88bda90325",
+      "rating": 5,
+      "date": "2026-02-07",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "bc1acca6567ec5bfeeaff9d098459f05734aaf871c3d96ea29ce9229205d4720",
+      "rating": 5,
+      "date": "2026-02-26",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "e1c3d7e3ee8b3e9ac5c041116369f2b068995c5e69674dd592372e6f1321cc7f",
+      "rating": 5,
+      "date": "2026-04-03",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "8355bd02af432b77d26b00b68736fb59b68c7246e9ce64823af34e003ea418c7",
+      "rating": 4,
+      "date": "2026-05-22",
+      "text": "Visited with my parents and the portions were larger than we expected. Worth the detour if you are nearby.",
+      "reviewerReviewCount": 20,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "162c499881c980aa13b52f975099aa71789b8d810fa023a72098b5581314b37f",
+      "rating": 5,
+      "date": "2026-03-18",
+      "text": "Came for the brunch menu and the pastry case looked tempting. The lighting makes it hard to read the menu.",
+      "reviewerReviewCount": 9,
+      "photoCount": 0,
+      "localGuideLevel": 5,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "f791d081683b6bdd3eab848a4999b1274391b6d89ef516397f3082b97f1008ad",
+      "rating": 5,
+      "date": "2026-03-20",
+      "text": "Great place, excellent service, will definitely come back.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "d578de0caf1182296a349262a02fcf805473ef3d4d1e4185a2f37585094270dc",
+      "rating": 4,
+      "date": "2026-05-17",
+      "text": "Found this place by accident and the soup of the day was surprisingly rich. Reservations recommended on weekends.",
+      "reviewerReviewCount": 11,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "5550093e43a87529ebe243253dfa78b2ecbab230a4cb95fd86f68ee8546da3ce",
+      "rating": 5,
+      "date": "2026-02-26",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "bb88a3e90bff5f658e60c5d73179f93bb0ecd3c3c7f62df60bd27d1163e007a3",
+      "rating": 5,
+      "date": "2026-04-05",
+      "text": "Great place, excellent service, will definitely come back.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "92d299aecbc62088b2b792d54d5e38eecc0c45e0422aaae37ddb27d56fcead11",
+      "rating": 3,
+      "date": "2026-03-30",
+      "text": "Visited with my parents and parking nearby was tricky on a weekday. Prices are fair for the area.",
+      "reviewerReviewCount": 37,
+      "photoCount": 0,
+      "localGuideLevel": 6,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "0c97de3230d87e85cd3d8e6b746cb93674e6a6679a006058ae4ef9e23297bee5",
+      "rating": 5,
+      "date": "2026-05-25",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "e3cd29f7ef1b6a2b9954f89b495e3b59f0146113e8335f2a95b1ef723840e1b5",
+      "rating": 3,
+      "date": "2026-05-20",
+      "text": "Dropped in for a quick coffee and the espresso had a pleasant bitter finish. The owner came out to chat, which was a nice touch.",
+      "reviewerReviewCount": 13,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "039f814f46fbb5bcee145a32b3b12bd4c3e9f223ba4ed911e40987073e15b83d",
+      "rating": 5,
+      "date": "2026-03-22",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "0bb5719777f32e6d45c838da2de7852824db6a4eda606b707474e0a8117b1698",
+      "rating": 5,
+      "date": "2026-05-08",
+      "text": "Great place, excellent service, will definitely come back.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "299ccc335f30f3975114d324369ae0e42d63a14a5d3a628fdd92503906b9e1ad",
+      "rating": 5,
+      "date": "2026-04-24",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "bb1d638d84d72f3d489405f4e4b5699b6eda4993452feb8b433f1555e5eceab9",
+      "rating": 5,
+      "date": "2026-04-25",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "5e9b6ec8b859609241f5309417def623d7e4ae57d615aac02f9cfb7ba8c646aa",
+      "rating": 5,
+      "date": "2026-02-20",
+      "text": "Great place, excellent service, will definitely come back.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "d5f0884f18ed53b476b903bf85d80052be858ec9592e96ef42167ee1ce0e19e9",
+      "rating": 5,
+      "date": "2026-02-28",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "ca2cd4ffc965a49b6966e78fbafd8e11a6f9f8bbd823d6837e5633eca8205e68",
+      "rating": 5,
+      "date": "2026-04-14",
+      "text": "Great place, excellent service, will definitely come back.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "dc31e40a0fd4b0f5de9c8fdb8f6701bc53fbb00628f594e9640fc081d3f05db6",
+      "rating": 3,
+      "date": "2026-05-01",
+      "text": "Came for the brunch menu but the music was a bit loud for a conversation. Not sure about the new menu, the old one had more variety.",
+      "reviewerReviewCount": 35,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "ea47a425111be75a82f34ea8a2ff1485511b94bc809916290edbaa6e0cc49c4d",
+      "rating": 5,
+      "date": "2026-02-02",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "c6db6662de0c932da15011efafbb55589d8c275eb8826b178e3fdc7661f96876",
+      "rating": 3,
+      "date": "2026-04-03",
+      "text": "Visited with my parents and the bathroom could use some attention. Reservations recommended on weekends.",
+      "reviewerReviewCount": 21,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "7ddf5eb99f8a6b615ca4c3b28e5b0370cde3370e197d781527aa1cdb90d65381",
+      "rating": 5,
+      "date": "2026-04-18",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "6fac744816cc9da9f63a33300a2c2e22dff32e7ebe825dee2bd841a0f506a608",
+      "rating": 3,
+      "date": "2026-04-27",
+      "text": "Came for the brunch menu but the music was a bit loud for a conversation. Reservations recommended on weekends.",
+      "reviewerReviewCount": 28,
+      "photoCount": 0,
+      "localGuideLevel": 3,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "9130e22098be3c95505526f9d908358b93e0aabc791edc20be751dd69e3329c8",
+      "rating": 5,
+      "date": "2026-04-25",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "6d028be646d0334fc5d7e58a28b02ce66ebf2abaea7f633e778e4856c63e7a60",
+      "rating": 5,
+      "date": "2026-05-03",
+      "text": "Dropped in for a quick coffee and the kids menu kept our daughter busy. The lighting makes it hard to read the menu.",
+      "reviewerReviewCount": 12,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "ae5bd84a6c26627251d62eae42868699c896b00c1030c9a8bf98e4326097001f",
+      "rating": 5,
+      "date": "2026-05-11",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "d110f7add714799c4167ea9a6f180759564c83fb5e8b9e5ca1b68a9d11644e24",
+      "rating": 4,
+      "date": "2026-03-26",
+      "text": "Found this place by accident and parking nearby was tricky on a weekday. Not sure about the new menu, the old one had more variety.",
+      "reviewerReviewCount": 17,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "2eebf768addc05a3be32069a2b82457c0d961dcb2710914bc812258ee0a61a9b",
+      "rating": 3,
+      "date": "2026-02-28",
+      "text": "Dropped in for a quick coffee and parking nearby was tricky on a weekday. The owner came out to chat, which was a nice touch.",
+      "reviewerReviewCount": 36,
+      "photoCount": 0,
+      "localGuideLevel": 4,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "5ab09fd99d2f3a6abf834bc42df699a323eb9af35868252a6390c761004d1fa7",
+      "rating": 5,
+      "date": "2026-03-14",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "34959753ed80ca2384abec0455c23280fc560a7a2ff899086ecdcffa77eb07ec",
+      "rating": 5,
+      "date": "2026-03-19",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "4aca33786e9fa0a90d4467b215b5794f19497bc1c9ff935d5e186b26b0af3cb3",
+      "rating": 5,
+      "date": "2026-03-09",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "fb7d31021fb0599fe0654d717cdaee63c9837dc93e7dfed1987aec3f69a42a9e",
+      "rating": 5,
+      "date": "2026-02-25",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "71cb0195c21c3cf997006a44c026257402b844f963ae077d1e07b26da815b181",
+      "rating": 4,
+      "date": "2026-05-12",
+      "text": "Booked a table for four and the soup of the day was surprisingly rich. Would come back for the dessert alone.",
+      "reviewerReviewCount": 9,
+      "photoCount": 0,
+      "localGuideLevel": 5,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "337b3debb114113281747261443315b7aeb79d86fb868d599f0a199d7786c2c9",
+      "rating": 5,
+      "date": "2026-02-17",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "d41cf15e8f959430926581637d150354e917776defc1a658440620d7dbb6797e",
+      "rating": 5,
+      "date": "2026-04-24",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "9d25ad66f29e22e76fab6c10cafdb7c360ce766d11e3fcd078ffae945d5c550c",
+      "rating": 5,
+      "date": "2026-02-21",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "cb39900fa0ad73f092e8063436392064cb0799ccd9718c078c92a14f8d402e35",
+      "rating": 5,
+      "date": "2026-05-21",
+      "text": "Great place, excellent service, will definitely come back.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "6382dd7b21e0282caf12b58ba53d2be891ae6061a2312775b793dcab3635446b",
+      "rating": 5,
+      "date": "2026-02-02",
+      "text": "Great place, excellent service, will definitely come back.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "389667208ecf59c7f5d43404144a7140ae012df55df954fd3984313ce5dd8297",
+      "rating": 5,
+      "date": "2026-05-09",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "8298d9e4ad77850bf6c7be1816683abb899be2ebf8361329ff88219f7ad3fbc7",
+      "rating": 5,
+      "date": "2026-02-15",
+      "text": "Great place, excellent service, will definitely come back.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "8806e4044b67e0da0a292dee353019d524b4cff67df49f88897e94243933a7ab",
+      "rating": 3,
+      "date": "2026-02-18",
+      "text": "Second time here and the waiter remembered our order from last month. Worth the detour if you are nearby.",
+      "reviewerReviewCount": 6,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "ab5c8aa3aa961ee0573d1b023395df67bee882de6a7bb99041ec376a4b7edfd2",
+      "rating": 5,
+      "date": "2026-04-13",
+      "text": "Great place, excellent service, will definitely come back.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "df528b580195f0655393fa12067c27520b7e54f1ec460285ce328afbdf9528a3",
+      "rating": 5,
+      "date": "2026-02-16",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "8c2810ce19aab24573ad313802d114c3f3d11081aa6d83408aeb2ed962c23c5e",
+      "rating": 3,
+      "date": "2026-03-10",
+      "text": "Stopped by after work and the soup of the day was surprisingly rich. Would come back for the dessert alone.",
+      "reviewerReviewCount": 39,
+      "photoCount": 0,
+      "localGuideLevel": 6,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "2d3bed138bb87c746015a565d423c13790bdff0a5dd0a6482e053d42715eb4e1",
+      "rating": 5,
+      "date": "2026-05-19",
+      "text": "We came here on a Saturday afternoon and the terrace view over the river is lovely in the evening. Would come back for the dessert alone.",
+      "reviewerReviewCount": 37,
+      "photoCount": 0,
+      "localGuideLevel": 4,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "0d9e1e23756c7638f8328904f5bbb5beae167b130e8fb4160b26992744df147c",
+      "rating": 5,
+      "date": "2026-04-05",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "0575a485ca98af34d2de2e8a6fc891d7ce5b349bc01b79a4685802ba361c2189",
+      "rating": 5,
+      "date": "2026-04-10",
+      "text": "Came for the brunch menu and parking nearby was tricky on a weekday. The owner came out to chat, which was a nice touch.",
+      "reviewerReviewCount": 31,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "e1758873d8efba35c619a538dd84e552fea508efa2bdb942d87b3073908f913f",
+      "rating": 5,
+      "date": "2026-03-26",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "f8cb5ee9ced37ce022552f25ad507eea1ff233ee15c1bb5d7be7ec7792f752e2",
+      "rating": 5,
+      "date": "2026-02-22",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "7d67406e89aa84b7487da25a620df98597cd4bcba3c972b1afff75c678e7fde9",
+      "rating": 5,
+      "date": "2026-02-23",
+      "text": "Great place, excellent service, will definitely come back.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "aff685891bfaa836c8382551159e02af1f746598de0b79cc858c4d5840018fe0",
+      "rating": 5,
+      "date": "2026-04-30",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "4570b35f61a8d6a920f1589439bdc7c13259cfd6d5c536babfc47f90f7a431f7",
+      "rating": 5,
+      "date": "2026-05-10",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "5178742fca9c8b366f7d4b7a18bd975cab00bb7b004a8b902c3b88d58b08397d",
+      "rating": 5,
+      "date": "2026-02-05",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "f28f6773e3ae82839bab91222308822692f0b0fb38a14e6c8567d25650ba6165",
+      "rating": 5,
+      "date": "2026-02-06",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "90bba5ad423e08395257337fd9cc8c0fd2687d5627d7e6db172032d4754e375d",
+      "rating": 5,
+      "date": "2026-04-16",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "d0b9e38f56733f5ae6204d2d9a33ce00a752b1fcc730235f2cb51f39e39ee045",
+      "rating": 5,
+      "date": "2026-04-03",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "aa4441a2322bd936fea7459ed4cec8e7dafc9531be909439e38ccdfaa73db098",
+      "rating": 5,
+      "date": "2026-04-24",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "c5902ae1a8b8723059449f97820f6b19ab13e5f45c7799a6f02234746e2fc9d8",
+      "rating": 5,
+      "date": "2026-03-10",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "99c03a7bcdbc67d28fa5cadbb97c707714f176c14982d8e347079b5f6cacaaf4",
+      "rating": 3,
+      "date": "2026-02-07",
+      "text": "Dropped in for a quick coffee and the terrace view over the river is lovely in the evening. The owner came out to chat, which was a nice touch.",
+      "reviewerReviewCount": 7,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "7a3268c460eeea3a42222b30b05b93581b4c8976137340055b2e7e924854cf5d",
+      "rating": 5,
+      "date": "2026-05-10",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "b1f18a6855986e8a2d9a4bad1e08c0a8c217ecb5e87f5199412446f1e96dec97",
+      "rating": 5,
+      "date": "2026-05-23",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "4f5d8b96d3c5fac84a084f421189cb8580ebc7ccb7ea1aa351485015c65a2dd1",
+      "rating": 5,
+      "date": "2026-02-02",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "463a0d82097c5543d774b7879a7a777d194f8efc9678923e61dd2cb92a79de3a",
+      "rating": 5,
+      "date": "2026-04-25",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "0af11eb1c0592db3220084857141e80617d7f358ff44dd0823d9d6a4fd26e7e9",
+      "rating": 5,
+      "date": "2026-04-24",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "30671efff81b86bd8d4e02214aa0e1f66a46844ff91d39598105b9803e9a2a1d",
+      "rating": 5,
+      "date": "2026-05-24",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "ba29f111e78654b5fe423484d19fd4470f2584fec2eb17054cdf96a9b966d3eb",
+      "rating": 5,
+      "date": "2026-03-18",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "9c260cc02c9d8a1413fd3ef06d4322252da9b15d27bdb389cb0c285302654991",
+      "rating": 5,
+      "date": "2026-05-04",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "1b9d3297aa71c2eddb7df6e8167cc2d2b1e51d86e17e5c585dfdeaf397c66087",
+      "rating": 5,
+      "date": "2026-06-01",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "431c4100d3a440fccef6f28af1a881b0c013578e9ef9b466ae76cbce6df8b5ae",
+      "rating": 5,
+      "date": "2026-05-30",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "cd18af2f177524179e1623666d8b7d6a16bcd00d51924a4161670b724c789af3",
+      "rating": 5,
+      "date": "2026-04-13",
+      "text": "We came here on a Saturday afternoon and the bathroom could use some attention. Would come back for the dessert alone.",
+      "reviewerReviewCount": 31,
+      "photoCount": 0,
+      "localGuideLevel": 6,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "d623bf41dd4212dac0d31b83c71ebdb1ccdc5840234beca47388df32e9767b7c",
+      "rating": 5,
+      "date": "2026-05-11",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "995565ac50485cbf34266ad87d3664891c5e27dc2515883d244172d74f118ae4",
+      "rating": 3,
+      "date": "2026-02-06",
+      "text": "Second time here and the espresso had a pleasant bitter finish. Reservations recommended on weekends.",
+      "reviewerReviewCount": 39,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "f7c90b6e2a7685340ac8f9c9677c89a2a4afd5ac2f6f400d1d07f34d2c3f1475",
+      "rating": 5,
+      "date": "2026-03-14",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "c3c6c1f69b9317e75835ff925cfa37e5c8507134b5e6c7036a9ad1793dfd2241",
+      "rating": 4,
+      "date": "2026-02-23",
+      "text": "We came here on a Saturday afternoon and the espresso had a pleasant bitter finish. The lighting makes it hard to read the menu.",
+      "reviewerReviewCount": 20,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "9cb499046d89319016e70830ae6fec154c74bc82e85bb7f983b77139e5727156",
+      "rating": 5,
+      "date": "2026-04-27",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "fd665e42ddd11f4c70bf18085f95e8885da881533d7c66d6ddf08ea7536e525d",
+      "rating": 5,
+      "date": "2026-05-21",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "1669673f5d6af7cc4732f46c4c177c5a39c8134ec357da597a439f7a273de1c3",
+      "rating": 5,
+      "date": "2026-03-14",
+      "text": "Great place, excellent service, will definitely come back.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "79b7623db6eed44848b9ccb766b14e3721c64238dd4ebeba357c66a4e12396ad",
+      "rating": 4,
+      "date": "2026-05-28",
+      "text": "Booked a table for four and the portions were larger than we expected. Prices are fair for the area.",
+      "reviewerReviewCount": 26,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "c232967e30c6ba251f420a6506ff71ba9a0939caaa0bf2e68da02fd757bd4cb6",
+      "rating": 5,
+      "date": "2026-04-19",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "3b6e7993c69337bd498ff319c028a468b9a3454f2efa4b9203953abf09b98f6b",
+      "rating": 5,
+      "date": "2026-05-06",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "905746b68f675cbe8f493ada5820e83d5c61fd58036b76a9899d106096188e45",
+      "rating": 3,
+      "date": "2026-04-16",
+      "text": "Second time here and the waiter remembered our order from last month. Service was slow but the staff apologised.",
+      "reviewerReviewCount": 28,
+      "photoCount": 0,
+      "localGuideLevel": 3,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "0caac1cfda94101beb9494696e127d8f52f8d8d877aed4f126424fb651dfb674",
+      "rating": 5,
+      "date": "2026-03-07",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "3c2e61cfb8b724342e51f9c5406cc8db1a24093f625d92122800d3063bec014d",
+      "rating": 3,
+      "date": "2026-04-04",
+      "text": "Visited with my parents and the espresso had a pleasant bitter finish. Reservations recommended on weekends.",
+      "reviewerReviewCount": 28,
+      "photoCount": 0,
+      "localGuideLevel": 5,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "fa69912f6304adaad6795c4631d7fbf236b900e7c17b58ae55b37c4236f81f92",
+      "rating": 3,
+      "date": "2026-03-16",
+      "text": "Found this place by accident and the pastry case looked tempting. Service was slow but the staff apologised.",
+      "reviewerReviewCount": 5,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "0cec7b75576a491768aa275d44aeff19b8f3eaedb03beb78b6adfed15a7d4486",
+      "rating": 5,
+      "date": "2026-03-23",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "1d83b5daca80bbd4d7b7f9fff90a682edb0611d276a594b3bfad3591fbe4c028",
+      "rating": 5,
+      "date": "2026-04-28",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "108541d6b334a875aa743a70ba1c383fee27a558dbe2250c961a389cfbdeeb5d",
+      "rating": 5,
+      "date": "2026-03-31",
+      "text": "Great place, excellent service, will definitely come back.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "99134a8f6fca581d5f6f01ca74a3c46f0011411099d19c0b309c15908375dad7",
+      "rating": 4,
+      "date": "2026-05-06",
+      "text": "Second time here and the waiter remembered our order from last month. The lighting makes it hard to read the menu.",
+      "reviewerReviewCount": 33,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "0dfaf7d19204ba96003c9875a5cad0a4b67dccc434f5162f3b546f87ec33e911",
+      "rating": 5,
+      "date": "2026-05-14",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "f1ba71329e5f92324bc136b774ae6af5c2c9b882ac4dd2096ed2ed68001c7002",
+      "rating": 5,
+      "date": "2026-04-27",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "727a4d8db179f29df2bff39457e5425885e3893b26f86f0aff32f31f4cc635db",
+      "rating": 5,
+      "date": "2026-03-16",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "826e7d8a1d48720f25800ff96848938844be69349ada874668429e6bf5c8cf21",
+      "rating": 5,
+      "date": "2026-05-01",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "0190940b79be8614d50dd93987765aa2f9b03c74823b9678b26926e5b9331dfc",
+      "rating": 5,
+      "date": "2026-02-24",
+      "text": "Stopped by after work and the portions were larger than we expected. Prices are fair for the area.",
+      "reviewerReviewCount": 13,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "0f0489a09ae26c74a43bb42b1e2d3794c45d26fc53dc52649d5afe23f11eda91",
+      "rating": 5,
+      "date": "2026-05-14",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "4c83dfbe71187adcea0ccc2bbe1ef727b587276aead4e305cffa36880ab97e11",
+      "rating": 5,
+      "date": "2026-03-16",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "b171dc18fd1676f993efb399df05a8329fcdc79fdc21eddc207f7a3e4beae550",
+      "rating": 5,
+      "date": "2026-02-06",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "8ae74f6eeabb13359a4265d44fccac22031b12b0d2f5f39bdc7145ca3fbdcaf1",
+      "rating": 5,
+      "date": "2026-03-24",
+      "text": "Great place, excellent service, will definitely come back.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "cc6e95a7ab5ac680b04f45d79e98b1ca13036803a91104b3c4f662320f661361",
+      "rating": 5,
+      "date": "2026-02-16",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "62af7a4a40e9425ce8f236110b20c0abd59ba480a31f9eeec14315c518355726",
+      "rating": 5,
+      "date": "2026-03-25",
+      "text": "Great place, excellent service, will definitely come back.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "58ab79d6e10aac08d326e4120c2704bf1d9ad3b4f8109d431aab3df26ca1af74",
+      "rating": 4,
+      "date": "2026-03-24",
+      "text": "Booked a table for four and the bathroom could use some attention. Service was slow but the staff apologised.",
+      "reviewerReviewCount": 16,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "9d7c7a4372c0c06e41f00bd753add86eb82eea708e316e368c8f8a656543df8e",
+      "rating": 5,
+      "date": "2026-04-20",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "b07f03fcbca14a7b0cbaf3b8ddef15f47e753f26d877acb061b03c86beeba68c",
+      "rating": 5,
+      "date": "2026-05-03",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "de149400dbef0bbe49254f46857f31acdc9e25e83fa9b8945a9bd45413e20744",
+      "rating": 5,
+      "date": "2026-03-28",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "416779b06b484cb88931a82250d24452d80c7e814346a3dd9803c0055df41412",
+      "rating": 5,
+      "date": "2026-04-20",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "8680393e8665093d0252ec24ff324aaf999da501f579018beda7e4ac35d51a3f",
+      "rating": 5,
+      "date": "2026-03-06",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "3342816ab51b8ebc7b40edba984c84c642265a730fb3d04c670cc17814c384d2",
+      "rating": 5,
+      "date": "2026-02-18",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 1,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "9ebc12fd780eb41440b52bc7bf49e7b6814a63747de44ba544ea3ca8b8e677fb",
+      "rating": 5,
+      "date": "2026-03-19",
+      "text": "Second time here and parking nearby was tricky on a weekday. The lighting makes it hard to read the menu.",
+      "reviewerReviewCount": 31,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "32819501297828cc072349f0ebed8c8c56fbc68e3520180e87844848f5d9e410",
+      "rating": 5,
+      "date": "2026-03-30",
+      "text": "Great place, excellent service, will definitely come back.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "a9084d0ec10e55257d49c04c61f4d3002fbeee64c9d49670c5461b4090fe2354",
+      "rating": 5,
+      "date": "2026-05-07",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "e8b454f3a94c2b264cc016d058ca27dca79285d587d547f8c04e8d9abc2f32da",
+      "rating": 5,
+      "date": "2026-05-06",
+      "text": "Great place, excellent service, will definitely come back.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "95366b134f6b1a1ed14418563fce27639e2b2cc89b474443697adf103ca1813a",
+      "rating": 5,
+      "date": "2026-02-18",
+      "text": "Amazing experience, great food, highly recommended.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "e5e927c828b5426bccac748d8d0d87fe94310c8bd473fdf0d52c713134f3b268",
+      "rating": 5,
+      "date": "2026-03-19",
+      "text": "Very satisfied, top notch, thank you so much.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "5246df7139019f195b0498aeeac79658391e8ec7846e4701033edcdc2bc3667f",
+      "rating": 5,
+      "date": "2026-04-27",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "7417311e8e437387313a3e6a2e7f76fa53967fef09298081e3c85f7bd51f35ea",
+      "rating": 5,
+      "date": "2026-04-28",
+      "text": "Highly recommend, great service and friendly staff.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "bda6bb19f8d673cede144cef73ed714699661e99d13dcb9eac168257f524fa10",
+      "rating": 4,
+      "date": "2026-05-25",
+      "text": "Visited with my parents but the music was a bit loud for a conversation. Not sure about the new menu, the old one had more variety.",
+      "reviewerReviewCount": 39,
+      "photoCount": 0,
+      "localGuideLevel": 5,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "7a45e2bfd81d151a2b620ed09c1898df119b237ba57c4817dc0827dec03baad0",
+      "rating": 5,
+      "date": "2026-04-04",
+      "text": "Best place in town, very professional, five stars.",
+      "reviewerReviewCount": 0,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you for your kind words!",
+      "language": "en"
+    }
+  ],
+  "expected": {
+    "placeId": "0xfixture:0xtemplate",
+    "score": 43,
+    "status": "ok",
+    "reviewCount": 150,
+    "signals": [
+      {
+        "id": "burst_ratio",
+        "unusualness": 0.061321,
+        "value": 0.193333,
+        "details": {
+          "peakShare": 0.193333,
+          "peakCount": 29,
+          "peakWindowStart": "2026-04-24",
+          "peakWindowEnd": "2026-05-07",
+          "lifespanDays": 120,
+          "expectedShare": 0.116667,
+          "excess": 0.086792,
+          "windowDays": 14
+        },
+        "available": true
+      },
+      {
+        "id": "rating_polarity",
+        "unusualness": 0,
+        "value": 0.793333,
+        "details": {
+          "share5": 0.793333,
+          "share1": 0,
+          "shareMid": 0.206667
+        },
+        "available": true
+      },
+      {
+        "id": "single_review_accounts",
+        "unusualness": 0.933333,
+        "value": 0.72,
+        "details": {
+          "share": 0.72,
+          "known": 150,
+          "singles": 108
+        },
+        "available": true
+      },
+      {
+        "id": "no_photo_short_text",
+        "unusualness": 0,
+        "value": 0,
+        "details": {
+          "share": 0,
+          "count": 0,
+          "noTextCount": 0,
+          "shortTextChars": 40
+        },
+        "available": true
+      },
+      {
+        "id": "text_similarity",
+        "unusualness": 0.651523,
+        "value": 0.163196,
+        "details": {
+          "meanJaccard": 0.163196,
+          "highPairShare": 0.104698,
+          "highPairs": 1170,
+          "pairs": 11175,
+          "maxPair": 1,
+          "eligible": 150
+        },
+        "available": true
+      },
+      {
+        "id": "template_phrases",
+        "unusualness": 1,
+        "value": 0.72,
+        "details": {
+          "share": 0.72,
+          "phraseBased": 108,
+          "withText": 150,
+          "anyPhraseShare": 0.72,
+          "topPhrases": "amazing experience (26); great food (26); highly recommended (26)"
+        },
+        "available": true
+      },
+      {
+        "id": "rating_text_mismatch",
+        "unusualness": 0,
+        "value": 0.019417,
+        "details": {
+          "share": 0.019417,
+          "scored": 103,
+          "mismatches": 2
+        },
+        "available": true
+      },
+      {
+        "id": "date_entropy",
+        "unusualness": 0,
+        "value": 0.89239,
+        "details": {
+          "normalizedEntropy": 0.89239,
+          "monthsInSpan": 5,
+          "activeMonths": 5,
+          "busiestMonth": "2026-04",
+          "busiestMonthShare": 0.266667
+        },
+        "available": true
+      },
+      {
+        "id": "local_guide_ratio",
+        "unusualness": 0.466667,
+        "value": 0.106667,
+        "details": {
+          "share": 0.106667,
+          "established": 16,
+          "exposed": 16,
+          "establishedLevel": 3
+        },
+        "available": true
+      },
+      {
+        "id": "owner_response_pattern",
+        "unusualness": 1,
+        "value": 0.990741,
+        "details": {
+          "identicalShare": 0.990741,
+          "responded": 108,
+          "responseRate": 0.72,
+          "distinctResponses": 1,
+          "largestGroupShare": 1
+        },
+        "available": true
+      }
+    ],
+    "monthly": [
+      {
+        "month": "2026-02",
+        "count": 33
+      },
+      {
+        "month": "2026-03",
+        "count": 37
+      },
+      {
+        "month": "2026-04",
+        "count": 40
+      },
+      {
+        "month": "2026-05",
+        "count": 38
+      },
+      {
+        "month": "2026-06",
+        "count": 2
+      }
+    ],
+    "ratingDistribution": {
+      "1": 0,
+      "2": 0,
+      "3": 16,
+      "4": 15,
+      "5": 119
+    },
+    "reviewerProfile": {
+      "singleReviewShare": 0.72,
+      "medianReviewCount": 1,
+      "localGuideShare": 0.106667,
+      "withPhotosShare": 0
+    },
+    "source": "server",
+    "engineVersion": "1.0.0",
+    "computedAt": "2026-06-01T00:00:00.000Z"
+  }
+}

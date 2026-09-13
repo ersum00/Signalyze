@@ -1,0 +1,12 @@
+node_modules
+dist
+.output
+.wxt
+.astro
+.venv
+uv.lock
+pnpm-lock.yaml
+**/fixtures/*.html
+apps/api/**
+*.min.*
+.github/workflows/*.yml

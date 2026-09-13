@@ -1,0 +1,919 @@
+{
+  "name": "turkish",
+  "seed": 107,
+  "now": "2026-06-01T00:00:00.000Z",
+  "placeId": "0xfixture:0xturkish",
+  "reviews": [
+    {
+      "reviewerHash": "52e2509e8040b355d298135ec8de6e0ce0b1739f852de43ac39ffa32b9386e8d",
+      "rating": 1,
+      "date": "2024-11-20",
+      "text": "Masalar kirli, servis yavaş, hayal kırıklığı.",
+      "reviewerReviewCount": 25,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "1d8227e7d0df7c1770d1ba3dc39ccae199cd7f94e3c6a1508ca0feb398a465b3",
+      "rating": 4,
+      "date": "2024-04-10",
+      "text": "Lezzetli yemekler ve temiz bir ortam, tekrar geleceğim.",
+      "reviewerReviewCount": 33,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "33e130d33edeec040cdfac7a82bf035febb2fd40a73ab6b008a6457b26348148",
+      "rating": 5,
+      "date": "2024-07-20",
+      "text": "Lezzetli yemekler ve temiz bir ortam, tekrar geleceğim.",
+      "reviewerReviewCount": 8,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "15f725ce7185d6b52385759399169d210a700fe7ca3051949b959f9ae9ac4036",
+      "rating": 4,
+      "date": "2024-05-02",
+      "text": "Tesadüfen bulduk ama hafta içi park yeri bulmak zordu. Yeni menü eskisi kadar çeşitli değil.",
+      "reviewerReviewCount": 35,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "7dd46fa5b0291cb4c2c6a478f9f16df6d567e7605f4d5b3a6619f4907728fd55",
+      "rating": 3,
+      "date": "2024-06-07",
+      "text": "Tesadüfen bulduk ve nehir manzaralı teras akşam çok keyifliydi. Fiyatlar semte göre makul.",
+      "reviewerReviewCount": 38,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "09211495a4efae7fc37b3fcd6724dbbd901b364ca248f503da559d6fe4ac903c",
+      "rating": 5,
+      "date": "2025-01-19",
+      "text": "İkinci gelişimiz ve porsiyonlar beklediğimizden büyüktü. Yeni menü eskisi kadar çeşitli değil.",
+      "reviewerReviewCount": 34,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "e98ea81361a897ad3a38cab8db7d3568a8b415fc1735d1f68699fbb0b1e4c2be",
+      "rating": 1,
+      "date": "2025-04-16",
+      "text": "Fiyatlar pahalı ve ekmek bayattı, tavsiye etmem.",
+      "reviewerReviewCount": 49,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "6b775afd4d4066649cac529fcb43611515f9049ae841996efea973795d0d8b6a",
+      "rating": 1,
+      "date": "2024-07-14",
+      "text": "Fiyatlar pahalı ve ekmek bayattı, tavsiye etmem.",
+      "reviewerReviewCount": 47,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "a553127530508e58baf3951e8076c78368dea4be03da19260d7d5255549efd99",
+      "rating": 3,
+      "date": "2025-01-20",
+      "text": "Kesinlikle tavsiye ederim, çok memnun kaldım.",
+      "reviewerReviewCount": 3,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "4f0a3fb3d1cb6566f84da3028c4fde9e93981e2b352dd1c7b1bb2ea478b662c6",
+      "rating": 3,
+      "date": "2024-08-20",
+      "text": "Harika bir yer, güler yüzlü personel, teşekkür ederim.",
+      "reviewerReviewCount": 37,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "8eeb1678953c5ee9c0fd5f5bb9b6384d597097311ac858875035f3cf650e44e0",
+      "rating": 5,
+      "date": "2025-09-19",
+      "text": "İkinci gelişimiz ve garson geçen ayki siparişimizi hatırladı. Sırf tatlı için bile tekrar gelinir.",
+      "reviewerReviewCount": 8,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "5ac7091bef264bf01adcf9116832b046240b9eef06b496f0dd21fd363af7dcee",
+      "rating": 4,
+      "date": "2024-11-26",
+      "text": "Harika bir yer, güler yüzlü personel, teşekkür ederim.",
+      "reviewerReviewCount": 35,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "acde74917f7bac4db0d1214fe72a2fb72a199864f7be33e4fde3fc4fb5c5dd76",
+      "rating": 5,
+      "date": "2024-04-22",
+      "text": "İş çıkışı uğradık ve garson geçen ayki siparişimizi hatırladı. Sırf tatlı için bile tekrar gelinir.",
+      "reviewerReviewCount": 32,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "62220565a2a65cc423fc70621a7c1f51b265abc8a1ac356293dbf17aeea3cf53",
+      "rating": 5,
+      "date": "2025-01-11",
+      "text": "Harika bir yer, güler yüzlü personel, teşekkür ederim.",
+      "reviewerReviewCount": 8,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "0346b201c3f1ae31246a0c3aa67f92594c332a6b76cdbe1a4df0f4f05daf6520",
+      "rating": 1,
+      "date": "2025-05-16",
+      "text": "Tavuk soğuktu ve garson kaba davrandı, bir daha asla.",
+      "reviewerReviewCount": 4,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "e9994e7d4031824c22008013564cc3b08249428f4526f3d59628ef05e8289404",
+      "rating": 1,
+      "date": "2025-01-04",
+      "text": "Tavuk soğuktu ve garson kaba davrandı, bir daha asla.",
+      "reviewerReviewCount": 15,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "d2dc3512db9b0298222b4e46c098726ecfc689cd1dfa6bd424cc8ffa2c19adc0",
+      "rating": 5,
+      "date": "2024-09-05",
+      "text": "Cumartesi öğleden sonra geldik ve garson geçen ayki siparişimizi hatırladı. Yeni menü eskisi kadar çeşitli değil.",
+      "reviewerReviewCount": 21,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "6565bfa8e2c9f3a903ae73e5c0990f533c5507734823e1b3d4e234e78707e367",
+      "rating": 5,
+      "date": "2026-01-05",
+      "text": "Harika bir yer, güler yüzlü personel, teşekkür ederim.",
+      "reviewerReviewCount": 33,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "9296a2f12d30aba88b6d2d48c1ec2dde93fe9233e6ccc8a5a29c2d9a9dc945ae",
+      "rating": 4,
+      "date": "2024-07-29",
+      "text": "Cumartesi öğleden sonra geldik ve espresso hoş bir acılıkla bitiyordu. Sırf tatlı için bile tekrar gelinir.",
+      "reviewerReviewCount": 28,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "999e0609b350d292b5ff9bd64f06e38680fa7f40031bd03d56c3f1ab4f21d1e3",
+      "rating": 3,
+      "date": "2025-07-01",
+      "text": "Fiyat performans olarak çok başarılı, herkese tavsiye.",
+      "reviewerReviewCount": 36,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "f07afd4467746396e3ea51dcef5fa5522973f260cac7bf11ce31be6cdc3fb8f0",
+      "rating": 3,
+      "date": "2024-06-28",
+      "text": "İş çıkışı uğradık ama hafta içi park yeri bulmak zordu. Yeni menü eskisi kadar çeşitli değil.",
+      "reviewerReviewCount": 14,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "3dafe34e9fdd9395f242095577bcb0acdac49192ce3e4aca23fab9b6fdf98442",
+      "rating": 5,
+      "date": "2024-06-19",
+      "text": "İş çıkışı uğradık ama müzik sohbet için biraz yüksekti. Yakındaysanız uğramaya değer.",
+      "reviewerReviewCount": 17,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "2be62cf6bdbc0a4a8888055c64d65dfdd8b18aae6f45b4523a4d806dc1fce2c5",
+      "rating": 5,
+      "date": "2025-11-06",
+      "text": "Dört kişilik masa ayırttık ve nehir manzaralı teras akşam çok keyifliydi. Sırf tatlı için bile tekrar gelinir.",
+      "reviewerReviewCount": 32,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "21e8662de768441e572d5286bd9090c5f0716c68a5e33ab59647292efb5c9a62",
+      "rating": 4,
+      "date": "2025-09-02",
+      "text": "Cumartesi öğleden sonra geldik ve espresso hoş bir acılıkla bitiyordu. Yakındaysanız uğramaya değer.",
+      "reviewerReviewCount": 44,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "dedd8292d1ccd9d21fa4b17bb1c7bc840bdcfd85ffb44c977c6cd58c0eee2b17",
+      "rating": 3,
+      "date": "2025-04-20",
+      "text": "Kesinlikle tavsiye ederim, çok memnun kaldım.",
+      "reviewerReviewCount": 23,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "73f0a54d6ae97ef6b48f09284dd28b0aecabd83c7faa791953602df18f82e1f9",
+      "rating": 1,
+      "date": "2024-08-14",
+      "text": "Masalar kirli, servis yavaş, hayal kırıklığı.",
+      "reviewerReviewCount": 2,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "dfdd6fcc6c956b0dce534c2a0769d43fb12bff146e4265465b440ba7e94b7223",
+      "rating": 3,
+      "date": "2025-03-23",
+      "text": "Fiyat performans olarak çok başarılı, herkese tavsiye.",
+      "reviewerReviewCount": 25,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "7ae234218360300b558823bfcc337069ef6a2e02d03bbd783e476cd471965202",
+      "rating": 5,
+      "date": "2024-06-18",
+      "text": "İkinci gelişimiz ve espresso hoş bir acılıkla bitiyordu. Yakındaysanız uğramaya değer.",
+      "reviewerReviewCount": 40,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "a8de9b234dc6b6ae288690279a36ef7053770608b480047ff27995205834d011",
+      "rating": 3,
+      "date": "2026-03-14",
+      "text": "Lezzetli yemekler ve temiz bir ortam, tekrar geleceğim.",
+      "reviewerReviewCount": 17,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "cc70ede74d59de52fe83924563d3bfb8c3c798adc790ab0ba9064e4c1857a721",
+      "rating": 5,
+      "date": "2025-09-05",
+      "text": "Lezzetli yemekler ve temiz bir ortam, tekrar geleceğim.",
+      "reviewerReviewCount": 37,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "33f6f62bcd15dfbd5b2343429ae549434db439cac5112be4d4ba21ba8c0bbbe5",
+      "rating": 5,
+      "date": "2026-05-03",
+      "text": "Tesadüfen bulduk ama hafta içi park yeri bulmak zordu. Fiyatlar semte göre makul.",
+      "reviewerReviewCount": 25,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "f51e5f1f6c3d57837356ed64cc71061b6a1c4ba387e0795e2d30b4cf51dc4139",
+      "rating": 5,
+      "date": "2026-01-11",
+      "text": "Tesadüfen bulduk ve nehir manzaralı teras akşam çok keyifliydi. Sırf tatlı için bile tekrar gelinir.",
+      "reviewerReviewCount": 19,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "8acdc2372e3b19bf6c80f4180a22e6390dfcc7b9a530213474ef8d99f5f7dd7c",
+      "rating": 5,
+      "date": "2026-05-29",
+      "text": "İş çıkışı uğradık ama müzik sohbet için biraz yüksekti. Sırf tatlı için bile tekrar gelinir.",
+      "reviewerReviewCount": 29,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "d6fca10e2f9db449bc64344d526d563303541a1af7ab8e50702ca6404d9486d4",
+      "rating": 1,
+      "date": "2024-11-23",
+      "text": "Fiyatlar pahalı ve ekmek bayattı, tavsiye etmem.",
+      "reviewerReviewCount": 35,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "0b5d8ac3b230f01737ffb3cf5fc7cfdeacb2bceacab559c0b7b8c320e51ae370",
+      "rating": 3,
+      "date": "2025-02-05",
+      "text": "Fiyat performans olarak çok başarılı, herkese tavsiye.",
+      "reviewerReviewCount": 7,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "a66ac43fa8ecb2cf388e09df98ec4f16de1329313e24b2bcc5f18fddc46449e7",
+      "rating": 5,
+      "date": "2026-04-09",
+      "text": "Ailemle birlikte gittik ama müzik sohbet için biraz yüksekti. Fiyatlar semte göre makul.",
+      "reviewerReviewCount": 46,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "0799a1418c986b4baaca9c04ea6d64a5eb81cf319db98b3557e450fabfb03b3d",
+      "rating": 3,
+      "date": "2024-08-18",
+      "text": "Fiyat performans olarak çok başarılı, herkese tavsiye.",
+      "reviewerReviewCount": 38,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "96a756b151c482428070e24bb310cf78188190edcd3c1dd30942726119351c28",
+      "rating": 5,
+      "date": "2026-05-16",
+      "text": "Kesinlikle tavsiye ederim, çok memnun kaldım.",
+      "reviewerReviewCount": 35,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "cb2f6aa3bde92de93728b779197b30b8c4022196141f05ae55ab3ef8c36b22fb",
+      "rating": 5,
+      "date": "2025-05-27",
+      "text": "Ailemle birlikte gittik ve garson geçen ayki siparişimizi hatırladı. Fiyatlar semte göre makul.",
+      "reviewerReviewCount": 15,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "c554ae372eb24930db5c261c29318f4383d4dea4eaea3721a4e6071d432813e5",
+      "rating": 5,
+      "date": "2025-12-25",
+      "text": "İkinci gelişimiz ve porsiyonlar beklediğimizden büyüktü. Servis yavaştı ama ekip özür diledi.",
+      "reviewerReviewCount": 7,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "0f909a12a5eb5a20c46f45e22ff068ea9ddb7d8d0be13c128772015cfe1c455e",
+      "rating": 1,
+      "date": "2024-04-26",
+      "text": "Fiyatlar pahalı ve ekmek bayattı, tavsiye etmem.",
+      "reviewerReviewCount": 17,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "63ea600814e259f4e8e0db05a076e0a9654f5fc15ac47834548f1093f346c3a1",
+      "rating": 5,
+      "date": "2025-10-06",
+      "text": "İş çıkışı uğradık ve nehir manzaralı teras akşam çok keyifliydi. Yakındaysanız uğramaya değer.",
+      "reviewerReviewCount": 48,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "dff86211570e8f91e39c59ca4b83e60f25140ecaa7491a1dc2060b291356d118",
+      "rating": 5,
+      "date": "2025-02-11",
+      "text": "Lezzetli yemekler ve temiz bir ortam, tekrar geleceğim.",
+      "reviewerReviewCount": 49,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "36a2498bdd52c837f477c58a8e974166d9377e16babd762e7808ec5a5c29c647",
+      "rating": 4,
+      "date": "2026-01-09",
+      "text": "İş çıkışı uğradık ve espresso hoş bir acılıkla bitiyordu. Yakındaysanız uğramaya değer.",
+      "reviewerReviewCount": 16,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "7e73d17d544d1f890075a22d9f476477935bcf8740f4683b144213d0710780dd",
+      "rating": 5,
+      "date": "2024-07-28",
+      "text": "İkinci gelişimiz ama müzik sohbet için biraz yüksekti. Hafta sonu rezervasyon şart.",
+      "reviewerReviewCount": 42,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "881e0e5370d0789f41592c66585559c92f4629082b0a295961f25aaa46b8eb73",
+      "rating": 5,
+      "date": "2026-01-26",
+      "text": "Kesinlikle tavsiye ederim, çok memnun kaldım.",
+      "reviewerReviewCount": 32,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "6dcdfa15d2f8902157f87f810d98680d5fec8c96300370b127b3adda55b170bc",
+      "rating": 4,
+      "date": "2024-08-04",
+      "text": "Harika bir yer, güler yüzlü personel, teşekkür ederim.",
+      "reviewerReviewCount": 14,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "a41fe1072ea45c045f72e0406ac961672721b9b18f4ceed14f10cb75ac072075",
+      "rating": 1,
+      "date": "2025-04-21",
+      "text": "Fiyatlar pahalı ve ekmek bayattı, tavsiye etmem.",
+      "reviewerReviewCount": 9,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "7b8833acbdc635849c57d896662ef957ad34ec8bfadc79f1bb6fb4044b670ca3",
+      "rating": 5,
+      "date": "2026-03-28",
+      "text": "Kesinlikle tavsiye ederim, çok memnun kaldım.",
+      "reviewerReviewCount": 46,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "a069fe2a8131d41ab70da7cbda0dea4b714789bae9ee190fab8a4851f14875f5",
+      "rating": 5,
+      "date": "2025-10-18",
+      "text": "İş çıkışı uğradık ve günün çorbası beklediğimden zengindi. Hafta sonu rezervasyon şart.",
+      "reviewerReviewCount": 29,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "6e31cb96a984e34b31e757132b3b7df48d101c67334515cc66c9988c88ed697e",
+      "rating": 3,
+      "date": "2025-07-17",
+      "text": "Kesinlikle tavsiye ederim, çok memnun kaldım.",
+      "reviewerReviewCount": 29,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "03a2723a0ebfa8481f110142df4865252948b4d60f80fa4acf440c77c4647d9a",
+      "rating": 3,
+      "date": "2025-08-11",
+      "text": "Tesadüfen bulduk ve günün çorbası beklediğimden zengindi. Yeni menü eskisi kadar çeşitli değil.",
+      "reviewerReviewCount": 31,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "fd4e5e604aceaed9475ab72ef4e8c3b50d67b945c3483d9422f67bfd5a6ee5aa",
+      "rating": 4,
+      "date": "2025-04-29",
+      "text": "Dört kişilik masa ayırttık ve porsiyonlar beklediğimizden büyüktü. Fiyatlar semte göre makul.",
+      "reviewerReviewCount": 17,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "0b9d77d7ad51b0e016e9c24489cb0671179cbaa6508ce88b6e30648d54982606",
+      "rating": 4,
+      "date": "2025-07-09",
+      "text": "Dört kişilik masa ayırttık ve espresso hoş bir acılıkla bitiyordu. Servis yavaştı ama ekip özür diledi.",
+      "reviewerReviewCount": 40,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "989ffa1e212871fb860e0b86a7c8efb66ff578ca35e42e67957e4c8ca65a9fe3",
+      "rating": 1,
+      "date": "2025-11-17",
+      "text": "Fiyatlar pahalı ve ekmek bayattı, tavsiye etmem.",
+      "reviewerReviewCount": 19,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "fbb0f80540d04cb22702dd999f856aad87aedc404cd73417eb3e7e14f9b0fec3",
+      "rating": 3,
+      "date": "2024-04-03",
+      "text": "İş çıkışı uğradık ve porsiyonlar beklediğimizden büyüktü. Yakındaysanız uğramaya değer.",
+      "reviewerReviewCount": 40,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "af7307cdf9479bc48ec901333047e00d28d482b82c3c56df3bc4bc9ce6e12d58",
+      "rating": 3,
+      "date": "2025-03-27",
+      "text": "Tesadüfen bulduk ve günün çorbası beklediğimden zengindi. Fiyatlar semte göre makul.",
+      "reviewerReviewCount": 2,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "c55ac16106880b4a0b9f1adfce21a88d58cde5fbb620be08f135989503f8a322",
+      "rating": 1,
+      "date": "2024-10-01",
+      "text": "Fiyatlar pahalı ve ekmek bayattı, tavsiye etmem.",
+      "reviewerReviewCount": 30,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "4c15b8d5939f9ced8fa2ff407cc4a75de1c04f0b70cc047ad0f1ef2dffb2764b",
+      "rating": 5,
+      "date": "2026-02-20",
+      "text": "Lezzetli yemekler ve temiz bir ortam, tekrar geleceğim.",
+      "reviewerReviewCount": 24,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "24b85ef27d21711d3888e32ebcd774f6110a0ade5d8c1b0c0f6594c5c298af84",
+      "rating": 5,
+      "date": "2025-08-01",
+      "text": "Cumartesi öğleden sonra geldik ve espresso hoş bir acılıkla bitiyordu. Yakındaysanız uğramaya değer.",
+      "reviewerReviewCount": 11,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    }
+  ],
+  "expected": {
+    "placeId": "0xfixture:0xturkish",
+    "score": 6,
+    "status": "ok",
+    "reviewCount": 60,
+    "signals": [
+      {
+        "id": "burst_ratio",
+        "unusualness": 0,
+        "value": 0.066667,
+        "details": {
+          "peakShare": 0.066667,
+          "peakCount": 4,
+          "peakWindowStart": "2025-04-16",
+          "peakWindowEnd": "2025-04-29",
+          "lifespanDays": 787,
+          "expectedShare": 0.017789,
+          "excess": 0.049763,
+          "windowDays": 14
+        },
+        "available": true
+      },
+      {
+        "id": "rating_polarity",
+        "unusualness": 0,
+        "value": 0.616667,
+        "details": {
+          "share5": 0.433333,
+          "share1": 0.183333,
+          "shareMid": 0.383333
+        },
+        "available": true
+      },
+      {
+        "id": "single_review_accounts",
+        "unusualness": 0,
+        "value": 0,
+        "details": {
+          "share": 0,
+          "known": 60,
+          "singles": 0
+        },
+        "available": true
+      },
+      {
+        "id": "no_photo_short_text",
+        "unusualness": 0,
+        "value": 0,
+        "details": {
+          "share": 0,
+          "count": 0,
+          "noTextCount": 0,
+          "shortTextChars": 40
+        },
+        "available": true
+      },
+      {
+        "id": "text_similarity",
+        "unusualness": 0.202521,
+        "value": 0.10113,
+        "details": {
+          "meanJaccard": 0.10113,
+          "highPairShare": 0.046328,
+          "highPairs": 82,
+          "pairs": 1770,
+          "maxPair": 1,
+          "eligible": 60
+        },
+        "available": true
+      },
+      {
+        "id": "template_phrases",
+        "unusualness": 0.285714,
+        "value": 0.25,
+        "details": {
+          "share": 0.25,
+          "phraseBased": 15,
+          "withText": 60,
+          "anyPhraseShare": 0.35,
+          "topPhrases": "kesinlikle tavsiye ederim (6); tavsiye ederim (6); tekrar geleceğim (6)"
+        },
+        "available": true
+      },
+      {
+        "id": "rating_text_mismatch",
+        "unusualness": 0,
+        "value": 0,
+        "details": {
+          "share": 0,
+          "scored": 30,
+          "mismatches": 0
+        },
+        "available": true
+      },
+      {
+        "id": "date_entropy",
+        "unusualness": 0,
+        "value": 0.941025,
+        "details": {
+          "normalizedEntropy": 0.941025,
+          "monthsInSpan": 26,
+          "activeMonths": 24,
+          "busiestMonth": "2024-04",
+          "busiestMonthShare": 0.066667
+        },
+        "available": true
+      },
+      {
+        "id": "local_guide_ratio",
+        "unusualness": 0,
+        "value": 0,
+        "details": {
+          "levelExposed": false
+        },
+        "available": false
+      },
+      {
+        "id": "owner_response_pattern",
+        "unusualness": 0,
+        "value": 0,
+        "details": {
+          "responded": 0,
+          "responseRate": 0,
+          "minResponded": 5
+        },
+        "available": false
+      }
+    ],
+    "monthly": [
+      {
+        "month": "2024-04",
+        "count": 4
+      },
+      {
+        "month": "2024-05",
+        "count": 1
+      },
+      {
+        "month": "2024-06",
+        "count": 4
+      },
+      {
+        "month": "2024-07",
+        "count": 4
+      },
+      {
+        "month": "2024-08",
+        "count": 4
+      },
+      {
+        "month": "2024-09",
+        "count": 1
+      },
+      {
+        "month": "2024-10",
+        "count": 1
+      },
+      {
+        "month": "2024-11",
+        "count": 3
+      },
+      {
+        "month": "2024-12",
+        "count": 0
+      },
+      {
+        "month": "2025-01",
+        "count": 4
+      },
+      {
+        "month": "2025-02",
+        "count": 2
+      },
+      {
+        "month": "2025-03",
+        "count": 2
+      },
+      {
+        "month": "2025-04",
+        "count": 4
+      },
+      {
+        "month": "2025-05",
+        "count": 2
+      },
+      {
+        "month": "2025-06",
+        "count": 0
+      },
+      {
+        "month": "2025-07",
+        "count": 3
+      },
+      {
+        "month": "2025-08",
+        "count": 2
+      },
+      {
+        "month": "2025-09",
+        "count": 3
+      },
+      {
+        "month": "2025-10",
+        "count": 2
+      },
+      {
+        "month": "2025-11",
+        "count": 2
+      },
+      {
+        "month": "2025-12",
+        "count": 1
+      },
+      {
+        "month": "2026-01",
+        "count": 4
+      },
+      {
+        "month": "2026-02",
+        "count": 1
+      },
+      {
+        "month": "2026-03",
+        "count": 2
+      },
+      {
+        "month": "2026-04",
+        "count": 1
+      },
+      {
+        "month": "2026-05",
+        "count": 3
+      }
+    ],
+    "ratingDistribution": {
+      "1": 11,
+      "2": 0,
+      "3": 14,
+      "4": 9,
+      "5": 26
+    },
+    "reviewerProfile": {
+      "singleReviewShare": 0,
+      "medianReviewCount": 29,
+      "localGuideShare": null,
+      "withPhotosShare": 0.35
+    },
+    "source": "server",
+    "engineVersion": "1.0.0",
+    "computedAt": "2026-06-01T00:00:00.000Z"
+  }
+}

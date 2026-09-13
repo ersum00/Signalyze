@@ -1,0 +1,24 @@
+# Local development only. Production uses deploy/docker-compose.yml.
+name: signalyze-dev
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: signalyze-dev-db
+    environment:
+      POSTGRES_USER: signalyze
+      POSTGRES_PASSWORD: signalyze
+      POSTGRES_DB: signalyze
+    ports:
+      - '127.0.0.1:5433:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./deploy/db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U signalyze -d signalyze']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  pgdata:

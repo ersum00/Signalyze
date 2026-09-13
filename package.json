@@ -1,0 +1,44 @@
+{
+  "name": "signalyze",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Review Profile for Google Maps businesses: a statistical summary of public review signals.",
+  "packageManager": "pnpm@10.15.1",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "lint": "eslint . && prettier --check .",
+    "lint:fix": "eslint . --fix && prettier --write .",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test",
+    "build": "pnpm -r --if-present build",
+    "build:zip": "pnpm --filter @signalyze/extension zip:store",
+    "check:forbidden-words": "node scripts/check-forbidden-words.mjs",
+    "check:dom-isolation": "node scripts/check-dom-isolation.mjs",
+    "icons": "node scripts/generate-icons.mjs",
+    "db:up": "docker compose up -d db",
+    "db:down": "docker compose down"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.0",
+    "@types/node": "^22.15.0",
+    "eslint": "^9.30.0",
+    "eslint-config-prettier": "^10.1.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "globals": "^16.2.0",
+    "pngjs": "^7.0.0",
+    "prettier": "^3.6.0",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.8.0",
+    "typescript-eslint": "^8.35.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+  },
+  "license": "MIT"
+}

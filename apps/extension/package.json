@@ -1,0 +1,36 @@
+{
+  "name": "@signalyze/extension",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Signalyze Chrome extension (Manifest V3).",
+  "scripts": {
+    "dev": "wxt",
+    "build": "wxt build",
+    "zip": "wxt zip",
+    "postinstall": "wxt prepare",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "zip:store": "node scripts/zip-store.mjs"
+  },
+  "dependencies": {
+    "@signalyze/shared": "workspace:*",
+    "@signalyze/signals": "workspace:*",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "recharts": "^2.15.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@wxt-dev/module-react": "^1.1.0",
+    "jsdom": "^26.1.0",
+    "playwright": "^1.63.0",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.8.0",
+    "vite": "^8.3.0",
+    "vitest": "^5.0.0",
+    "wxt": "^0.20.0"
+  }
+}

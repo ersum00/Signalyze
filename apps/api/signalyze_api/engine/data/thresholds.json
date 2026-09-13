@@ -1,0 +1,23 @@
+{
+  "$comment": "Calibration points for mapping a measured value onto 0..1 unusualness with a linear ramp: unusualness = clamp((value - low) / (high - low)). Each pair is explained in docs/METHODOLOGY.md. Shared byte-for-byte with the Python port (apps/api/signalyze_api/engine/data/).",
+  "version": "1.0.0",
+  "burst_ratio": { "excessLow": 0.05, "excessHigh": 0.65, "windowDays": 14 },
+  "rating_polarity": { "low": 0.82, "high": 0.96 },
+  "single_review_accounts": { "low": 0.3, "high": 0.75, "minKnown": 15 },
+  "no_photo_short_text": { "low": 0.6, "high": 0.95, "shortTextChars": 40 },
+  "text_similarity": {
+    "meanLow": 0.18,
+    "meanHigh": 0.45,
+    "pairShareLow": 0.02,
+    "pairShareHigh": 0.15,
+    "pairThreshold": 0.5,
+    "ngramSize": 3,
+    "minTextChars": 20,
+    "minEligible": 10
+  },
+  "template_phrases": { "low": 0.15, "high": 0.5, "coverageThreshold": 0.5, "minWithText": 10 },
+  "rating_text_mismatch": { "low": 0.1, "high": 0.35, "minScored": 10, "toneThreshold": 0.5 },
+  "date_entropy": { "low": 0.25, "high": 0.65, "minMonths": 3 },
+  "local_guide_ratio": { "establishedLevel": 3, "shareLow": 0.0, "shareHigh": 0.2 },
+  "owner_response_pattern": { "low": 0.6, "high": 0.95, "minResponded": 5 }
+}

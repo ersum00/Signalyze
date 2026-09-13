@@ -1,0 +1,77 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  policy:
+    name: Language policy and DOM isolation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/check-forbidden-words.mjs
+      - run: node scripts/check-dom-isolation.mjs
+
+  web:
+    name: TypeScript workspaces
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm --filter '!@signalyze/api' -r --if-present typecheck
+      - run: pnpm --filter '!@signalyze/api' -r --if-present test
+      - run: pnpm --filter @signalyze/landing build
+      - run: pnpm --filter @signalyze/extension build
+      - run: pnpm --filter @signalyze/extension zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: extension-zip
+          path: apps/extension/.output/*.zip
+          if-no-files-found: error
+
+  api:
+    name: Python API
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/api
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: signalyze
+          POSTGRES_PASSWORD: signalyze
+          POSTGRES_DB: signalyze
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U signalyze"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      TEST_DATABASE_URL: postgresql://signalyze:signalyze@127.0.0.1:5432/signalyze
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: '3.12'
+      - run: uv sync --frozen
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run mypy signalyze_api tests
+      - run: uv run pytest -q
