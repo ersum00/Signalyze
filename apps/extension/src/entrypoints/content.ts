@@ -55,11 +55,7 @@ function ignore(): void {
 }
 
 export default defineContentScript({
-  matches: [
-    'https://www.google.com/maps/*',
-    'https://www.google.*/maps/*',
-    'https://maps.google.*/*',
-  ],
+  matches: ['https://www.google.com/maps*', 'https://maps.google.com/*'],
   runAt: 'document_idle',
   main(ctx) {
     let settings: Settings = DEFAULT_SETTINGS;

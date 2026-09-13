@@ -339,12 +339,12 @@ The Review Profile (score, signals, charts, reviewer summary), the settings and 
 
 ### Host permission justification: Google Maps domains
 
-Applies to `https://www.google.com/maps/*`, `https://www.google.*/maps/*`, `https://maps.google.com/*`, `https://maps.google.*/*`.
+Applies to `https://www.google.com/maps*` and `https://maps.google.com/*`.
 
 Limit 1,000 characters · this text: 649 characters
 
 ```text
-Required to read the review panel of the Google Maps business page the user is viewing and to show the score badge under the business name. The content script is injected only on Google Maps URLs, never runs an analysis on its own, reads reviews only after the user clicks Analyze (it scrolls the review list at one step per 600 ms, up to 200 or 500 reviews), never opens reviewer profiles or any other page and adds nothing to the page except the badge. The country-code domains are needed because Google Maps is served from google.co.uk, google.de, google.com.tr and similar hosts as well as google.com; the same page structure is read everywhere.
+Required to read the review panel of the Google Maps business page the user is viewing and to show the score badge under the business name. The content script is injected only on Google Maps URLs, never runs an analysis on its own, reads reviews only after the user clicks Analyze (it scrolls the review list at one step per 600 ms, up to 200 or 500 reviews), never opens reviewer profiles or any other page and adds nothing to the page except the badge. Google Maps is served from google.com in every country (country domains redirect there), so these two hosts cover all users.
 ```
 
 ### Host permission justification: api.signalyze.veriskor.com
@@ -399,7 +399,7 @@ Website content: review text and public review metadata (star rating, calendar d
 ## 7. How to upload
 
 1. Run the checks: `pnpm lint && pnpm typecheck && pnpm test && pnpm check:forbidden-words && pnpm check:dom-isolation`.
-2. Build the store package: `pnpm build:zip` → `apps/extension/.output/signalyze-0.1.0-chrome.zip` (built without the dev `key`; the Store assigns the id).
+2. Build the store package: `pnpm build:zip`, then `pnpm --filter @signalyze/extension install:test` (installs the build into a real Chromium, the same check the Store runs) → `apps/extension/.output/signalyze-0.1.0-chrome.zip` (built without the dev `key`; the Store assigns the id).
 3. Developer Dashboard → **New item** → upload that zip.
 4. **Store listing** tab: fill Item name, Summary, Description, Category, Language, Official URL, Support URL from section 1; upload `store/assets/icon-128.png`, the five screenshots in order and both promo tiles.
 5. **Add localized listing** for Turkish, German and Spanish from sections 2 to 4 (the manifest already ships `_locales` for the four languages, so the extension name in Chrome follows the browser language).

@@ -60,13 +60,13 @@ Free and open about how it works: https://signalyze.veriskor.com/methodology
 
 ## Permission justifications
 
-| Permission                                                                                      | Justification text for the dashboard                                                                                                                                                                                                       |
-| ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Host: `https://www.google.com/maps/*`, `https://www.google.*/maps/*`, `https://maps.google.*/*` | Required to read the review panel of the Google Maps business page the user is viewing and to show the score badge next to the business name. The content script runs only on Maps place pages and only acts when the user clicks Analyze. |
-| Host: `https://api.signalyze.veriskor.com/*`                                                    | Required to send the stripped-down review data (ratings, dates, texts, public reviewer counts, photo counts; no identifiers) to the Signalyze API, which computes and caches the profile.                                                  |
-| `storage`                                                                                       | Stores the user's settings (language, badge on/off, data-sending consent) and a local cache of profiles already viewed.                                                                                                                    |
-| `activeTab`                                                                                     | Lets the side panel know which Google Maps tab is active when the user opens it from the toolbar icon.                                                                                                                                     |
-| `sidePanel`                                                                                     | The Review Profile is shown in Chrome's side panel next to the map so the page itself is not modified beyond a small badge.                                                                                                                |
+| Permission                                                        | Justification text for the dashboard                                                                                                                                                                                                       |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Host: `https://www.google.com/maps*`, `https://maps.google.com/*` | Required to read the review panel of the Google Maps business page the user is viewing and to show the score badge next to the business name. The content script runs only on Maps place pages and only acts when the user clicks Analyze. |
+| Host: `https://api.signalyze.veriskor.com/*`                      | Required to send the stripped-down review data (ratings, dates, texts, public reviewer counts, photo counts; no identifiers) to the Signalyze API, which computes and caches the profile.                                                  |
+| `storage`                                                         | Stores the user's settings (language, badge on/off, data-sending consent) and a local cache of profiles already viewed.                                                                                                                    |
+| `activeTab`                                                       | Lets the side panel know which Google Maps tab is active when the user opens it from the toolbar icon.                                                                                                                                     |
+| `sidePanel`                                                       | The Review Profile is shown in Chrome's side panel next to the map so the page itself is not modified beyond a small badge.                                                                                                                |
 
 Remote code: **none**. All logic ships in the package; the API returns JSON data only.
 
@@ -97,7 +97,7 @@ score shown must be a real computed value, never an edited one.
 ## Release checklist
 
 - [ ] `pnpm lint && pnpm typecheck && pnpm test && pnpm check:forbidden-words && pnpm check:dom-isolation`
-- [ ] `pnpm build:zip` → `apps/extension/.output/signalyze-<version>-chrome.zip` (built without the dev `key`; the Store assigns the id)
+- [ ] `pnpm build:zip` → `apps/extension/.output/signalyze-<version>-chrome.zip` (built without the dev `key`; the Store assigns the id), then `pnpm --filter @signalyze/extension install:test`
 - [ ] Version bumped in `apps/extension/package.json`, entry added to `CHANGELOG.md`
 - [ ] Privacy page live and identical to `docs/PRIVACY.md`
 - [ ] After the first upload: copy the Store public key into `apps/extension/extension-key.json`, add the Store id to `EXTENSION_IDS` on the server, redeploy the API

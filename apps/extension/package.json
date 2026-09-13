@@ -12,7 +12,8 @@
     "typecheck": "tsc -p tsconfig.json",
     "test": "vitest run",
     "zip:store": "node scripts/zip-store.mjs",
-    "store:assets": "node store/capture.mjs"
+    "store:assets": "node store/capture.mjs",
+    "install:test": "node scripts/install-test.mjs"
   },
   "dependencies": {
     "@signalyze/shared": "workspace:*",

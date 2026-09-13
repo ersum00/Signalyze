@@ -28,10 +28,12 @@ export default defineConfig({
     ...(includeKey ? { key: extensionKey.publicKey } : {}),
     permissions: ['storage', 'activeTab', 'sidePanel'],
     host_permissions: [
-      'https://www.google.com/maps/*',
-      'https://www.google.*/maps/*',
+      // Google Maps is served from google.com only; country domains redirect
+      // there. "/maps*" also covers "/maps?q=..." (match patterns ignore the
+      // query, so "/maps/*" would miss it). Host wildcards after the name are
+      // not valid match patterns and make the package uninstallable.
+      'https://www.google.com/maps*',
       'https://maps.google.com/*',
-      'https://maps.google.*/*',
       'https://api.signalyze.veriskor.com/*',
     ],
     action: {
