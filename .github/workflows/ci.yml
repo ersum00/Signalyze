@@ -37,12 +37,13 @@ jobs:
       - run: pnpm --filter '!@signalyze/api' -r --if-present test
       - run: pnpm --filter @signalyze/landing build
       - run: pnpm --filter @signalyze/extension build
-      - run: pnpm --filter @signalyze/extension zip
+      - run: pnpm --filter @signalyze/extension zip:store
       - uses: actions/upload-artifact@v4
         with:
           name: extension-zip
           path: apps/extension/.output/*.zip
           if-no-files-found: error
+          include-hidden-files: true
 
   api:
     name: Python API
