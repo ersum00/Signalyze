@@ -6,7 +6,7 @@ import {
   detectLanguage,
   normalizeText,
   tokenize,
-  type EngineLanguage,
+  type DetectedLanguage,
 } from './text';
 
 /** A review plus the derived fields every signal needs. Computed once. */
@@ -17,22 +17,22 @@ export interface PreparedReview {
   normalizedText: string;
   textLength: number;
   tokens: string[];
-  language: EngineLanguage;
+  /** Dictionary language of the text, or 'other' when no dictionary applies. */
+  language: DetectedLanguage;
   normalizedOwnerResponse: string | null;
 }
 
 export function prepareReviews(reviews: readonly Review[]): PreparedReview[] {
   return reviews.map((review) => {
     const normalizedText = normalizeText(review.text);
-    const tokens = tokenize(normalizedText);
     return {
       review,
       day: dayNumber(review.date),
       month: monthKey(review.date),
       normalizedText,
       textLength: codePointLength(review.text.trim()),
-      tokens,
-      language: detectLanguage(tokens),
+      tokens: tokenize(normalizedText),
+      language: detectLanguage(normalizedText),
       normalizedOwnerResponse:
         review.ownerResponse !== null && review.ownerResponse.trim() !== ''
           ? normalizeText(review.ownerResponse)

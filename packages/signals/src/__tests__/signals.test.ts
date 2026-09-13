@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { Review, SignalId } from '@signalyze/shared';
 import { AnalysisResultSchema, MIN_REVIEWS_FOR_SCORE, SIGNAL_IDS } from '@signalyze/shared';
 import { analyze, computeSignals } from '../index';
-import { DATASETS, normalDataset, rng, randomHash } from '../testing/synthetic';
+import { DATASETS, MULTILINGUAL_POOLS, normalDataset, rng, randomHash } from '../testing/synthetic';
 
 const NOW = new Date('2026-06-01T00:00:00Z');
 
@@ -186,6 +186,18 @@ describe('text_similarity and template_phrases', () => {
     expect(tpl.available).toBe(true);
     expect(tpl.value).toBeGreaterThan(0.2);
   });
+
+  it('recognise the stock texts of every language pool as phrase-based', () => {
+    for (const pool of MULTILINGUAL_POOLS) {
+      const reviews: Review[] = Array.from({ length: 10 }, (_, i) => ({
+        ...normalDataset({ count: 1, seed: i })[0]!,
+        text: pool.stock[i % pool.stock.length]!,
+      }));
+      const tpl = signal(reviews, 'template_phrases');
+      expect(tpl.available).toBe(true);
+      expect(tpl.value, pool.detected).toBe(pool.detected === 'other' ? 0 : 1);
+    }
+  });
 });
 
 describe('rating_text_mismatch', () => {
@@ -200,6 +212,37 @@ describe('rating_text_mismatch', () => {
     expect(s.available).toBe(true);
     expect(s.value).toBeGreaterThan(0.25);
     expect(s.unusualness).toBe(1);
+  });
+
+  it('scores the natural texts of every language pool with the expected tone', () => {
+    for (const pool of MULTILINGUAL_POOLS) {
+      if (pool.detected === 'other') continue;
+      const reviews: Review[] = [
+        ...pool.positive.map((text) => ({
+          ...normalDataset({ count: 1, seed: 1 })[0]!,
+          rating: 1 as const,
+          text,
+        })),
+        ...pool.negative.map((text) => ({
+          ...normalDataset({ count: 1, seed: 2 })[0]!,
+          rating: 5 as const,
+          text,
+        })),
+      ];
+      // 10 scored reviews are needed: repeat the pool.
+      const repeated = [...reviews, ...reviews, ...reviews];
+      const s = signal(repeated, 'rating_text_mismatch');
+      expect(s.available, pool.detected).toBe(true);
+      expect(s.details.scored, pool.detected).toBe(repeated.length);
+      expect(s.value, pool.detected).toBe(1);
+    }
+  });
+
+  it('is available on the multilingual dataset and counts the injected mismatches', () => {
+    const s = signal(DATASETS.multilingual({ count: 95, seed: 6 }), 'rating_text_mismatch');
+    expect(s.available).toBe(true);
+    expect(s.details.scored).toBeGreaterThan(60);
+    expect(s.value).toBeGreaterThan(0.03);
   });
 });
 

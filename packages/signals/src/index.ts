@@ -47,6 +47,16 @@ export function analyze(reviews: readonly Review[], options: AnalyzeOptions): An
 }
 
 export { computeScore, WEIGHTS } from './score';
-export { normalizeText, charNgrams, jaccard, detectLanguage, tokenize } from './text';
+export {
+  normalizeText,
+  charNgrams,
+  jaccard,
+  detectLanguage,
+  tokenize,
+  ENGINE_LANGUAGES,
+  LANGUAGE_TABLE,
+  MATCH_MODE,
+} from './text';
+export type { DetectedLanguage, EngineLanguage, LanguageEntry, MatchMode, Script } from './text';
 export { toneOf } from './signals/rating-text-mismatch';
 export type { PreparedReview } from './prepare';

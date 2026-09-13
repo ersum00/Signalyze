@@ -106,7 +106,7 @@ export function analysisResult(overrides: Partial<AnalysisResult> = {}): Analysi
       withPhotosShare: 0.3,
     },
     source: 'offline',
-    engineVersion: '1.0.0',
+    engineVersion: '1.1.0',
     computedAt: '2026-09-12T10:00:00.000Z',
     ...overrides,
   };

@@ -1,6 +1,6 @@
 # Methodology
 
-_Engine version 1.0.0. This document is the single source of truth for how each signal and the Signalyze Score are computed. The landing page `/methodology` is generated from it, and the code in `packages/signals` (TypeScript) and `apps/api/signalyze_api/engine` (Python) implements exactly what is written here; both implementations are held to the same test fixtures._
+_Engine version 1.1.0. This document is the single source of truth for how each signal and the Signalyze Score are computed. The landing page `/methodology` is generated from it, and the code in `packages/signals` (TypeScript) and `apps/api/signalyze_api/engine` (Python) implements exactly what is written here; both implementations are held to the same test fixtures._
 
 Signalyze computes ten deterministic signals from the reviews visible on a Google Maps business page. Every signal is a number between 0 and 1 that expresses how unusual the measured value is compared with what typical reviewed places look like; 0 means "unremarkable", 1 means "as unusual as we ever see". The Signalyze Score (0-100) is a weighted combination of the signals that could be computed. No language model is involved and nothing is inferred about intent: each signal is a fact about the distribution of public data that anyone can recompute from the same page.
 
@@ -16,7 +16,7 @@ The extension loads up to 200 reviews (500 with "Load more") in Google's default
 
 - **Dates** are parsed from relative labels ("2 weeks ago") in the browser and rounded to a calendar day. Month subtraction is calendar-based, so "3 months ago" on 31 May is 28 or 29 February.
 - **Text normalisation**: Unicode NFKC, lower-case, every character that is not a letter, digit or whitespace becomes a space, whitespace collapsed, trimmed. Lengths are counted in Unicode code points.
-- **Language of a text** is guessed from small stopword lists for English, Turkish, German and Spanish (most hits wins, ties resolve to English). It only selects which phrase dictionary and tone lexicon apply.
+- **Language of a text** is decided in two steps. The script of its letters comes first: any kana makes it Japanese, any Hangul Korean, any Han character (without kana) Chinese, any Arabic letter Arabic. Cyrillic texts then vote between Russian and Ukrainian, and Latin-script texts vote among English, Spanish, Portuguese, French, German, Italian, Turkish, Dutch, Polish, Indonesian, Vietnamese and Swedish, using small stopword lists (most hits wins; ties resolve in that order, and a text without any stopword hit is Russian or English respectively). Texts in other scripts (Thai, Devanagari, Greek, Hebrew, ...) get no dictionary. The language only selects which phrase dictionary and tone lexicon apply; it is never reported.
 - Reviews are processed in a fixed order, sums are accumulated in that order, and every reported number is rounded half-up to six decimals, so the TypeScript and Python implementations produce identical output.
 
 ## From a measurement to "unusualness"
@@ -27,7 +27,7 @@ Every signal produces a raw measurement (mostly a share between 0 and 1) and map
 unusualness = clamp((value - low) / (high - low), 0, 1)
 ```
 
-`low` is the level at which the signal starts to count (typical places sit at or below it), `high` is the level at which it counts fully. The calibration points live in `packages/signals/data/thresholds.json` and are listed per signal below. They are engine version 1.0.0 estimates chosen from the shape of public Google Maps review data and from synthetic datasets; they will be revised with new engine versions and every revision is recorded in the changelog.
+`low` is the level at which the signal starts to count (typical places sit at or below it), `high` is the level at which it counts fully. The calibration points live in `packages/signals/data/thresholds.json` and are listed per signal below. They are engine version 1.1.0 estimates chosen from the shape of public Google Maps review data and from synthetic datasets; they will be revised with new engine versions and every revision is recorded in the changelog.
 
 ## The signals
 
@@ -85,7 +85,7 @@ unusualness = clamp((value - low) / (high - low), 0, 1)
 
 **Measures:** the share of reviews whose text consists mostly of stock phrases.
 
-**How:** per language, a dictionary of common stock phrases ("highly recommend", "kesinlikle tavsiye ederim", "sehr zu empfehlen", "muy recomendable", ...) is matched on the normalised text with word boundaries. A review is phrase-based when the matched phrases cover at least 50% of its characters. `share = phraseBased / withText`. Requires at least 10 reviews with text. The three most frequent phrases are reported.
+**How:** per language, a dictionary of common stock phrases ("highly recommend", "kesinlikle tavsiye ederim", "sehr zu empfehlen", "muy recomendable", "je recommande", "また来たい", "强烈推荐", ...) is matched on the normalised text with word boundaries; for Japanese and Chinese, which are written without spaces, phrases are matched as plain substrings. A review is phrase-based when the matched phrases cover at least 50% of its characters. `share = phraseBased / withText`. Requires at least 10 reviews with text. Texts whose language has no dictionary count in `withText` but are never phrase-based. The three most frequent phrases are reported.
 
 **Ramp:** 0.15 to 0.50.
 
@@ -95,7 +95,7 @@ unusualness = clamp((value - low) / (high - low), 0, 1)
 
 **Measures:** how often the tone of the text disagrees with the star rating.
 
-**How:** per language, a small lexicon of positive and negative words gives `tone = (positive - negative) / (positive + negative)` over the tokens of a review; reviews with no lexicon hit are not scored. A mismatch is a rating of 4 or 5 with tone ≤ -0.5, or a rating of 1 or 2 with tone ≥ 0.5. `share = mismatches / scored`. Requires at least 10 scored reviews.
+**How:** per language, a small lexicon of positive and negative words gives `tone = (positive - negative) / (positive + negative)` over the tokens of a review. For Japanese and Chinese the lexicon entries are matched as substrings of the normalised text, longest entries first, each entry counted once and removed before shorter entries are tried, so a negated form such as 不好吃 in the negative list is not also counted as 好吃. Reviews with no lexicon hit, and texts whose language has no dictionary, are not scored. A mismatch is a rating of 4 or 5 with tone ≤ -0.5, or a rating of 1 or 2 with tone ≥ 0.5. `share = mismatches / scored`. Requires at least 10 scored reviews.
 
 **Ramp:** 0.10 to 0.35. The lexicon does not handle negation or sarcasm, so a baseline of mismatches is expected and does not count.
 
@@ -137,7 +137,7 @@ unusualness = clamp((value - low) / (high - low), 0, 1)
 score = round( 100 × Σ (w_i × u_i) / Σ w_i )   over available signals i
 ```
 
-Weights (`packages/signals/src/weights.json`, version 1.0.0):
+Weights (`packages/signals/src/weights.json`, version 1.1.0):
 
 | Signal                 | Weight |
 | ---------------------- | ------ |
@@ -158,24 +158,25 @@ Weights are renormalised over the signals that are available for the place, so a
 
 ## What the synthetic datasets look like
 
-The engine ships with seeded synthetic datasets used in tests and as cross-implementation fixtures (`packages/signals/fixtures/`). Their scores at engine 1.0.0, for orientation:
+The engine ships with seeded synthetic datasets used in tests and as cross-implementation fixtures (`packages/signals/fixtures/`). Their scores at engine 1.1.0, for orientation:
 
-| Dataset   | Description                                                                          | Score                            |
-| --------- | ------------------------------------------------------------------------------------ | -------------------------------- |
-| normal    | steady flow over three years, mixed ratings, natural texts                           | 1-3                              |
-| polarized | mostly 5- and 1-star ratings                                                         | 7-12                             |
-| burst     | 60% of reviews within one 14-day window, mostly single-review accounts               | 24                               |
-| template  | stock-phrase texts, near-duplicates, single-review accounts, identical owner replies | 43-53                            |
-| sparse    | ratings only, no text or reviewer data                                               | 20 (only four signals available) |
+| Dataset      | Description                                                                          | Score                            |
+| ------------ | ------------------------------------------------------------------------------------ | -------------------------------- |
+| normal       | steady flow over three years, mixed ratings, natural texts                           | 1-3                              |
+| polarized    | mostly 5- and 1-star ratings                                                         | 7-12                             |
+| burst        | 60% of reviews within one 14-day window, mostly single-review accounts               | 24                               |
+| template     | stock-phrase texts, near-duplicates, single-review accounts, identical owner replies | 43-53                            |
+| sparse       | ratings only, no text or reviewer data                                               | 21 (only four signals available) |
+| multilingual | natural and stock-phrase texts in all 18 covered languages plus Thai, Hindi, Greek   | 4                                |
 
 ## Limitations
 
 - The sample is Google's "Most relevant" ordering, not the full history.
 - Relative dates limit precision to roughly a day for recent reviews and a month or a year for old ones.
-- Lexicons and phrase dictionaries cover English, Turkish, German and Spanish; texts in other languages contribute to timing, rating and reviewer signals but not to the text signals.
+- Lexicons and phrase dictionaries cover 18 languages: English, Spanish, Portuguese, French, German, Italian, Turkish, Dutch, Polish, Indonesian, Vietnamese, Swedish, Russian, Ukrainian, Arabic, Japanese, Chinese and Korean. Texts in other languages contribute to timing, rating and reviewer signals but not to the text signals (a Latin-script text in an uncovered language falls back to the English dictionaries, which rarely match it). The dictionaries are small and match surface forms only, with no stemming, negation handling or sarcasm detection, so heavily inflected languages get fewer hits per text.
 - Local Guide levels are often not shown in the review list; the signal is then unavailable rather than guessed.
-- The calibration points are version 1.0.0 estimates. Changing any of them is an engine version bump, recorded in the changelog, and the server cache is keyed by engine version.
+- The calibration points are version 1.1.0 estimates. Changing any of them is an engine version bump, recorded in the changelog, and the server cache is keyed by engine version.
 
 ## Optional language model (off by default)
 
-Engine 1.0.0 includes an optional server-side step that can be enabled by the operator: when `text_similarity` is already high, up to 30 texts (no reviewer data) are sent to an OpenAI-compatible endpoint that returns one number, a 0-1 "writing homogeneity" estimate, reported in the `text_similarity` details as `llmHomogeneity`. It never labels individual reviews and never changes the score in this version. It is disabled unless both `LLM_BASE_URL` and `LLM_API_KEY` are configured; the public Signalyze API currently runs with it disabled.
+Engine 1.1.0 includes an optional server-side step that can be enabled by the operator: when `text_similarity` is already high, up to 30 texts (no reviewer data) are sent to an OpenAI-compatible endpoint that returns one number, a 0-1 "writing homogeneity" estimate, reported in the `text_similarity` details as `llmHomogeneity`. It never labels individual reviews and never changes the score in this version. It is disabled unless both `LLM_BASE_URL` and `LLM_API_KEY` are configured; the public Signalyze API currently runs with it disabled.

@@ -15,4 +15,8 @@ Initial feature set.
 - Signalyze API (FastAPI) that computes and caches profiles per place for 7 days, stores no review text and never contacts Google.
 - Interface languages: English, Turkish, German and Spanish.
 - Landing site with methodology, privacy and changelog pages generated from the repository documents.
+- Google Maps adapter reads dates, the Reviews tab, owner responses and number formats in 30 interface languages, with structural fallbacks.
+- Landing site in English, Turkish, German and Spanish, with translated privacy and methodology pages.
+- Chrome Web Store kit: listing texts in four languages, icon, five screenshots and promo tiles (apps/extension/store).
 - Language policy enforced in CI: user-facing text describes measurable patterns only.
+- Signal engine 1.1.0: text signals cover 18 languages (English, Spanish, Portuguese, French, German, Italian, Turkish, Dutch, Polish, Indonesian, Vietnamese, Swedish, Russian, Ukrainian, Arabic, Japanese, Chinese, Korean) with script-based language detection and substring matching for Japanese and Chinese; cached profiles computed by engine 1.0.0 are recomputed.

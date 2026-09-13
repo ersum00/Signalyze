@@ -7,6 +7,7 @@ import datetime as dt
 import pytest
 
 from signalyze_api.engine import ENGINE_VERSION, analyze, compute_score, to_js_iso
+from signalyze_api.engine.data_files import LANGUAGE_CODES
 from signalyze_api.engine.mathutil import (
     add_months,
     clamp01,
@@ -20,12 +21,16 @@ from signalyze_api.engine.mathutil import (
     round6,
     round_half_up,
 )
+from signalyze_api.engine.signals.rating_text_mismatch import tone_of
 from signalyze_api.engine.text import (
+    ENGINE_LANGUAGES,
+    MATCH_MODE,
     char_ngrams,
     contains_phrase,
     detect_language,
     jaccard,
     js_trim,
+    matches_phrase,
     normalize_text,
     tokenize,
     utf16_length,
@@ -91,20 +96,70 @@ def test_normalize_text_matches_reference_rules() -> None:
     assert normalize_text("!!!") == ""
     assert normalize_text("") == ""
     assert normalize_text("emoji \U0001f600 here") == "emoji here"
+    assert (
+        normalize_text("とても美味しかったです。また来たい！")
+        == "とても美味しかったです また来たい"
+    )
+    assert normalize_text("服务很好，菜很好吃。") == "服务很好 菜很好吃"
 
 
-def test_tokenize_language_and_ngrams() -> None:
+def test_tokenize_and_ngrams() -> None:
     assert tokenize("") == []
     assert tokenize("a b") == ["a", "b"]
-    assert detect_language([]) == "en"
-    assert detect_language(["the", "and"]) == "en"
-    assert detect_language(["ve", "bir", "çok"]) == "tr"
-    assert detect_language(["und", "der"]) == "de"
-    assert detect_language(["y", "el", "muy"]) == "es"
-    assert detect_language(["the", "ve"]) == "en"
     assert char_ngrams("abcd", 3) == {"abc", "bcd"}
     assert char_ngrams("ab", 3) == set()
     assert char_ngrams("a b", 3) == {"a b"}
+
+
+def test_language_table_matches_data_file() -> None:
+    assert LANGUAGE_CODES == ENGINE_LANGUAGES
+    assert len(ENGINE_LANGUAGES) == 18
+    assert [lang for lang in ENGINE_LANGUAGES if MATCH_MODE[lang] == "substring"] == ["ja", "zh"]
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("The staff was very kind and the food was great", "en"),
+        ("La comida es muy buena y el trato es genial", "es"),
+        ("O atendimento foi excelente e a comida é muito boa", "pt"),
+        ("Le service est rapide et le personnel est très sympathique", "fr"),
+        ("Wir waren sehr zufrieden und kommen gerne wieder", "de"),
+        ("Il personale è gentile e il cibo è ottimo", "it"),
+        ("Bu yer çok güzel ve personel çok ilgili", "tr"),
+        ("Het eten was heerlijk en de bediening was erg vriendelijk", "nl"),
+        ("Jedzenie było pyszne i obsługa bardzo miła", "pl"),
+        ("Makanannya enak dan pelayanannya sangat ramah", "id"),
+        ("Đồ ăn rất ngon và nhân viên rất nhiệt tình", "vi"),
+        ("Maten var god och personalen var mycket trevlig", "sv"),
+        ("Очень вкусно и приветливый персонал, рекомендую", "ru"),
+        ("Дуже смачно і привітний персонал, рекомендую", "uk"),
+        ("Вкусно", "ru"),
+        ("الأكل لذيذ والخدمة ممتازة", "ar"),
+        ("料理がとても美味しかったです", "ja"),
+        ("ラーメン最高", "ja"),
+        ("服务很好，菜很好吃", "zh"),
+        ("음식이 맛있고 직원분들이 친절해요", "ko"),
+        ("Отличное место, Starbucks рядом", "ru"),
+        ("服务很好 Starbucks", "zh"),
+        ("Lorem ipsum dolor sit amet", "en"),
+        ("12 34", "other"),
+        ("", "other"),
+        ("อาหารอร่อยมาก พนักงานบริการดี", "other"),
+        ("खाना बहुत स्वादिष्ट था", "other"),
+        ("Το φαγητό ήταν υπέροχο", "other"),
+        ("האוכל היה מצוין", "other"),
+        ("Το φαγητό ήταν υπέροχο, ok", "other"),
+    ],
+)
+def test_detect_language(text: str, expected: str) -> None:
+    assert detect_language(normalize_text(text)) == expected
+
+
+def test_detect_language_tie_order() -> None:
+    # "de" is a stopword of es, pt, fr, nl and tr: the earliest Latin language wins the tie.
+    assert detect_language("de") == "es"
+    assert detect_language("в на") == "ru"
 
 
 def test_jaccard_and_phrase_matching() -> None:
@@ -115,6 +170,22 @@ def test_jaccard_and_phrase_matching() -> None:
     assert contains_phrase("highly recommend this", "highly recommend")
     assert not contains_phrase("highly recommended", "highly recommend")
     assert contains_phrase("great food", "great food")
+    assert not matches_phrase("highly recommended", "highly recommend", "word")
+    assert matches_phrase("highly recommended", "highly recommend", "substring")
+    assert matches_phrase("とても美味しかったです", "美味しかったです", "substring")
+    assert not matches_phrase("とても美味しかったです", "美味しかったです", "word")
+
+
+def test_tone_of_word_and_substring_modes() -> None:
+    en = normalize_text("Great food but slow service")
+    assert tone_of(en, tokenize(en), "en") == 0.0
+    assert tone_of(en, tokenize(en), "other") is None
+    assert tone_of("很好吃", [], "zh") == 1.0
+    assert tone_of("不好吃", [], "zh") == -1.0
+    assert tone_of("菜不好吃 但是服务很好吃", [], "zh") == 0.0
+    assert tone_of("親切でした", [], "ja") == 1.0
+    assert tone_of("不親切でした", [], "ja") == -1.0
+    assert tone_of("今日は雨", [], "ja") is None
 
 
 def test_js_trim_and_utf16_length() -> None:
@@ -139,7 +210,7 @@ def test_compute_score_and_insufficient_data() -> None:
     assert result.score is None
     assert result.signals == []
     assert result.source == "offline"
-    assert result.engineVersion == ENGINE_VERSION == "1.0.0"
+    assert result.engineVersion == ENGINE_VERSION == "1.1.0"
     assert result.computedAt == "2026-06-01T00:00:00.000Z"
     sufficient = analyze([*reviews, *reviews], "0xa:0xb", "server")
     assert sufficient.status == "ok"

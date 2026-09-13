@@ -1,0 +1,1325 @@
+{
+  "name": "multilingual",
+  "seed": 108,
+  "now": "2026-06-01T00:00:00.000Z",
+  "placeId": "0xfixture:0xmultilingual",
+  "reviews": [
+    {
+      "reviewerHash": "e451c464bfe513688d91b3f0aa636ed3a25225cb40fd3853d830a02eafcad8a3",
+      "rating": 5,
+      "date": "2025-02-17",
+      "text": "Cozy little place, the soup of the day was excellent and the prices are fair.",
+      "reviewerReviewCount": 17,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you, please ask for the seasonal menu next time.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "0fabd613835741ef2b1095825a0b87f5d7a3854df9552e115a58e15c7deb3ca8",
+      "rating": 4,
+      "date": "2024-12-12",
+      "text": "Çorba çok lezzetli ve garson çok ilgili, fiyatlar da uygun.",
+      "reviewerReviewCount": 48,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "e6edc41e06b4454dfaa9147328bc2ebb5c494961193ea0b4eb82769106ab15c3",
+      "rating": 5,
+      "date": "2025-12-23",
+      "text": "Das Essen war sehr lecker und die Bedienung war aufmerksam und freundlich.",
+      "reviewerReviewCount": 6,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "de"
+    },
+    {
+      "reviewerHash": "17d4094271186076d74ac2521ee8c25ca4a5f0a61f066c5ea5856a0f350a126f",
+      "rating": 5,
+      "date": "2026-05-29",
+      "text": "Mesas sucias y servicio lento, una decepción.",
+      "reviewerReviewCount": 7,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "es"
+    },
+    {
+      "reviewerHash": "1e42930c32dfb30ed27ea40853dd3f9601acf2510c4914a456ee846ef9df4895",
+      "rating": 1,
+      "date": "2025-06-10",
+      "text": "Tables sales et service lent, une soirée décevante.",
+      "reviewerReviewCount": 38,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "fr"
+    },
+    {
+      "reviewerHash": "adf73a154bdc5b1402036f34e121c36d57e4fff0758b48264250b176847947f2",
+      "rating": 5,
+      "date": "2024-04-28",
+      "text": "Il pollo era freddo e il cameriere era scortese, mai più.",
+      "reviewerReviewCount": 53,
+      "photoCount": 2,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "it"
+    },
+    {
+      "reviewerHash": "810a041e240f13ec3fefd0f6d0fae9de462692efcce8076a3f8de1270346fd1e",
+      "rating": 5,
+      "date": "2026-02-04",
+      "text": "A comida é muito boa e o atendimento foi excelente, voltaremos.",
+      "reviewerReviewCount": 47,
+      "photoCount": 3,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "pt"
+    },
+    {
+      "reviewerHash": "e7f5cf0e872b795d2a15e96de84d80dbe80aaf364fe93e561b18141b52f03e7e",
+      "rating": 2,
+      "date": "2025-12-31",
+      "text": "De kip was koud en de ober was onbeschoft, nooit meer.",
+      "reviewerReviewCount": 29,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "nl"
+    },
+    {
+      "reviewerHash": "2e69a731cd2851a23e37bebc9955b38f8cc255e0c51da2b2691ce56216671ade",
+      "rating": 5,
+      "date": "2024-10-13",
+      "text": "Wszystko super i świetne miejsce, na pewno wrócę.",
+      "reviewerReviewCount": 59,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "pl"
+    },
+    {
+      "reviewerHash": "2b5c76af496281b5bb009cf353577520580e36cc553c2b24ecef1955468ff853",
+      "rating": 3,
+      "date": "2026-05-24",
+      "text": "Всё было вкусно, обязательно вернёмся, спасибо большое.",
+      "reviewerReviewCount": 46,
+      "photoCount": 3,
+      "localGuideLevel": 7,
+      "ownerResponse": null,
+      "language": "ru"
+    },
+    {
+      "reviewerHash": "c24e81b6462a457d9e785b82195de43ec6f9117cf3835b3a4ac92219ca2a41f2",
+      "rating": 4,
+      "date": "2025-05-21",
+      "text": "Їжа була дуже смачна і офіціант був уважний, ціни приємні.",
+      "reviewerReviewCount": 49,
+      "photoCount": 2,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "uk"
+    },
+    {
+      "reviewerHash": "272879eb2230adf4fbd811c78a8ddd97bc735ed03202c695aa06179bef5b9865",
+      "rating": 1,
+      "date": "2025-02-21",
+      "text": "الطاولات متسخة والخدمة بطيئة جدا، تجربة سيئة.",
+      "reviewerReviewCount": 5,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "ar"
+    },
+    {
+      "reviewerHash": "3893d200f93ba0044cd8f0fad32afcb80848c67bd1ade3cf62e0b700b4618738",
+      "rating": 4,
+      "date": "2024-09-09",
+      "text": "料理はとても美味しくて、店員さんの対応も丁寧でした。",
+      "reviewerReviewCount": 14,
+      "photoCount": 0,
+      "localGuideLevel": 3,
+      "ownerResponse": "Thank you, please ask for the seasonal menu next time.",
+      "language": "ja"
+    },
+    {
+      "reviewerHash": "b213bb127cc0f9cacd1e1a14c8c39ac74d461334c8afb1535b14b438229421ce",
+      "rating": 2,
+      "date": "2026-01-01",
+      "text": "鸡肉是凉的，服务员态度差，再也不来了。",
+      "reviewerReviewCount": 40,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "zh"
+    },
+    {
+      "reviewerHash": "e633b3c661886c234510461c258a6582d53a50d4c0be3c9a6de5bcd0ec8ff953",
+      "rating": 5,
+      "date": "2024-08-07",
+      "text": "테이블이 더럽고 음식이 너무 느려요, 실망했어요.",
+      "reviewerReviewCount": 19,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "ko"
+    },
+    {
+      "reviewerHash": "9dc43e774f2840888b3987f65d1c565effa3b35cc3ccba2eedc4dca1937fe046",
+      "rating": 2,
+      "date": "2024-04-13",
+      "text": "Ayamnya dingin dan pelayannya kasar, kapok saya.",
+      "reviewerReviewCount": 60,
+      "photoCount": 0,
+      "localGuideLevel": 1,
+      "ownerResponse": null,
+      "language": "id"
+    },
+    {
+      "reviewerHash": "99c245ac31a6275489f6314f3eee337e12b6a725ec18964e4717390c2f49c333",
+      "rating": 5,
+      "date": "2024-11-17",
+      "text": "Không gian yên tĩnh và sạch sẽ, cà phê cũng rất thơm.",
+      "reviewerReviewCount": 4,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "vi"
+    },
+    {
+      "reviewerHash": "43972a164bd2f2af836c8899ea1ff40ccca285d6629c22cc140556dbe0541ce3",
+      "rating": 2,
+      "date": "2025-01-17",
+      "text": "Smutsiga bord och långsam service, mycket besviken.",
+      "reviewerReviewCount": 15,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "sv"
+    },
+    {
+      "reviewerHash": "ab86a8eae59c29dfcb03288897414ab22bb896f5c706c31610dd091c5a7b939a",
+      "rating": 5,
+      "date": "2025-06-04",
+      "text": "อาหารอร่อยมาก พนักงานบริการดี",
+      "reviewerReviewCount": 33,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "6a9ec8a1eb7e3937456695e6d6b331de39dba341c5c8be6a52c578d91cd8ea68",
+      "rating": 5,
+      "date": "2024-11-30",
+      "text": "The chicken was cold and the waiter was rude, never again.",
+      "reviewerReviewCount": 27,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "2f8bcb01e9a5cf8b7c67f8ed79366085036b5c3f5227bafd182ae19cb7c07548",
+      "rating": 2,
+      "date": "2025-09-06",
+      "text": "Masalar kirli ve servis çok yavaş, hayal kırıklığı.",
+      "reviewerReviewCount": 56,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": "We appreciate the feedback, we will pass this on to the kitchen.",
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "10696bb8e54cfa5ac0a02c4f5b494fcf6cfcf52aea108d46b8ae6dc5d80c7dc7",
+      "rating": 1,
+      "date": "2025-12-19",
+      "text": "Das Schnitzel war kalt und der Kellner war unfreundlich, nie wieder.",
+      "reviewerReviewCount": 57,
+      "photoCount": 0,
+      "localGuideLevel": 6,
+      "ownerResponse": null,
+      "language": "de"
+    },
+    {
+      "reviewerHash": "10997e7e74dd5c1ea345c82f88e8e1b6beb783b2233396ef6e6a8a0be36574cc",
+      "rating": 4,
+      "date": "2024-03-07",
+      "text": "Todo perfecto, muy buen servicio, sin duda volveré.",
+      "reviewerReviewCount": 24,
+      "photoCount": 2,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "es"
+    },
+    {
+      "reviewerHash": "d633a14535778d1888425e93975cfb752c04817069f4d9c4022330b81a7e0e79",
+      "rating": 5,
+      "date": "2024-09-07",
+      "text": "Le service est très bon et la cuisine est délicieuse, nous reviendrons.",
+      "reviewerReviewCount": 58,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "fr"
+    },
+    {
+      "reviewerHash": "c72e2de0efbcbfa6c2297e873a2144e2f82a0ea4c8da59ee070bb1342004ea85",
+      "rating": 5,
+      "date": "2024-04-18",
+      "text": "Tutto perfetto, ottimo rapporto qualità prezzo, grazie mille.",
+      "reviewerReviewCount": 26,
+      "photoCount": 3,
+      "localGuideLevel": 1,
+      "ownerResponse": null,
+      "language": "it"
+    },
+    {
+      "reviewerHash": "e47aacc3103b917ec9842d0ff9f4a4e043fdc00ee5d34b4fa1930060b06e9234",
+      "rating": 2,
+      "date": "2025-09-18",
+      "text": "Mesas sujas e serviço lento, uma noite decepcionante.",
+      "reviewerReviewCount": 52,
+      "photoCount": 3,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "pt"
+    },
+    {
+      "reviewerHash": "5df3a40c03a4bd2a05923bd41f92c9dd25c51cd779d4c721098e9578a6febc1e",
+      "rating": 3,
+      "date": "2026-03-20",
+      "text": "Gezellige zaak met eerlijke prijzen en een lekker kopje koffie.",
+      "reviewerReviewCount": 48,
+      "photoCount": 3,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you, we are sorry about the wait that evening.",
+      "language": "nl"
+    },
+    {
+      "reviewerHash": "cdeb99a16b2635ffa18e814532ab3220eaca3cadd312e8f42589b54ad5fc0f68",
+      "rating": 4,
+      "date": "2024-03-19",
+      "text": "Klimatyczne miejsce z przystępnymi cenami i świetną kawą.",
+      "reviewerReviewCount": 51,
+      "photoCount": 3,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "pl"
+    },
+    {
+      "reviewerHash": "cf7c104dd01a9c637f84972b14a9d41aa32991861b822e77ac1d46958b8adce8",
+      "rating": 5,
+      "date": "2025-10-25",
+      "text": "Курица была холодной и официант был грубым, больше никогда.",
+      "reviewerReviewCount": 6,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "ru"
+    },
+    {
+      "reviewerHash": "43e43d3181e7f1d592b568f8f6bf71bef547fc04ee5147f817b0887794ab43d9",
+      "rating": 3,
+      "date": "2026-02-20",
+      "text": "Рекомендую, привітний персонал і чудове обслуговування.",
+      "reviewerReviewCount": 35,
+      "photoCount": 2,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "uk"
+    },
+    {
+      "reviewerHash": "882f1d9955f5fc2f0a619607cf631b323fb046f6d89d53294ceea4d6c38b95de",
+      "rating": 3,
+      "date": "2024-09-11",
+      "text": "الأكل لذيذ جدا والموظفين محترمين والأسعار مناسبة.",
+      "reviewerReviewCount": 20,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "ar"
+    },
+    {
+      "reviewerHash": "3f1fc11ba8ee21d6325c3e3820107d0030d3521bf80558903a97393298731ed0",
+      "rating": 5,
+      "date": "2025-06-29",
+      "text": "料理はとても美味しくて、店員さんの対応も丁寧でした。",
+      "reviewerReviewCount": 29,
+      "photoCount": 3,
+      "localGuideLevel": 7,
+      "ownerResponse": null,
+      "language": "ja"
+    },
+    {
+      "reviewerHash": "bb4b2395b5aea4f0e39bb6d1dfea092fe5ad2d383f0b488253cc36e22cbceeab",
+      "rating": 3,
+      "date": "2024-06-13",
+      "text": "很好吃，性价比很高，下次再来。",
+      "reviewerReviewCount": 50,
+      "photoCount": 0,
+      "localGuideLevel": 3,
+      "ownerResponse": null,
+      "language": "zh"
+    },
+    {
+      "reviewerHash": "d81c0d8490e0eb2380a86d6cc4cb7639ea8986f3104a1acb9618a36331d21e47",
+      "rating": 5,
+      "date": "2024-11-15",
+      "text": "강력 추천, 친절하고 맛있어요, 또 올게요.",
+      "reviewerReviewCount": 29,
+      "photoCount": 1,
+      "localGuideLevel": 2,
+      "ownerResponse": null,
+      "language": "ko"
+    },
+    {
+      "reviewerHash": "c21cc9c2c9962255e487f24ee518c2c20285af4a0f02f825234fc6346e1901f8",
+      "rating": 2,
+      "date": "2025-08-23",
+      "text": "Ayamnya dingin dan pelayannya kasar, kapok saya.",
+      "reviewerReviewCount": 34,
+      "photoCount": 0,
+      "localGuideLevel": 6,
+      "ownerResponse": null,
+      "language": "id"
+    },
+    {
+      "reviewerHash": "47720242c6bdaa9746951c24b6be6f12de23723b804a6c0d30b51d0132bf91e7",
+      "rating": 3,
+      "date": "2024-03-04",
+      "text": "Rất đáng thử, nhân viên nhiệt tình và đồ ăn ngon.",
+      "reviewerReviewCount": 60,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "vi"
+    },
+    {
+      "reviewerHash": "7f9eaccf2f0d135f489e92683936472c683dcdc925f36372a98d2c39b264e0eb",
+      "rating": 5,
+      "date": "2024-06-26",
+      "text": "Mysigt ställe med bra priser och riktigt gott kaffe.",
+      "reviewerReviewCount": 57,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "sv"
+    },
+    {
+      "reviewerHash": "a723783bd701e2f83b62b9b99b893273612e1447f2fb395025e999b5e19f9d97",
+      "rating": 4,
+      "date": "2026-02-07",
+      "text": "Το φαγητό ήταν υπέροχο και το προσωπικό πολύ ευγενικό",
+      "reviewerReviewCount": 14,
+      "photoCount": 2,
+      "localGuideLevel": 5,
+      "ownerResponse": "We appreciate the feedback, our team will be happy to hear this.",
+      "language": null
+    },
+    {
+      "reviewerHash": "79297623395557fe5db9bb4355ee3f2680374b4e912eb97b87879e954d0e1fb1",
+      "rating": 5,
+      "date": "2025-11-12",
+      "text": "The pasta was fresh and the waiter was attentive without hovering.",
+      "reviewerReviewCount": 57,
+      "photoCount": 0,
+      "localGuideLevel": 5,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "b8fb6cd0c145305e5bb5c0281e7474bc6dee12052f386ef068df2219376ca7a2",
+      "rating": 2,
+      "date": "2026-02-17",
+      "text": "Masalar kirli ve servis çok yavaş, hayal kırıklığı.",
+      "reviewerReviewCount": 51,
+      "photoCount": 0,
+      "localGuideLevel": 7,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "431e5b54ba43ffdfb3ea9a3906d1c807c04953d6aaab0645d4d975709e4c5b1a",
+      "rating": 4,
+      "date": "2026-04-12",
+      "text": "Das Essen war sehr lecker und die Bedienung war aufmerksam und freundlich.",
+      "reviewerReviewCount": 50,
+      "photoCount": 0,
+      "localGuideLevel": 1,
+      "ownerResponse": null,
+      "language": "de"
+    },
+    {
+      "reviewerHash": "8a529e5ee7e9160044ae0cb60c354e311945d595b379ba0f665cd949ce3dc43f",
+      "rating": 5,
+      "date": "2025-01-31",
+      "text": "Un sitio acogedor con precios justos y postres deliciosos.",
+      "reviewerReviewCount": 13,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "es"
+    },
+    {
+      "reviewerHash": "8fce5064a1a6186dd99ab02f1af6641fa3b59069c544255391d5e75b3d355fd0",
+      "rating": 5,
+      "date": "2025-01-29",
+      "text": "Je recommande, très bon accueil et service impeccable.",
+      "reviewerReviewCount": 21,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "fr"
+    },
+    {
+      "reviewerHash": "719a0a5f94f623a2ecc6cb808499111c5bbbf34ad5e807cc6072b5dc2839955b",
+      "rating": 5,
+      "date": "2024-08-13",
+      "text": "Tavoli sporchi e servizio lento, una serata deludente.",
+      "reviewerReviewCount": 21,
+      "photoCount": 3,
+      "localGuideLevel": null,
+      "ownerResponse": "Thank you, we are sorry about the wait that evening.",
+      "language": "it"
+    },
+    {
+      "reviewerHash": "8063804f1b4d649dbd2f86d14702fe80d7bc2de38ef8c99843402ac19fb4b3ae",
+      "rating": 4,
+      "date": "2024-12-21",
+      "text": "Tudo perfeito, muito bom, voltarei com certeza.",
+      "reviewerReviewCount": 45,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "pt"
+    },
+    {
+      "reviewerHash": "d8731315b692a7895a86da1a6f612fdd2ada3987e3c2a39649f2cfcad9e33007",
+      "rating": 2,
+      "date": "2024-10-18",
+      "text": "De kip was koud en de ober was onbeschoft, nooit meer.",
+      "reviewerReviewCount": 58,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "nl"
+    },
+    {
+      "reviewerHash": "a772af4738227b8027c3afe776b6e40d8eb3c3bae2543d8ad414bbbcc36285d6",
+      "rating": 2,
+      "date": "2025-01-25",
+      "text": "Kurczak był zimny i kelner był niemiły, nigdy więcej.",
+      "reviewerReviewCount": 39,
+      "photoCount": 1,
+      "localGuideLevel": 5,
+      "ownerResponse": null,
+      "language": "pl"
+    },
+    {
+      "reviewerHash": "781a37d86b3f2ebd9fd637cd39c9ba08550defa0227199a951da430240c263f2",
+      "rating": 4,
+      "date": "2024-09-06",
+      "text": "Всё было вкусно, обязательно вернёмся, спасибо большое.",
+      "reviewerReviewCount": 49,
+      "photoCount": 0,
+      "localGuideLevel": 5,
+      "ownerResponse": null,
+      "language": "ru"
+    },
+    {
+      "reviewerHash": "2d256a307ac39333100bcd15d076ff45b907c9dbe0e088db27ebea0b01049c75",
+      "rating": 5,
+      "date": "2025-12-17",
+      "text": "Затишний зал, дуже ввічливий персонал і смачна кава.",
+      "reviewerReviewCount": 18,
+      "photoCount": 3,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "uk"
+    },
+    {
+      "reviewerHash": "b448b2bfb72a0e6f0799c5907f9cdc0d189b66b1e40137fe619904601199480e",
+      "rating": 4,
+      "date": "2026-03-27",
+      "text": "الأكل لذيذ جدا والموظفين محترمين والأسعار مناسبة.",
+      "reviewerReviewCount": 31,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "We appreciate the feedback, the terrace is open again from May.",
+      "language": "ar"
+    },
+    {
+      "reviewerHash": "d5b8e3a15ad626e2a0bda25134831cca9e36107781c5cb465c53f48cd664d5d5",
+      "rating": 2,
+      "date": "2024-05-03",
+      "text": "チキンは冷めていて、店員の態度も悪い。二度と行きません。",
+      "reviewerReviewCount": 12,
+      "photoCount": 0,
+      "localGuideLevel": 6,
+      "ownerResponse": null,
+      "language": "ja"
+    },
+    {
+      "reviewerHash": "8c5e4725d78d68c797cf5105b3275ec6f968979e859c290a93b679884928606a",
+      "rating": 4,
+      "date": "2025-05-26",
+      "text": "很好吃，性价比很高，下次再来。",
+      "reviewerReviewCount": 51,
+      "photoCount": 3,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "zh"
+    },
+    {
+      "reviewerHash": "c8459fc698b476855b82a5c42144f1ab18cbf8116e3859d92830a0a7424d771c",
+      "rating": 5,
+      "date": "2026-02-23",
+      "text": "테이블이 더럽고 음식이 너무 느려요, 실망했어요.",
+      "reviewerReviewCount": 38,
+      "photoCount": 2,
+      "localGuideLevel": 1,
+      "ownerResponse": null,
+      "language": "ko"
+    },
+    {
+      "reviewerHash": "a4c38d6454761f4e98335ea2381107fa4ea969f29ab13216856f7a371a23ecea",
+      "rating": 2,
+      "date": "2025-07-15",
+      "text": "Ayamnya dingin dan pelayannya kasar, kapok saya.",
+      "reviewerReviewCount": 57,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "id"
+    },
+    {
+      "reviewerHash": "2e70798998db450811a17af09555670b0330422e4e1ef58bf951ff813b9ddcc3",
+      "rating": 4,
+      "date": "2024-03-05",
+      "text": "Rất hài lòng, giá cả hợp lý, sẽ quay lại.",
+      "reviewerReviewCount": 11,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "vi"
+    },
+    {
+      "reviewerHash": "34703dcef53bf7fa0268e6be5734146fdd5c1e1ac127b3c41eb9ff717683a1ee",
+      "rating": 4,
+      "date": "2026-01-27",
+      "text": "Allt var perfekt, god mat, kommer gärna tillbaka.",
+      "reviewerReviewCount": 27,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Glad you came by, the terrace is open again from May.",
+      "language": "sv"
+    },
+    {
+      "reviewerHash": "db29af197bdd53edc0960b47db2ddeaa7f5ff4e4e735330d4eb4f9c6f66eb453",
+      "rating": 4,
+      "date": "2025-08-27",
+      "text": "อาหารอร่อยมาก พนักงานบริการดี",
+      "reviewerReviewCount": 56,
+      "photoCount": 0,
+      "localGuideLevel": 1,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "97c8fa2224c288b503349e8ee783aabf23c3dff61b99157b0a7822da30cd53dd",
+      "rating": 3,
+      "date": "2024-05-28",
+      "text": "Cozy little place, the soup of the day was excellent and the prices are fair.",
+      "reviewerReviewCount": 39,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thanks for visiting, we are sorry about the wait that evening.",
+      "language": "en"
+    },
+    {
+      "reviewerHash": "791abc76e3d6446fe4404b12269a472653a1143f30b6557e23342efed3d45aff",
+      "rating": 1,
+      "date": "2024-10-18",
+      "text": "Tavuk soğuktu ve garson kaba davrandı, bir daha asla.",
+      "reviewerReviewCount": 42,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "f8fbda3589c0662fed57fd09e1703955de945828731bd7d6419d24b0044a3655",
+      "rating": 2,
+      "date": "2025-08-09",
+      "text": "Schmutzige Tische und langsamer Service, sehr enttäuschend.",
+      "reviewerReviewCount": 3,
+      "photoCount": 0,
+      "localGuideLevel": 3,
+      "ownerResponse": null,
+      "language": "de"
+    },
+    {
+      "reviewerHash": "14935e98d50bf0d486984e7c15c6c28ccdb5da8747b6b60fe254d04abe6d2e30",
+      "rating": 2,
+      "date": "2024-01-05",
+      "text": "El pollo estaba frío y el camarero fue grosero, nunca más.",
+      "reviewerReviewCount": 1,
+      "photoCount": 2,
+      "localGuideLevel": 5,
+      "ownerResponse": null,
+      "language": "es"
+    },
+    {
+      "reviewerHash": "40ec433bbca46def6e987a9e00182ea489897f471cdb6c8cee9e179c1a6b97f9",
+      "rating": 5,
+      "date": "2024-07-10",
+      "text": "Le poulet était froid et le serveur était impoli, plus jamais.",
+      "reviewerReviewCount": 22,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "fr"
+    },
+    {
+      "reviewerHash": "0a374ba30d03dafce725bd306ab512edcf3737c970dbb4365fc03d15b37d623e",
+      "rating": 5,
+      "date": "2026-05-09",
+      "text": "Il servizio è ottimo e la cucina è deliziosa, ci torneremo.",
+      "reviewerReviewCount": 33,
+      "photoCount": 0,
+      "localGuideLevel": 1,
+      "ownerResponse": null,
+      "language": "it"
+    },
+    {
+      "reviewerHash": "7581d12b703496104098d94c461acb3fa5a87dbeda106d47f2c0d6c0efcc9975",
+      "rating": 4,
+      "date": "2024-12-25",
+      "text": "Um lugar aconchegante com preços justos e sobremesas deliciosas.",
+      "reviewerReviewCount": 12,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "pt"
+    },
+    {
+      "reviewerHash": "7c1df98566245dbf2b9e7932bf68938a7bf6c7a36b667085795c03b130c69633",
+      "rating": 2,
+      "date": "2026-02-22",
+      "text": "Vieze tafels en trage bediening, erg teleurstellend.",
+      "reviewerReviewCount": 24,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "nl"
+    },
+    {
+      "reviewerHash": "342a8f2bca8566a956edd276af09f2abbb4400b8fa2a5c27b0fea212777992a6",
+      "rating": 3,
+      "date": "2025-09-17",
+      "text": "Jedzenie było pyszne i obsługa bardzo miła, na pewno wrócimy.",
+      "reviewerReviewCount": 57,
+      "photoCount": 2,
+      "localGuideLevel": 6,
+      "ownerResponse": null,
+      "language": "pl"
+    },
+    {
+      "reviewerHash": "54dd4200d04dd975f00e39cf66d9e04dab8473b1ea3f5750f5799437fb665715",
+      "rating": 4,
+      "date": "2024-05-23",
+      "text": "Еда очень вкусная и официант приветливый, всё быстро и недорого.",
+      "reviewerReviewCount": 2,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "ru"
+    },
+    {
+      "reviewerHash": "c8c7a3393795d9c874a3b0400c76b8b53a643afa36bc09b932978b23a554c825",
+      "rating": 3,
+      "date": "2026-05-22",
+      "text": "Все було смачно, обов'язково повернемось, дуже дякую.",
+      "reviewerReviewCount": 22,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "uk"
+    },
+    {
+      "reviewerHash": "ea01eec1a49c65940b1eabe35433dc8dd1201a336e0e5b8627e32c3441a7da6c",
+      "rating": 5,
+      "date": "2025-02-27",
+      "text": "الأكل لذيذ جدا والموظفين محترمين والأسعار مناسبة.",
+      "reviewerReviewCount": 46,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "ar"
+    },
+    {
+      "reviewerHash": "d0f4b7daf6ec9501fc136166b82f12873ed8690bd5d024a5be9e1588370aa19d",
+      "rating": 5,
+      "date": "2025-05-12",
+      "text": "テーブルが汚くて、料理が出てくるのも遅い。がっかりしました。",
+      "reviewerReviewCount": 20,
+      "photoCount": 1,
+      "localGuideLevel": 2,
+      "ownerResponse": null,
+      "language": "ja"
+    },
+    {
+      "reviewerHash": "6a9664cacaba05d99ff6630dd7bca96d667b15b499a120a68abdfbaa78b950f9",
+      "rating": 3,
+      "date": "2025-06-01",
+      "text": "很好吃，性价比很高，下次再来。",
+      "reviewerReviewCount": 49,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "zh"
+    },
+    {
+      "reviewerHash": "a17f42510599504194e360274a415f8427ad7d24a7e02043a703338361e3d53c",
+      "rating": 2,
+      "date": "2024-10-29",
+      "text": "테이블이 더럽고 음식이 너무 느려요, 실망했어요.",
+      "reviewerReviewCount": 32,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "ko"
+    },
+    {
+      "reviewerHash": "46688b00b515cc4bba75b6d18aecbef091d1ecfd03e4a7fcceb8b2b0bc951817",
+      "rating": 5,
+      "date": "2025-11-16",
+      "text": "Ayamnya dingin dan pelayannya kasar, kapok saya.",
+      "reviewerReviewCount": 6,
+      "photoCount": 3,
+      "localGuideLevel": null,
+      "ownerResponse": "Glad you came by, hope to see you again soon.",
+      "language": "id"
+    },
+    {
+      "reviewerHash": "f97da10ee13e154c4a9cab4ca9b639b69086e4c65efc003f96c10cb2821395f3",
+      "rating": 5,
+      "date": "2025-02-02",
+      "text": "Rất đáng thử, nhân viên nhiệt tình và đồ ăn ngon.",
+      "reviewerReviewCount": 49,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "vi"
+    },
+    {
+      "reviewerHash": "6c0022f94c5205da7bf82883b032e66166d944b689771f515414e150248ba144",
+      "rating": 5,
+      "date": "2026-03-17",
+      "text": "Smutsiga bord och långsam service, mycket besviken.",
+      "reviewerReviewCount": 7,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "sv"
+    },
+    {
+      "reviewerHash": "c4c7fdefe1b03561e50a93d82be79d3ed8448052db6dcdacea97bdd6b206e794",
+      "rating": 5,
+      "date": "2025-08-06",
+      "text": "खाना ठंडा था और सेवा बहुत धीमी थी",
+      "reviewerReviewCount": 27,
+      "photoCount": 0,
+      "localGuideLevel": 6,
+      "ownerResponse": null,
+      "language": null
+    },
+    {
+      "reviewerHash": "3f6e3822ea3d668b537eb3d7b5cd4686ee08d0db89aeb537be8e83d87b9aea97",
+      "rating": 1,
+      "date": "2024-09-08",
+      "text": "Dirty tables and slow service, very disappointing evening.",
+      "reviewerReviewCount": 15,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "en"
+    },
+    {
+      "reviewerHash": "74fc0455e9ef5d51148c5d8a3dbe7a050d48aee9d6a7c415a790635dc350783b",
+      "rating": 5,
+      "date": "2026-01-02",
+      "text": "Çorba çok lezzetli ve garson çok ilgili, fiyatlar da uygun.",
+      "reviewerReviewCount": 56,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Thanks for visiting, please ask for the seasonal menu next time.",
+      "language": "tr"
+    },
+    {
+      "reviewerHash": "5c5423a3e9806b6e395f8e49a589ba3849ab24071ef6e10525099758f419751e",
+      "rating": 5,
+      "date": "2025-11-16",
+      "text": "Immer wieder gerne, sehr lecker und top Service.",
+      "reviewerReviewCount": 15,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "de"
+    },
+    {
+      "reviewerHash": "bb50e64f67c93672647caaf4b0f8f1cdc776b76ed64f419a9596960a55e41d29",
+      "rating": 3,
+      "date": "2026-02-17",
+      "text": "Todo perfecto, muy buen servicio, sin duda volveré.",
+      "reviewerReviewCount": 10,
+      "photoCount": 2,
+      "localGuideLevel": 5,
+      "ownerResponse": null,
+      "language": "es"
+    },
+    {
+      "reviewerHash": "b4e97c1ae60e8715ce2667e10a201fe0fcfabae76a161ddf7d5a022beac8297c",
+      "rating": 3,
+      "date": "2026-02-18",
+      "text": "Le service est très bon et la cuisine est délicieuse, nous reviendrons.",
+      "reviewerReviewCount": 7,
+      "photoCount": 1,
+      "localGuideLevel": 3,
+      "ownerResponse": null,
+      "language": "fr"
+    },
+    {
+      "reviewerHash": "c3de9dccf06115ce9f4aa0aecb85fe7c85f57953338c061f0373e8104c9d0ed0",
+      "rating": 5,
+      "date": "2024-08-05",
+      "text": "Un locale accogliente con prezzi giusti e un personale cortese.",
+      "reviewerReviewCount": 5,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "it"
+    },
+    {
+      "reviewerHash": "0660f7cc90d25c5ac5c3cdf9668a3e71c7eb14866b0fd3df8e17c4cf50aba04f",
+      "rating": 5,
+      "date": "2023-12-24",
+      "text": "Recomendo muito, atendimento excelente e equipe atenciosa.",
+      "reviewerReviewCount": 22,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "pt"
+    },
+    {
+      "reviewerHash": "4a5185f8715542f6d35d1c1b3cdf47f4477ac54ce45df1433d90e00125460050",
+      "rating": 4,
+      "date": "2026-05-01",
+      "text": "Heerlijk gegeten en helemaal top, we komen zeker terug.",
+      "reviewerReviewCount": 33,
+      "photoCount": 0,
+      "localGuideLevel": 2,
+      "ownerResponse": null,
+      "language": "nl"
+    },
+    {
+      "reviewerHash": "fab8821884e461cbd129ca1ea173763c3509b5d1f55d181ac139032bbe8fd53c",
+      "rating": 5,
+      "date": "2025-06-21",
+      "text": "Klimatyczne miejsce z przystępnymi cenami i świetną kawą.",
+      "reviewerReviewCount": 10,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "pl"
+    },
+    {
+      "reviewerHash": "95bb8badcfeca700ca91d98944d5d5b311b2ba7ddc8e209b49c12c1f8de3e9bd",
+      "rating": 5,
+      "date": "2025-11-05",
+      "text": "Всё было вкусно, обязательно вернёмся, спасибо большое.",
+      "reviewerReviewCount": 6,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": "Glad you came by, we are sorry about the wait that evening.",
+      "language": "ru"
+    },
+    {
+      "reviewerHash": "a302807441f431ee02c23ea8eba3a2ae3694cbd37a6f782679da3e00ead65d9c",
+      "rating": 5,
+      "date": "2024-07-07",
+      "text": "Їжа була дуже смачна і офіціант був уважний, ціни приємні.",
+      "reviewerReviewCount": 25,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "uk"
+    },
+    {
+      "reviewerHash": "016fb7e68f8f4cb08caba8a1c8d9bb742aa283de311d88965224cfbaab2803e8",
+      "rating": 5,
+      "date": "2025-02-02",
+      "text": "مكان جميل وهادئ والقهوة ممتازة.",
+      "reviewerReviewCount": 35,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "ar"
+    },
+    {
+      "reviewerHash": "7cac142c553d70d7cf4fab8ea21493b94d920eb89e6d16ca4fb9d324faf8bdd7",
+      "rating": 4,
+      "date": "2024-11-27",
+      "text": "おすすめです。店員さんが親切で、コスパ最高でした。",
+      "reviewerReviewCount": 6,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "ja"
+    },
+    {
+      "reviewerHash": "56267838c3539fe24df73e7d5e7754d76d75a5f70d2c8dd62678f1a86696f643",
+      "rating": 5,
+      "date": "2024-05-10",
+      "text": "环境安静舒服，咖啡也很好喝。",
+      "reviewerReviewCount": 31,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "zh"
+    },
+    {
+      "reviewerHash": "71c42929339797f2c792e95c1290ecf7dd82cd2a595bb56b0d3680b4a66f15a8",
+      "rating": 1,
+      "date": "2023-12-27",
+      "text": "치킨이 차갑고 직원이 불친절해요, 다시는 안 갑니다.",
+      "reviewerReviewCount": 40,
+      "photoCount": 0,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "ko"
+    },
+    {
+      "reviewerHash": "47d1767130e74069ea0edc5a880f976b3c6c48c5a9fba82f51764ab67d3a8d88",
+      "rating": 5,
+      "date": "2023-12-23",
+      "text": "Ayamnya dingin dan pelayannya kasar, kapok saya.",
+      "reviewerReviewCount": 59,
+      "photoCount": 3,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "id"
+    },
+    {
+      "reviewerHash": "6be441fa43479eab879e8c68a251aae085bdf451b0f079dd2fbee062b5b2b214",
+      "rating": 5,
+      "date": "2025-08-29",
+      "text": "Không gian yên tĩnh và sạch sẽ, cà phê cũng rất thơm.",
+      "reviewerReviewCount": 51,
+      "photoCount": 1,
+      "localGuideLevel": null,
+      "ownerResponse": null,
+      "language": "vi"
+    },
+    {
+      "reviewerHash": "421053e559e21eb4a720e3a1c287997a206a483bef8c0a82ae7cbe686cb3c8cb",
+      "rating": 5,
+      "date": "2024-03-19",
+      "text": "Maten var god och personalen var mycket trevlig, vi kommer tillbaka.",
+      "reviewerReviewCount": 57,
+      "photoCount": 2,
+      "localGuideLevel": 2,
+      "ownerResponse": "Glad you came by, we will pass this on to the kitchen.",
+      "language": "sv"
+    },
+    {
+      "reviewerHash": "da98c5cbbaea7b5fe8b77e1832bd65730335791246338565464ab3e9d20a213c",
+      "rating": 5,
+      "date": "2025-08-14",
+      "text": "อาหารอร่อยมาก พนักงานบริการดี",
+      "reviewerReviewCount": 32,
+      "photoCount": 0,
+      "localGuideLevel": 2,
+      "ownerResponse": null,
+      "language": null
+    }
+  ],
+  "expected": {
+    "placeId": "0xfixture:0xmultilingual",
+    "score": 4,
+    "status": "ok",
+    "reviewCount": 95,
+    "signals": [
+      {
+        "id": "burst_ratio",
+        "unusualness": 0,
+        "value": 0.063158,
+        "details": {
+          "peakShare": 0.063158,
+          "peakCount": 6,
+          "peakWindowStart": "2026-02-17",
+          "peakWindowEnd": "2026-03-02",
+          "lifespanDays": 889,
+          "expectedShare": 0.015748,
+          "excess": 0.048168,
+          "windowDays": 14
+        },
+        "available": true
+      },
+      {
+        "id": "rating_polarity",
+        "unusualness": 0,
+        "value": 0.515789,
+        "details": {
+          "share5": 0.452632,
+          "share1": 0.063158,
+          "shareMid": 0.484211
+        },
+        "available": true
+      },
+      {
+        "id": "single_review_accounts",
+        "unusualness": 0,
+        "value": 0.010526,
+        "details": {
+          "share": 0.010526,
+          "known": 95,
+          "singles": 1
+        },
+        "available": true
+      },
+      {
+        "id": "no_photo_short_text",
+        "unusualness": 0,
+        "value": 0.157895,
+        "details": {
+          "share": 0.157895,
+          "count": 15,
+          "noTextCount": 0,
+          "shortTextChars": 40
+        },
+        "available": true
+      },
+      {
+        "id": "text_similarity",
+        "unusualness": 0,
+        "value": 0.019265,
+        "details": {
+          "meanJaccard": 0.019265,
+          "highPairShare": 0.008739,
+          "highPairs": 35,
+          "pairs": 4005,
+          "maxPair": 1,
+          "eligible": 90
+        },
+        "available": true
+      },
+      {
+        "id": "template_phrases",
+        "unusualness": 0.293233,
+        "value": 0.252632,
+        "details": {
+          "share": 0.252632,
+          "phraseBased": 24,
+          "withText": 95,
+          "anyPhraseShare": 0.410526,
+          "topPhrases": "sehr lecker (3); всё было вкусно (3); обязательно вернёмся (3)"
+        },
+        "available": true
+      },
+      {
+        "id": "rating_text_mismatch",
+        "unusualness": 0.133333,
+        "value": 0.133333,
+        "details": {
+          "share": 0.133333,
+          "scored": 90,
+          "mismatches": 12
+        },
+        "available": true
+      },
+      {
+        "id": "date_entropy",
+        "unusualness": 0,
+        "value": 0.936469,
+        "details": {
+          "normalizedEntropy": 0.936469,
+          "monthsInSpan": 30,
+          "activeMonths": 27,
+          "busiestMonth": "2026-02",
+          "busiestMonthShare": 0.084211
+        },
+        "available": true
+      },
+      {
+        "id": "local_guide_ratio",
+        "unusualness": 0.052632,
+        "value": 0.189474,
+        "details": {
+          "share": 0.189474,
+          "established": 18,
+          "exposed": 29,
+          "establishedLevel": 3
+        },
+        "available": true
+      },
+      {
+        "id": "owner_response_pattern",
+        "unusualness": 0,
+        "value": 0.153846,
+        "details": {
+          "identicalShare": 0.153846,
+          "responded": 13,
+          "responseRate": 0.136842,
+          "distinctResponses": 11,
+          "largestGroupShare": 0.153846
+        },
+        "available": true
+      }
+    ],
+    "monthly": [
+      {
+        "month": "2023-12",
+        "count": 3
+      },
+      {
+        "month": "2024-01",
+        "count": 1
+      },
+      {
+        "month": "2024-02",
+        "count": 0
+      },
+      {
+        "month": "2024-03",
+        "count": 5
+      },
+      {
+        "month": "2024-04",
+        "count": 3
+      },
+      {
+        "month": "2024-05",
+        "count": 4
+      },
+      {
+        "month": "2024-06",
+        "count": 2
+      },
+      {
+        "month": "2024-07",
+        "count": 2
+      },
+      {
+        "month": "2024-08",
+        "count": 3
+      },
+      {
+        "month": "2024-09",
+        "count": 5
+      },
+      {
+        "month": "2024-10",
+        "count": 4
+      },
+      {
+        "month": "2024-11",
+        "count": 4
+      },
+      {
+        "month": "2024-12",
+        "count": 3
+      },
+      {
+        "month": "2025-01",
+        "count": 4
+      },
+      {
+        "month": "2025-02",
+        "count": 5
+      },
+      {
+        "month": "2025-03",
+        "count": 0
+      },
+      {
+        "month": "2025-04",
+        "count": 0
+      },
+      {
+        "month": "2025-05",
+        "count": 3
+      },
+      {
+        "month": "2025-06",
+        "count": 5
+      },
+      {
+        "month": "2025-07",
+        "count": 1
+      },
+      {
+        "month": "2025-08",
+        "count": 6
+      },
+      {
+        "month": "2025-09",
+        "count": 3
+      },
+      {
+        "month": "2025-10",
+        "count": 1
+      },
+      {
+        "month": "2025-11",
+        "count": 4
+      },
+      {
+        "month": "2025-12",
+        "count": 4
+      },
+      {
+        "month": "2026-01",
+        "count": 3
+      },
+      {
+        "month": "2026-02",
+        "count": 8
+      },
+      {
+        "month": "2026-03",
+        "count": 3
+      },
+      {
+        "month": "2026-04",
+        "count": 1
+      },
+      {
+        "month": "2026-05",
+        "count": 5
+      }
+    ],
+    "ratingDistribution": {
+      "1": 6,
+      "2": 16,
+      "3": 12,
+      "4": 18,
+      "5": 43
+    },
+    "reviewerProfile": {
+      "singleReviewShare": 0.010526,
+      "medianReviewCount": 32,
+      "localGuideShare": 0.305263,
+      "withPhotosShare": 0.294737
+    },
+    "source": "server",
+    "engineVersion": "1.1.0",
+    "computedAt": "2026-06-01T00:00:00.000Z"
+  }
+}

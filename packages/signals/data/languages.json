@@ -1,0 +1,23 @@
+{
+  "$comment": "Languages the text signals cover; single source of truth for both runtimes. Detection first classifies the script of the letters in a text (kana -> ja, Hangul -> ko, Han -> zh, Arabic -> ar, Cyrillic and Latin -> stopword vote among the languages of that script). The order of entries within a script is the tie order of the vote and its first entry is the default when no stopword matches. matchMode 'word' = space tokens and word-boundary phrase matching; 'substring' = plain substring matching for languages written without spaces.",
+  "languages": [
+    { "code": "en", "script": "latin", "matchMode": "word" },
+    { "code": "es", "script": "latin", "matchMode": "word" },
+    { "code": "pt", "script": "latin", "matchMode": "word" },
+    { "code": "fr", "script": "latin", "matchMode": "word" },
+    { "code": "de", "script": "latin", "matchMode": "word" },
+    { "code": "it", "script": "latin", "matchMode": "word" },
+    { "code": "tr", "script": "latin", "matchMode": "word" },
+    { "code": "nl", "script": "latin", "matchMode": "word" },
+    { "code": "pl", "script": "latin", "matchMode": "word" },
+    { "code": "id", "script": "latin", "matchMode": "word" },
+    { "code": "vi", "script": "latin", "matchMode": "word" },
+    { "code": "sv", "script": "latin", "matchMode": "word" },
+    { "code": "ru", "script": "cyrillic", "matchMode": "word" },
+    { "code": "uk", "script": "cyrillic", "matchMode": "word" },
+    { "code": "ar", "script": "arabic", "matchMode": "word" },
+    { "code": "ja", "script": "japanese", "matchMode": "substring" },
+    { "code": "zh", "script": "han", "matchMode": "substring" },
+    { "code": "ko", "script": "hangul", "matchMode": "word" }
+  ]
+}

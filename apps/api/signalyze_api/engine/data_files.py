@@ -8,9 +8,11 @@ Attribute names mirror the JSON keys (camelCase) so signal code reads like the T
 from __future__ import annotations
 
 import json
+from collections.abc import Sequence
 from pathlib import Path
+from typing import Literal
 
-from pydantic import BaseModel
+from pydantic import BaseModel, TypeAdapter
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 
@@ -88,11 +90,20 @@ class Thresholds(BaseModel):
     owner_response_pattern: OwnerResponsePatternThresholds
 
 
-class LanguageLists(BaseModel):
-    en: list[str]
-    tr: list[str]
-    de: list[str]
-    es: list[str]
+Script = Literal["latin", "cyrillic", "arabic", "japanese", "han", "hangul"]
+MatchMode = Literal["word", "substring"]
+
+
+class LanguageEntry(BaseModel):
+    """One row of languages.json: a language code, the script that identifies it, its match mode."""
+
+    code: str
+    script: Script
+    matchMode: MatchMode
+
+
+class LanguagesFile(BaseModel):
+    languages: list[LanguageEntry]
 
 
 class LexiconEntry(BaseModel):
@@ -100,20 +111,36 @@ class LexiconEntry(BaseModel):
     negative: list[str]
 
 
-class Lexicon(BaseModel):
-    en: LexiconEntry
-    tr: LexiconEntry
-    de: LexiconEntry
-    es: LexiconEntry
-
-
 class WeightsFile(BaseModel):
     version: str
     weights: dict[str, float]
 
 
+_WORD_LIST = TypeAdapter(list[str])
+
+
+def _object_file(name: str) -> dict[str, object]:
+    raw = _load(name)
+    if not isinstance(raw, dict):
+        raise TypeError(f"{name}: expected a JSON object at the top level")
+    return {str(key): value for key, value in raw.items()}
+
+
+def _per_language_lists(name: str, codes: Sequence[str]) -> dict[str, list[str]]:
+    """The word list of every language code (a missing language is a load-time error)."""
+    raw = _object_file(name)
+    return {code: _WORD_LIST.validate_python(raw[code]) for code in codes}
+
+
+def _per_language_lexicon(name: str, codes: Sequence[str]) -> dict[str, LexiconEntry]:
+    raw = _object_file(name)
+    return {code: LexiconEntry.model_validate(raw[code]) for code in codes}
+
+
 THRESHOLDS = Thresholds.model_validate(_load("thresholds.json"))
-STOPWORDS = LanguageLists.model_validate(_load("stopwords.json"))
-TEMPLATE_PHRASES = LanguageLists.model_validate(_load("template-phrases.json"))
-SENTIMENT_LEXICON = Lexicon.model_validate(_load("sentiment-lexicon.json"))
+LANGUAGES = LanguagesFile.model_validate(_load("languages.json"))
+LANGUAGE_CODES: tuple[str, ...] = tuple(entry.code for entry in LANGUAGES.languages)
+STOPWORDS = _per_language_lists("stopwords.json", LANGUAGE_CODES)
+TEMPLATE_PHRASES = _per_language_lists("template-phrases.json", LANGUAGE_CODES)
+SENTIMENT_LEXICON = _per_language_lexicon("sentiment-lexicon.json", LANGUAGE_CODES)
 WEIGHTS_FILE = WeightsFile.model_validate(_load("weights.json"))

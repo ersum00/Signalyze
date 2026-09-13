@@ -4,8 +4,9 @@
  * attribute taken is the numeric contributor id, which stays in the browser.
  */
 import { parseRelativeDate } from './dates';
-import { parseDisplayedCount, parseFirstInteger, parseStarCount } from './numbers';
-import { OWNER_RESPONSE_WORDS, REVIEW_COUNT_PATTERN, ownText, rule } from './selectors';
+import { parseFirstInteger, parseNumberSequence, parseStarCount } from './numbers';
+import { findOwnerResponse, ownText, rule } from './selectors';
+import { compileTerms, foldText } from './text';
 
 export const MAX_TEXT_CHARS = 2000;
 
@@ -53,7 +54,44 @@ export interface ReadResult {
 }
 
 const CONTRIB_ID = /\/maps\/contrib\/(\d+)/;
-const LOCAL_GUIDE_LEVEL = /(level|seviye|stufe|nivel)\s*[:.]?\s*(\d{1,2})/i;
+
+/** Words for "level" preceding a Local Guide level number. */
+const LEVEL_WORDS: readonly string[] = [
+  'level', // en
+  'seviye', // tr
+  'stufe', // de
+  'nivel', // es
+  'niveau', // fr nl
+  'livello', // it
+  'nível', // pt
+  'poziom', // pl
+  'уровень', // ru
+  'рівень', // uk
+  'úroveň', // cs
+  'nivå', // sv da nb
+  'taso', // fi
+  'επίπεδο', // el
+  'szint', // hu
+  'nivelul', // ro
+  'tingkat', // id
+  'tahap', // ms
+  'cấp', // vi
+  'ระดับ', // th
+  'レベル', // ja
+  '等级', // zh
+  '等級', // zh
+  '레벨', // ko
+  'المستوى', // ar
+  'مستوى', // ar
+  'רמה', // he
+  'स्तर', // hi
+];
+
+/** "Level 5" / "Seviye 5" / "レベル 5": a level word followed by a one- or two-digit number. */
+const LOCAL_GUIDE_LEVEL = new RegExp(
+  `${compileTerms(LEVEL_WORDS).source}\\s*[:.]?\\s*(\\d{1,2})(?!\\d)`,
+  'u',
+);
 /** "+ 34 more photos" / "+34" overlay on the last photo tile. */
 const MORE_PHOTOS = /\+\s*(\d+)/;
 
@@ -86,18 +124,24 @@ function readDate(container: Element, now: Date): { dateText: string; date: stri
   return { dateText: candidates[0] ?? '', date: null };
 }
 
+/**
+ * The reviewer stats line is parsed positionally, independent of its words:
+ * the first number is the reviewer's review count (the second, unused here,
+ * is the photo count). A "Level N" phrase is removed first so the level never
+ * counts as reviews; a Local Guide badge without a level gives no level.
+ */
 function readReviewerStats(container: Element): {
   reviewerReviewCount: number | null;
   localGuideLevel: number | null;
 } {
   const link = rule('reviewerLink').find(container)[0];
   const stats = rule('reviewerStats').find(container)[0];
-  const statsText = stats ? ownText(stats) : '';
-  const countMatch = REVIEW_COUNT_PATTERN.exec(statsText);
-  const reviewerReviewCount = countMatch ? parseDisplayedCount(countMatch[0]) : null;
-  const levelSource = `${statsText} ${link?.textContent ?? ''}`;
+  const statsText = stats ? foldText(ownText(stats)) : '';
+  const levelSource = `${statsText} ${foldText(link?.textContent ?? '')}`;
   const levelMatch = LOCAL_GUIDE_LEVEL.exec(levelSource);
-  const localGuideLevel = levelMatch?.[2] ? parseFirstInteger(levelMatch[2]) : null;
+  const localGuideLevel = levelMatch?.[1] ? parseFirstInteger(levelMatch[1]) : null;
+  const countSource = statsText.replace(LOCAL_GUIDE_LEVEL, ' ');
+  const reviewerReviewCount = parseNumberSequence(countSource)[0] ?? null;
   return { reviewerReviewCount, localGuideLevel };
 }
 
@@ -121,15 +165,17 @@ function readPhotoCount(container: Element): number {
   return tiles.length + extra;
 }
 
-function readOwnerResponse(container: Element): string | null {
-  const block = rule('ownerResponse').find(container)[0];
-  if (!block) return null;
-  const body = Array.from(block.children)
-    .filter((child) => !OWNER_RESPONSE_WORDS.test(child.textContent ?? ''))
+/** The owner reply text; never the review's own text, even if the structure is ambiguous. */
+function readOwnerResponse(container: Element, reviewText: string): string | null {
+  const parts = findOwnerResponse(container);
+  if (!parts) return null;
+  const body = Array.from(parts.block.children)
+    .filter((child) => child !== parts.headingRow)
     .map((child) => child.textContent ?? '')
     .join('\n');
   const text = normaliseText(body);
-  return text.length > 0 ? text : null;
+  if (text.length === 0 || (reviewText.length > 0 && text === reviewText)) return null;
+  return text;
 }
 
 function readReview(
@@ -145,6 +191,7 @@ function readReview(
   if (date === null) return { skipped: 'noDate' };
   const id = container.getAttribute('data-review-id') ?? '';
   const { reviewerReviewCount, localGuideLevel } = readReviewerStats(container);
+  const text = readText(container);
   return {
     entry: {
       id,
@@ -153,11 +200,11 @@ function readReview(
         rating,
         dateText,
         date,
-        text: readText(container),
+        text,
         reviewerReviewCount,
         photoCount: readPhotoCount(container),
         localGuideLevel,
-        ownerResponse: readOwnerResponse(container),
+        ownerResponse: readOwnerResponse(container, text),
         language,
       },
     },

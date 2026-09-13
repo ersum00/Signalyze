@@ -7,7 +7,7 @@
 import { SCROLL_INTERVAL_MS } from '@signalyze/shared';
 import type { RawReview } from './reviews';
 import { readReviewEntries } from './reviews';
-import { checkLayout, rule } from './selectors';
+import { checkLayout, labelledReviewsTabs, rule } from './selectors';
 
 export type CollectStatus = 'complete' | 'exhausted' | 'aborted' | 'unsupported_layout';
 
@@ -35,6 +35,10 @@ const STALE_SCROLLS_BEFORE_EXHAUSTED = 2;
 const TIME_BUDGET_FACTOR = 3;
 /** Intervals to wait for the first review to render after opening the Reviews tab. */
 const RENDER_WAIT_INTERVALS = 5;
+/** Upper bound on tabs clicked when no tab label is recognised. */
+const MAX_PROBED_TABS = 4;
+/** Intervals given to each probed tab to render its content. */
+const PROBE_WAIT_INTERVALS = 2;
 
 function defaultSleep(ms: number): Promise<void> {
   return new Promise((resolve) => {
@@ -64,9 +68,48 @@ export function findScrollPanel(doc: Document): HTMLElement | null {
   return focusable ?? (main instanceof HTMLElement ? main : null);
 }
 
+/** The Reviews tab identified by its label in one of the known UI languages, or null. */
 export function findReviewsTab(doc: Document): HTMLElement | null {
-  const tab = rule('reviewsTab').find(doc)[0];
+  const tab = labelledReviewsTabs(doc)[0];
   return tab instanceof HTMLElement ? tab : null;
+}
+
+/**
+ * Language-independent fallback when no tab label is recognised: clicks up to
+ * MAX_PROBED_TABS tabs in order, gives each up to PROBE_WAIT_INTERVALS
+ * intervals to render, and keeps the tab that renders the most review
+ * containers (the Overview tab shows a few review snippets, the Reviews tab a
+ * longer list; ties go to the first). Leaves that tab selected. Returns null
+ * when no tab renders any review container or the caller aborted.
+ */
+async function probeReviewsTab(
+  doc: Document,
+  wait: () => Promise<void>,
+  aborted: () => boolean,
+): Promise<HTMLElement | null> {
+  const tabs = rule('panelTabs')
+    .find(doc)
+    .filter((el): el is HTMLElement => el instanceof HTMLElement)
+    .slice(0, MAX_PROBED_TABS);
+  let best: { tab: HTMLElement; count: number } | null = null;
+  let lastClicked: HTMLElement | null = null;
+  for (const tab of tabs) {
+    if (aborted()) return null;
+    tab.click();
+    lastClicked = tab;
+    let count = 0;
+    for (let i = 0; i < PROBE_WAIT_INTERVALS && count === 0; i += 1) {
+      await wait();
+      count = rule('reviewContainer').find(doc).length;
+    }
+    if (count > 0 && (best === null || count > best.count)) best = { tab, count };
+  }
+  if (best === null || aborted()) return null;
+  if (best.tab !== lastClicked) {
+    best.tab.click();
+    await wait();
+  }
+  return best.tab;
 }
 
 /** Clicks every "More" button inside the rendered reviews so full texts are readable. */
@@ -106,11 +149,16 @@ export async function collectReviews(
   };
 
   if (aborted()) return finish('aborted');
-  const tab = findReviewsTab(doc);
-  if (!tab) return finish('unsupported_layout');
-  if (tab.getAttribute('aria-selected') !== 'true') {
-    tab.click();
-    await wait();
+  const labelled = findReviewsTab(doc);
+  if (labelled) {
+    if (labelled.getAttribute('aria-selected') !== 'true') {
+      labelled.click();
+      await wait();
+    }
+  } else {
+    const probed = await probeReviewsTab(doc, wait, aborted);
+    if (aborted()) return finish('aborted');
+    if (!probed) return finish('unsupported_layout');
   }
   // The list renders asynchronously after the tab opens: poll a few intervals for it.
   for (

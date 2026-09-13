@@ -1,16 +1,5 @@
 ---
-import { getEntry, render } from 'astro:content';
-import Doc from '../layouts/Doc.astro';
-
-const entry = await getEntry('docs', 'privacy');
-if (!entry) throw new Error('docs/PRIVACY.md was not found by the content loader.');
-const { Content } = await render(entry);
+import DocPage from '../components/DocPage.astro';
 ---
 
-<Doc
-  title="Privacy"
-  description="Exactly what the Signalyze extension and API do with data: what is sent, what is never sent, what is stored and for how long."
-  source="docs/PRIVACY.md"
->
-  <Content />
-</Doc>
+<DocPage locale="en" doc="privacy" />

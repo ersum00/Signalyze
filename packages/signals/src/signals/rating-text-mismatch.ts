@@ -3,33 +3,64 @@ import lexicon from '../../data/sentiment-lexicon.json';
 import thresholds from '../../data/thresholds.json';
 import { ramp, round6 } from '../math';
 import type { PreparedReview } from '../prepare';
-import { normalizeText, type EngineLanguage } from '../text';
+import {
+  codePointLength,
+  MATCH_MODE,
+  normalizeText,
+  perLanguage,
+  type DetectedLanguage,
+  type EngineLanguage,
+} from '../text';
 import { unavailable } from '../types';
 
 const T = thresholds.rating_text_mismatch;
 
-const LEXICON: Record<EngineLanguage, { positive: Set<string>; negative: Set<string> }> = {
-  en: sets(lexicon.en),
-  tr: sets(lexicon.tr),
-  de: sets(lexicon.de),
-  es: sets(lexicon.es),
-};
-
-function sets(entry: { positive: string[]; negative: string[] }) {
-  return {
-    positive: new Set(entry.positive.map(normalizeText)),
-    negative: new Set(entry.negative.map(normalizeText)),
-  };
+interface Lexicon {
+  positive: Set<string>;
+  negative: Set<string>;
+  /** Substring mode: every entry with its polarity, longest first (stable on file order). */
+  ordered: readonly { entry: string; positive: boolean }[];
 }
 
-/** tone in [-1, 1] from lexicon hits, or null when no lexicon word occurs. */
-export function toneOf(tokens: readonly string[], language: EngineLanguage): number | null {
+const LEXICON: Record<EngineLanguage, Lexicon> = perLanguage((lang) => {
+  const positive = lexicon[lang].positive.map(normalizeText).filter((w) => w !== '');
+  const negative = lexicon[lang].negative.map(normalizeText).filter((w) => w !== '');
+  const ordered = [
+    ...positive.map((entry) => ({ entry, positive: true })),
+    ...negative.map((entry) => ({ entry, positive: false })),
+  ].sort((a, b) => codePointLength(b.entry) - codePointLength(a.entry));
+  return { positive: new Set(positive), negative: new Set(negative), ordered };
+});
+
+/**
+ * tone in [-1, 1] from lexicon hits, or null when no lexicon word occurs.
+ * Word mode counts the tokens found in the lexicon. Substring mode (ja, zh)
+ * counts the lexicon entries found in the text, longest first, each once;
+ * a matched entry is removed before shorter entries are tried, so a negated
+ * form such as 不好吃 is not also counted as 好吃. 'other' has no lexicon.
+ */
+export function toneOf(
+  normalized: string,
+  tokens: readonly string[],
+  language: DetectedLanguage,
+): number | null {
+  if (language === 'other') return null;
   const lex = LEXICON[language];
   let pos = 0;
   let neg = 0;
-  for (const t of tokens) {
-    if (lex.positive.has(t)) pos += 1;
-    else if (lex.negative.has(t)) neg += 1;
+  if (MATCH_MODE[language] === 'word') {
+    for (const t of tokens) {
+      if (lex.positive.has(t)) pos += 1;
+      else if (lex.negative.has(t)) neg += 1;
+    }
+  } else {
+    let text = normalized;
+    for (const { entry, positive } of lex.ordered) {
+      if (!text.includes(entry)) continue;
+      if (positive) pos += 1;
+      else neg += 1;
+      text = text.replaceAll(entry, ' ');
+    }
   }
   if (pos + neg === 0) return null;
   return (pos - neg) / (pos + neg);
@@ -44,7 +75,7 @@ export function ratingTextMismatch(reviews: readonly PreparedReview[]): SignalRe
   let scored = 0;
   let mismatches = 0;
   for (const r of reviews) {
-    const tone = toneOf(r.tokens, r.language);
+    const tone = toneOf(r.normalizedText, r.tokens, r.language);
     if (tone === null) continue;
     scored += 1;
     const rating = r.review.rating;

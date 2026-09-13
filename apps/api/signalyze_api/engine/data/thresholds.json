@@ -1,6 +1,6 @@
 {
   "$comment": "Calibration points for mapping a measured value onto 0..1 unusualness with a linear ramp: unusualness = clamp((value - low) / (high - low)). Each pair is explained in docs/METHODOLOGY.md. Shared byte-for-byte with the Python port (apps/api/signalyze_api/engine/data/).",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "burst_ratio": { "excessLow": 0.05, "excessHigh": 0.65, "windowDays": 14 },
   "rating_polarity": { "low": 0.82, "high": 0.96 },
   "single_review_accounts": { "low": 0.3, "high": 0.75, "minKnown": 15 },

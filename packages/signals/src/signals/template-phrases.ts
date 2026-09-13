@@ -3,22 +3,27 @@ import phrases from '../../data/template-phrases.json';
 import thresholds from '../../data/thresholds.json';
 import { ramp, round6 } from '../math';
 import type { PreparedReview } from '../prepare';
-import { codePointLength, containsPhrase, normalizeText, type EngineLanguage } from '../text';
+import {
+  codePointLength,
+  MATCH_MODE,
+  matchesPhrase,
+  normalizeText,
+  perLanguage,
+  type EngineLanguage,
+} from '../text';
 import { unavailable } from '../types';
 
 const T = thresholds.template_phrases;
 
-const PHRASES: Record<EngineLanguage, string[]> = {
-  en: phrases.en.map(normalizeText),
-  tr: phrases.tr.map(normalizeText),
-  de: phrases.de.map(normalizeText),
-  es: phrases.es.map(normalizeText),
-};
+const PHRASES: Record<EngineLanguage, string[]> = perLanguage((lang) =>
+  phrases[lang].map(normalizeText),
+);
 
 /**
  * A review is "phrase-based" when stock phrases from its language's dictionary
  * cover at least half of its normalised text. value = share of phrase-based
- * reviews among reviews with text.
+ * reviews among reviews with text. Texts whose language is 'other' have no
+ * dictionary: they count in withText but are never phrase-based.
  */
 export function templatePhrases(reviews: readonly PreparedReview[]): SignalResult {
   const withText = reviews.filter((r) => r.normalizedText !== '');
@@ -35,11 +40,14 @@ export function templatePhrases(reviews: readonly PreparedReview[]): SignalResul
     const textLen = codePointLength(r.normalizedText);
     let covered = 0;
     let hit = false;
-    for (const phrase of PHRASES[r.language]) {
-      if (containsPhrase(r.normalizedText, phrase)) {
-        hit = true;
-        covered += codePointLength(phrase);
-        phraseCounts.set(phrase, (phraseCounts.get(phrase) ?? 0) + 1);
+    if (r.language !== 'other') {
+      const mode = MATCH_MODE[r.language];
+      for (const phrase of PHRASES[r.language]) {
+        if (matchesPhrase(r.normalizedText, phrase, mode)) {
+          hit = true;
+          covered += codePointLength(phrase);
+          phraseCounts.set(phrase, (phraseCounts.get(phrase) ?? 0) + 1);
+        }
       }
     }
     if (hit) anyHit += 1;

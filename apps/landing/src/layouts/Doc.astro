@@ -1,19 +1,31 @@
 ---
+import { useTranslations, type Locale } from '../i18n';
 import Base from './Base.astro';
 
 interface Props {
+  locale: Locale;
   title: string;
   description: string;
   /** Repository path of the Markdown file this page is generated from. */
   source: string;
+  /** Optional localised note shown above the document (English fallback, changelog). */
+  note?: string;
 }
 
-const { title, description, source } = Astro.props;
+const { locale, title, description, source, note } = Astro.props;
+const t = useTranslations(locale);
 ---
 
-<Base title={title} description={description}>
+<Base locale={locale} title={title} description={description}>
   <main id="main" class="mx-auto max-w-3xl px-5 py-14 sm:px-8 sm:py-20">
-    <p class="eyebrow mb-8">source: {source}</p>
+    <p class="eyebrow mb-8">{t('doc.source')}: {source}</p>
+    {
+      note && (
+        <p class="mb-8 rounded-lg border border-brand-100 bg-brand-50 px-4 py-3 text-sm text-ink-700">
+          {note}
+        </p>
+      )
+    }
     <article class="prose">
       <slot />
     </article>

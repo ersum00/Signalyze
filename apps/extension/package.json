@@ -11,7 +11,8 @@
     "postinstall": "wxt prepare",
     "typecheck": "tsc -p tsconfig.json",
     "test": "vitest run",
-    "zip:store": "node scripts/zip-store.mjs"
+    "zip:store": "node scripts/zip-store.mjs",
+    "store:assets": "node store/capture.mjs"
   },
   "dependencies": {
     "@signalyze/shared": "workspace:*",

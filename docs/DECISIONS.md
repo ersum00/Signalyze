@@ -96,3 +96,18 @@ DOM with Google's UI strings rewritten, marked `synthetic: true` in their meta f
 the date, star-label and count parsers in those languages but not real layout variations. The
 capture script and the exact commands to re-run real captures are in the adapter folder and in
 the README; re-capturing is a manual, headed-browser task.
+
+## 2026-09-13 · Global coverage: 18 engine languages, 30 interface languages in the adapter
+
+Google Maps reviews are written in many languages and the page itself is rendered in the user's
+interface language, so "works globally" has two halves. The signal engine (version 1.1.0) ships
+stopword lists, stock-phrase dictionaries and tone lexicons for 18 languages; language is decided by
+script first (kana, Hangul, Han, Arabic) and by a stopword vote within Cyrillic and Latin scripts,
+and Japanese and Chinese use substring matching because they have no word separators. Texts in
+uncovered languages still feed every non-text signal. The adapter recognises relative dates, the
+Reviews tab, owner-response headings, Local Guide labels and number formats in 30 interface
+languages through dictionaries, and every dictionary has a structural fallback (probing the tabs
+for the one that renders review containers; detecting an owner reply by its position and date
+line; parsing reviewer stats positionally) so a missing or misspelt entry degrades to a slower
+path, never to a wrong number. Dictionary entries outside en/tr/de/es were written from memory
+and are listed in the agents' reports for native-speaker review.

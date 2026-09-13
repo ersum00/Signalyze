@@ -3,6 +3,7 @@
  * the cross-runtime fixtures. Deterministic: same seed, same output.
  */
 import type { Review } from '@signalyze/shared';
+import type { DetectedLanguage } from '../text';
 
 /** mulberry32 PRNG: small, fast, deterministic. */
 export function createRng(seed: number): () => number {
@@ -304,6 +305,353 @@ export function turkishDataset({ count, seed }: DatasetOptions): Review[] {
   return out;
 }
 
+/** Natural sentences and stock-phrase texts in one language (or in scripts without a dictionary). */
+export interface LanguagePool {
+  /** Client-side language tag written into the reviews (null for the mixed-script pool). */
+  language: string | null;
+  /** What the engine's detection must return for every text of the pool. */
+  detected: DetectedLanguage;
+  positive: readonly string[];
+  negative: readonly string[];
+  stock: readonly string[];
+}
+
+/**
+ * One pool per covered language plus one of scripts without a dictionary
+ * (Thai, Hindi, Greek). Every text is detected as `detected`; that is
+ * asserted by the tests, so the pools double as detection samples.
+ */
+export const MULTILINGUAL_POOLS: readonly LanguagePool[] = [
+  {
+    language: 'en',
+    detected: 'en',
+    positive: [
+      'The pasta was fresh and the waiter was attentive without hovering.',
+      'Cozy little place, the soup of the day was excellent and the prices are fair.',
+    ],
+    negative: [
+      'The chicken was cold and the waiter was rude, never again.',
+      'Dirty tables and slow service, very disappointing evening.',
+    ],
+    stock: [
+      'Highly recommend, great service and friendly staff.',
+      'Great place, excellent food, will definitely come back.',
+    ],
+  },
+  {
+    language: 'tr',
+    detected: 'tr',
+    positive: [
+      'Çorba çok lezzetli ve garson çok ilgili, fiyatlar da uygun.',
+      'Temiz ve keyifli bir yer, tatlılar taze ve porsiyonlar büyük.',
+    ],
+    negative: [
+      'Tavuk soğuktu ve garson kaba davrandı, bir daha asla.',
+      'Masalar kirli ve servis çok yavaş, hayal kırıklığı.',
+    ],
+    stock: [
+      'Kesinlikle tavsiye ederim, çok güler yüzlü personel, çok teşekkürler.',
+      'Harika bir yer, mükemmel hizmet, tekrar geleceğim.',
+    ],
+  },
+  {
+    language: 'de',
+    detected: 'de',
+    positive: [
+      'Das Essen war sehr lecker und die Bedienung war aufmerksam und freundlich.',
+      'Gemütliches Lokal mit fairen Preisen, der Kuchen war hervorragend.',
+    ],
+    negative: [
+      'Das Schnitzel war kalt und der Kellner war unfreundlich, nie wieder.',
+      'Schmutzige Tische und langsamer Service, sehr enttäuschend.',
+    ],
+    stock: [
+      'Sehr zu empfehlen, sehr freundliches Personal, vielen Dank.',
+      'Immer wieder gerne, sehr lecker und top Service.',
+    ],
+  },
+  {
+    language: 'es',
+    detected: 'es',
+    positive: [
+      'La comida es muy buena y el trato es genial, volveremos.',
+      'Un sitio acogedor con precios justos y postres deliciosos.',
+    ],
+    negative: [
+      'El pollo estaba frío y el camarero fue grosero, nunca más.',
+      'Mesas sucias y servicio lento, una decepción.',
+    ],
+    stock: [
+      'Muy recomendable, excelente atención y muy amables.',
+      'Todo perfecto, muy buen servicio, sin duda volveré.',
+    ],
+  },
+  {
+    language: 'fr',
+    detected: 'fr',
+    positive: [
+      'Le service est très bon et la cuisine est délicieuse, nous reviendrons.',
+      'Un endroit agréable avec des prix corrects et un personnel souriant.',
+    ],
+    negative: [
+      'Le poulet était froid et le serveur était impoli, plus jamais.',
+      'Tables sales et service lent, une soirée décevante.',
+    ],
+    stock: [
+      'Je recommande, très bon accueil et service impeccable.',
+      'Tout était parfait et le rapport qualité prix est au top, merci beaucoup.',
+    ],
+  },
+  {
+    language: 'it',
+    detected: 'it',
+    positive: [
+      'Il servizio è ottimo e la cucina è deliziosa, ci torneremo.',
+      'Un locale accogliente con prezzi giusti e un personale cortese.',
+    ],
+    negative: [
+      'Il pollo era freddo e il cameriere era scortese, mai più.',
+      'Tavoli sporchi e servizio lento, una serata deludente.',
+    ],
+    stock: [
+      'Consigliatissimo, personale gentile e servizio eccellente, ci torneremo di sicuro.',
+      'Tutto perfetto, ottimo rapporto qualità prezzo, grazie mille.',
+    ],
+  },
+  {
+    language: 'pt',
+    detected: 'pt',
+    positive: [
+      'A comida é muito boa e o atendimento foi excelente, voltaremos.',
+      'Um lugar aconchegante com preços justos e sobremesas deliciosas.',
+    ],
+    negative: [
+      'O frango estava frio e o garçom foi grosseiro, nunca mais.',
+      'Mesas sujas e serviço lento, uma noite decepcionante.',
+    ],
+    stock: [
+      'Recomendo muito, atendimento excelente e equipe atenciosa.',
+      'Tudo perfeito, muito bom, voltarei com certeza.',
+    ],
+  },
+  {
+    language: 'nl',
+    detected: 'nl',
+    positive: [
+      'Het eten was heerlijk en de bediening was erg vriendelijk, we komen terug.',
+      'Gezellige zaak met eerlijke prijzen en een lekker kopje koffie.',
+    ],
+    negative: [
+      'De kip was koud en de ober was onbeschoft, nooit meer.',
+      'Vieze tafels en trage bediening, erg teleurstellend.',
+    ],
+    stock: [
+      'Een aanrader, vriendelijk personeel en uitstekende service.',
+      'Heerlijk gegeten en helemaal top, we komen zeker terug.',
+    ],
+  },
+  {
+    language: 'pl',
+    detected: 'pl',
+    positive: [
+      'Jedzenie było pyszne i obsługa bardzo miła, na pewno wrócimy.',
+      'Klimatyczne miejsce z przystępnymi cenami i świetną kawą.',
+    ],
+    negative: [
+      'Kurczak był zimny i kelner był niemiły, nigdy więcej.',
+      'Brudne stoliki i wolna obsługa, bardzo rozczarowani.',
+    ],
+    stock: [
+      'Polecam, miła obsługa i pyszne jedzenie.',
+      'Wszystko super i świetne miejsce, na pewno wrócę.',
+    ],
+  },
+  {
+    language: 'ru',
+    detected: 'ru',
+    positive: [
+      'Еда очень вкусная и официант приветливый, всё быстро и недорого.',
+      'Уютный зал, очень вежливый персонал и отличный кофе.',
+    ],
+    negative: [
+      'Курица была холодной и официант был грубым, больше никогда.',
+      'Грязный стол и очень медленно обслуживают, разочарована.',
+    ],
+    stock: [
+      'Рекомендую, приветливый персонал и отличное обслуживание.',
+      'Всё было вкусно, обязательно вернёмся, спасибо большое.',
+    ],
+  },
+  {
+    language: 'uk',
+    detected: 'uk',
+    positive: [
+      'Їжа була дуже смачна і офіціант був уважний, ціни приємні.',
+      'Затишний зал, дуже ввічливий персонал і смачна кава.',
+    ],
+    negative: [
+      'Курка була холодна і офіціант був грубий, більше ніколи.',
+      'Брудний стіл і дуже повільно обслуговують, розчарована.',
+    ],
+    stock: [
+      'Рекомендую, привітний персонал і чудове обслуговування.',
+      "Все було смачно, обов'язково повернемось, дуже дякую.",
+    ],
+  },
+  {
+    language: 'ar',
+    detected: 'ar',
+    positive: [
+      'الأكل لذيذ جدا والموظفين محترمين والأسعار مناسبة.',
+      'مكان جميل وهادئ والقهوة ممتازة.',
+    ],
+    negative: [
+      'الدجاج كان بارد والخدمة سيئة، لن أعود أبدا.',
+      'الطاولات متسخة والخدمة بطيئة جدا، تجربة سيئة.',
+    ],
+    stock: ['أنصح به بشدة، خدمة ممتازة ومكان رائع.', 'أكل لذيذ وتعامل راقي، سأعود مرة أخرى.'],
+  },
+  {
+    language: 'ja',
+    detected: 'ja',
+    positive: [
+      '料理はとても美味しくて、店員さんの対応も丁寧でした。',
+      '落ち着いた雰囲気で、コーヒーも絶品でした。',
+    ],
+    negative: [
+      'チキンは冷めていて、店員の態度も悪い。二度と行きません。',
+      'テーブルが汚くて、料理が出てくるのも遅い。がっかりしました。',
+    ],
+    stock: [
+      'とても美味しかったです。また来たいです。',
+      'おすすめです。店員さんが親切で、コスパ最高でした。',
+    ],
+  },
+  {
+    language: 'zh',
+    detected: 'zh',
+    positive: ['菜很新鲜，服务员也很热情，价格实惠。', '环境安静舒服，咖啡也很好喝。'],
+    negative: ['鸡肉是凉的，服务员态度差，再也不来了。', '桌子很脏，上菜太慢，非常失望。'],
+    stock: ['强烈推荐，服务很好，环境不错。', '很好吃，性价比很高，下次再来。'],
+  },
+  {
+    language: 'ko',
+    detected: 'ko',
+    positive: [
+      '음식이 정말 맛있고 직원분들이 친절하세요, 가격도 착해요.',
+      '분위기가 조용하고 커피도 훌륭해요.',
+    ],
+    negative: [
+      '치킨이 차갑고 직원이 불친절해요, 다시는 안 갑니다.',
+      '테이블이 더럽고 음식이 너무 느려요, 실망했어요.',
+    ],
+    stock: [
+      '강력 추천, 친절하고 맛있어요, 또 올게요.',
+      '가성비 최고, 분위기 좋아요, 다시 오고 싶어요.',
+    ],
+  },
+  {
+    language: 'id',
+    detected: 'id',
+    positive: [
+      'Makanannya enak dan pelayanannya sangat ramah, harganya juga murah.',
+      'Tempatnya nyaman dan bersih, kopinya juga mantap.',
+    ],
+    negative: [
+      'Ayamnya dingin dan pelayannya kasar, kapok saya.',
+      'Meja kotor dan pelayanan lambat, sangat mengecewakan.',
+    ],
+    stock: [
+      'Sangat recommended, pelayanan ramah dan makanannya enak.',
+      'Puas banget, harga terjangkau, pasti balik lagi.',
+    ],
+  },
+  {
+    language: 'vi',
+    detected: 'vi',
+    positive: [
+      'Đồ ăn rất ngon và nhân viên rất nhiệt tình, giá cũng hợp lý.',
+      'Không gian yên tĩnh và sạch sẽ, cà phê cũng rất thơm.',
+    ],
+    negative: [
+      'Gà bị nguội và nhân viên thì thô lỗ, không bao giờ quay lại.',
+      'Bàn bẩn và phục vụ chậm, rất thất vọng.',
+    ],
+    stock: [
+      'Rất đáng thử, nhân viên nhiệt tình và đồ ăn ngon.',
+      'Rất hài lòng, giá cả hợp lý, sẽ quay lại.',
+    ],
+  },
+  {
+    language: 'sv',
+    detected: 'sv',
+    positive: [
+      'Maten var god och personalen var mycket trevlig, vi kommer tillbaka.',
+      'Mysigt ställe med bra priser och riktigt gott kaffe.',
+    ],
+    negative: [
+      'Kycklingen var kall och servitören var otrevlig, aldrig mer.',
+      'Smutsiga bord och långsam service, mycket besviken.',
+    ],
+    stock: [
+      'Rekommenderas, trevlig personal och utmärkt service.',
+      'Allt var perfekt, god mat, kommer gärna tillbaka.',
+    ],
+  },
+  {
+    language: null,
+    detected: 'other',
+    positive: [
+      'อาหารอร่อยมาก พนักงานบริการดี',
+      'खाना बहुत स्वादिष्ट था और स्टाफ बहुत अच्छा था',
+      'Το φαγητό ήταν υπέροχο και το προσωπικό πολύ ευγενικό',
+    ],
+    negative: [
+      'อาหารเย็นและพนักงานไม่สุภาพ ไม่กลับมาอีก',
+      'खाना ठंडा था और सेवा बहुत धीमी थी',
+      'Το κοτόπουλο ήταν κρύο και ο σερβιτόρος αγενής',
+    ],
+    stock: [
+      'อาหารอร่อยมาก พนักงานบริการดี',
+      'Το φαγητό ήταν υπέροχο και το προσωπικό πολύ ευγενικό',
+    ],
+  },
+];
+
+/**
+ * Reviews cycling through every language pool: natural positive and negative
+ * sentences, stock-phrase texts, and a tenth of 5-star ratings paired with a
+ * negative text (exercises rating_text_mismatch in every language).
+ */
+export function multilingualDataset({ count, seed }: DatasetOptions): Review[] {
+  const r = rng(seed);
+  const out: Review[] = [];
+  for (let i = 0; i < count; i += 1) {
+    const pool = MULTILINGUAL_POOLS[i % MULTILINGUAL_POOLS.length]!;
+    const mismatch = r.chance(0.1);
+    const rating = mismatch ? 5 : r.pick([5, 5, 5, 4, 4, 3, 2, 1] as const);
+    const text =
+      mismatch || rating <= 2
+        ? r.pick(pool.negative)
+        : r.chance(0.4)
+          ? r.pick(pool.stock)
+          : r.pick(pool.positive);
+    out.push(
+      baseReview(r, {
+        rating,
+        date: isoDay(DAY_2026_06_01 - r.int(0, 900)),
+        text,
+        reviewerReviewCount: r.int(0, 60),
+        photoCount: r.chance(0.3) ? r.int(1, 3) : 0,
+        localGuideLevel: r.chance(0.3) ? r.int(1, 7) : null,
+        ownerResponse: r.chance(0.15) ? ownerReply(r) : null,
+        language: pool.language,
+      }),
+    );
+  }
+  return out;
+}
+
 export const DATASETS = {
   normal: normalDataset,
   burst: burstDataset,
@@ -312,6 +660,7 @@ export const DATASETS = {
   small: smallDataset,
   sparse: sparseDataset,
   turkish: turkishDataset,
+  multilingual: multilingualDataset,
 } as const;
 
 export type DatasetName = keyof typeof DATASETS;

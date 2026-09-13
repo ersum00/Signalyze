@@ -16,6 +16,7 @@ DATA_DIR = API_DIR / "signalyze_api" / "engine" / "data"
 
 FILES = {
     "thresholds.json": SIGNALS_DIR / "data" / "thresholds.json",
+    "languages.json": SIGNALS_DIR / "data" / "languages.json",
     "stopwords.json": SIGNALS_DIR / "data" / "stopwords.json",
     "template-phrases.json": SIGNALS_DIR / "data" / "template-phrases.json",
     "sentiment-lexicon.json": SIGNALS_DIR / "data" / "sentiment-lexicon.json",

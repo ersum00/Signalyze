@@ -18,7 +18,7 @@ const files = readdirSync(dir).filter((f) => f.endsWith('.json'));
 
 describe('fixtures', () => {
   it('exist for every synthetic dataset', () => {
-    expect(files.length).toBeGreaterThanOrEqual(7);
+    expect(files.length).toBeGreaterThanOrEqual(8);
   });
 
   for (const file of files) {

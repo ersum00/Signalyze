@@ -3,9 +3,17 @@
  * A static, illustrative rendering of the extension's side panel, built from
  * HTML and CSS only. Every number is example data.
  */
-import type { SignalId } from '@signalyze/shared';
-import { SIGNALS } from '../lib/signals';
-import { SUMMARY_SENTENCE } from '../lib/site';
+import { BURST_WINDOW_DAYS, LOCAL_GUIDE_ESTABLISHED_LEVEL, type SignalId } from '@signalyze/shared';
+import { useTranslations, type Locale } from '../i18n';
+import { getSignals } from '../lib/signals';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const signals = getSignals(locale);
 
 const score = 58;
 
@@ -22,21 +30,11 @@ const values: Record<SignalId, number> = {
   owner_response_pattern: 0.35,
 };
 
-const months = [
-  { label: 'S', n: 3 },
-  { label: 'O', n: 4 },
-  { label: 'N', n: 2 },
-  { label: 'D', n: 5 },
-  { label: 'J', n: 3 },
-  { label: 'F', n: 4 },
-  { label: 'M', n: 18 },
-  { label: 'A', n: 22 },
-  { label: 'M', n: 6 },
-  { label: 'J', n: 4 },
-  { label: 'J', n: 3 },
-  { label: 'A', n: 5 },
-];
-const maxMonth = Math.max(...months.map((m) => m.n));
+// September to August; the month initials are localised in `mock.months`.
+const counts = [3, 4, 2, 5, 3, 4, 18, 22, 6, 4, 3, 5];
+const labels = t('mock.months').split(' ');
+const months = counts.map((n, i) => ({ label: labels[i] ?? '', n }));
+const maxMonth = Math.max(...counts);
 
 const ratings = [
   { stars: 5, pct: 64 },
@@ -47,9 +45,9 @@ const ratings = [
 ];
 
 const reviewers = [
-  { value: '71%', label: 'one review only' },
-  { value: '18%', label: 'Local Guide level 3+' },
-  { value: '44%', label: 'no photo, short text' },
+  { value: '71%', label: t('mock.reviewers.single') },
+  { value: '18%', label: t('mock.reviewers.guides', { level: LOCAL_GUIDE_ESTABLISHED_LEVEL }) },
+  { value: '44%', label: t('mock.reviewers.noPhoto') },
 ];
 ---
 
@@ -61,13 +59,13 @@ const reviewers = [
         Signalyze
       </span>
       <span class="rounded-full bg-brand-50 px-2 py-0.5 font-mono text-[11px] text-brand-700"
-        >example data</span
+        >{t('mock.example')}</span
       >
     </div>
 
     <div class="border-b border-line px-4 py-3">
-      <p class="font-semibold">Harbour Street Bakery</p>
-      <p class="mt-0.5 text-xs text-ink-600 tabular-nums">4.6 ★ · 1,240 reviews · 200 analysed</p>
+      <p class="font-semibold">{t('mock.place')}</p>
+      <p class="mt-0.5 text-xs text-ink-600 tabular-nums">{t('mock.placeMeta')}</p>
     </div>
 
     <div class="grid grid-cols-[auto_1fr] items-center gap-4 border-b border-line px-4 py-4">
@@ -75,16 +73,16 @@ const reviewers = [
         <span class="text-2xl font-bold tabular-nums">{score}</span>
       </div>
       <div>
-        <p class="text-xs text-ink-400">Signalyze Score · 0 to 100</p>
-        <p class="mt-1 text-[11px] leading-snug text-ink-600">{SUMMARY_SENTENCE}</p>
+        <p class="text-xs text-ink-400">{t('mock.scoreLabel')}</p>
+        <p class="mt-1 text-[11px] leading-snug text-ink-600">{t('legal.summary')}</p>
       </div>
     </div>
 
     <section class="border-b border-line px-4 py-3">
-      <h3 class="text-xs font-semibold text-ink-400">Signals</h3>
+      <h3 class="text-xs font-semibold text-ink-400">{t('mock.signals')}</h3>
       <ul class="mt-2 space-y-1.5">
         {
-          SIGNALS.map((s) => (
+          signals.map((s) => (
             <li class="grid grid-cols-[1fr_4.5rem_2.5rem] items-center gap-3 text-xs">
               <span class="truncate">{s.title}</span>
               <span class="meter" aria-hidden="true">
@@ -100,7 +98,7 @@ const reviewers = [
     </section>
 
     <section class="border-b border-line px-4 py-3">
-      <h3 class="text-xs font-semibold text-ink-400">Reviews per month</h3>
+      <h3 class="text-xs font-semibold text-ink-400">{t('mock.monthly')}</h3>
       <div class="bars mt-2" aria-hidden="true">
         {
           months.map((m) => (
@@ -115,12 +113,12 @@ const reviewers = [
         {months.map((m) => <span class="flex-1 text-center">{m.label}</span>)}
       </div>
       <p class="mt-1 text-[11px] text-ink-600">
-        40 of 80 reviews in the last year were posted within one 14-day window.
+        {t('mock.monthlyNote', { days: BURST_WINDOW_DAYS })}
       </p>
     </section>
 
     <section class="border-b border-line px-4 py-3">
-      <h3 class="text-xs font-semibold text-ink-400">Rating distribution</h3>
+      <h3 class="text-xs font-semibold text-ink-400">{t('mock.rating')}</h3>
       <ul class="mt-2 space-y-1">
         {
           ratings.map((r) => (
@@ -137,7 +135,7 @@ const reviewers = [
     </section>
 
     <section class="px-4 py-3">
-      <h3 class="text-xs font-semibold text-ink-400">Reviewers</h3>
+      <h3 class="text-xs font-semibold text-ink-400">{t('mock.reviewers')}</h3>
       <dl class="mt-2 grid grid-cols-3 gap-2">
         {
           reviewers.map((r) => (
@@ -150,7 +148,5 @@ const reviewers = [
       </dl>
     </section>
   </div>
-  <figcaption class="mt-3 text-xs text-ink-400">
-    Illustrative side panel. The place and every number are example data.
-  </figcaption>
+  <figcaption class="mt-3 text-xs text-ink-400">{t('mock.caption')}</figcaption>
 </figure>

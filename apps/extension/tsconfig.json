@@ -11,6 +11,8 @@
     "src/**/*",
     "wxt.config.ts",
     "vitest.config.ts",
+    "vite.store.config.ts",
+    "store/harness/**/*",
     "extension-key.json",
     ".wxt/wxt.d.ts"
   ]

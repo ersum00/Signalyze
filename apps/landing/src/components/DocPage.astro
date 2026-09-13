@@ -1,0 +1,58 @@
+---
+/**
+ * Renders one of the repository documents for one locale. Privacy and
+ * methodology look for `docs/<DOC>.<locale>.md` first and fall back to the
+ * English `docs/<DOC>.md` with a note; the changelog is English-only and is
+ * shown with a note in every other locale.
+ */
+import { getEntry, render } from 'astro:content';
+import { DEFAULT_LOCALE, LOCALE_NAMES, useTranslations, type Locale } from '../i18n';
+import Doc from '../layouts/Doc.astro';
+
+type DocName = 'privacy' | 'methodology' | 'changelog';
+
+interface Props {
+  locale: Locale;
+  doc: DocName;
+}
+
+const { locale, doc } = Astro.props;
+const t = useTranslations(locale);
+
+let entry;
+let source: string;
+let note: string | undefined;
+
+if (doc === 'changelog') {
+  entry = await getEntry('changelog', 'changelog');
+  source = 'CHANGELOG.md';
+  if (locale !== DEFAULT_LOCALE) note = t('doc.changelogNote');
+} else {
+  const file = doc.toUpperCase();
+  const localized =
+    locale === DEFAULT_LOCALE ? undefined : await getEntry('docs', `${doc}.${locale}`);
+  if (localized) {
+    entry = localized;
+    source = `docs/${file}.${locale}.md`;
+  } else {
+    entry = await getEntry('docs', doc);
+    source = `docs/${file}.md`;
+    if (locale !== DEFAULT_LOCALE) {
+      note = t('doc.fallbackNote', { language: LOCALE_NAMES[locale] });
+    }
+  }
+}
+
+if (!entry) throw new Error(`${source} was not found by the content loader.`);
+const { Content } = await render(entry);
+---
+
+<Doc
+  locale={locale}
+  title={t(`meta.${doc}.title`)}
+  description={t(`meta.${doc}.description`)}
+  source={source}
+  note={note}
+>
+  <Content />
+</Doc>

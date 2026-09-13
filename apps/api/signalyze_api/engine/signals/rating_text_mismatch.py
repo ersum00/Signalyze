@@ -3,42 +3,77 @@
 from __future__ import annotations
 
 from collections.abc import Sequence
+from dataclasses import dataclass
 
 from signalyze_api.engine.data_files import SENTIMENT_LEXICON, THRESHOLDS, LexiconEntry
 from signalyze_api.engine.mathutil import ramp, round6
 from signalyze_api.engine.prepare import PreparedReview
-from signalyze_api.engine.text import EngineLanguage, normalize_text
+from signalyze_api.engine.text import (
+    ENGINE_LANGUAGES,
+    MATCH_MODE,
+    DetectedLanguage,
+    EngineLanguage,
+    code_point_length,
+    normalize_text,
+)
 from signalyze_api.engine.types import unavailable
 from signalyze_api.models import SignalResult
 
 T = THRESHOLDS.rating_text_mismatch
 
 
-def _sets(entry: LexiconEntry) -> tuple[frozenset[str], frozenset[str]]:
-    return (
-        frozenset(normalize_text(w) for w in entry.positive),
-        frozenset(normalize_text(w) for w in entry.negative),
+@dataclass(frozen=True, slots=True)
+class Lexicon:
+    positive: frozenset[str]
+    negative: frozenset[str]
+    # Substring mode: every entry with its polarity, longest first (stable on file order).
+    ordered: tuple[tuple[str, bool], ...]
+
+
+def _lexicon(entry: LexiconEntry) -> Lexicon:
+    positive = [w for w in (normalize_text(x) for x in entry.positive) if w != ""]
+    negative = [w for w in (normalize_text(x) for x in entry.negative) if w != ""]
+    ordered = sorted(
+        [*((w, True) for w in positive), *((w, False) for w in negative)],
+        key=lambda item: -code_point_length(item[0]),
     )
+    return Lexicon(frozenset(positive), frozenset(negative), tuple(ordered))
 
 
-LEXICON: dict[EngineLanguage, tuple[frozenset[str], frozenset[str]]] = {
-    "en": _sets(SENTIMENT_LEXICON.en),
-    "tr": _sets(SENTIMENT_LEXICON.tr),
-    "de": _sets(SENTIMENT_LEXICON.de),
-    "es": _sets(SENTIMENT_LEXICON.es),
+LEXICON: dict[EngineLanguage, Lexicon] = {
+    lang: _lexicon(SENTIMENT_LEXICON[lang]) for lang in ENGINE_LANGUAGES
 }
 
 
-def tone_of(tokens: Sequence[str], language: EngineLanguage) -> float | None:
-    """Tone in [-1, 1] from lexicon hits, or None when no lexicon word occurs."""
-    positive, negative = LEXICON[language]
+def tone_of(normalized: str, tokens: Sequence[str], language: DetectedLanguage) -> float | None:
+    """Tone in [-1, 1] from lexicon hits, or None when no lexicon word occurs.
+
+    Word mode counts the tokens found in the lexicon. Substring mode (ja, zh) counts the
+    lexicon entries found in the text, longest first, each once; a matched entry is removed
+    before shorter entries are tried, so a negated form is not also counted as its stem.
+    "other" has no lexicon.
+    """
+    if language == "other":
+        return None
+    lex = LEXICON[language]
     pos = 0
     neg = 0
-    for t in tokens:
-        if t in positive:
-            pos += 1
-        elif t in negative:
-            neg += 1
+    if MATCH_MODE[language] == "word":
+        for t in tokens:
+            if t in lex.positive:
+                pos += 1
+            elif t in lex.negative:
+                neg += 1
+    else:
+        text = normalized
+        for entry, positive in lex.ordered:
+            if entry not in text:
+                continue
+            if positive:
+                pos += 1
+            else:
+                neg += 1
+            text = text.replace(entry, " ")
     if pos + neg == 0:
         return None
     return (pos - neg) / (pos + neg)
@@ -49,7 +84,7 @@ def rating_text_mismatch(reviews: Sequence[PreparedReview]) -> SignalResult:
     scored = 0
     mismatches = 0
     for r in reviews:
-        tone = tone_of(r.tokens, r.language)
+        tone = tone_of(r.normalized_text, r.tokens, r.language)
         if tone is None:
             continue
         scored += 1

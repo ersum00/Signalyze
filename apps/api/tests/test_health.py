@@ -9,7 +9,7 @@ def test_health_ok(client: TestClient) -> None:
     body = response.json()
     assert body["status"] == "ok"
     assert body["version"]
-    assert body["engineVersion"] == "1.0.0"
+    assert body["engineVersion"] == "1.1.0"
     assert body["cache"] == "memory"
 
 

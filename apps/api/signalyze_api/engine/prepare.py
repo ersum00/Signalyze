@@ -7,7 +7,7 @@ from dataclasses import dataclass
 
 from signalyze_api.engine.mathutil import day_number, month_key
 from signalyze_api.engine.text import (
-    EngineLanguage,
+    DetectedLanguage,
     char_ngrams,
     code_point_length,
     detect_language,
@@ -28,7 +28,8 @@ class PreparedReview:
     normalized_text: str
     text_length: int
     tokens: list[str]
-    language: EngineLanguage
+    # Dictionary language of the text, or "other" when no dictionary applies.
+    language: DetectedLanguage
     normalized_owner_response: str | None
 
 
@@ -37,7 +38,6 @@ def prepare_reviews(reviews: Sequence[Review], ngram_size: int) -> list[Prepared
     prepared: list[PreparedReview] = []
     for review in reviews:
         normalized_text = normalize_text(review.text)
-        tokens = tokenize(normalized_text)
         owner = review.ownerResponse
         prepared.append(
             PreparedReview(
@@ -46,8 +46,8 @@ def prepare_reviews(reviews: Sequence[Review], ngram_size: int) -> list[Prepared
                 month=month_key(review.date),
                 normalized_text=normalized_text,
                 text_length=code_point_length(js_trim(review.text)),
-                tokens=tokens,
-                language=detect_language(tokens),
+                tokens=tokenize(normalized_text),
+                language=detect_language(normalized_text),
                 normalized_owner_response=(
                     normalize_text(owner) if owner is not None and js_trim(owner) != "" else None
                 ),

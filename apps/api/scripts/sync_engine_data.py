@@ -1,13 +1,14 @@
 """Copy the engine data files from the TypeScript reference into the Python package.
 
-The signal engine's calibration points, stopword lists, phrase dictionaries, tone lexicons
-and score weights are owned by ``packages/signals`` and must be byte-identical on both
-sides. Run from ``apps/api`` after changing any of them::
+The signal engine's calibration points, language table, stopword lists, phrase dictionaries,
+tone lexicons and score weights are owned by ``packages/signals`` and must be byte-identical
+on both sides. Run from ``apps/api`` after changing any of them::
 
     uv run python scripts/sync_engine_data.py
 
 Copies
     packages/signals/data/thresholds.json
+    packages/signals/data/languages.json
     packages/signals/data/stopwords.json
     packages/signals/data/template-phrases.json
     packages/signals/data/sentiment-lexicon.json
@@ -28,6 +29,7 @@ DATA_DIR = API_DIR / "signalyze_api" / "engine" / "data"
 
 FILES: dict[str, Path] = {
     "thresholds.json": SIGNALS_DIR / "data" / "thresholds.json",
+    "languages.json": SIGNALS_DIR / "data" / "languages.json",
     "stopwords.json": SIGNALS_DIR / "data" / "stopwords.json",
     "template-phrases.json": SIGNALS_DIR / "data" / "template-phrases.json",
     "sentiment-lexicon.json": SIGNALS_DIR / "data" / "sentiment-lexicon.json",

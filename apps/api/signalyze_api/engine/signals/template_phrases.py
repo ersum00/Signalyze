@@ -8,9 +8,11 @@ from signalyze_api.engine.data_files import TEMPLATE_PHRASES, THRESHOLDS
 from signalyze_api.engine.mathutil import ramp, round6
 from signalyze_api.engine.prepare import PreparedReview
 from signalyze_api.engine.text import (
+    ENGINE_LANGUAGES,
+    MATCH_MODE,
     EngineLanguage,
     code_point_length,
-    contains_phrase,
+    matches_phrase,
     normalize_text,
 )
 from signalyze_api.engine.types import unavailable
@@ -19,15 +21,16 @@ from signalyze_api.models import SignalResult
 T = THRESHOLDS.template_phrases
 
 PHRASES: dict[EngineLanguage, list[str]] = {
-    "en": [normalize_text(p) for p in TEMPLATE_PHRASES.en],
-    "tr": [normalize_text(p) for p in TEMPLATE_PHRASES.tr],
-    "de": [normalize_text(p) for p in TEMPLATE_PHRASES.de],
-    "es": [normalize_text(p) for p in TEMPLATE_PHRASES.es],
+    lang: [normalize_text(p) for p in TEMPLATE_PHRASES[lang]] for lang in ENGINE_LANGUAGES
 }
 
 
 def template_phrases(reviews: Sequence[PreparedReview]) -> SignalResult:
-    """Share of reviews whose stock phrases cover at least half of the normalised text."""
+    """Share of reviews whose stock phrases cover at least half of the normalised text.
+
+    Texts whose language is "other" have no dictionary: they count in withText but are
+    never phrase-based.
+    """
     with_text = [r for r in reviews if r.normalized_text != ""]
     if len(with_text) < T.minWithText:
         return unavailable(
@@ -40,11 +43,13 @@ def template_phrases(reviews: Sequence[PreparedReview]) -> SignalResult:
         text_len = code_point_length(r.normalized_text)
         covered = 0
         hit = False
-        for phrase in PHRASES[r.language]:
-            if contains_phrase(r.normalized_text, phrase):
-                hit = True
-                covered += code_point_length(phrase)
-                phrase_counts[phrase] = phrase_counts.get(phrase, 0) + 1
+        if r.language != "other":
+            mode = MATCH_MODE[r.language]
+            for phrase in PHRASES[r.language]:
+                if matches_phrase(r.normalized_text, phrase, mode):
+                    hit = True
+                    covered += code_point_length(phrase)
+                    phrase_counts[phrase] = phrase_counts.get(phrase, 0) + 1
         if hit:
             any_hit += 1
         if hit and min(covered, text_len) / text_len >= T.coverageThreshold:

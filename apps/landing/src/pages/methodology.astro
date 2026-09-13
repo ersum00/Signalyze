@@ -1,16 +1,5 @@
 ---
-import { getEntry, render } from 'astro:content';
-import Doc from '../layouts/Doc.astro';
-
-const entry = await getEntry('docs', 'methodology');
-if (!entry) throw new Error('docs/METHODOLOGY.md was not found by the content loader.');
-const { Content } = await render(entry);
+import DocPage from '../components/DocPage.astro';
 ---
 
-<Doc
-  title="Methodology"
-  description="How each of the ten Signalyze signals and the 0 to 100 Signalyze Score are computed, with formulas, thresholds and weights."
-  source="docs/METHODOLOGY.md"
->
-  <Content />
-</Doc>
+<DocPage locale="en" doc="methodology" />

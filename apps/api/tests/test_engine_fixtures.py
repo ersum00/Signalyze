@@ -113,7 +113,7 @@ def differences(actual: object, expected: object, path: str, key: str) -> list[s
 
 
 def test_fixtures_exist() -> None:
-    assert len(FIXTURE_FILES) >= 7
+    assert len(FIXTURE_FILES) >= 8
 
 
 @pytest.mark.parametrize("fixture_path", FIXTURE_FILES, ids=[p.stem for p in FIXTURE_FILES])

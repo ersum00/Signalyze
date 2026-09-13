@@ -15,7 +15,7 @@ def test_analyze_happy_path(client: TestClient) -> None:
     assert body["placeId"] == PLACE_ID
     assert body["status"] == "ok"
     assert body["source"] == "server"
-    assert body["engineVersion"] == "1.0.0"
+    assert body["engineVersion"] == "1.1.0"
     assert isinstance(body["score"], int) and 0 <= body["score"] <= 100
     assert [s["id"] for s in body["signals"]] == list(SIGNAL_IDS)
     assert body["computedAt"].endswith("Z") and len(body["computedAt"]) == 24
