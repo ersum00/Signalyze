@@ -14,7 +14,7 @@ _Zuletzt aktualisiert: 2026-09-12. Diese Seite beschreibt genau, was die Signaly
 
 ## Was die Erweiterung liest
 
-Wenn Sie eine Unternehmensseite auf Google Maps öffnen und auf **Analysieren** klicken, liest die Erweiterung das Rezensionsfenster, das Google in Ihrem Tab bereits gerendert hat. Sie scrollt das Fenster, um bis zu 200 Rezensionen zu laden (oder bis zu 500, wenn Sie „Mehr laden“ wählen). Sie besucht keine andere Seite, öffnet keine Rezensentenprofile und liest nichts außerhalb der Unternehmensseite, die Sie gerade ansehen.
+Wenn Sie eine Unternehmensseite auf Google Maps öffnen und auf **Analysieren** klicken, liest die Erweiterung das Rezensionsfenster, das Google in Ihrem Tab bereits gerendert hat. Sie scrollt das Fenster, um standardmäßig 200 Rezensionen zu lesen, oder 500, 1000 oder alle Rezensionen der Seite (bis zu 2000), wenn Sie das so wählen; das Tempo bleibt bei jeder Wahl gleich (ein Scrollschritt alle 600 ms). Sie besucht keine andere Seite, öffnet keine Rezensentenprofile und liest nichts außerhalb der Unternehmensseite, die Sie gerade ansehen. Eine auf einen Zeitraum eingeschränkte Analyse (zum Beispiel die letzten 3 Monate) verlässt Ihren Browser nie: Sie wird lokal berechnet und nicht an den Server gesendet.
 
 ## Was an die Signalyze-API gesendet wird
 

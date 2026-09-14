@@ -194,7 +194,7 @@ export const en = {
 
   'mock.example': 'example data',
   'mock.place': 'Harbour Street Bakery',
-  'mock.placeMeta': '4.6 ★ · 1,240 reviews · 200 analysed',
+  'mock.placeMeta': '4.6 ★ · 1,240 reviews · 1,240 analysed',
   'mock.scoreLabel': 'Signalyze Score · 0 to 100',
   'mock.signals': 'Signals',
   'mock.monthly': 'Reviews per month',

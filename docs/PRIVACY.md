@@ -12,7 +12,7 @@ _Last updated: 2026-09-12. This page describes exactly what the Signalyze extens
 
 ## What the extension reads
 
-When you open a business page on Google Maps and click **Analyze**, the extension reads the review panel that Google has already rendered in your tab. It scrolls the panel to load up to 200 reviews (or up to 500 if you choose "Load more"). It does not visit any other page, does not open reviewer profiles and does not read anything outside the business page you are looking at.
+When you open a business page on Google Maps and click **Analyze**, the extension reads the review panel that Google has already rendered in your tab. It scrolls the panel to read 200 reviews by default, or 500, 1000 or every review on the page (up to 2000) when you choose so, at the same pace whatever the choice (one scroll step per 600 ms). It does not visit any other page, does not open reviewer profiles and does not read anything outside the business page you are looking at. An analysis restricted to a period (for example the last 3 months) never leaves your browser: it is computed locally and is not sent to the server.
 
 ## What is sent to the Signalyze API
 

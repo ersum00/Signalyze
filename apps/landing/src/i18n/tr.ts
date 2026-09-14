@@ -191,7 +191,7 @@ export const tr: Dictionary = {
 
   'mock.example': 'örnek veri',
   'mock.place': 'Harbour Street Bakery',
-  'mock.placeMeta': '4,6 ★ · 1.240 yorum · 200 analiz edildi',
+  'mock.placeMeta': '4,6 ★ · 1.240 yorum · 1.240 analiz edildi',
   'mock.scoreLabel': 'Signalyze Skoru · 0 ile 100 arası',
   'mock.signals': 'Sinyaller',
   'mock.monthly': 'Aylık yorum sayısı',

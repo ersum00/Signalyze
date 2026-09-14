@@ -9,7 +9,9 @@ histories look like and how similar the texts are. No account, no tracking.
 **What it does.** It reads the reviews already visible on the Google Maps page you are looking at,
 computes ten measurable signals (for example "62% of reviews were posted within one 14-day
 window" or "71% of reviewers have no other review") and combines them into a 0-100 Signalyze
-Score. Every signal is explained in plain language and in [docs/METHODOLOGY.md](docs/METHODOLOGY.md).
+Score. The analysis can cover every review on the page (up to 2000) and can be restricted to a
+recent period such as the last 3 months. Every signal is explained in plain language and in
+[docs/METHODOLOGY.md](docs/METHODOLOGY.md).
 
 **What it does not do.** It makes no claim about the accuracy of any review, and no claim about
 any business or reviewer. The score is a statistical summary of public review data, nothing more.
@@ -44,6 +46,15 @@ pnpm check:forbidden-words
 pnpm check:dom-isolation
 pnpm build:zip       # Chrome Web Store zip -> apps/extension/.output/*.zip
 ```
+
+## Live check
+
+```sh
+pnpm --filter @signalyze/extension build
+pnpm --filter @signalyze/extension live:check "https://www.google.com/maps/search/<place>" --limit all --headed
+```
+
+Loads the built extension into a real Chrome, collects the reviews of that page through the extension itself, runs the engine twice and cross-checks the star histogram against the page; add `--window last3m` for a period.
 
 ## Adapter fixtures
 

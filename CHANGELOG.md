@@ -2,6 +2,16 @@
 
 All notable changes to Signalyze are recorded here. The version number is the extension version; the API and the site are released together with it.
 
+## 0.2.0 - unreleased
+
+- Reviews to load: 200, 500, 1000 or every review on the page (up to 2000), chosen on the Home view; the "Load more" buttons are gone.
+- Period filter: this year, last 12/6/3 months or this month. The extension switches Google's sort order to Newest, stops once the list has moved past the period and keeps only reviews dated within it; period profiles are computed in the browser, never sent to the server, and cached separately from the all-time profile.
+- Score card explains itself: a plain reading sentence by band, the 0–100 scale in words and the signals that make up the score with their points.
+- Every signal row shows its distance from typical and, expanded, a plain-language sentence with the numbers, the typical range and extreme threshold from the calibration file, and what to look at on the page.
+- Signal engine 1.2.0: text similarity compares at most 600 evenly spaced texts so a 2000-review analysis stays fast; profiles computed by 1.1.0 are recomputed.
+- API accepts up to 2000 reviews and 8 MB per request.
+- `live-check` script: loads the built extension into a real Chrome and verifies collection, determinism and the star histogram on a live Google Maps page.
+
 ## 0.1.0 - unreleased
 
 Initial feature set.

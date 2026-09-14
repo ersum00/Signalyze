@@ -197,7 +197,7 @@ export const de: Dictionary = {
 
   'mock.example': 'beispieldaten',
   'mock.place': 'Harbour Street Bakery',
-  'mock.placeMeta': '4,6 ★ · 1.240 Rezensionen · 200 analysiert',
+  'mock.placeMeta': '4,6 ★ · 1.240 Rezensionen · 1.240 analysiert',
   'mock.scoreLabel': 'Signalyze-Wert · 0 bis 100',
   'mock.signals': 'Signale',
   'mock.monthly': 'Rezensionen pro Monat',
