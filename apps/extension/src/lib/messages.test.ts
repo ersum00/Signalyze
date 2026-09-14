@@ -5,7 +5,10 @@ describe('isTabMessage', () => {
   it('accepts every well-formed tab message', () => {
     expect(isTabMessage({ type: 'GET_PLACE_CONTEXT' })).toBe(true);
     expect(isTabMessage({ type: 'CANCEL_COLLECT' })).toBe(true);
-    expect(isTabMessage({ type: 'COLLECT_REVIEWS', limit: 200 })).toBe(true);
+    expect(isTabMessage({ type: 'COLLECT_REVIEWS', limit: 200, minDate: null })).toBe(true);
+    expect(isTabMessage({ type: 'COLLECT_REVIEWS', limit: 2000, minDate: '2026-01-01' })).toBe(
+      true,
+    );
     for (const state of BADGE_STATES) {
       expect(isTabMessage({ type: 'SET_BADGE', score: 42, state })).toBe(true);
     }
@@ -16,7 +19,9 @@ describe('isTabMessage', () => {
     expect(isTabMessage(null)).toBe(false);
     expect(isTabMessage('GET_PLACE_CONTEXT')).toBe(false);
     expect(isTabMessage({ type: 'COLLECT_REVIEWS' })).toBe(false);
-    expect(isTabMessage({ type: 'COLLECT_REVIEWS', limit: 'many' })).toBe(false);
+    expect(isTabMessage({ type: 'COLLECT_REVIEWS', limit: 'many', minDate: null })).toBe(false);
+    expect(isTabMessage({ type: 'COLLECT_REVIEWS', limit: 200 })).toBe(false);
+    expect(isTabMessage({ type: 'COLLECT_REVIEWS', limit: 200, minDate: 5 })).toBe(false);
     expect(isTabMessage({ type: 'SET_BADGE', score: 'x', state: 'done' })).toBe(false);
     expect(isTabMessage({ type: 'SET_BADGE', score: 1, state: 'unknown' })).toBe(false);
     expect(isTabMessage({ type: 'OPEN_SIDE_PANEL' })).toBe(false);

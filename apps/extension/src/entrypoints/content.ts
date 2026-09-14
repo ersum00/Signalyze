@@ -4,7 +4,7 @@
  * hashes reviewer ids before anything leaves the page and keeps the on-page
  * badge in sync. Every DOM access goes through the adapter folder.
  */
-import { EXTENDED_REVIEW_LIMIT, SCROLL_INTERVAL_MS } from '@signalyze/shared';
+import { ALL_REVIEWS_CEILING, SCROLL_INTERVAL_MS } from '@signalyze/shared';
 import { browser } from 'wxt/browser';
 import {
   RULES,
@@ -128,12 +128,16 @@ export default defineContentScript({
       }
     };
 
-    const collect = async (limit: number): Promise<CollectReviewsResponse> => {
+    const collect = async (
+      limit: number,
+      minDate: string | null,
+    ): Promise<CollectReviewsResponse> => {
       const empty = (status: CollectReviewsResponse['status']): CollectReviewsResponse => ({
         status,
         request: null,
         collected: 0,
         dropped: 0,
+        sortedByNewest: false,
       });
       const current = readPlaceContext(document, location.href) ?? context;
       if (current === null) return empty('no_place');
@@ -142,11 +146,12 @@ export default defineContentScript({
       const controller = new AbortController();
       collecting = controller;
       setBadge({ state: 'loading' });
-      const bounded = Math.min(Math.max(1, Math.floor(limit)), EXTENDED_REVIEW_LIMIT);
+      const bounded = Math.min(Math.max(1, Math.floor(limit)), ALL_REVIEWS_CEILING);
       let success = false;
       try {
         const result = await collectReviews(document, {
           limit: bounded,
+          minDate,
           scrollIntervalMs: SCROLL_INTERVAL_MS,
           signal: controller.signal,
           onProgress: (count) => {
@@ -159,7 +164,13 @@ export default defineContentScript({
           return empty('unsupported_layout');
         }
         if (result.status === 'aborted') {
-          return { status: 'aborted', request: null, collected: result.reviews.length, dropped: 0 };
+          return {
+            status: 'aborted',
+            request: null,
+            collected: result.reviews.length,
+            dropped: 0,
+            sortedByNewest: result.sortedByNewest,
+          };
         }
         const built = await buildAnalysisRequest(
           current,
@@ -174,6 +185,7 @@ export default defineContentScript({
           request: built.request,
           collected: result.reviews.length,
           dropped: built.dropped,
+          sortedByNewest: result.sortedByNewest,
         };
       } catch {
         return empty('error');
@@ -200,7 +212,7 @@ export default defineContentScript({
           await refresh();
           return { context, layout, layoutSupported: layoutSupported(layout) };
         case 'COLLECT_REVIEWS':
-          return collect(message.limit);
+          return collect(message.limit, message.minDate);
         case 'CANCEL_COLLECT': {
           const active = collecting !== null;
           collecting?.abort();
