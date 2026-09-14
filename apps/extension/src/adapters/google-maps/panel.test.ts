@@ -431,10 +431,11 @@ describe('collectReviews with a window', () => {
       limit: 2000,
       minDate: '2026-08-01',
       now: NOW,
-      sleep: async () => {
+      sleep: () => {
         round += 1;
         if (round > 40) throw new Error('collection did not stop');
         list.insertAdjacentHTML('beforeend', reviewHtml(older(round)));
+        return Promise.resolve();
       },
     });
     expect(result.sortedByNewest).toBe(true);
