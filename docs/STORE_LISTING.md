@@ -5,15 +5,16 @@ the language policy (`pnpm check:forbidden-words` scans this file).
 
 ## Identity
 
-| Field              | Value                                                                                   |
-| ------------------ | --------------------------------------------------------------------------------------- |
-| Name               | Signalyze: Review Profile for Google Maps                                               |
-| Category           | Productivity › Tools (alternative: Shopping)                                            |
-| Language           | English (default); Turkish, German, Spanish via `_locales`                              |
-| Privacy policy URL | https://signalyze.veriskor.com/privacy                                                  |
-| Homepage URL       | https://signalyze.veriskor.com                                                          |
-| Support            | Contact channel of the developer account                                                |
-| Single purpose     | Show a statistical Review Profile for the Google Maps business page the user is viewing |
+| Field              | Value                                                                                              |
+| ------------------ | -------------------------------------------------------------------------------------------------- |
+| Name               | Signalyze: Review Profile for Google Maps                                                          |
+| Category           | Productivity › Tools (alternative: Shopping)                                                       |
+| Language           | English (default); Turkish, German, Spanish via `_locales`                                         |
+| Privacy policy URL | https://signalyze.veriskor.com/privacy                                                             |
+| Homepage URL       | https://signalyze.veriskor.com                                                                     |
+| Store URL          | https://chromewebstore.google.com/detail/signalyze-review-profile/boalccknclijlfkpeaeohcpahidpchcf |
+| Support            | Contact channel of the developer account                                                           |
+| Single purpose     | Show a statistical Review Profile for the Google Maps business page the user is viewing            |
 
 ## Short description (132 characters max)
 

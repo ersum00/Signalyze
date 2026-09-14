@@ -31,7 +31,6 @@ export const de: Dictionary = {
   'hero.lead':
     'Signalyze macht aus den Rezensionen, die ohnehin auf einer Google-Maps-Seite stehen, ein Bewertungsprofil: zehn messbare Signale, von zeitlichen Häufungen bis zur Textähnlichkeit, zusammengefasst zu einem Signalyze-Wert von 0 bis 100. Kein Konto, kein Tracking.',
   'hero.methodology': 'Methodik lesen',
-  'hero.storeSoon': 'Der Eintrag im Chrome Web Store folgt in Kürze.',
   'hero.readouts.label': 'Beispielhafte Signalwerte',
   'hero.readouts.eyebrow': 'so sieht ein signal aus',
   'hero.readouts.burst':
@@ -179,7 +178,6 @@ export const de: Dictionary = {
 
   'cta.title': 'Erst das Profil lesen, dann entscheiden.',
   'cta.text': 'Kostenlos, ohne Konto, nichts wird gesendet, bevor Sie auf „Analysieren“ klicken.',
-  'cta.storeSoon': 'Store-Eintrag folgt in Kürze.',
 
   'footer.github': 'GitHub',
   'footer.trademark':

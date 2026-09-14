@@ -31,7 +31,6 @@ export const es: Dictionary = {
   'hero.lead':
     'Signalyze convierte las reseñas que ya están en una página de Google Maps en un perfil de reseñas: diez señales medibles, desde la concentración temporal hasta la similitud de textos, combinadas en una Puntuación Signalyze de 0 a 100. Sin cuenta, sin rastreo.',
   'hero.methodology': 'Leer la metodología',
-  'hero.storeSoon': 'La ficha en Chrome Web Store estará disponible en breve.',
   'hero.readouts.label': 'Ejemplos de valores de señal',
   'hero.readouts.eyebrow': 'así se ve una señal',
   'hero.readouts.burst': 'de las reseñas se publicó dentro de una sola ventana de {days} días',
@@ -178,7 +177,6 @@ export const es: Dictionary = {
 
   'cta.title': 'Lee el perfil y después decide.',
   'cta.text': 'Gratis, sin cuenta, y no se envía nada hasta que pulsas Analizar.',
-  'cta.storeSoon': 'La ficha en la tienda estará disponible en breve.',
 
   'footer.github': 'GitHub',
   'footer.trademark':

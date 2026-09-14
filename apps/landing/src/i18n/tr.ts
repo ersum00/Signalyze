@@ -30,7 +30,6 @@ export const tr: Dictionary = {
   'hero.lead':
     'Signalyze, bir Google Haritalar sayfasında zaten bulunan yorumları bir Yorum Profili’ne dönüştürür: zaman yoğunlaşmasından metin benzerliğine kadar ölçülebilir on sinyal, 0 ile 100 arası bir Signalyze Skoru’nda birleşir. Hesap yok, izleme yok.',
   'hero.methodology': 'Yöntemi okuyun',
-  'hero.storeSoon': 'Chrome Web Mağazası sayfası yakında.',
   'hero.readouts.label': 'Örnek sinyal değerleri',
   'hero.readouts.eyebrow': 'bir sinyal nasıl görünür',
   'hero.readouts.burst': 'oranındaki yorum tek bir {days} günlük pencerede yazılmış',
@@ -175,7 +174,6 @@ export const tr: Dictionary = {
 
   'cta.title': 'Profili okuyun, sonra karar verin.',
   'cta.text': 'Ücretsiz, hesapsız; Analiz et’e tıklayana kadar hiçbir şey gönderilmez.',
-  'cta.storeSoon': 'Mağaza sayfası yakında.',
 
   'footer.github': 'GitHub',
   'footer.trademark':

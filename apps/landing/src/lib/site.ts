@@ -6,11 +6,9 @@ export const SITE_NAME = 'Signalyze';
 /** Public origin of this site; also configured as `site` in astro.config.mjs. */
 export const SITE_URL = LANDING_URL;
 
-/**
- * The only place the Chrome Web Store link is defined. The id is a placeholder
- * until the first Store upload assigns the real one.
- */
-export const STORE_URL = 'https://chromewebstore.google.com/detail/signalyze/PLACEHOLDER_STORE_ID';
+/** The only place the Chrome Web Store link is defined. */
+export const STORE_URL =
+  'https://chromewebstore.google.com/detail/signalyze-review-profile/boalccknclijlfkpeaeohcpahidpchcf';
 
 /** Source repository, linked from the footer. */
 export const GITHUB_URL = 'https://github.com/ersum00/Signalyze';

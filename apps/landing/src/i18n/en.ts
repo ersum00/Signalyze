@@ -31,7 +31,6 @@ export const en = {
   'hero.lead':
     'Signalyze turns the reviews already on a Google Maps page into a Review Profile: ten measurable signals, from timing bursts to text similarity, combined into a 0 to 100 Signalyze Score. No account, no tracking.',
   'hero.methodology': 'Read the methodology',
-  'hero.storeSoon': 'Chrome Web Store listing coming soon.',
   'hero.readouts.label': 'Example signal readouts',
   'hero.readouts.eyebrow': 'what a signal looks like',
   'hero.readouts.burst': 'of reviews were posted within one {days}-day window',
@@ -176,7 +175,6 @@ export const en = {
 
   'cta.title': 'Read the profile, then decide.',
   'cta.text': 'Free, no account, nothing sent until you click Analyze.',
-  'cta.storeSoon': 'Store listing coming soon.',
 
   'footer.github': 'GitHub',
   'footer.trademark':

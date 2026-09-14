@@ -4,6 +4,8 @@ A free Chrome extension that shows a **Review Profile** for any Google Maps busi
 statistical summary of when reviews were written, how ratings are distributed, what the reviewers'
 histories look like and how similar the texts are. No account, no tracking.
 
+**Install:** [Signalyze on the Chrome Web Store](https://chromewebstore.google.com/detail/signalyze-review-profile/boalccknclijlfkpeaeohcpahidpchcf)
+
 **What it does.** It reads the reviews already visible on the Google Maps page you are looking at,
 computes ten measurable signals (for example "62% of reviews were posted within one 14-day
 window" or "71% of reviewers have no other review") and combines them into a 0-100 Signalyze
