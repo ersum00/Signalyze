@@ -46,7 +46,7 @@ export const en = {
     'Any place page with at least {min} reviews. Signalyze stays idle until you ask for it.',
   'how.step2.title': 'Click Analyze',
   'how.step2.text':
-    'The extension scrolls the review panel Google has already rendered and reads up to {limit} reviews, or {extended} with "Load more". It never opens another page.',
+    'The extension scrolls the review panel Google has already rendered and reads {limit} reviews by default, or every review on the page (up to {ceiling}) and only a chosen period if you prefer. It never opens another page.',
   'how.step3.title': 'Read the Review Profile',
   'how.step3.text':
     'The side panel shows the score, the ten signals, reviews per month, the rating distribution and a reviewer summary, each explained in plain language.',

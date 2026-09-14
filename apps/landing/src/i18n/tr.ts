@@ -45,7 +45,7 @@ export const tr: Dictionary = {
     'En az {min} yorumu olan herhangi bir işletme sayfası. Siz istemedikçe Signalyze hiçbir şey yapmaz.',
   'how.step2.title': 'Analiz et’e tıklayın',
   'how.step2.text':
-    'Uzantı, Google’ın zaten oluşturduğu yorum panelini kaydırır ve en fazla {limit} yorumu, "Daha fazla yükle" ile {extended} yorumu okur. Asla başka bir sayfa açmaz.',
+    'Uzantı, Google’ın zaten oluşturduğu yorum panelini kaydırır ve varsayılan olarak {limit} yorumu, isterseniz sayfadaki tüm yorumları (en fazla {ceiling}) ve yalnızca seçtiğiniz dönemi okur. Asla başka bir sayfa açmaz.',
   'how.step3.title': 'Yorum Profili’ni okuyun',
   'how.step3.text':
     'Yan panel skoru, on sinyali, aylık yorum sayısını, puan dağılımını ve yorumcu özetini her biri sade bir dille açıklanmış olarak gösterir.',

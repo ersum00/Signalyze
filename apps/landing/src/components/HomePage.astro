@@ -2,8 +2,8 @@
 import {
   BURST_WINDOW_DAYS,
   CACHE_TTL_DAYS,
+  ALL_REVIEWS_CEILING,
   DEFAULT_REVIEW_LIMIT,
-  EXTENDED_REVIEW_LIMIT,
   MIN_REVIEWS_FOR_SCORE,
   NGRAM_SIZE,
 } from '@signalyze/shared';
@@ -40,7 +40,7 @@ const steps = [
   { title: t('how.step1.title'), text: t('how.step1.text', { min: MIN_REVIEWS_FOR_SCORE }) },
   {
     title: t('how.step2.title'),
-    text: t('how.step2.text', { limit: DEFAULT_REVIEW_LIMIT, extended: EXTENDED_REVIEW_LIMIT }),
+    text: t('how.step2.text', { limit: DEFAULT_REVIEW_LIMIT, ceiling: ALL_REVIEWS_CEILING }),
   },
   { title: t('how.step3.title'), text: t('how.step3.text') },
 ];

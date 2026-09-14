@@ -46,7 +46,7 @@ export const es: Dictionary = {
     'Cualquier página de negocio con al menos {min} reseñas. Signalyze no hace nada hasta que se lo pides.',
   'how.step2.title': 'Pulsa Analizar',
   'how.step2.text':
-    'La extensión desplaza el panel de reseñas que Google ya ha mostrado y lee hasta {limit} reseñas, o {extended} con «Cargar más». Nunca abre otra página.',
+    'La extensión desplaza el panel de reseñas que Google ya ha mostrado y lee {limit} reseñas por defecto, o todas las reseñas de la página (hasta {ceiling}) y solo el periodo que elijas. Nunca abre otra página.',
   'how.step3.title': 'Lee el perfil de reseñas',
   'how.step3.text':
     'El panel lateral muestra la puntuación, las diez señales, las reseñas por mes, la distribución de puntuaciones y un resumen de los reseñadores, cada uno explicado en lenguaje sencillo.',

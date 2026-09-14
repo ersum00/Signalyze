@@ -48,7 +48,7 @@ export const de: Dictionary = {
     'Jede Unternehmensseite mit mindestens {min} Rezensionen. Signalyze bleibt untätig, bis Sie es aufrufen.',
   'how.step2.title': 'Auf „Analysieren“ klicken',
   'how.step2.text':
-    'Die Erweiterung scrollt das Rezensionsfenster, das Google bereits gerendert hat, und liest bis zu {limit} Rezensionen, mit „Mehr laden“ bis zu {extended}. Sie öffnet nie eine andere Seite.',
+    'Die Erweiterung scrollt das Rezensionsfenster, das Google bereits gerendert hat, und liest standardmäßig {limit} Rezensionen, auf Wunsch alle Rezensionen der Seite (bis zu {ceiling}) und nur einen gewählten Zeitraum. Sie öffnet nie eine andere Seite.',
   'how.step3.title': 'Das Bewertungsprofil lesen',
   'how.step3.text':
     'Das Seitenpanel zeigt den Wert, die zehn Signale, die Rezensionen pro Monat, die Sterneverteilung und eine Zusammenfassung der Rezensenten, jeweils in einfacher Sprache erklärt.',
