@@ -1,7 +1,16 @@
 import { SIGNAL_IDS, SUPPORTED_LOCALES, type SignalResult } from '@signalyze/shared';
 import { analyze } from '@signalyze/signals';
 import { describe, expect, it } from 'vitest';
-import { explainSignal, signalName, signalShort, signalWhy } from './explain';
+import {
+  baselineParams,
+  explainSignal,
+  signalBaseline,
+  signalLookAt,
+  signalName,
+  signalPlain,
+  signalShort,
+  signalWhy,
+} from './explain';
 import { sampleReviews, signalResult } from './test-helpers';
 
 const LEFTOVER = /\{\w+\}/;
@@ -198,5 +207,72 @@ describe('signal copy', () => {
         expect(signalWhy(id, locale).length).toBeGreaterThan(0);
       }
     }
+  });
+});
+
+describe('plain language', () => {
+  it('renders plain, baseline and look-at sentences without leftovers in every locale', () => {
+    for (const signal of AVAILABLE) {
+      for (const locale of SUPPORTED_LOCALES) {
+        expect(signalPlain(signal, locale), `${locale}:${signal.id}`).not.toMatch(LEFTOVER);
+        expect(signalBaseline(signal.id, locale), `${locale}:${signal.id}`).not.toMatch(LEFTOVER);
+        expect(signalLookAt(signal.id, locale).length, `${locale}:${signal.id}`).toBeGreaterThan(
+          10,
+        );
+      }
+    }
+  });
+
+  it('quotes the thresholds file, not hard-coded numbers', () => {
+    expect(baselineParams('burst_ratio')).toEqual({ low: 5, high: 65 });
+    expect(baselineParams('single_review_accounts')).toEqual({ low: 30, high: 75 });
+    expect(baselineParams('text_similarity')).toEqual({
+      meanLow: 18,
+      meanHigh: 45,
+      pairLow: 2,
+      pairHigh: 15,
+    });
+    expect(baselineParams('date_entropy')).toEqual({ typicalAbove: 75, extremeBelow: 35 });
+    expect(baselineParams('local_guide_ratio')).toEqual({ typicalAtLeast: 20 });
+  });
+
+  it('explains the burst window against an even spread', () => {
+    const burst = AVAILABLE.find((s) => s.id === 'burst_ratio')!;
+    const text = signalPlain(burst, 'en');
+    expect(text).toContain('62%');
+    expect(text).toContain('124');
+    expect(text).toContain('2.5 years');
+    expect(text).toContain('1.5%');
+  });
+
+  it('mentions sampling only when it happened', () => {
+    const sampled = signalResult({
+      id: 'text_similarity',
+      value: 0.2,
+      details: {
+        meanJaccard: 0.2,
+        highPairShare: 0.01,
+        highPairs: 2,
+        pairs: 179700,
+        maxPair: 0.7,
+        eligible: 812,
+        sampled: 600,
+      },
+    });
+    expect(signalPlain(sampled, 'en')).toContain('600 of 812');
+    const full = signalResult({
+      id: 'text_similarity',
+      value: 0.2,
+      details: {
+        meanJaccard: 0.2,
+        highPairShare: 0.01,
+        highPairs: 2,
+        pairs: 190,
+        maxPair: 0.7,
+        eligible: 20,
+        sampled: 20,
+      },
+    });
+    expect(signalPlain(full, 'en')).not.toContain('20 of 20');
   });
 });
