@@ -148,6 +148,72 @@ export const LOCAL_GUIDE_PHRASES: Readonly<Record<string, readonly string[]>> = 
   hi: ['स्थानीय गाइड'],
 };
 
+/** Label of the review sort control ("Sort reviews", "Yorumları sırala"). Google also sets data-value="Sort". */
+export const SORT_BUTTON_LABELS: Readonly<Record<string, readonly string[]>> = {
+  en: ['Sort'],
+  tr: ['Sırala', 'Sıralama'],
+  de: ['Sortieren'],
+  es: ['Ordenar'],
+  fr: ['Trier'],
+  it: ['Ordina'],
+  pt: ['Ordenar', 'Classificar'],
+  nl: ['Sorteren'],
+  pl: ['Sortuj'],
+  ru: ['Сортировать', 'Сортировка'],
+  uk: ['Сортувати', 'Сортування'],
+  cs: ['Seřadit', 'Řadit'],
+  sv: ['Sortera'],
+  da: ['Sortér', 'Sorter'],
+  nb: ['Sorter'],
+  fi: ['Lajittele', 'Järjestä'],
+  el: ['Ταξινόμηση'],
+  hu: ['Rendezés'],
+  ro: ['Sortează', 'Sortare'],
+  id: ['Urutkan'],
+  ms: ['Isih', 'Susun'],
+  vi: ['Sắp xếp'],
+  th: ['จัดเรียง', 'เรียง'],
+  ja: ['並べ替え', '並び替え'],
+  zh: ['排序'],
+  ko: ['정렬'],
+  ar: ['ترتيب', 'فرز'],
+  he: ['מיון'],
+  hi: ['क्रमबद्ध', 'क्रम से लगाएं'],
+};
+
+/** The "Newest" entry of the sort menu. Google's menu order is fixed: most relevant, newest, highest, lowest. */
+export const NEWEST_LABELS: Readonly<Record<string, readonly string[]>> = {
+  en: ['Newest'],
+  tr: ['En yeni', 'En yeniler'],
+  de: ['Neueste'],
+  es: ['Más recientes', 'Más reciente'],
+  fr: ['Plus récents', 'Les plus récents'],
+  it: ['Più recenti'],
+  pt: ['Mais recentes'],
+  nl: ['Nieuwste'],
+  pl: ['Najnowsze'],
+  ru: ['Сначала новые', 'Новые'],
+  uk: ['Спочатку нові', 'Найновіші'],
+  cs: ['Nejnovější'],
+  sv: ['Nyaste', 'Senaste'],
+  da: ['Nyeste'],
+  nb: ['Nyeste'],
+  fi: ['Uusimmat'],
+  el: ['Πιο πρόσφατες', 'Νεότερες'],
+  hu: ['Legújabb'],
+  ro: ['Cele mai recente', 'Cele mai noi'],
+  id: ['Terbaru'],
+  ms: ['Terbaru'],
+  vi: ['Mới nhất'],
+  th: ['ใหม่ล่าสุด', 'ล่าสุด'],
+  ja: ['新しい順'],
+  zh: ['最新', '最新的'],
+  ko: ['최신순'],
+  ar: ['الأحدث'],
+  he: ['החדשות ביותר', 'הכי חדש'],
+  hi: ['सबसे नए', 'नवीनतम'],
+};
+
 /** Words for "star(s)"; used to keep star labels out of the review-count rule. */
 const STAR_WORDS: Readonly<Record<string, readonly string[]>> = {
   en: ['star', 'stars'],
@@ -225,6 +291,8 @@ export const REVIEW_WORDS = compileTerms([
   ...dictionaryTerms(REVIEWS_TAB_LABELS),
 ]);
 const OWNER_HEADING_REGEX = compileTerms(dictionaryTerms(OWNER_RESPONSE_HEADINGS));
+const SORT_LABEL_REGEX = compileTerms(dictionaryTerms(SORT_BUTTON_LABELS));
+const NEWEST_LABEL_REGEX = compileTerms(dictionaryTerms(NEWEST_LABELS));
 export const LOCAL_GUIDE_REGEX = compileTerms(dictionaryTerms(LOCAL_GUIDE_PHRASES));
 const STAR_WORD_REGEX = compileTerms(dictionaryTerms(STAR_WORDS));
 const PHOTO_TILE_REGEX = new RegExp(`^\\s*${compileTerms(PHOTO_WORDS).source}\\s*\\d`, 'u');
@@ -476,6 +544,52 @@ export const RULES: readonly SelectorRule[] = [
     find: (root) => {
       const labelled = labelledReviewsTabs(root);
       return labelled.length > 0 ? labelled : selectedTabWithReviews(root);
+    },
+  },
+  {
+    name: 'sortButton',
+    scope: 'document',
+    required: false,
+    reliesOn:
+      'button[aria-haspopup] in the main panel outside the review containers: data-value="Sort", else a label with a "sort" word in a known UI language, else the last such button before the first review container',
+    find: (root) => {
+      const main = mainPanelOf(root);
+      const first = reviewContainers(main)[0] ?? null;
+      const candidates = all(main, 'button[aria-haspopup]').filter(
+        (el) => el.closest('[data-review-id]') === null,
+      );
+      const byValue = candidates.filter((el) => el.getAttribute('data-value') === 'Sort');
+      if (byValue.length > 0) return byValue;
+      const byLabel = candidates.filter((el) =>
+        SORT_LABEL_REGEX.test(
+          foldText(`${el.getAttribute('aria-label') ?? ''} ${el.textContent ?? ''}`),
+        ),
+      );
+      if (byLabel.length > 0) return byLabel;
+      const before = candidates.filter(
+        (el) =>
+          first === null ||
+          (el.compareDocumentPosition(first) & Node.DOCUMENT_POSITION_FOLLOWING) !== 0,
+      );
+      const last = before[before.length - 1];
+      return last === undefined ? [] : [last];
+    },
+  },
+  {
+    name: 'sortMenuNewest',
+    scope: 'document',
+    required: false,
+    reliesOn:
+      "inside [role=menu], the [role=menuitemradio] whose text carries a 'newest' word in a known UI language; else the second item (Google's fixed order: most relevant, newest, highest, lowest)",
+    find: (root) => {
+      const items = all(
+        root,
+        '[role="menu"] [role="menuitemradio"], [role="menu"] [role="menuitem"]',
+      );
+      const byLabel = items.find((el) => NEWEST_LABEL_REGEX.test(foldText(el.textContent ?? '')));
+      if (byLabel !== undefined) return [byLabel];
+      const second = items[1];
+      return items.length >= 2 && second !== undefined ? [second] : [];
     },
   },
   {

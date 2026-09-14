@@ -435,7 +435,7 @@ describe('tab probing when no label is recognised', () => {
       return Promise.resolve();
     };
     const result = await collectReviews(doc, { limit: 3, now: NOW, sleep });
-    expect(result).toEqual({ reviews: [], status: 'unsupported_layout' });
+    expect(result).toEqual({ reviews: [], status: 'unsupported_layout', sortedByNewest: false });
     expect(clicks).toEqual(['A', 'B', 'C', 'D']);
     expect(sleeps).toBe(8);
   });
@@ -453,7 +453,7 @@ describe('tab probing when no label is recognised', () => {
       sleep,
       signal: controller.signal,
     });
-    expect(result).toEqual({ reviews: [], status: 'aborted' });
+    expect(result).toEqual({ reviews: [], status: 'aborted', sortedByNewest: false });
   });
 });
 

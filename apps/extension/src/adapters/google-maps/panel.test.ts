@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { collectReviews, expandTruncatedTexts, findScrollPanel } from './panel';
+import { collectReviews, expandTruncatedTexts, findScrollPanel, selectNewestSort } from './panel';
 import { readVisibleReviewsDetailed } from './reviews';
 import { checkLayout } from './selectors';
 
@@ -50,7 +50,35 @@ function reviewHtml(r: MiniReview): string {
     </div>`;
 }
 
-function pageHtml(reviews: MiniReview[], options: { tabSelected?: boolean } = {}): string {
+interface SortLabels {
+  button: string;
+  items: string[];
+  /** Google's stable data-value="Sort" attribute; omitted to exercise the label/position fallbacks. */
+  dataValue?: boolean;
+}
+
+const ENGLISH_SORT: SortLabels = {
+  button: 'Sort reviews',
+  items: ['Most relevant', 'Newest', 'Highest rating', 'Lowest rating'],
+  dataValue: true,
+};
+
+function sortHtml(labels: SortLabels): string {
+  const value = labels.dataValue === true ? ' data-value="Sort"' : '';
+  const items = labels.items
+    .map(
+      (item, i) =>
+        `<div role="menuitemradio" data-index="${i}" aria-checked="${i === 0}">${item}</div>`,
+    )
+    .join('');
+  return `<button aria-haspopup="true"${value} aria-label="${labels.button}">${labels.button}</button>
+    <div role="menu">${items}</div>`;
+}
+
+function pageHtml(
+  reviews: MiniReview[],
+  options: { tabSelected?: boolean; sort?: SortLabels } = {},
+): string {
   const selected = options.tabSelected ?? true;
   return `
     <div role="main" aria-label="Business test">
@@ -61,6 +89,7 @@ function pageHtml(reviews: MiniReview[], options: { tabSelected?: boolean } = {}
         <button role="tab" aria-selected="${selected ? 'false' : 'true'}" aria-label="Overview of Business test">Overview</button>
         <button role="tab" aria-selected="${selected ? 'true' : 'false'}" aria-label="Reviews for Business test">Reviews</button>
       </div>
+      ${options.sort ? sortHtml(options.sort) : ''}
       <div tabindex="-1">
         <div>${reviews.map(reviewHtml).join('')}</div>
       </div>
@@ -266,7 +295,7 @@ describe('collectReviews (hand-built DOM)', () => {
       return Promise.resolve();
     };
     const result = await collectReviews(doc, { limit: 3, now: NOW, sleep });
-    expect(result).toEqual({ reviews: [], status: 'unsupported_layout' });
+    expect(result).toEqual({ reviews: [], status: 'unsupported_layout', sortedByNewest: false });
     expect(sleeps).toBe(5);
   });
 
@@ -290,7 +319,7 @@ describe('collectReviews (hand-built DOM)', () => {
   it('returns unsupported_layout on an unrelated document', async () => {
     const doc = load('<p>hi</p>');
     const result = await collectReviews(doc, { limit: 10, now: NOW, sleep: instantSleep });
-    expect(result).toEqual({ reviews: [], status: 'unsupported_layout' });
+    expect(result).toEqual({ reviews: [], status: 'unsupported_layout', sortedByNewest: false });
   });
 
   it('stops with exhausted when the time budget is spent while a spinner stays visible', async () => {
@@ -307,5 +336,130 @@ describe('collectReviews (hand-built DOM)', () => {
     expect(result.status).toBe('exhausted');
     // Budget is limit * interval * 3 = 1200 ms, i.e. 12 scrolls of 100 ms.
     expect(sleeps).toBe(12);
+  });
+});
+
+function clicksOf(doc: Document): string[] {
+  const clicked: string[] = [];
+  for (const item of Array.from(doc.querySelectorAll('[role="menuitemradio"]'))) {
+    item.addEventListener('click', () => {
+      clicked.push(item.textContent ?? '');
+    });
+  }
+  return clicked;
+}
+
+describe('selectNewestSort', () => {
+  it('opens the sort menu and clicks the Newest item by label', async () => {
+    const doc = load(pageHtml(THREE, { sort: ENGLISH_SORT }));
+    const clicked = clicksOf(doc);
+    expect(
+      await selectNewestSort(
+        doc,
+        async () => {},
+        () => false,
+      ),
+    ).toBe(true);
+    expect(clicked).toEqual(['Newest']);
+  });
+
+  it('finds the button by a known label and the item by a known word', async () => {
+    const doc = load(
+      pageHtml(THREE, {
+        sort: {
+          button: 'Rendezés',
+          items: ['Legrelevánsabb', 'Legújabb', 'Legjobb', 'Legrosszabb'],
+        },
+      }),
+    );
+    const clicked = clicksOf(doc);
+    expect(
+      await selectNewestSort(
+        doc,
+        async () => {},
+        () => false,
+      ),
+    ).toBe(true);
+    expect(clicked).toEqual(['Legújabb']);
+  });
+
+  it('falls back to the popup before the list and the second item in an unknown language', async () => {
+    const doc = load(
+      pageHtml(THREE, {
+        sort: {
+          button: 'Panga',
+          items: ['Zinazofaa zaidi', 'Mpya zaidi', 'Bora zaidi', 'Duni zaidi'],
+        },
+      }),
+    );
+    const clicked = clicksOf(doc);
+    expect(
+      await selectNewestSort(
+        doc,
+        async () => {},
+        () => false,
+      ),
+    ).toBe(true);
+    expect(clicked).toEqual(['Mpya zaidi']);
+  });
+
+  it('reports false when the page has no sort control', async () => {
+    const doc = load(pageHtml(THREE));
+    expect(
+      await selectNewestSort(
+        doc,
+        async () => {},
+        () => false,
+      ),
+    ).toBe(false);
+  });
+});
+
+describe('collectReviews with a window', () => {
+  const older = (i: number): MiniReview => ({
+    id: `old${i}`,
+    reviewer: 100 + i,
+    stars: 4,
+    when: '4 years ago',
+  });
+
+  it('stops after two rounds that only added reviews older than minDate', async () => {
+    const doc = load(pageHtml(THREE, { sort: ENGLISH_SORT }));
+    const list = doc.querySelector('[tabindex="-1"] > div')!;
+    let round = 0;
+    const result = await collectReviews(doc, {
+      limit: 2000,
+      minDate: '2026-08-01',
+      now: NOW,
+      sleep: async () => {
+        round += 1;
+        if (round > 40) throw new Error('collection did not stop');
+        list.insertAdjacentHTML('beforeend', reviewHtml(older(round)));
+      },
+    });
+    expect(result.sortedByNewest).toBe(true);
+    expect(result.status).toBe('complete');
+    expect(result.reviews.length).toBeLessThan(8);
+  });
+
+  it('keeps collecting in the default order when the sort switch failed', async () => {
+    const doc = load(pageHtml(THREE));
+    const result = await collectReviews(doc, {
+      limit: 3,
+      minDate: '2026-08-01',
+      now: NOW,
+      sleep: async () => {},
+    });
+    expect(result.sortedByNewest).toBe(false);
+    expect(result.status).toBe('complete');
+    expect(result.reviews).toHaveLength(3);
+  });
+
+  it('reports sortedByNewest false without a window', async () => {
+    const doc = load(pageHtml(THREE, { sort: ENGLISH_SORT }));
+    const clicked = clicksOf(doc);
+    const result = await collectReviews(doc, { limit: 3, now: NOW, sleep: async () => {} });
+    expect(result.sortedByNewest).toBe(false);
+    expect(clicked).toEqual([]);
   });
 });
