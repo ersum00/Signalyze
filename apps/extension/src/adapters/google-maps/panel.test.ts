@@ -356,7 +356,7 @@ describe('selectNewestSort', () => {
     expect(
       await selectNewestSort(
         doc,
-        async () => {},
+        () => Promise.resolve(),
         () => false,
       ),
     ).toBe(true);
@@ -376,7 +376,7 @@ describe('selectNewestSort', () => {
     expect(
       await selectNewestSort(
         doc,
-        async () => {},
+        () => Promise.resolve(),
         () => false,
       ),
     ).toBe(true);
@@ -396,7 +396,7 @@ describe('selectNewestSort', () => {
     expect(
       await selectNewestSort(
         doc,
-        async () => {},
+        () => Promise.resolve(),
         () => false,
       ),
     ).toBe(true);
@@ -408,7 +408,7 @@ describe('selectNewestSort', () => {
     expect(
       await selectNewestSort(
         doc,
-        async () => {},
+        () => Promise.resolve(),
         () => false,
       ),
     ).toBe(false);
@@ -448,7 +448,7 @@ describe('collectReviews with a window', () => {
       limit: 3,
       minDate: '2026-08-01',
       now: NOW,
-      sleep: async () => {},
+      sleep: () => Promise.resolve(),
     });
     expect(result.sortedByNewest).toBe(false);
     expect(result.status).toBe('complete');
@@ -458,7 +458,11 @@ describe('collectReviews with a window', () => {
   it('reports sortedByNewest false without a window', async () => {
     const doc = load(pageHtml(THREE, { sort: ENGLISH_SORT }));
     const clicked = clicksOf(doc);
-    const result = await collectReviews(doc, { limit: 3, now: NOW, sleep: async () => {} });
+    const result = await collectReviews(doc, {
+      limit: 3,
+      now: NOW,
+      sleep: () => Promise.resolve(),
+    });
     expect(result.sortedByNewest).toBe(false);
     expect(clicked).toEqual([]);
   });
