@@ -7,10 +7,14 @@ import type { AnalysisResult, Review, SignalResult } from '@signalyze/shared';
 import { MIN_REVIEWS_FOR_SCORE, SIGNAL_IDS } from '@signalyze/shared';
 import { monthlyCounts, ratingDistribution, reviewerProfile } from './aggregates';
 import { prepareReviews } from './prepare';
+import thresholds from '../data/thresholds.json';
 import { computeScore, WEIGHTS_VERSION } from './score';
 import { SIGNAL_FUNCTIONS } from './signals/index';
 
 export const ENGINE_VERSION: string = WEIGHTS_VERSION;
+
+/** Calibration points of every signal, shared byte-for-byte with the Python port. */
+export const THRESHOLDS = thresholds;
 
 export interface AnalyzeOptions {
   placeId: string;

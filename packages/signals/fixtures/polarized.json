@@ -1721,7 +1721,8 @@
           "highPairs": 180,
           "pairs": 4950,
           "maxPair": 1,
-          "eligible": 100
+          "eligible": 100,
+          "sampled": 100
         },
         "available": true
       },
@@ -1924,7 +1925,7 @@
       "withPhotosShare": 0.22
     },
     "source": "server",
-    "engineVersion": "1.1.0",
+    "engineVersion": "1.2.0",
     "computedAt": "2026-06-01T00:00:00.000Z"
   }
 }

@@ -292,3 +292,21 @@ describe('owner_response_pattern', () => {
     expect(signal(reviews, 'owner_response_pattern').available).toBe(false);
   });
 });
+
+describe('text_similarity sampling', () => {
+  it('compares every pair up to 600 eligible texts and samples evenly above', () => {
+    const small = signal(normalDataset({ count: 300, seed: 21 }), 'text_similarity');
+    expect(small.details.sampled).toBe(small.details.eligible);
+    const big = signal(DATASETS.large({ count: 1000, seed: 109 }), 'text_similarity');
+    expect(big.details.eligible).toBeGreaterThan(600);
+    expect(big.details.sampled).toBe(600);
+    expect(big.details.pairs).toBe((600 * 599) / 2);
+  });
+
+  it('picks the same texts for the same input order', () => {
+    const reviews = DATASETS.large({ count: 1000, seed: 109 });
+    const a = signal(reviews, 'text_similarity');
+    const b = signal([...reviews], 'text_similarity');
+    expect(a).toEqual(b);
+  });
+});
