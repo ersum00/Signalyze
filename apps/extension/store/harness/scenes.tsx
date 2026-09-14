@@ -130,7 +130,9 @@ function Result({
       result={result}
       fallbackReason={fallbackReason}
       collectStatus="complete"
-      limit={200}
+      scope={{ limit: 200, window: 'all' }}
+      sortedByNewest={false}
+      loaded={result.reviewCount}
       onAnalyze={noop}
     />
   );
