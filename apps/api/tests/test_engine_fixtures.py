@@ -42,6 +42,7 @@ INT_KEYS = {
     "highPairs",
     "pairs",
     "eligible",
+    "sampled",
     "minEligible",
     "phraseBased",
     "withText",

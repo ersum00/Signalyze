@@ -19,14 +19,18 @@ def text_similarity(reviews: Sequence[PreparedReview]) -> SignalResult:
 
     Eligibility uses the reference's ``normalizedText.length`` (UTF-16 units). Pairs are
     visited in index order (i < j) so the running sum is reproducible across runtimes.
-    value = mean Jaccard.
+    Above ``maxEligible`` texts an evenly spaced subset is compared (index ``i * n // cap``
+    in input order), the same indices the reference picks. value = mean Jaccard.
     """
     eligible = [r for r in reviews if utf16_length(r.normalized_text) >= T.minTextChars]
     if len(eligible) < T.minEligible:
         return unavailable(
             "text_similarity", {"eligible": len(eligible), "minEligible": T.minEligible}
         )
-    grams = [ngrams_of(r, T.ngramSize) for r in eligible]
+    n = len(eligible)
+    cap = T.maxEligible
+    sampled = [eligible[(i * n) // cap] for i in range(cap)] if n > cap else eligible
+    grams = [ngrams_of(r, T.ngramSize) for r in sampled]
     total = 0.0
     pairs = 0
     high_pairs = 0
@@ -58,7 +62,8 @@ def text_similarity(reviews: Sequence[PreparedReview]) -> SignalResult:
             "highPairs": high_pairs,
             "pairs": pairs,
             "maxPair": round6(max_pair),
-            "eligible": len(eligible),
+            "eligible": n,
+            "sampled": len(sampled),
         },
         available=True,
     )

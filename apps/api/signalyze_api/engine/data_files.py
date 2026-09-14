@@ -50,6 +50,7 @@ class TextSimilarityThresholds(BaseModel):
     ngramSize: int
     minTextChars: int
     minEligible: int
+    maxEligible: int
 
 
 class TemplatePhrasesThresholds(LowHighThresholds):

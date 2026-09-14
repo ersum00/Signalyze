@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     # Rate limit: analyses per IP per hour.
     analyze_rate_limit: str = "60/hour"
     # Reject request bodies larger than this (bytes). Also enforced by the edge proxy.
-    max_body_bytes: int = 2 * 1024 * 1024
+    max_body_bytes: int = 8 * 1024 * 1024
     cache_ttl_days: int = 7
 
     @field_validator("extension_ids", mode="before")

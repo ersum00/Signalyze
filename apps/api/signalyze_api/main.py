@@ -1,6 +1,6 @@
 """FastAPI application factory.
 
-Wires CORS (extension origins only), the 2 MB body guard, the anonymised access log, slowapi
+Wires CORS (extension origins only), the 8 MB body guard, the anonymised access log, slowapi
 rate limiting, uniform ``{"error", "message"}`` error bodies and the profile cache lifecycle
 (PostgreSQL when DATABASE_URL is set, otherwise in-memory).
 """
@@ -151,7 +151,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         if length is not None and length.isdigit() and int(length) > settings.max_body_bytes:
             return JSONResponse(
                 status_code=413,
-                content={"error": "payload_too_large", "message": "Request body exceeds 2 MB."},
+                content={"error": "payload_too_large", "message": "Request body exceeds 8 MB."},
             )
         return await call_next(request)
 
