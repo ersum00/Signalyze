@@ -1,6 +1,6 @@
 # Methodology
 
-_Engine version 1.1.0. This document is the single source of truth for how each signal and the Signalyze Score are computed. The landing page `/methodology` is generated from it, and the code in `packages/signals` (TypeScript) and `apps/api/signalyze_api/engine` (Python) implements exactly what is written here; both implementations are held to the same test fixtures._
+_Engine version 1.2.0. This document is the single source of truth for how each signal and the Signalyze Score are computed. The landing page `/methodology` is generated from it, and the code in `packages/signals` (TypeScript) and `apps/api/signalyze_api/engine` (Python) implements exactly what is written here; both implementations are held to the same test fixtures._
 
 Signalyze computes ten deterministic signals from the reviews visible on a Google Maps business page. Every signal is a number between 0 and 1 that expresses how unusual the measured value is compared with what typical reviewed places look like; 0 means "unremarkable", 1 means "as unusual as we ever see". The Signalyze Score (0-100) is a weighted combination of the signals that could be computed. No language model is involved and nothing is inferred about intent: each signal is a fact about the distribution of public data that anyone can recompute from the same page.
 
@@ -10,7 +10,7 @@ Signalyze computes ten deterministic signals from the reviews visible on a Googl
 
 The engine receives, per review: star rating (1-5), calendar day, text, the reviewer's public review count (if visible), photo count, Local Guide level (if visible), owner response text (if any). It never receives names, profile links or user ids. See [Privacy](/privacy).
 
-The extension loads up to 200 reviews (500 with "Load more") in Google's default "Most relevant" order, so the sample is the part of the review history Google chose to show first, not a random or chronological sample. Signals are computed on that sample and the side panel always shows how many reviews were analysed out of the displayed total.
+The extension loads 200 reviews by default, or 500, 1000 or every review on the page (up to 2000) when the user chooses so on the Home view, in Google's default "Most relevant" order, so the sample is the part of the review history Google chose to show first, not a random or chronological sample. When a period is chosen (this year, last 12, 6 or 3 months, this month), the extension first switches Google's sort order to "Newest" (if the sort control is not recognised, it keeps the "Most relevant" order and says so in the result), stops loading once two consecutive scroll rounds only added reviews older than the period, and keeps only reviews dated on or after the period's first day (computed in UTC). Such a windowed profile is computed locally in the browser with the bundled engine, is never sent to the server and is cached separately from the all-time profile, so the all-time profile and the on-page badge are unchanged; only all-time analyses use the shared server cache. Signals are computed on the loaded sample and the side panel always shows how many reviews were analysed out of the displayed total.
 
 ## Preprocessing
 
@@ -27,7 +27,7 @@ Every signal produces a raw measurement (mostly a share between 0 and 1) and map
 unusualness = clamp((value - low) / (high - low), 0, 1)
 ```
 
-`low` is the level at which the signal starts to count (typical places sit at or below it), `high` is the level at which it counts fully. The calibration points live in `packages/signals/data/thresholds.json` and are listed per signal below. They are engine version 1.1.0 estimates chosen from the shape of public Google Maps review data and from synthetic datasets; they will be revised with new engine versions and every revision is recorded in the changelog.
+`low` is the level at which the signal starts to count (typical places sit at or below it), `high` is the level at which it counts fully. The calibration points live in `packages/signals/data/thresholds.json` and are listed per signal below. They are engine version 1.2.0 estimates chosen from the shape of public Google Maps review data and from synthetic datasets; they will be revised with new engine versions and every revision is recorded in the changelog.
 
 ## The signals
 
@@ -75,7 +75,7 @@ unusualness = clamp((value - low) / (high - low), 0, 1)
 
 **Measures:** how much review texts overlap with each other.
 
-**How:** for every review with at least 20 characters of normalised text, build the set of character 3-grams (spaces included). For every pair compute the Jaccard similarity `|A ∩ B| / |A ∪ B|`. Report the mean over all pairs and the share of pairs above 0.5 ("near-duplicate pairs"). Requires at least 10 eligible texts.
+**How:** for every review with at least 20 characters of normalised text, build the set of character 3-grams (spaces included). For every pair compute the Jaccard similarity `|A ∩ B| / |A ∪ B|`. Report the mean over all pairs and the share of pairs above 0.5 ("near-duplicate pairs"). Requires at least 10 eligible texts. At most 600 eligible texts are compared: above 600, an evenly spaced subset is used (the text at index floor(i × n / 600) in input order, for i from 0 to 599), chosen identically by the TypeScript and Python engines, and the number of texts actually compared is reported in the details as `sampled`. All other signals run on every review.
 
 **Ramp:** the larger of mean Jaccard from 0.18 to 0.45 and near-duplicate pair share from 0.02 to 0.15.
 
@@ -137,7 +137,7 @@ unusualness = clamp((value - low) / (high - low), 0, 1)
 score = round( 100 × Σ (w_i × u_i) / Σ w_i )   over available signals i
 ```
 
-Weights (`packages/signals/src/weights.json`, version 1.1.0):
+Weights (`packages/signals/src/weights.json`, version 1.2.0):
 
 | Signal                 | Weight |
 | ---------------------- | ------ |
@@ -158,7 +158,7 @@ Weights are renormalised over the signals that are available for the place, so a
 
 ## What the synthetic datasets look like
 
-The engine ships with seeded synthetic datasets used in tests and as cross-implementation fixtures (`packages/signals/fixtures/`). Their scores at engine 1.1.0, for orientation:
+The engine ships with seeded synthetic datasets used in tests and as cross-implementation fixtures (`packages/signals/fixtures/`). Their scores at engine 1.2.0, for orientation:
 
 | Dataset      | Description                                                                          | Score                            |
 | ------------ | ------------------------------------------------------------------------------------ | -------------------------------- |
@@ -171,12 +171,13 @@ The engine ships with seeded synthetic datasets used in tests and as cross-imple
 
 ## Limitations
 
-- The sample is Google's "Most relevant" ordering, not the full history.
+- Unless every review is loaded, the sample is Google's "Most relevant" ordering (or "Newest" with a period), not the full history; a place with more than 2000 reviews is never loaded completely.
 - Relative dates limit precision to roughly a day for recent reviews and a month or a year for old ones.
+- A period is approximate: Google displays dates relatively ("2 months ago"), so the boundary of a period is applied to dates that are themselves rounded.
 - Lexicons and phrase dictionaries cover 18 languages: English, Spanish, Portuguese, French, German, Italian, Turkish, Dutch, Polish, Indonesian, Vietnamese, Swedish, Russian, Ukrainian, Arabic, Japanese, Chinese and Korean. Texts in other languages contribute to timing, rating and reviewer signals but not to the text signals (a Latin-script text in an uncovered language falls back to the English dictionaries, which rarely match it). The dictionaries are small and match surface forms only, with no stemming, negation handling or sarcasm detection, so heavily inflected languages get fewer hits per text.
 - Local Guide levels are often not shown in the review list; the signal is then unavailable rather than guessed.
-- The calibration points are version 1.1.0 estimates. Changing any of them is an engine version bump, recorded in the changelog, and the server cache is keyed by engine version.
+- The calibration points are version 1.2.0 estimates. Changing any of them is an engine version bump, recorded in the changelog, and the server cache is keyed by engine version.
 
 ## Optional language model (off by default)
 
-Engine 1.1.0 includes an optional server-side step that can be enabled by the operator: when `text_similarity` is already high, up to 30 texts (no reviewer data) are sent to an OpenAI-compatible endpoint that returns one number, a 0-1 "writing homogeneity" estimate, reported in the `text_similarity` details as `llmHomogeneity`. It never labels individual reviews and never changes the score in this version. It is disabled unless both `LLM_BASE_URL` and `LLM_API_KEY` are configured; the public Signalyze API currently runs with it disabled.
+Engine 1.2.0 includes an optional server-side step that can be enabled by the operator: when `text_similarity` is already high, up to 30 texts (no reviewer data) are sent to an OpenAI-compatible endpoint that returns one number, a 0-1 "writing homogeneity" estimate, reported in the `text_similarity` details as `llmHomogeneity`. It never labels individual reviews and never changes the score in this version. It is disabled unless both `LLM_BASE_URL` and `LLM_API_KEY` are configured; the public Signalyze API currently runs with it disabled.

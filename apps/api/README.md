@@ -33,7 +33,7 @@ After editing any file in `packages/signals/data` or `packages/signals/src/weigh
 | `EXTENSION_IDS` | empty | Comma-separated Chrome extension ids allowed by CORS. |
 | `PORT` | `8090` | Port for uvicorn. |
 | `ANALYZE_RATE_LIMIT` | `60/hour` | Analyses per client IP (slowapi, in-memory per worker). |
-| `MAX_BODY_BYTES` | `2097152` | Requests larger than this get 413. |
+| `MAX_BODY_BYTES` | `8388608` | Requests larger than this get 413. |
 | `CACHE_TTL_DAYS` | `7` | How long a computed profile is kept. |
 | `LLM_BASE_URL`, `LLM_API_KEY` | empty | Optional OpenAI-compatible endpoint; both empty = step disabled. |
 | `LLM_MODEL` | `gpt-4o-mini` | Model name for the optional step. |
@@ -43,7 +43,7 @@ After editing any file in `packages/signals/data` or `packages/signals/src/weigh
 | Method and path | Purpose |
 | --- | --- |
 | `GET /v1/health` | `{"status":"ok","version","engineVersion","cache":"postgres"\|"memory"}` |
-| `POST /v1/analyze` | Body: `AnalysisRequest` (placeId, reviews[1..500], ...). Returns `AnalysisResult`; `source` is `server` when computed now, `server-cache` when served from the 7-day cache (a request carrying more reviews than the cached profile recomputes). Rate limited. |
+| `POST /v1/analyze` | Body: `AnalysisRequest` (placeId, reviews[1..2000], ...). Returns `AnalysisResult`; `source` is `server` when computed now, `server-cache` when served from the 7-day cache (a request carrying more reviews than the cached profile recomputes). Rate limited. |
 | `GET /v1/place/{place_id}` | Cached `AnalysisResult` (`source: server-cache`) or 404. |
 
 Error bodies are always `{"error": <slug>, "message": <text>}`: `invalid_request` (422, with a

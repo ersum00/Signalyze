@@ -652,8 +652,14 @@ export function multilingualDataset({ count, seed }: DatasetOptions): Review[] {
   return out;
 }
 
+/** A normal place with enough texts to trigger the text-similarity sampling cap. */
+export function largeDataset({ count, seed }: DatasetOptions): Review[] {
+  return normalDataset({ count: Math.max(count, 700), seed });
+}
+
 export const DATASETS = {
   normal: normalDataset,
+  large: largeDataset,
   burst: burstDataset,
   polarized: polarizedDataset,
   template: templateDataset,

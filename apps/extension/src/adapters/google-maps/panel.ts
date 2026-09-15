@@ -1,8 +1,10 @@
 /**
- * Reviews tab, scroll container and the paced collection loop. Scrolling
- * happens at most once per interval (600 ms by default) and stops as soon as
- * the requested number of reviews is read, the list is exhausted, the caller
- * aborts, or the layout self-test fails.
+ * Reviews tab, sort control, scroll container and the paced collection loop.
+ * Scrolling happens at most once per interval (600 ms by default) and stops
+ * as soon as the requested number of reviews is read, the list is exhausted,
+ * the caller aborts, the layout self-test fails or, when a period is
+ * requested and Google's Newest order is active, two rounds in a row added
+ * only reviews older than the period.
  */
 import { SCROLL_INTERVAL_MS } from '@signalyze/shared';
 import type { RawReview } from './reviews';
@@ -12,8 +14,14 @@ import { checkLayout, labelledReviewsTabs, rule } from './selectors';
 export type CollectStatus = 'complete' | 'exhausted' | 'aborted' | 'unsupported_layout';
 
 export interface CollectOptions {
-  /** Maximum number of reviews to collect (200 default / 500 extended, decided by the caller). */
+  /** Maximum number of reviews to collect (decided by the caller; the content script bounds it). */
   limit: number;
+  /**
+   * First calendar day ("YYYY-MM-DD") of the requested period, or null for all
+   * time. When set, the loop switches Google's sort order to Newest first and
+   * stops early once the list has moved past the period.
+   */
+  minDate?: string | null;
   /** Delay between scrolls; never scrolls faster than this. Default 600 ms. */
   scrollIntervalMs?: number;
   onProgress?: (count: number) => void;
@@ -27,6 +35,8 @@ export interface CollectOptions {
 export interface CollectResult {
   reviews: RawReview[];
   status: CollectStatus;
+  /** True when Google's Newest order was selected for this run (only attempted with minDate). */
+  sortedByNewest: boolean;
 }
 
 /** Scrolls with no new review after which the list counts as exhausted (unless still loading). */
@@ -112,6 +122,32 @@ async function probeReviewsTab(
   return best.tab;
 }
 
+/**
+ * Switches the review list to Google's Newest order: opens the sort popup,
+ * waits for the menu to render and clicks the Newest entry (by label, else by
+ * position). Returns false when either control is missing, which leaves the
+ * default order untouched.
+ */
+export async function selectNewestSort(
+  doc: Document,
+  wait: () => Promise<void>,
+  aborted: () => boolean,
+): Promise<boolean> {
+  const button = rule('sortButton').find(doc)[0];
+  if (!(button instanceof HTMLElement)) return false;
+  button.click();
+  let item: Element | undefined = rule('sortMenuNewest').find(doc)[0];
+  for (let i = 0; i < PROBE_WAIT_INTERVALS && item === undefined; i += 1) {
+    if (aborted()) return false;
+    await wait();
+    item = rule('sortMenuNewest').find(doc)[0];
+  }
+  if (!(item instanceof HTMLElement)) return false;
+  item.click();
+  await wait();
+  return true;
+}
+
 /** Clicks every "More" button inside the rendered reviews so full texts are readable. */
 export function expandTruncatedTexts(doc: Document): number {
   let clicked = 0;
@@ -134,14 +170,17 @@ export async function collectReviews(
   const sleep = options.sleep ?? defaultSleep;
   const now = options.now ?? new Date();
   const limit = Math.max(1, Math.floor(options.limit));
+  const minDate = options.minDate ?? null;
   const timeBudgetMs = limit * interval * TIME_BUDGET_FACTOR;
   const collected = new Map<string, RawReview>();
   let elapsedMs = 0;
+  let sortedByNewest = false;
 
   const aborted = (): boolean => options.signal?.aborted === true;
   const finish = (status: CollectStatus): CollectResult => ({
     reviews: Array.from(collected.values()).slice(0, limit),
     status,
+    sortedByNewest,
   });
   const wait = async (): Promise<void> => {
     await sleep(interval);
@@ -168,19 +207,32 @@ export async function collectReviews(
   ) {
     await wait();
   }
+  if (minDate !== null) {
+    sortedByNewest = await selectNewestSort(doc, wait, aborted);
+    if (aborted()) return finish('aborted');
+  }
   const panel = findScrollPanel(doc);
   if (!panel || !checkLayout(doc).ok) return finish('unsupported_layout');
 
   let staleScrolls = 0;
+  let oldRounds = 0;
   for (;;) {
     if (aborted()) return finish('aborted');
     expandTruncatedTexts(doc);
     const before = collected.size;
+    let added = 0;
+    let addedOld = 0;
     for (const { id, review } of readReviewEntries(doc, now).entries) {
-      if (!collected.has(id)) collected.set(id, review);
+      if (collected.has(id)) continue;
+      collected.set(id, review);
+      added += 1;
+      if (minDate !== null && review.date < minDate) addedOld += 1;
     }
     options.onProgress?.(collected.size);
     if (collected.size >= limit) return finish('complete');
+    // In Newest order, once whole rounds fall before the period the rest is older still.
+    oldRounds = added > 0 && addedOld === added ? oldRounds + 1 : 0;
+    if (sortedByNewest && oldRounds >= STALE_SCROLLS_BEFORE_EXHAUSTED) return finish('complete');
 
     staleScrolls = collected.size > before ? 0 : staleScrolls + 1;
     const loading = rule('loadingIndicator').find(doc).length > 0;

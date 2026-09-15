@@ -9,7 +9,7 @@ def test_health_ok(client: TestClient) -> None:
     body = response.json()
     assert body["status"] == "ok"
     assert body["version"]
-    assert body["engineVersion"] == "1.1.0"
+    assert body["engineVersion"] == "1.2.0"
     assert body["cache"] == "memory"
 
 
@@ -52,7 +52,7 @@ def test_oversized_body_rejected(client: TestClient) -> None:
     response = client.post(
         "/v1/health",
         content=b"{}",
-        headers={"Content-Length": str(3 * 1024 * 1024), "Content-Type": "application/json"},
+        headers={"Content-Length": str(9 * 1024 * 1024), "Content-Type": "application/json"},
     )
     assert response.status_code == 413
     assert response.json()["error"] == "payload_too_large"

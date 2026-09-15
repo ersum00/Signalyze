@@ -17,7 +17,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 # --- constants shared with packages/shared/src/constants.ts ---------------------------------
 
 MIN_REVIEWS_FOR_SCORE = 15
-MAX_REVIEWS_PER_REQUEST = 500
+MAX_REVIEWS_PER_REQUEST = 2000
 CACHE_TTL_DAYS = 7
 
 SUPPORTED_LOCALES: tuple[str, ...] = ("en", "tr", "de", "es")

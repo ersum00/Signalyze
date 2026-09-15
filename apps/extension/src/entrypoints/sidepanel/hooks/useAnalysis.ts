@@ -2,8 +2,13 @@
  * The side panel's state machine. Talks to the content script of the active
  * Google Maps tab, runs the analysis (remote or offline) and keeps the
  * on-page badge informed. Nothing here touches the page DOM.
+ *
+ * Scope: the number of reviews to load and the period to keep. A period is
+ * applied after collection (the content script returns everything it read
+ * in Newest order); windowed analyses run in the browser only and are cached
+ * under their own key so the all-time profile and the badge stay untouched.
  */
-import { DEFAULT_REVIEW_LIMIT, type AnalysisResult } from '@signalyze/shared';
+import { resolveLimit, windowStart, type AnalysisResult } from '@signalyze/shared';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { browser, type Browser } from 'wxt/browser';
 import type { PlaceContext } from '@/adapters/google-maps';
@@ -16,7 +21,14 @@ import {
   type CollectReviewsResponse,
   type PlaceContextResponse,
 } from '@/lib/messages';
-import { DEFAULT_SETTINGS, getCachedResult, type CachedResult, type Settings } from '@/lib/storage';
+import { filterByWindow, type AnalysisScope } from '@/lib/scope';
+import {
+  DEFAULT_SETTINGS,
+  getCachedResult,
+  setCachedResult,
+  type CachedResult,
+  type Settings,
+} from '@/lib/storage';
 import { getActiveTab, isGoogleMapsUrl } from '@/lib/tabs';
 
 export type Phase =
@@ -26,21 +38,26 @@ export type Phase =
   | { kind: 'no_place' }
   | { kind: 'layout_changed' }
   | { kind: 'ready'; context: PlaceContext; cached: CachedResult | null; notice?: 'cancelled' }
-  | { kind: 'collecting'; context: PlaceContext; count: number; limit: number }
-  | { kind: 'analyzing'; context: PlaceContext; limit: number }
+  | { kind: 'collecting'; context: PlaceContext; count: number; scope: AnalysisScope }
+  | { kind: 'analyzing'; context: PlaceContext; scope: AnalysisScope }
   | {
       kind: 'result';
       context: PlaceContext;
       result: AnalysisResult;
       fallbackReason: string | null;
       collectStatus: CollectOutcome | 'cached';
-      limit: number;
+      scope: AnalysisScope;
+      /** Whether the page was read in Google's Newest order (only attempted with a period). */
+      sortedByNewest: boolean;
+      /** Reviews read from the page before the period filter. */
+      loaded: number;
     }
-  | { kind: 'error'; context: PlaceContext; reason: 'collect' | 'analysis' };
+  | { kind: 'error'; context: PlaceContext; reason: 'collect' | 'analysis' }
+  | { kind: 'empty_window'; context: PlaceContext; scope: AnalysisScope };
 
 export interface AnalysisController {
   phase: Phase;
-  analyze: (limit: number) => void;
+  analyze: (scope: AnalysisScope) => void;
   cancel: () => void;
   showCached: () => void;
   back: () => void;
@@ -138,9 +155,7 @@ export function useAnalysis(settings: Settings | null): AnalysisController {
     const onMessage = (message: unknown, sender: Browser.runtime.MessageSender) => {
       if (!isRuntimeMessage(message) || message.type !== 'COLLECT_PROGRESS') return;
       if (sender.tab?.id !== tabIdRef.current) return;
-      setPhase((prev) =>
-        prev.kind === 'collecting' ? { ...prev, count: message.count, limit: message.limit } : prev,
-      );
+      setPhase((prev) => (prev.kind === 'collecting' ? { ...prev, count: message.count } : prev));
     };
     browser.runtime.onMessage.addListener(onMessage);
     return () => {
@@ -148,7 +163,7 @@ export function useAnalysis(settings: Settings | null): AnalysisController {
     };
   }, []);
 
-  const analyze = useCallback((limit: number) => {
+  const analyze = useCallback((scope: AnalysisScope) => {
     const tabId = tabIdRef.current;
     const current = phaseRef.current;
     const context = 'context' in current ? current.context : null;
@@ -163,12 +178,14 @@ export function useAnalysis(settings: Settings | null): AnalysisController {
       setBadge(null, 'idle');
     };
 
+    const limit = resolveLimit(scope.limit);
+    const minDate = windowStart(scope.window, new Date());
     busyRef.current = true;
-    setPhase({ kind: 'collecting', context, count: 0, limit });
+    setPhase({ kind: 'collecting', context, count: 0, scope });
     void (async () => {
       let response: CollectReviewsResponse | null = null;
       try {
-        response = await sendToTab(tabId, { type: 'COLLECT_REVIEWS', limit });
+        response = await sendToTab(tabId, { type: 'COLLECT_REVIEWS', limit, minDate });
       } catch {
         response = null;
       }
@@ -192,9 +209,22 @@ export function useAnalysis(settings: Settings | null): AnalysisController {
         fail('collect');
         return;
       }
-      setPhase({ kind: 'analyzing', context, limit });
+      const reviews = filterByWindow(request.reviews, minDate);
+      if (reviews.length === 0) {
+        busyRef.current = false;
+        setPhase({ kind: 'empty_window', context, scope });
+        setBadge(null, 'idle');
+        return;
+      }
+      setPhase({ kind: 'analyzing', context, scope });
+      const current = settingsRef.current ?? DEFAULT_SETTINGS;
       try {
-        const outcome = await runAnalysis(request, settingsRef.current ?? DEFAULT_SETTINGS);
+        const outcome = await runAnalysis(
+          { ...request, reviews },
+          // A windowed profile is a personal view: it never goes to the shared server cache.
+          { sendToServer: current.sendToServer && scope.window === 'all' },
+          { store: (placeId, result) => setCachedResult(placeId, result, scope.window) },
+        );
         busyRef.current = false;
         setPhase({
           kind: 'result',
@@ -202,9 +232,16 @@ export function useAnalysis(settings: Settings | null): AnalysisController {
           result: outcome.result,
           fallbackReason: outcome.fallbackReason ?? null,
           collectStatus: response.status,
-          limit,
+          scope,
+          sortedByNewest: response.sortedByNewest,
+          loaded: request.reviews.length,
         });
-        setBadge(outcome.result.score, outcome.result.score === null ? 'insufficient' : 'done');
+        if (scope.window === 'all') {
+          setBadge(outcome.result.score, outcome.result.score === null ? 'insufficient' : 'done');
+        } else {
+          // The badge always shows the all-time profile; "idle" re-syncs it from the cache.
+          setBadge(null, 'idle');
+        }
       } catch {
         fail('analysis');
       }
@@ -220,13 +257,16 @@ export function useAnalysis(settings: Settings | null): AnalysisController {
   const showCached = useCallback(() => {
     const current = phaseRef.current;
     if (current.kind !== 'ready' || current.cached === null) return;
+    const limit = (settingsRef.current ?? DEFAULT_SETTINGS).sampleLimit;
     setPhase({
       kind: 'result',
       context: current.context,
       result: current.cached.result,
       fallbackReason: null,
       collectStatus: 'cached',
-      limit: DEFAULT_REVIEW_LIMIT,
+      scope: { limit, window: 'all' },
+      sortedByNewest: false,
+      loaded: current.cached.result.reviewCount,
     });
   }, []);
 

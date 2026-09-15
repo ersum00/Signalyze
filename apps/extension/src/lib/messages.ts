@@ -24,7 +24,10 @@ export interface GetPlaceContextMessage {
 
 export interface CollectReviewsMessage {
   type: 'COLLECT_REVIEWS';
+  /** Resolved number of reviews to load (the content script bounds it by the ceiling). */
   limit: number;
+  /** First day ("YYYY-MM-DD") of the requested period, or null for all time. */
+  minDate: string | null;
 }
 
 export interface CancelCollectMessage {
@@ -61,6 +64,8 @@ export interface CollectReviewsResponse {
   collected: number;
   /** Reviews dropped because they did not pass the shared schema. */
   dropped: number;
+  /** True when Google's Newest order was active for this collection (see adapters/google-maps/panel.ts). */
+  sortedByNewest: boolean;
 }
 
 export interface AckResponse {
@@ -115,7 +120,11 @@ export function isTabMessage(value: unknown): value is TabMessage {
     case 'CANCEL_COLLECT':
       return true;
     case 'COLLECT_REVIEWS':
-      return typeof record.limit === 'number' && Number.isFinite(record.limit);
+      return (
+        typeof record.limit === 'number' &&
+        Number.isFinite(record.limit) &&
+        (record.minDate === null || typeof record.minDate === 'string')
+      );
     case 'SET_BADGE':
       return (
         (record.score === null || typeof record.score === 'number') && isBadgeState(record.state)

@@ -24,6 +24,7 @@ const CASES: { name: DatasetName; count: number; seed: number }[] = [
   { name: 'sparse', count: 60, seed: 106 },
   { name: 'turkish', count: 60, seed: 107 },
   { name: 'multilingual', count: 95, seed: 108 },
+  { name: 'large', count: 1000, seed: 109 },
 ];
 
 for (const c of CASES) {

@@ -2,7 +2,7 @@
 
 _Traducción del original en inglés, que es la versión de referencia._
 
-_Versión del motor 1.1.0. Este documento es la única fuente de verdad sobre cómo se calculan cada señal y la Puntuación Signalyze. La página `/methodology` del sitio se genera a partir de él, y el código de `packages/signals` (TypeScript) y `apps/api/signalyze_api/engine` (Python) implementa exactamente lo que aquí se describe; ambas implementaciones se contrastan con los mismos datos de prueba._
+_Versión del motor 1.2.0. Este documento es la única fuente de verdad sobre cómo se calculan cada señal y la Puntuación Signalyze. La página `/methodology` del sitio se genera a partir de él, y el código de `packages/signals` (TypeScript) y `apps/api/signalyze_api/engine` (Python) implementa exactamente lo que aquí se describe; ambas implementaciones se contrastan con los mismos datos de prueba._
 
 Signalyze calcula diez señales deterministas a partir de las reseñas visibles en la página de un negocio en Google Maps. Cada señal es un número entre 0 y 1 que expresa cuán inusual es el valor medido en comparación con el aspecto de los lugares reseñados típicos; 0 significa «nada destacable» y 1 significa «tan inusual como lo más inusual que vemos». La Puntuación Signalyze (0-100) es una combinación ponderada de las señales que se pudieron calcular. No interviene ningún modelo de lenguaje y no se infiere nada sobre la intención: cada señal es un hecho sobre la distribución de datos públicos que cualquiera puede recalcular desde la misma página.
 
@@ -12,7 +12,7 @@ Signalyze calcula diez señales deterministas a partir de las reseñas visibles 
 
 El motor recibe, por reseña: puntuación en estrellas (1-5), día del calendario, texto, número público de reseñas del reseñador (si es visible), número de fotos, nivel de Local Guide (si es visible) y texto de la respuesta del propietario (si la hay). Nunca recibe nombres, enlaces de perfil ni identificadores de usuario. Ver [Privacidad](/es/privacy).
 
-La extensión carga hasta 200 reseñas (500 con «Cargar más») en el orden «Más relevantes» predeterminado de Google, así que la muestra es la parte del historial de reseñas que Google decidió mostrar primero, no una muestra aleatoria ni cronológica. Las señales se calculan sobre esa muestra y el panel lateral siempre indica cuántas reseñas se analizaron del total mostrado.
+La extensión carga 200 reseñas de forma predeterminada, o 500, 1000 o todas las reseñas de la página (hasta 2000) si el usuario así lo elige en la vista de inicio, en el orden «Más relevantes» predeterminado de Google, así que la muestra es la parte del historial de reseñas que Google decidió mostrar primero, no una muestra aleatoria ni cronológica. Cuando se elige un periodo (este año, últimos 12, 6 o 3 meses, este mes), la extensión cambia primero el orden de Google a «Más recientes» (si no reconoce el control de ordenación, mantiene el orden «Más relevantes» y lo indica en el resultado), deja de cargar cuando dos rondas de desplazamiento consecutivas solo han añadido reseñas anteriores al periodo y conserva únicamente las reseñas fechadas el primer día del periodo o después (calculado en UTC). Ese perfil por periodo se calcula localmente en el navegador con el motor incluido, nunca se envía al servidor y se guarda en caché por separado del perfil de todo el tiempo, de modo que el perfil de todo el tiempo y la etiqueta de la página no cambian; solo los análisis de todo el tiempo usan la caché compartida del servidor. Las señales se calculan sobre la muestra cargada y el panel lateral siempre indica cuántas reseñas se analizaron del total mostrado.
 
 ## Preprocesamiento
 
@@ -29,7 +29,7 @@ Cada señal produce una medición bruta (casi siempre una proporción entre 0 y 
 unusualness = clamp((value - low) / (high - low), 0, 1)
 ```
 
-`low` es el nivel a partir del cual la señal empieza a contar (los lugares típicos están en ese nivel o por debajo) y `high` es el nivel a partir del cual cuenta por completo. Los puntos de calibración están en `packages/signals/data/thresholds.json` y se enumeran por señal más abajo. Son estimaciones de la versión 1.1.0 del motor, elegidas a partir de la forma de los datos públicos de reseñas de Google Maps y de conjuntos de datos sintéticos; se revisarán con nuevas versiones del motor y cada revisión quedará registrada en las novedades.
+`low` es el nivel a partir del cual la señal empieza a contar (los lugares típicos están en ese nivel o por debajo) y `high` es el nivel a partir del cual cuenta por completo. Los puntos de calibración están en `packages/signals/data/thresholds.json` y se enumeran por señal más abajo. Son estimaciones de la versión 1.2.0 del motor, elegidas a partir de la forma de los datos públicos de reseñas de Google Maps y de conjuntos de datos sintéticos; se revisarán con nuevas versiones del motor y cada revisión quedará registrada en las novedades.
 
 ## Las señales
 
@@ -77,7 +77,7 @@ unusualness = clamp((value - low) / (high - low), 0, 1)
 
 **Mide:** cuánto se solapan los textos de las reseñas entre sí.
 
-**Cómo:** para cada reseña con al menos 20 caracteres de texto normalizado, construir el conjunto de 3-gramas de caracteres (espacios incluidos). Para cada par, calcular la similitud de Jaccard `|A ∩ B| / |A ∪ B|`. Comunicar la media de todos los pares y la proporción de pares por encima de 0,5 («pares casi idénticos»). Requiere al menos 10 textos válidos.
+**Cómo:** para cada reseña con al menos 20 caracteres de texto normalizado, construir el conjunto de 3-gramas de caracteres (espacios incluidos). Para cada par, calcular la similitud de Jaccard `|A ∩ B| / |A ∪ B|`. Comunicar la media de todos los pares y la proporción de pares por encima de 0,5 («pares casi idénticos»). Requiere al menos 10 textos válidos. Se comparan como máximo 600 textos válidos: por encima de 600 se usa un subconjunto espaciado uniformemente (el texto en el índice floor(i × n / 600) en el orden de entrada, para i de 0 a 599); los motores de TypeScript y Python eligen los mismos índices, y el número de textos realmente comparados se comunica en los detalles como `sampled`. Todas las demás señales se ejecutan sobre todas las reseñas.
 
 **Rampa:** el mayor entre la media de Jaccard de 0,18 a 0,45 y la proporción de pares casi idénticos de 0,02 a 0,15.
 
@@ -139,7 +139,7 @@ unusualness = clamp((value - low) / (high - low), 0, 1)
 score = round( 100 × Σ (w_i × u_i) / Σ w_i )   over available signals i
 ```
 
-Pesos (`packages/signals/src/weights.json`, versión 1.1.0):
+Pesos (`packages/signals/src/weights.json`, versión 1.2.0):
 
 | Señal                  | Peso |
 | ---------------------- | ---- |
@@ -160,7 +160,7 @@ Los pesos se renormalizan sobre las señales disponibles para el lugar, de modo 
 
 ## Cómo son los conjuntos de datos sintéticos
 
-El motor incluye conjuntos de datos sintéticos con semilla fija que se usan en las pruebas y como datos de referencia entre implementaciones (`packages/signals/fixtures/`). Sus puntuaciones con el motor 1.1.0, a modo de orientación:
+El motor incluye conjuntos de datos sintéticos con semilla fija que se usan en las pruebas y como datos de referencia entre implementaciones (`packages/signals/fixtures/`). Sus puntuaciones con el motor 1.2.0, a modo de orientación:
 
 | Conjunto     | Descripción                                                                                                 | Puntuación                           |
 | ------------ | ----------------------------------------------------------------------------------------------------------- | ------------------------------------ |
@@ -173,12 +173,13 @@ El motor incluye conjuntos de datos sintéticos con semilla fija que se usan en 
 
 ## Limitaciones
 
-- La muestra es el orden «Más relevantes» de Google, no el historial completo.
+- Salvo que se carguen todas las reseñas, la muestra es el orden «Más relevantes» de Google (o «Más recientes» con un periodo), no el historial completo; un lugar con más de 2000 reseñas nunca se carga por completo.
 - Las fechas relativas limitan la precisión a aproximadamente un día en las reseñas recientes y a un mes o un año en las antiguas.
+- Un periodo es aproximado: Google muestra las fechas de forma relativa («hace 2 meses»), así que el límite del periodo se aplica a fechas que ya están redondeadas.
 - Los léxicos y los diccionarios de frases cubren 18 idiomas: inglés, español, portugués, francés, alemán, italiano, turco, neerlandés, polaco, indonesio, vietnamita, sueco, ruso, ucraniano, árabe, japonés, chino y coreano. Los textos en otros idiomas contribuyen a las señales temporales, de puntuación y de reseñadores, pero no a las señales de texto (un texto en alfabeto latino de un idioma no cubierto recurre a los diccionarios de inglés, que rara vez coinciden con él). Los diccionarios son pequeños y solo reconocen formas superficiales, sin lematización, tratamiento de la negación ni detección de ironía, por lo que los idiomas muy flexivos obtienen menos coincidencias por texto.
 - Los niveles de Local Guide a menudo no se muestran en la lista de reseñas; en ese caso la señal no está disponible en lugar de estimarse.
-- Los puntos de calibración son estimaciones de la versión 1.1.0. Cambiar cualquiera de ellos supone una nueva versión del motor, registrada en las novedades, y la caché del servidor se indexa por versión del motor.
+- Los puntos de calibración son estimaciones de la versión 1.2.0. Cambiar cualquiera de ellos supone una nueva versión del motor, registrada en las novedades, y la caché del servidor se indexa por versión del motor.
 
 ## Modelo de lenguaje opcional (desactivado por defecto)
 
-El motor 1.1.0 incluye un paso opcional en el servidor que el operador puede activar: cuando `text_similarity` ya es alta, se envían hasta 30 textos (sin datos de reseñadores) a un punto de conexión compatible con OpenAI que devuelve un solo número, una estimación de «homogeneidad de escritura» entre 0 y 1, comunicada en los detalles de `text_similarity` como `llmHomogeneity`. Nunca etiqueta reseñas individuales y nunca cambia la puntuación en esta versión. Está desactivado a menos que se configuren tanto `LLM_BASE_URL` como `LLM_API_KEY`; la API pública de Signalyze funciona actualmente con este paso desactivado.
+El motor 1.2.0 incluye un paso opcional en el servidor que el operador puede activar: cuando `text_similarity` ya es alta, se envían hasta 30 textos (sin datos de reseñadores) a un punto de conexión compatible con OpenAI que devuelve un solo número, una estimación de «homogeneidad de escritura» entre 0 y 1, comunicada en los detalles de `text_similarity` como `llmHomogeneity`. Nunca etiqueta reseñas individuales y nunca cambia la puntuación en esta versión. Está desactivado a menos que se configuren tanto `LLM_BASE_URL` como `LLM_API_KEY`; la API pública de Signalyze funciona actualmente con este paso desactivado.

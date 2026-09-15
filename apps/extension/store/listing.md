@@ -1,4 +1,4 @@
-# Chrome Web Store listing: Signalyze 0.1.0
+# Chrome Web Store listing: Signalyze 0.2.0
 
 Paste-ready text for every field of the Developer Dashboard. Under each field heading the first line gives the dashboard limit and the character count of the text in the block that follows. Copy the block content as is (plain text, no markdown). Every block follows the language policy in `docs/LEGAL_NOTES.md`: measurable patterns only, no verdict words.
 
@@ -22,13 +22,13 @@ See the statistics behind a Google Maps rating: review timing, rating shape, rev
 
 ### Description
 
-Limit 16,000 characters · this text: 3,220 characters
+Limit 16,000 characters · this text: 3,627 characters
 
 ```text
 Signalyze shows a Review Profile for any business on Google Maps: a statistical summary of when its reviews were written, how the ratings are distributed, what the reviewers' histories look like and how similar the review texts are.
 
 HOW IT WORKS
-Open a business on Google Maps, click Analyze in the side panel, and Signalyze reads the reviews already shown on the page (up to 200, or 500 with "Load more"). Ten measurable signals are computed from them:
+Open a business on Google Maps, choose how many reviews to load (200, 500, 1000 or all, up to 2000) and a period (all time, this year, last 12, 6 or 3 months, this month), click Analyze in the side panel, and Signalyze reads the reviews already shown on the page. Ten measurable signals are computed from them:
 
 • Burst ratio: the share of reviews posted within the busiest 14-day window
 • Rating polarity: how concentrated the ratings are at 5 and 1 stars
@@ -41,7 +41,9 @@ Open a business on Google Maps, click Analyze in the side panel, and Signalyze r
 • Local Guide share: how many reviews come from established Local Guides
 • Owner responses: how identical the owner's replies are
 
-The signals are combined into a 0-100 Signalyze Score. Every signal is shown with its value, a plain-language explanation of what was measured, why it matters and a link to the full formula on the methodology page. You also get a reviews-per-month chart, the rating distribution and a summary of the reviewer profile (single-review share, median review count, Local Guide share, photo share).
+• Every signal comes with a plain sentence stating its numbers, its typical range and what to look at on the page
+
+The signals are combined into a 0-100 Signalyze Score. The score card explains itself: one sentence on how far the measured patterns sit from typical businesses, the 0-100 scale in words and the signals that contribute most, with their points. Every signal is shown with its value, a plain-language explanation of what was measured, why it matters and a link to the full formula on the methodology page. You also get a reviews-per-month chart, the rating distribution and a summary of the reviewer profile (single-review share, median review count, Local Guide share, photo share).
 
 This score is a statistical summary of public review data; it is not a claim about the business or any reviewer. Signalyze reports what the data looks like, in numbers anyone can recompute from the same page. It does not label individual reviews, does not rate reviewers and does not compare businesses. Below 15 reviews no score is shown.
 
@@ -131,13 +133,13 @@ Google Haritalar puanının arkasındaki istatistik: yorum zamanlaması, puan da
 
 ### Description (tr)
 
-Limit 16,000 characters · this text: 3,414 characters
+Limit 16,000 characters · this text: 3,817 characters
 
 ```text
 Signalyze, Google Haritalar'daki herhangi bir işletme için bir Yorum Profili gösterir: yorumların ne zaman yazıldığının, puanların nasıl dağıldığının, yorumcuların geçmişlerinin nasıl göründüğünün ve yorum metinlerinin birbirine ne kadar benzediğinin istatistiksel bir özeti.
 
 NASIL ÇALIŞIR
-Google Haritalar'da bir işletme açın, yan paneldeki Analiz et düğmesine tıklayın; Signalyze sayfada zaten görünen yorumları okur (en fazla 200, "Daha fazla yükle" ile 500). Bu yorumlardan on ölçülebilir sinyal hesaplanır:
+Google Haritalar'da bir işletme açın, kaç yorum yükleneceğini (200, 500, 1000 ya da tümü, en fazla 2000) ve dönemi (tüm zamanlar, bu yıl, son 12, 6 ya da 3 ay, bu ay) seçin, yan paneldeki Analiz et düğmesine tıklayın; Signalyze sayfada zaten görünen yorumları okur. Bu yorumlardan on ölçülebilir sinyal hesaplanır:
 
 • Yoğunlaşma oranı: en yoğun 14 günlük pencereye düşen yorumların payı
 • Puan kutuplaşması: puanların 5 ve 1 yıldızda ne kadar toplandığı
@@ -150,7 +152,9 @@ Google Haritalar'da bir işletme açın, yan paneldeki Analiz et düğmesine tı
 • Yerel Rehber payı: yorumların ne kadarının deneyimli Yerel Rehberlerden geldiği
 • İşletme yanıtları: işletme sahibinin yanıtlarının ne kadar birbirinin aynısı olduğu
 
-Sinyaller 0-100 arası bir Signalyze Skoru'nda birleştirilir. Her sinyal; değeri, neyin ölçüldüğünü anlatan sade bir açıklama, neden önemli olduğu ve metodoloji sayfasındaki tam formüle bir bağlantıyla birlikte gösterilir. Ayrıca aylık yorum sayısı grafiği, puan dağılımı ve yorumcu profilinin özeti (tek yorumlu hesapların payı, medyan yorum sayısı, Yerel Rehber payı, fotoğraflı yorum payı) sunulur.
+• Her sinyal, sayılarını içeren sade bir cümle, tipik aralığı ve sayfada neye bakılacağıyla birlikte gelir
+
+Sinyaller 0-100 arası bir Signalyze Skoru'nda birleştirilir. Skor kartı kendini açıklar: ölçülen örüntülerin tipik işletmelerden ne kadar uzak olduğunu söyleyen tek bir cümle, 0-100 ölçeğinin sözle anlatımı ve skora en çok katkıda bulunan sinyaller, puanlarıyla. Her sinyal; değeri, neyin ölçüldüğünü anlatan sade bir açıklama, neden önemli olduğu ve metodoloji sayfasındaki tam formüle bir bağlantıyla birlikte gösterilir. Ayrıca aylık yorum sayısı grafiği, puan dağılımı ve yorumcu profilinin özeti (tek yorumlu hesapların payı, medyan yorum sayısı, Yerel Rehber payı, fotoğraflı yorum payı) sunulur.
 
 Bu skor kamuya açık yorum verisinin istatistiksel özetidir; işletme veya yorumcu hakkında bir iddia değildir. Signalyze verinin neye benzediğini, herkesin aynı sayfadan yeniden hesaplayabileceği sayılarla anlatır. Tek tek yorumları etiketlemez, yorumculara not vermez ve işletmeleri karşılaştırmaz. 15 yorumun altında skor gösterilmez.
 
@@ -195,13 +199,13 @@ Die Statistik hinter einer Google-Maps-Bewertung: Zeitverlauf, Sterneverteilung,
 
 ### Description (de)
 
-Limit 16,000 characters · this text: 3,719 characters
+Limit 16,000 characters · this text: 4,232 characters
 
 ```text
 Signalyze zeigt für jedes Unternehmen auf Google Maps ein Bewertungsprofil: eine statistische Zusammenfassung davon, wann die Rezensionen geschrieben wurden, wie die Sterne verteilt sind, wie die Historie der Rezensenten aussieht und wie ähnlich sich die Texte sind.
 
 SO FUNKTIONIERT ES
-Öffnen Sie ein Unternehmen auf Google Maps und klicken Sie in der Seitenleiste auf Analysieren. Signalyze liest die Rezensionen, die auf der Seite bereits angezeigt werden (bis zu 200, mit "Mehr laden" bis zu 500), und berechnet daraus zehn messbare Signale:
+Öffnen Sie ein Unternehmen auf Google Maps, wählen Sie, wie viele Rezensionen geladen werden sollen (200, 500, 1000 oder alle, bis zu 2000) und einen Zeitraum (gesamter Zeitraum, dieses Jahr, letzte 12, 6 oder 3 Monate, dieser Monat), und klicken Sie in der Seitenleiste auf Analysieren. Signalyze liest die Rezensionen, die auf der Seite bereits angezeigt werden, und berechnet daraus zehn messbare Signale:
 
 • Häufungsquote: der Anteil der Rezensionen im dichtesten 14-Tage-Fenster
 • Bewertungspolarität: wie stark sich die Bewertungen auf 5 und 1 Sterne konzentrieren
@@ -214,7 +218,9 @@ SO FUNKTIONIERT ES
 • Local-Guide-Anteil: wie viele Rezensionen von etablierten Local Guides stammen
 • Antworten des Inhabers: wie identisch die Antworten des Inhabers sind
 
-Die Signale werden zu einem Signalyze-Wert von 0 bis 100 zusammengefasst. Jedes Signal wird mit seinem Wert, einer verständlichen Erklärung dessen, was gemessen wurde, dem Grund, warum es zählt, und einem Link zur vollständigen Formel auf der Methodikseite angezeigt. Dazu kommen ein Diagramm der Rezensionen pro Monat, die Sterneverteilung und eine Zusammenfassung des Rezensentenprofils (Anteil mit nur einer Rezension, Median der Rezensionsanzahl, Local-Guide-Anteil, Anteil mit Fotos).
+• Jedes Signal kommt mit einem verständlichen Satz mit seinen Zahlen, seinem typischen Bereich und dem, worauf man auf der Seite achten sollte
+
+Die Signale werden zu einem Signalyze-Wert von 0 bis 100 zusammengefasst. Die Wertekarte erklärt sich selbst: ein Satz dazu, wie weit die gemessenen Muster von typischen Unternehmen entfernt sind, die Skala von 0 bis 100 in Worten und die Signale, die am meisten beitragen, mit ihren Punkten. Jedes Signal wird mit seinem Wert, einer verständlichen Erklärung dessen, was gemessen wurde, dem Grund, warum es zählt, und einem Link zur vollständigen Formel auf der Methodikseite angezeigt. Dazu kommen ein Diagramm der Rezensionen pro Monat, die Sterneverteilung und eine Zusammenfassung des Rezensentenprofils (Anteil mit nur einer Rezension, Median der Rezensionsanzahl, Local-Guide-Anteil, Anteil mit Fotos).
 
 Dieser Wert ist eine statistische Zusammenfassung öffentlicher Bewertungsdaten; er ist keine Aussage über das Unternehmen oder einzelne Rezensenten. Signalyze beschreibt, wie die Daten aussehen, in Zahlen, die jeder anhand derselben Seite nachrechnen kann. Es markiert keine einzelnen Rezensionen, bewertet keine Rezensenten und vergleicht keine Unternehmen. Unter 15 Rezensionen wird kein Wert angezeigt.
 
@@ -259,13 +265,13 @@ La estadística tras una puntuación de Google Maps: ritmo temporal, distribuci�
 
 ### Description (es)
 
-Limit 16,000 characters · this text: 3,746 characters
+Limit 16,000 characters · this text: 4,157 characters
 
 ```text
 Signalyze muestra un Perfil de reseñas para cualquier negocio de Google Maps: un resumen estadístico de cuándo se escribieron las reseñas, cómo se distribuyen las puntuaciones, cómo es el historial de los reseñadores y cuánto se parecen los textos entre sí.
 
 CÓMO FUNCIONA
-Abre un negocio en Google Maps, pulsa Analizar en el panel lateral y Signalyze lee las reseñas que ya se muestran en la página (hasta 200, o 500 con "Cargar más"). A partir de ellas calcula diez señales medibles:
+Abre un negocio en Google Maps, elige cuántas reseñas cargar (200, 500, 1000 o todas, hasta 2000) y un periodo (todo el tiempo, este año, últimos 12, 6 o 3 meses, este mes), pulsa Analizar en el panel lateral y Signalyze lee las reseñas que ya se muestran en la página. A partir de ellas calcula diez señales medibles:
 
 • Concentración temporal: la proporción de reseñas publicadas en la ventana de 14 días más activa
 • Polaridad de las puntuaciones: cuánto se concentran las puntuaciones en 5 y 1 estrellas
@@ -278,7 +284,9 @@ Abre un negocio en Google Maps, pulsa Analizar en el panel lateral y Signalyze l
 • Proporción de Local Guides: cuántas reseñas proceden de Local Guides consolidados
 • Respuestas del propietario: cuán idénticas son las respuestas del propietario
 
-Las señales se combinan en una Puntuación Signalyze de 0 a 100. Cada señal se muestra con su valor, una explicación en lenguaje sencillo de lo que se ha medido, por qué importa y un enlace a la fórmula completa en la página de metodología. También verás un gráfico de reseñas por mes, la distribución de puntuaciones y un resumen del perfil de los reseñadores (proporción con una sola reseña, mediana de reseñas, proporción de Local Guides, proporción con fotos).
+• Cada señal viene con una frase sencilla con sus cifras, su rango típico y qué mirar en la página
+
+Las señales se combinan en una Puntuación Signalyze de 0 a 100. La tarjeta de puntuación se explica sola: una frase sobre cuán lejos están los patrones medidos de los negocios típicos, la escala de 0 a 100 en palabras y las señales que más contribuyen, con sus puntos. Cada señal se muestra con su valor, una explicación en lenguaje sencillo de lo que se ha medido, por qué importa y un enlace a la fórmula completa en la página de metodología. También verás un gráfico de reseñas por mes, la distribución de puntuaciones y un resumen del perfil de los reseñadores (proporción con una sola reseña, mediana de reseñas, proporción de Local Guides, proporción con fotos).
 
 Esta puntuación es un resumen estadístico de datos públicos de reseñas; no es una afirmación sobre el negocio ni sobre ningún reseñador. Signalyze describe cómo son los datos, en cifras que cualquiera puede volver a calcular a partir de la misma página. No etiqueta reseñas individuales, no califica a los reseñadores y no compara negocios. Por debajo de 15 reseñas no se muestra ninguna puntuación.
 
@@ -341,10 +349,10 @@ The Review Profile (score, signals, charts, reviewer summary), the settings and 
 
 Applies to `https://www.google.com/maps*` and `https://maps.google.com/*`.
 
-Limit 1,000 characters · this text: 649 characters
+Limit 1,000 characters · this text: 573 characters
 
 ```text
-Required to read the review panel of the Google Maps business page the user is viewing and to show the score badge under the business name. The content script is injected only on Google Maps URLs, never runs an analysis on its own, reads reviews only after the user clicks Analyze (it scrolls the review list at one step per 600 ms, up to 200 or 500 reviews), never opens reviewer profiles or any other page and adds nothing to the page except the badge. Google Maps is served from google.com in every country (country domains redirect there), so these two hosts cover all users.
+Required to read the review panel of the Google Maps business page the user is viewing and to show the score badge under the business name. The content script is injected only on Google Maps URLs, never runs an analysis on its own, reads reviews only after the user clicks Analyze (it scrolls the review list at one step per 600 ms, up to 2000 reviews), never opens reviewer profiles or any other page and adds nothing to the page except the badge. Google Maps is served from google.com in every country (country domains redirect there), so these two hosts cover all users.
 ```
 
 ### Host permission justification: api.signalyze.veriskor.com
@@ -399,7 +407,7 @@ Website content: review text and public review metadata (star rating, calendar d
 ## 7. How to upload
 
 1. Run the checks: `pnpm lint && pnpm typecheck && pnpm test && pnpm check:forbidden-words && pnpm check:dom-isolation`.
-2. Build the store package: `pnpm build:zip`, then `pnpm --filter @signalyze/extension install:test` (installs the build into a real Chromium, the same check the Store runs) → `apps/extension/.output/signalyze-0.1.0-chrome.zip` (built without the dev `key`; the Store assigns the id).
+2. Build the store package: `pnpm build:zip`, then `pnpm --filter @signalyze/extension install:test` (installs the build into a real Chromium, the same check the Store runs) → `apps/extension/.output/signalyze-0.2.0-chrome.zip` (built without the dev `key`; the Store assigns the id).
 3. Developer Dashboard → **New item** → upload that zip.
 4. **Store listing** tab: fill Item name, Summary, Description, Category, Language, Official URL, Support URL from section 1; upload `store/assets/icon-128.png`, the five screenshots in order and both promo tiles.
 5. **Add localized listing** for Turkish, German and Spanish from sections 2 to 4 (the manifest already ships `_locales` for the four languages, so the extension name in Chrome follows the browser language).

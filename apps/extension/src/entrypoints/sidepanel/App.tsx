@@ -39,7 +39,7 @@ export function App() {
             {view === 'settings' ? (
               <SettingsView settings={settings} update={update} />
             ) : (
-              <MainView analysis={analysis} />
+              <MainView analysis={analysis} settings={settings} update={update} />
             )}
           </main>
         </div>

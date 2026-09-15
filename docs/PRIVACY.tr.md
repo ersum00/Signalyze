@@ -14,7 +14,7 @@ _Son güncelleme: 2026-09-12. Bu sayfa, Signalyze uzantısının ve Signalyze AP
 
 ## Uzantı ne okur
 
-Google Haritalar'da bir işletme sayfası açıp **Analiz et**'e tıkladığınızda uzantı, Google'ın sekmenizde zaten oluşturduğu yorum panelini okur. En fazla 200 yorumu ("Daha fazla yükle"yi seçerseniz en fazla 500) yüklemek için paneli kaydırır. Başka hiçbir sayfayı ziyaret etmez, yorumcu profillerini açmaz ve baktığınız işletme sayfasının dışında hiçbir şey okumaz.
+Google Haritalar'da bir işletme sayfası açıp **Analiz et**'e tıkladığınızda uzantı, Google'ın sekmenizde zaten oluşturduğu yorum panelini okur. Varsayılan olarak 200 yorumu, siz öyle seçerseniz 500, 1000 ya da sayfadaki tüm yorumları (en fazla 2000) okumak için paneli kaydırır; seçim ne olursa olsun hız aynıdır (600 ms'de bir kaydırma adımı). Başka hiçbir sayfayı ziyaret etmez, yorumcu profillerini açmaz ve baktığınız işletme sayfasının dışında hiçbir şey okumaz. Bir dönemle sınırlanmış analiz (örneğin son 3 ay) tarayıcınızdan asla çıkmaz: yerel olarak hesaplanır ve sunucuya gönderilmez.
 
 ## Signalyze API'sine ne gönderilir
 

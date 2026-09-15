@@ -1,23 +1,28 @@
+import { ALL_REVIEWS_CEILING } from '@signalyze/shared';
 import type { PlaceContext } from '@/adapters/google-maps';
 import { useI18n } from '@/i18n/react';
+import type { AnalysisScope } from '@/lib/scope';
 import { PlaceCard } from './PlaceCard';
 import { Button } from './ui';
 
 export function Collecting({
   context,
   count,
-  limit,
+  scope,
   analyzing,
   onCancel,
 }: {
   context: PlaceContext;
   count: number;
-  limit: number;
+  scope: AnalysisScope;
   analyzing: boolean;
   onCancel: () => void;
 }) {
   const { t } = useI18n();
-  const ratio = limit > 0 ? Math.min(1, count / limit) : 0;
+  // "All" has no known target: the bar grows towards the ceiling instead.
+  const limit = scope.limit === 'all' ? null : scope.limit;
+  const target = limit ?? ALL_REVIEWS_CEILING;
+  const ratio = Math.min(1, count / target);
   return (
     <>
       <PlaceCard context={context} />
@@ -29,7 +34,9 @@ export function Collecting({
           </h2>
           {!analyzing && (
             <span className="text-[12px] text-ink-600 tabular-nums">
-              {t('collecting.progress', { count, limit })}
+              {limit === null
+                ? t('collecting.progressAll', { count })
+                : t('collecting.progress', { count, limit })}
             </span>
           )}
         </div>
@@ -37,8 +44,8 @@ export function Collecting({
           className="meter mt-3"
           role="progressbar"
           aria-valuemin={0}
-          aria-valuemax={limit}
-          aria-valuenow={analyzing ? limit : count}
+          aria-valuemax={target}
+          aria-valuenow={analyzing ? target : count}
         >
           <span
             className="meter-fill"

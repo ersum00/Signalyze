@@ -42,7 +42,7 @@ about the distribution of public data, not about intent, honesty or origin.
 ## 3. Relationship to Google
 
 - The extension only reads what Google has already rendered in the user's own tab, on the user's
-  explicit action. It never runs automatically, never crawls, and loads at most 500 reviews at a
+  explicit action. It never runs automatically, never crawls, and loads at most 2000 reviews at a
   human-like pace (one scroll per 600 ms).
 - The server never contacts Google. This is enforced by a static test on the API source and a
   runtime guard on the only outbound HTTP client.

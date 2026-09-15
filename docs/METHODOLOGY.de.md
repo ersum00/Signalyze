@@ -2,7 +2,7 @@
 
 _Übersetzung des englischen Originals; die englische Fassung ist die Referenzversion._
 
-_Engine-Version 1.1.0. Dieses Dokument ist die einzige verbindliche Quelle dafür, wie jedes Signal und der Signalyze-Wert berechnet werden. Die Seite `/methodology` wird daraus erzeugt, und der Code in `packages/signals` (TypeScript) und `apps/api/signalyze_api/engine` (Python) setzt genau das um, was hier steht; beide Implementierungen werden an denselben Testfixtures gemessen._
+_Engine-Version 1.2.0. Dieses Dokument ist die einzige verbindliche Quelle dafür, wie jedes Signal und der Signalyze-Wert berechnet werden. Die Seite `/methodology` wird daraus erzeugt, und der Code in `packages/signals` (TypeScript) und `apps/api/signalyze_api/engine` (Python) setzt genau das um, was hier steht; beide Implementierungen werden an denselben Testfixtures gemessen._
 
 Signalyze berechnet zehn deterministische Signale aus den Rezensionen, die auf einer Google-Maps-Unternehmensseite sichtbar sind. Jedes Signal ist eine Zahl zwischen 0 und 1, die ausdrückt, wie ungewöhnlich der gemessene Wert im Vergleich zu typischen bewerteten Orten ist; 0 bedeutet „unauffällig“, 1 bedeutet „so ungewöhnlich, wie wir es je sehen“. Der Signalyze-Wert (0-100) ist eine gewichtete Kombination der Signale, die berechnet werden konnten. Es ist kein Sprachmodell beteiligt, und über Absichten wird nichts abgeleitet: Jedes Signal ist eine Tatsache über die Verteilung öffentlicher Daten, die jeder von derselben Seite aus nachrechnen kann.
 
@@ -12,7 +12,7 @@ Signalyze berechnet zehn deterministische Signale aus den Rezensionen, die auf e
 
 Die Engine erhält pro Rezension: Sternebewertung (1-5), Kalendertag, Text, die öffentliche Rezensionsanzahl des Rezensenten (falls sichtbar), Fotoanzahl, Local-Guide-Stufe (falls sichtbar), Text der Inhaberantwort (falls vorhanden). Sie erhält nie Namen, Profil-Links oder Nutzer-IDs. Siehe [Datenschutz](/de/privacy).
 
-Die Erweiterung lädt bis zu 200 Rezensionen (500 mit „Mehr laden“) in Googles Standardsortierung „Relevanteste“, sodass die Stichprobe der Teil der Rezensionsgeschichte ist, den Google zuerst anzeigt, und keine zufällige oder chronologische Stichprobe. Die Signale werden auf dieser Stichprobe berechnet, und das Seitenpanel zeigt immer, wie viele Rezensionen von der angezeigten Gesamtzahl analysiert wurden.
+Die Erweiterung lädt standardmäßig 200 Rezensionen, oder 500, 1000 oder alle Rezensionen der Seite (bis zu 2000), wenn der Nutzer das in der Startansicht so wählt, in Googles Standardsortierung „Relevanteste“, sodass die Stichprobe der Teil der Rezensionsgeschichte ist, den Google zuerst anzeigt, und keine zufällige oder chronologische Stichprobe. Wird ein Zeitraum gewählt (dieses Jahr, letzte 12, 6 oder 3 Monate, dieser Monat), stellt die Erweiterung zuerst Googles Sortierung auf „Neueste“ um (wird das Sortierelement nicht erkannt, bleibt sie bei „Relevanteste“ und sagt das im Ergebnis), beendet das Laden, sobald zwei aufeinanderfolgende Scrollrunden nur Rezensionen hinzugefügt haben, die älter als der Zeitraum sind, und behält nur Rezensionen, die am ersten Tag des Zeitraums oder danach datiert sind (in UTC berechnet). Ein solches Zeitraumprofil wird lokal im Browser mit der mitgelieferten Engine berechnet, nie an den Server gesendet und getrennt vom Gesamtprofil zwischengespeichert, sodass das Gesamtprofil und die Plakette auf der Seite unverändert bleiben; nur Analysen über den gesamten Zeitraum nutzen den gemeinsamen Server-Cache. Die Signale werden auf der geladenen Stichprobe berechnet, und das Seitenpanel zeigt immer, wie viele Rezensionen von der angezeigten Gesamtzahl analysiert wurden.
 
 ## Vorverarbeitung
 
@@ -29,7 +29,7 @@ Jedes Signal erzeugt eine Rohmessung (meist einen Anteil zwischen 0 und 1) und b
 unusualness = clamp((value - low) / (high - low), 0, 1)
 ```
 
-`low` ist das Niveau, ab dem das Signal zu zählen beginnt (typische Orte liegen darauf oder darunter), `high` das Niveau, ab dem es voll zählt. Die Kalibrierungspunkte liegen in `packages/signals/data/thresholds.json` und sind unten pro Signal aufgeführt. Es sind Schätzungen der Engine-Version 1.1.0, gewählt anhand der Form öffentlicher Google-Maps-Rezensionsdaten und synthetischer Datensätze; sie werden mit neuen Engine-Versionen überarbeitet, und jede Überarbeitung wird im Änderungsprotokoll festgehalten.
+`low` ist das Niveau, ab dem das Signal zu zählen beginnt (typische Orte liegen darauf oder darunter), `high` das Niveau, ab dem es voll zählt. Die Kalibrierungspunkte liegen in `packages/signals/data/thresholds.json` und sind unten pro Signal aufgeführt. Es sind Schätzungen der Engine-Version 1.2.0, gewählt anhand der Form öffentlicher Google-Maps-Rezensionsdaten und synthetischer Datensätze; sie werden mit neuen Engine-Versionen überarbeitet, und jede Überarbeitung wird im Änderungsprotokoll festgehalten.
 
 ## Die Signale
 
@@ -77,7 +77,7 @@ unusualness = clamp((value - low) / (high - low), 0, 1)
 
 **Misst:** wie stark sich Rezensionstexte gegenseitig überlappen.
 
-**Wie:** Für jede Rezension mit mindestens 20 Zeichen normalisiertem Text die Menge der Zeichen-3-Gramme bilden (Leerzeichen eingeschlossen). Für jedes Paar die Jaccard-Ähnlichkeit `|A ∩ B| / |A ∪ B|` berechnen. Den Mittelwert über alle Paare und den Anteil der Paare über 0,5 („nahezu identische Paare“) ausgeben. Benötigt mindestens 10 geeignete Texte.
+**Wie:** Für jede Rezension mit mindestens 20 Zeichen normalisiertem Text die Menge der Zeichen-3-Gramme bilden (Leerzeichen eingeschlossen). Für jedes Paar die Jaccard-Ähnlichkeit `|A ∩ B| / |A ∪ B|` berechnen. Den Mittelwert über alle Paare und den Anteil der Paare über 0,5 („nahezu identische Paare“) ausgeben. Benötigt mindestens 10 geeignete Texte. Es werden höchstens 600 geeignete Texte verglichen: Bei mehr als 600 wird eine gleichmäßig verteilte Teilmenge verwendet (der Text an Index floor(i × n / 600) in Eingabereihenfolge, für i von 0 bis 599); die TypeScript- und die Python-Engine wählen dieselben Indizes, und die Zahl der tatsächlich verglichenen Texte wird in den Details als `sampled` ausgegeben. Alle anderen Signale laufen über jede Rezension.
 
 **Rampe:** das Größere aus mittlerem Jaccard von 0,18 bis 0,45 und Anteil nahezu identischer Paare von 0,02 bis 0,15.
 
@@ -139,7 +139,7 @@ unusualness = clamp((value - low) / (high - low), 0, 1)
 score = round( 100 × Σ (w_i × u_i) / Σ w_i )   over available signals i
 ```
 
-Gewichte (`packages/signals/src/weights.json`, Version 1.1.0):
+Gewichte (`packages/signals/src/weights.json`, Version 1.2.0):
 
 | Signal                 | Gewicht |
 | ---------------------- | ------- |
@@ -160,7 +160,7 @@ Die Gewichte werden über die für den Ort verfügbaren Signale neu normalisiert
 
 ## Wie die synthetischen Datensätze aussehen
 
-Die Engine wird mit geseedeten synthetischen Datensätzen ausgeliefert, die in Tests und als Fixtures für den Abgleich der Implementierungen dienen (`packages/signals/fixtures/`). Ihre Werte bei Engine 1.1.0, zur Orientierung:
+Die Engine wird mit geseedeten synthetischen Datensätzen ausgeliefert, die in Tests und als Fixtures für den Abgleich der Implementierungen dienen (`packages/signals/fixtures/`). Ihre Werte bei Engine 1.2.0, zur Orientierung:
 
 | Datensatz    | Beschreibung                                                                                            | Wert                            |
 | ------------ | ------------------------------------------------------------------------------------------------------- | ------------------------------- |
@@ -173,12 +173,13 @@ Die Engine wird mit geseedeten synthetischen Datensätzen ausgeliefert, die in T
 
 ## Grenzen
 
-- Die Stichprobe ist Googles Sortierung „Relevanteste“, nicht die vollständige Historie.
+- Sofern nicht alle Rezensionen geladen werden, ist die Stichprobe Googles Sortierung „Relevanteste“ (bei einem Zeitraum „Neueste“), nicht die vollständige Historie; ein Ort mit mehr als 2000 Rezensionen wird nie vollständig geladen.
 - Relative Datumsangaben begrenzen die Genauigkeit auf etwa einen Tag bei neuen Rezensionen und einen Monat oder ein Jahr bei alten.
+- Ein Zeitraum ist ungefähr: Google zeigt Datumsangaben relativ an („vor 2 Monaten“), sodass die Zeitraumgrenze auf Daten angewendet wird, die selbst gerundet sind.
 - Lexika und Phrasenwörterbücher decken 18 Sprachen ab: Englisch, Spanisch, Portugiesisch, Französisch, Deutsch, Italienisch, Türkisch, Niederländisch, Polnisch, Indonesisch, Vietnamesisch, Schwedisch, Russisch, Ukrainisch, Arabisch, Japanisch, Chinesisch und Koreanisch. Texte in anderen Sprachen tragen zu den Zeit-, Bewertungs- und Rezensentensignalen bei, aber nicht zu den Textsignalen (ein lateinisch geschriebener Text in einer nicht abgedeckten Sprache fällt auf die englischen Wörterbücher zurück, die ihn selten treffen). Die Wörterbücher sind klein und erfassen nur Oberflächenformen, ohne Stammformreduktion, Verneinungs- oder Ironieerkennung, sodass stark flektierende Sprachen weniger Treffer pro Text erhalten.
 - Local-Guide-Stufen werden in der Rezensionsliste oft nicht angezeigt; das Signal ist dann nicht verfügbar statt geschätzt.
-- Die Kalibrierungspunkte sind Schätzungen der Version 1.1.0. Jede Änderung daran ist eine neue Engine-Version, wird im Änderungsprotokoll festgehalten, und der Server-Cache ist nach Engine-Version geschlüsselt.
+- Die Kalibrierungspunkte sind Schätzungen der Version 1.2.0. Jede Änderung daran ist eine neue Engine-Version, wird im Änderungsprotokoll festgehalten, und der Server-Cache ist nach Engine-Version geschlüsselt.
 
 ## Optionales Sprachmodell (standardmäßig aus)
 
-Engine 1.1.0 enthält einen optionalen serverseitigen Schritt, den der Betreiber aktivieren kann: Wenn `text_similarity` bereits hoch ist, werden bis zu 30 Texte (ohne Rezensentendaten) an einen OpenAI-kompatiblen Endpunkt gesendet, der eine einzelne Zahl zurückgibt, eine Schätzung der „Schreibhomogenität“ von 0 bis 1, die in den Details von `text_similarity` als `llmHomogeneity` ausgegeben wird. Einzelne Rezensionen werden nie gekennzeichnet, und der Wert ändert sich in dieser Version nie dadurch. Der Schritt ist deaktiviert, solange nicht sowohl `LLM_BASE_URL` als auch `LLM_API_KEY` konfiguriert sind; die öffentliche Signalyze-API läuft derzeit mit deaktiviertem Schritt.
+Engine 1.2.0 enthält einen optionalen serverseitigen Schritt, den der Betreiber aktivieren kann: Wenn `text_similarity` bereits hoch ist, werden bis zu 30 Texte (ohne Rezensentendaten) an einen OpenAI-kompatiblen Endpunkt gesendet, der eine einzelne Zahl zurückgibt, eine Schätzung der „Schreibhomogenität“ von 0 bis 1, die in den Details von `text_similarity` als `llmHomogeneity` ausgegeben wird. Einzelne Rezensionen werden nie gekennzeichnet, und der Wert ändert sich in dieser Version nie dadurch. Der Schritt ist deaktiviert, solange nicht sowohl `LLM_BASE_URL` als auch `LLM_API_KEY` konfiguriert sind; die öffentliche Signalyze-API läuft derzeit mit deaktiviertem Schritt.

@@ -1,6 +1,6 @@
 {
   "name": "@signalyze/extension",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "description": "Signalyze Chrome extension (Manifest V3).",
@@ -13,7 +13,8 @@
     "test": "vitest run",
     "zip:store": "node scripts/zip-store.mjs",
     "store:assets": "node store/capture.mjs",
-    "install:test": "node scripts/install-test.mjs"
+    "install:test": "node scripts/install-test.mjs",
+    "live:check": "node --import tsx scripts/live-check.mjs"
   },
   "dependencies": {
     "@signalyze/shared": "workspace:*",
@@ -30,6 +31,7 @@
     "jsdom": "^26.1.0",
     "playwright": "^1.63.0",
     "tailwindcss": "^4.1.0",
+    "tsx": "^4.20.0",
     "typescript": "^5.8.0",
     "vite": "^8.3.0",
     "vitest": "^5.0.0",

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { AnalysisRequestSchema, AnalysisResultSchema, ReviewSchema } from '../schemas';
+import { MAX_REVIEWS_PER_REQUEST } from '../constants';
 
 const validReview = {
   reviewerHash: 'a'.repeat(64),
@@ -53,8 +54,8 @@ describe('AnalysisRequestSchema', () => {
     expect(parsed.locale).toBe('en');
   });
 
-  it('rejects more than 500 reviews', () => {
-    const reviews = Array.from({ length: 501 }, () => validReview);
+  it('rejects more than the request cap of reviews', () => {
+    const reviews = Array.from({ length: MAX_REVIEWS_PER_REQUEST + 1 }, () => validReview);
     const result = AnalysisRequestSchema.safeParse({
       placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4',
       reviews,

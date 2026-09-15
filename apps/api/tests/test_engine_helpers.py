@@ -210,7 +210,7 @@ def test_compute_score_and_insufficient_data() -> None:
     assert result.score is None
     assert result.signals == []
     assert result.source == "offline"
-    assert result.engineVersion == ENGINE_VERSION == "1.1.0"
+    assert result.engineVersion == ENGINE_VERSION == "1.2.0"
     assert result.computedAt == "2026-06-01T00:00:00.000Z"
     sufficient = analyze([*reviews, *reviews], "0xa:0xb", "server")
     assert sufficient.status == "ok"

@@ -28,7 +28,7 @@ signalyze.veriskor.com {
 api.signalyze.veriskor.com {
 	import ortak
 	request_body {
-		max_size 2MB
+		max_size 8MB
 	}
 	reverse_proxy signalyze-api:8090 {
 		transport http {

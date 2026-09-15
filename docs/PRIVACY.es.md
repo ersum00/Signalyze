@@ -14,7 +14,7 @@ _Última actualización: 2026-09-12. Esta página describe exactamente qué hace
 
 ## Qué lee la extensión
 
-Cuando abres la página de un negocio en Google Maps y pulsas **Analizar**, la extensión lee el panel de reseñas que Google ya ha mostrado en tu pestaña. Desplaza el panel para cargar hasta 200 reseñas (o hasta 500 si eliges «Cargar más»). No visita ninguna otra página, no abre perfiles de reseñadores y no lee nada fuera de la página del negocio que estás viendo.
+Cuando abres la página de un negocio en Google Maps y pulsas **Analizar**, la extensión lee el panel de reseñas que Google ya ha mostrado en tu pestaña. Desplaza el panel para leer 200 reseñas de forma predeterminada, o 500, 1000 o todas las reseñas de la página (hasta 2000) si así lo eliges, siempre al mismo ritmo (un paso de desplazamiento cada 600 ms). No visita ninguna otra página, no abre perfiles de reseñadores y no lee nada fuera de la página del negocio que estás viendo. Un análisis restringido a un periodo (por ejemplo, los últimos 3 meses) nunca sale de tu navegador: se calcula localmente y no se envía al servidor.
 
 ## Qué se envía a la API de Signalyze
 

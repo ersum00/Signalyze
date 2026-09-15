@@ -7,8 +7,12 @@ import {
   AnalysisResultSchema,
   CACHE_TTL_DAYS,
   SUPPORTED_LOCALES,
+  isAnalysisWindow,
+  isSampleLimit,
   type AnalysisResult,
+  type AnalysisWindow,
   type Locale,
+  type SampleLimit,
 } from '@signalyze/shared';
 import { browser, type Browser } from 'wxt/browser';
 
@@ -21,6 +25,10 @@ export interface Settings {
   sendToServer: boolean;
   consentGivenAt: string | null;
   onboardingDone: boolean;
+  /** Reviews to load per analysis; 'all' means every review Google shows, up to the ceiling. */
+  sampleLimit: SampleLimit;
+  /** Period the analysis is restricted to. */
+  window: AnalysisWindow;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -29,6 +37,8 @@ export const DEFAULT_SETTINGS: Settings = {
   sendToServer: false,
   consentGivenAt: null,
   onboardingDone: false,
+  sampleLimit: 200,
+  window: 'all',
 };
 
 export const SETTINGS_KEY = 'settings';
@@ -61,6 +71,10 @@ function sanitizeSettings(value: unknown): Settings {
       typeof record.onboardingDone === 'boolean'
         ? record.onboardingDone
         : DEFAULT_SETTINGS.onboardingDone,
+    sampleLimit: isSampleLimit(record.sampleLimit)
+      ? record.sampleLimit
+      : DEFAULT_SETTINGS.sampleLimit,
+    window: isAnalysisWindow(record.window) ? record.window : DEFAULT_SETTINGS.window,
   };
 }
 
@@ -98,6 +112,15 @@ export interface CachedResult {
 
 type CacheMap = Record<string, CachedResult>;
 
+/**
+ * Cache key of a profile. All-time profiles keep the bare place id (the key
+ * the badge and older entries use); windowed profiles get a suffix so they
+ * never replace the all-time profile.
+ */
+export function cacheKey(placeId: string, window: AnalysisWindow): string {
+  return window === 'all' ? placeId : `${placeId}|${window}`;
+}
+
 function isCachedEntry(value: unknown): value is CachedResult {
   if (typeof value !== 'object' || value === null) return false;
   const record = value as Record<string, unknown>;
@@ -123,17 +146,19 @@ function isFresh(entry: CachedResult, now: Date): boolean {
   return Number.isFinite(age) && age >= 0 && age <= CACHE_TTL_MS;
 }
 
-/** Returns the cached profile for a place, or null when absent, expired or malformed. */
+/** Returns the cached profile for a place and period, or null when absent, expired or malformed. */
 export async function getCachedResult(
   placeId: string,
+  window: AnalysisWindow = 'all',
   now: Date = new Date(),
 ): Promise<CachedResult | null> {
+  const key = cacheKey(placeId, window);
   const cache = await readCache();
-  const entry = cache[placeId];
+  const entry = cache[key];
   if (entry === undefined) return null;
   const parsed = AnalysisResultSchema.safeParse(entry.result);
   if (!isFresh(entry, now) || !parsed.success) {
-    await writeCache(Object.fromEntries(Object.entries(cache).filter(([key]) => key !== placeId)));
+    await writeCache(Object.fromEntries(Object.entries(cache).filter(([k]) => k !== key)));
     return null;
   }
   return { result: parsed.data, storedAt: entry.storedAt };
@@ -143,10 +168,11 @@ export async function getCachedResult(
 export async function setCachedResult(
   placeId: string,
   result: AnalysisResult,
+  window: AnalysisWindow = 'all',
   now: Date = new Date(),
 ): Promise<void> {
   const cache = await readCache();
-  cache[placeId] = { result, storedAt: now.toISOString() };
+  cache[cacheKey(placeId, window)] = { result, storedAt: now.toISOString() };
   const kept = Object.entries(cache)
     .filter(([, entry]) => isFresh(entry, now))
     .sort((a, b) => Date.parse(b[1].storedAt) - Date.parse(a[1].storedAt))

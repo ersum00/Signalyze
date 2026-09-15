@@ -1,4 +1,6 @@
+import { MIN_REVIEWS_FOR_SCORE } from '@signalyze/shared';
 import { useI18n } from '@/i18n/react';
+import type { Settings } from '@/lib/storage';
 import type { AnalysisController } from '../hooks/useAnalysis';
 import { Collecting } from './Collecting';
 import { Home } from './Home';
@@ -6,7 +8,15 @@ import { PlaceCard } from './PlaceCard';
 import { ResultView } from './ResultView';
 import { Button, Notice } from './ui';
 
-export function MainView({ analysis }: { analysis: AnalysisController }) {
+export function MainView({
+  analysis,
+  settings,
+  update,
+}: {
+  analysis: AnalysisController;
+  settings: Settings;
+  update: (patch: Partial<Settings>) => Promise<void>;
+}) {
   const { t } = useI18n();
   const { phase } = analysis;
 
@@ -26,6 +36,8 @@ export function MainView({ analysis }: { analysis: AnalysisController }) {
         <Home
           context={phase.context}
           cached={phase.cached}
+          settings={settings}
+          update={update}
           onAnalyze={analysis.analyze}
           onShowCached={analysis.showCached}
         />
@@ -34,6 +46,8 @@ export function MainView({ analysis }: { analysis: AnalysisController }) {
           context={phase.context}
           cached={phase.cached}
           notice={phase.notice}
+          settings={settings}
+          update={update}
           onAnalyze={analysis.analyze}
           onShowCached={analysis.showCached}
         />
@@ -43,7 +57,7 @@ export function MainView({ analysis }: { analysis: AnalysisController }) {
         <Collecting
           context={phase.context}
           count={phase.count}
-          limit={phase.limit}
+          scope={phase.scope}
           analyzing={false}
           onCancel={analysis.cancel}
         />
@@ -52,8 +66,8 @@ export function MainView({ analysis }: { analysis: AnalysisController }) {
       return (
         <Collecting
           context={phase.context}
-          count={phase.limit}
-          limit={phase.limit}
+          count={0}
+          scope={phase.scope}
           analyzing
           onCancel={analysis.cancel}
         />
@@ -65,9 +79,29 @@ export function MainView({ analysis }: { analysis: AnalysisController }) {
           result={phase.result}
           fallbackReason={phase.fallbackReason}
           collectStatus={phase.collectStatus}
-          limit={phase.limit}
+          scope={phase.scope}
+          sortedByNewest={phase.sortedByNewest}
+          loaded={phase.loaded}
           onAnalyze={analysis.analyze}
         />
+      );
+    case 'empty_window':
+      return (
+        <>
+          <PlaceCard context={phase.context} />
+          <Notice
+            title={t('state.insufficient.title')}
+            body={t('state.insufficient.window', {
+              period: t(`window.${phase.scope.window}`),
+              count: 0,
+              min: MIN_REVIEWS_FOR_SCORE,
+            })}
+          >
+            <Button variant="primary" onClick={analysis.back}>
+              {t('nav.back')}
+            </Button>
+          </Notice>
+        </>
       );
     case 'error':
       return (

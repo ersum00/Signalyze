@@ -11,7 +11,9 @@ const T = thresholds.text_similarity;
  * Mean pairwise Jaccard similarity of character 3-gram sets over reviews with
  * at least 20 characters of normalised text, plus the share of pairs above 0.5.
  * value = mean Jaccard. Pairs are visited in index order (i < j) so sums are
- * reproducible across runtimes.
+ * reproducible across runtimes. Above `maxEligible` texts an evenly spaced
+ * subset is compared (index floor(i * n / cap) in input order) so the cost
+ * stays bounded; both runtimes pick the same indices.
  */
 export function textSimilarity(reviews: readonly PreparedReview[]): SignalResult {
   const eligible = reviews.filter((r) => r.normalizedText.length >= T.minTextChars);
@@ -21,7 +23,13 @@ export function textSimilarity(reviews: readonly PreparedReview[]): SignalResult
       minEligible: T.minEligible,
     });
   }
-  const grams = eligible.map((r) => ngramsOf(r, T.ngramSize));
+  const n = eligible.length;
+  const cap = T.maxEligible;
+  const sampled =
+    n > cap
+      ? Array.from({ length: cap }, (_, i) => eligible[Math.floor((i * n) / cap)]!)
+      : eligible;
+  const grams = sampled.map((r) => ngramsOf(r, T.ngramSize));
   let total = 0;
   let pairs = 0;
   let highPairs = 0;
@@ -51,7 +59,8 @@ export function textSimilarity(reviews: readonly PreparedReview[]): SignalResult
       highPairs,
       pairs,
       maxPair: round6(maxPair),
-      eligible: eligible.length,
+      eligible: n,
+      sampled: sampled.length,
     },
     available: true,
   };

@@ -4,11 +4,26 @@ export const MIN_REVIEWS_FOR_SCORE = 15;
 /** Default number of reviews the extension loads when the user clicks Analyze. */
 export const DEFAULT_REVIEW_LIMIT = 200;
 
-/** Upper bound for the optional "Load more" action. */
-export const EXTENDED_REVIEW_LIMIT = 500;
+/** Review-count choices offered on the Home view; 'all' loads until Google shows no more. */
+export const SAMPLE_LIMITS = [200, 500, 1000] as const;
+export type SampleLimit = (typeof SAMPLE_LIMITS)[number] | 'all';
 
-/** Hard cap accepted by the API (also enforced by the 2 MB body limit). */
-export const MAX_REVIEWS_PER_REQUEST = 500;
+/** Hard ceiling for 'all': bounds the time budget, the request size and browser memory. */
+export const ALL_REVIEWS_CEILING = 2000;
+
+/** Hard cap accepted by the API (also enforced by the 8 MB body limit). */
+export const MAX_REVIEWS_PER_REQUEST = ALL_REVIEWS_CEILING;
+
+/** Periods an analysis can be restricted to. Start days are computed in UTC (see window.ts). */
+export const ANALYSIS_WINDOWS = [
+  'all',
+  'thisYear',
+  'last12m',
+  'last6m',
+  'last3m',
+  'thisMonth',
+] as const;
+export type AnalysisWindow = (typeof ANALYSIS_WINDOWS)[number];
 
 /** Server-side cache TTL for computed profiles, in days. */
 export const CACHE_TTL_DAYS = 7;

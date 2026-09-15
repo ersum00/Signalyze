@@ -2,7 +2,7 @@
 
 _İngilizce özgün metnin çevirisidir; referans sürüm İngilizce metindir._
 
-_Motor sürümü 1.1.0. Bu belge, her sinyalin ve Signalyze Skoru'nun nasıl hesaplandığına ilişkin tek doğruluk kaynağıdır. Sitedeki `/methodology` sayfası bu belgeden üretilir; `packages/signals` (TypeScript) ve `apps/api/signalyze_api/engine` (Python) içindeki kod tam olarak burada yazılanı uygular ve her iki uygulama da aynı test fikstürleriyle sınanır._
+_Motor sürümü 1.2.0. Bu belge, her sinyalin ve Signalyze Skoru'nun nasıl hesaplandığına ilişkin tek doğruluk kaynağıdır. Sitedeki `/methodology` sayfası bu belgeden üretilir; `packages/signals` (TypeScript) ve `apps/api/signalyze_api/engine` (Python) içindeki kod tam olarak burada yazılanı uygular ve her iki uygulama da aynı test fikstürleriyle sınanır._
 
 Signalyze, bir Google Haritalar işletme sayfasında görünen yorumlardan on deterministik sinyal hesaplar. Her sinyal, ölçülen değerin tipik yorumlanmış yerlere kıyasla ne kadar sıra dışı olduğunu ifade eden 0 ile 1 arası bir sayıdır; 0 "dikkat çekmeyen", 1 "gördüğümüz en sıra dışı düzeyde" anlamına gelir. Signalyze Skoru (0-100), hesaplanabilen sinyallerin ağırlıklı bir birleşimidir. Hiçbir dil modeli işin içinde değildir ve niyet hakkında hiçbir çıkarım yapılmaz: her sinyal, herkesin aynı sayfadan yeniden hesaplayabileceği, kamuya açık verinin dağılımına ilişkin bir olgudur.
 
@@ -12,7 +12,7 @@ Signalyze, bir Google Haritalar işletme sayfasında görünen yorumlardan on de
 
 Motor, yorum başına şunları alır: yıldız puanı (1-5), takvim günü, metin, yorumcunun herkese açık yorum sayısı (görünüyorsa), fotoğraf sayısı, Yerel Rehber seviyesi (görünüyorsa), işletme yanıtı metni (varsa). Asla ad, profil bağlantısı veya kullanıcı kimliği almaz. Bkz. [Gizlilik](/tr/privacy).
 
-Uzantı, Google'ın varsayılan "En alakalı" sıralamasında en fazla 200 yorum ("Daha fazla yükle" ile 500) yükler; dolayısıyla örneklem, yorum geçmişinin Google'ın önce göstermeyi seçtiği kısmıdır, rastgele ya da kronolojik bir örneklem değildir. Sinyaller bu örneklem üzerinden hesaplanır ve yan panel her zaman gösterilen toplamın ne kadarının analiz edildiğini belirtir.
+Uzantı, Google'ın varsayılan "En alakalı" sıralamasında varsayılan olarak 200 yorum, kullanıcı ana görünümde öyle seçerse 500, 1000 ya da sayfadaki tüm yorumları (en fazla 2000) yükler; dolayısıyla örneklem, yorum geçmişinin Google'ın önce göstermeyi seçtiği kısmıdır, rastgele ya da kronolojik bir örneklem değildir. Bir dönem seçildiğinde (bu yıl, son 12, 6 ya da 3 ay, bu ay) uzantı önce Google'ın sıralamasını "En yeni"ye çevirir (sıralama denetimi tanınmazsa "En alakalı" sıralamasında kalır ve bunu sonuçta belirtir), art arda iki kaydırma turu yalnızca dönemden eski yorumlar eklediğinde yüklemeyi durdurur ve yalnızca dönemin ilk gününde ya da sonrasında tarihlenmiş yorumları (UTC'ye göre hesaplanır) tutar. Böyle bir dönem profili tarayıcıda, paketlenmiş motorla yerel olarak hesaplanır, sunucuya asla gönderilmez ve tüm zamanlar profilinden ayrı önbelleğe alınır; böylece tüm zamanlar profili ve sayfadaki rozet değişmez. Paylaşılan sunucu önbelleğini yalnızca tüm zamanlar analizleri kullanır. Sinyaller yüklenen örneklem üzerinden hesaplanır ve yan panel her zaman gösterilen toplamın ne kadarının analiz edildiğini belirtir.
 
 ## Ön işleme
 
@@ -29,7 +29,7 @@ Her sinyal bir ham ölçüm üretir (çoğunlukla 0 ile 1 arası bir pay) ve bun
 unusualness = clamp((value - low) / (high - low), 0, 1)
 ```
 
-`low`, sinyalin sayılmaya başladığı düzeydir (tipik yerler bu düzeyde ya da altındadır); `high`, sinyalin tam olarak sayıldığı düzeydir. Kalibrasyon noktaları `packages/signals/data/thresholds.json` dosyasında bulunur ve aşağıda sinyal başına listelenir. Bunlar, kamuya açık Google Haritalar yorum verisinin şeklinden ve sentetik veri kümelerinden seçilmiş motor sürümü 1.1.0 tahminleridir; yeni motor sürümleriyle gözden geçirilecek ve her değişiklik sürüm notlarına kaydedilecektir.
+`low`, sinyalin sayılmaya başladığı düzeydir (tipik yerler bu düzeyde ya da altındadır); `high`, sinyalin tam olarak sayıldığı düzeydir. Kalibrasyon noktaları `packages/signals/data/thresholds.json` dosyasında bulunur ve aşağıda sinyal başına listelenir. Bunlar, kamuya açık Google Haritalar yorum verisinin şeklinden ve sentetik veri kümelerinden seçilmiş motor sürümü 1.2.0 tahminleridir; yeni motor sürümleriyle gözden geçirilecek ve her değişiklik sürüm notlarına kaydedilecektir.
 
 ## Sinyaller
 
@@ -77,7 +77,7 @@ unusualness = clamp((value - low) / (high - low), 0, 1)
 
 **Ölçer:** yorum metinlerinin birbiriyle ne kadar örtüştüğü.
 
-**Nasıl:** en az 20 karakter normalleştirilmiş metni olan her yorum için karakter 3-gram kümesini (boşluklar dahil) oluştur. Her çift için Jaccard benzerliğini `|A ∩ B| / |A ∪ B|` hesapla. Tüm çiftler üzerindeki ortalamayı ve 0,5'in üzerindeki çiftlerin payını ("neredeyse birebir aynı çiftler") raporla. En az 10 uygun metin gerekir.
+**Nasıl:** en az 20 karakter normalleştirilmiş metni olan her yorum için karakter 3-gram kümesini (boşluklar dahil) oluştur. Her çift için Jaccard benzerliğini `|A ∩ B| / |A ∪ B|` hesapla. Tüm çiftler üzerindeki ortalamayı ve 0,5'in üzerindeki çiftlerin payını ("neredeyse birebir aynı çiftler") raporla. En az 10 uygun metin gerekir. En fazla 600 uygun metin karşılaştırılır: 600'ün üzerinde eşit aralıklı bir alt küme kullanılır (girdi sırasında floor(i × n / 600) dizinindeki metin, i = 0 … 599); TypeScript ve Python motorları aynı dizinleri seçer ve gerçekten karşılaştırılan metin sayısı ayrıntılarda `sampled` olarak raporlanır. Diğer tüm sinyaller her yorum üzerinde çalışır.
 
 **Rampa:** ortalama Jaccard için 0,18'den 0,45'e ve neredeyse birebir aynı çift payı için 0,02'den 0,15'e; ikisinden büyük olanı alınır.
 
@@ -139,7 +139,7 @@ unusualness = clamp((value - low) / (high - low), 0, 1)
 score = round( 100 × Σ (w_i × u_i) / Σ w_i )   over available signals i
 ```
 
-Ağırlıklar (`packages/signals/src/weights.json`, sürüm 1.1.0):
+Ağırlıklar (`packages/signals/src/weights.json`, sürüm 1.2.0):
 
 | Sinyal                 | Ağırlık |
 | ---------------------- | ------- |
@@ -160,7 +160,7 @@ Ağırlıklar, yer için mevcut olan sinyaller üzerinden yeniden normalleştiri
 
 ## Sentetik veri kümeleri nasıl görünür
 
-Motor, testlerde ve uygulamalar arası fikstür olarak kullanılan tohumlu sentetik veri kümeleriyle gelir (`packages/signals/fixtures/`). Motor 1.1.0'daki skorları, fikir vermesi için:
+Motor, testlerde ve uygulamalar arası fikstür olarak kullanılan tohumlu sentetik veri kümeleriyle gelir (`packages/signals/fixtures/`). Motor 1.2.0'daki skorları, fikir vermesi için:
 
 | Veri kümesi  | Açıklama                                                                                              | Skor                             |
 | ------------ | ----------------------------------------------------------------------------------------------------- | -------------------------------- |
@@ -173,12 +173,13 @@ Motor, testlerde ve uygulamalar arası fikstür olarak kullanılan tohumlu sente
 
 ## Sınırlamalar
 
-- Örneklem, tam geçmiş değil, Google'ın "En alakalı" sıralamasıdır.
+- Tüm yorumlar yüklenmedikçe örneklem, tam geçmiş değil, Google'ın "En alakalı" sıralamasıdır (dönem seçildiğinde "En yeni"); 2000'den fazla yorumu olan bir yer hiçbir zaman tamamen yüklenmez.
 - Göreli tarihler hassasiyeti yeni yorumlar için yaklaşık bir güne, eski yorumlar için bir aya veya bir yıla sınırlar.
+- Dönem yaklaşıktır: Google tarihleri göreli gösterir ("2 ay önce"), bu yüzden dönem sınırı kendileri yuvarlanmış tarihlere uygulanır.
 - Sözlükler ve kalıp ifade sözlükleri 18 dili kapsar: İngilizce, İspanyolca, Portekizce, Fransızca, Almanca, İtalyanca, Türkçe, Felemenkçe, Lehçe, Endonezce, Vietnamca, İsveççe, Rusça, Ukraynaca, Arapça, Japonca, Çince ve Korece. Diğer dillerdeki metinler zamanlama, puan ve yorumcu sinyallerine katkıda bulunur ama metin sinyallerine katkıda bulunmaz (kapsanmayan bir dildeki Latin harfli metin, nadiren eşleşen İngilizce sözlüklere düşer). Sözlükler küçüktür ve yalnızca yüzey biçimlerini eşleştirir; kök bulma, olumsuzlama işleme ya da ironi algılama yoktur, bu yüzden çekimi yoğun dillerde metin başına daha az eşleşme olur.
 - Yerel Rehber seviyeleri yorum listesinde çoğu zaman gösterilmez; sinyal bu durumda tahmin edilmek yerine mevcut değildir.
-- Kalibrasyon noktaları sürüm 1.1.0 tahminleridir. Herhangi birini değiştirmek bir motor sürümü artışıdır, sürüm notlarına kaydedilir ve sunucu önbelleği motor sürümüyle anahtarlanır.
+- Kalibrasyon noktaları sürüm 1.2.0 tahminleridir. Herhangi birini değiştirmek bir motor sürümü artışıdır, sürüm notlarına kaydedilir ve sunucu önbelleği motor sürümüyle anahtarlanır.
 
 ## İsteğe bağlı dil modeli (varsayılan olarak kapalı)
 
-Motor 1.1.0, operatör tarafından etkinleştirilebilen isteğe bağlı bir sunucu tarafı adım içerir: `text_similarity` zaten yüksek olduğunda en fazla 30 metin (yorumcu verisi olmadan) OpenAI uyumlu bir uç noktaya gönderilir; uç nokta 0-1 arası bir "yazım türdeşliği" tahmini olan tek bir sayı döndürür ve bu, `text_similarity` ayrıntılarında `llmHomogeneity` olarak raporlanır. Tek tek yorumları asla etiketlemez ve bu sürümde skoru asla değiştirmez. Hem `LLM_BASE_URL` hem de `LLM_API_KEY` yapılandırılmadıkça devre dışıdır; herkese açık Signalyze API'si şu anda bu özellik kapalı olarak çalışır.
+Motor 1.2.0, operatör tarafından etkinleştirilebilen isteğe bağlı bir sunucu tarafı adım içerir: `text_similarity` zaten yüksek olduğunda en fazla 30 metin (yorumcu verisi olmadan) OpenAI uyumlu bir uç noktaya gönderilir; uç nokta 0-1 arası bir "yazım türdeşliği" tahmini olan tek bir sayı döndürür ve bu, `text_similarity` ayrıntılarında `llmHomogeneity` olarak raporlanır. Tek tek yorumları asla etiketlemez ve bu sürümde skoru asla değiştirmez. Hem `LLM_BASE_URL` hem de `LLM_API_KEY` yapılandırılmadıkça devre dışıdır; herkese açık Signalyze API'si şu anda bu özellik kapalı olarak çalışır.
