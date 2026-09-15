@@ -1,5 +1,5 @@
 {
-  "$comment": "Public key pinned in manifest.json so the unpacked dev build always gets the same extension id. Safe to commit. After the first Chrome Web Store upload, replace with the store public key (Developer Dashboard > Package > Public key) and add the store id to EXTENSION_IDS.",
-  "publicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv+dUi8+44XOAqJ6InhbEZNVel6Coo9KcLn+sWcPteBCLOq+dyuOIQ6RNtfXN6aePyXQsaWWF065/bBgzbLSoERIk5F8TJh7/rLtLwW5ebbPpHyDus/1bZTT6LnQzoxXsOhKg7dPQ2IM7xuIv91gPLiXpu6mdb0dNKpZ89f/IOBrKFGsZmOpL/r7Z1M3981WI7DaAqt+DZ8C+ElH5APiLm3ca95T10OZltOZhjxmUx79Ot9YQc3cRpe9pYD3XYVbIO2jRQmOAZtga1rX4OoU324non1afGxJsF6p4JiwaxdAAcwWwrYtQtvJ0fz6CO/OFbmoqRG3F9pBc021Wb+DuywIDAQAB",
-  "extensionId": "mecknkahfceojapfdeaelbapigaijcek"
+  "$comment": "Public key of the Chrome Web Store listing (id boalccknclijlfkpeaeohcpahidpchcf), taken from the published CRX header on 2026-09-15 and pinned in manifest.json so unpacked dev builds get the same id as the Store build and the API's CORS list can stay a single id. Safe to commit (public key only). The previous dev key derived mecknkahfceojapfdeaelbapigaijcek.",
+  "publicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsEI2RNvWJIGnNRjQ25DRsE61LV23BIKJtQI5oFcG73fCWNv94dmBHzuc2aepa0ArGW7d/YPsKq+3yZYEMD523TdCHlg7lTCgRj6GhUXj1z6k8xnj/wl7a5muAL9VgU2ggzp0cci0diEJH0IlEgukxXFkqv8VP8/6QMIPBVOV/NGFidTcB11kEepjM3bn3uM3Ig84ZeyAu5njq4L+XTEHx1yjVlgB6S2KNnJEfv1Ks/LsYc/SMsKu81nUm5Y8s/GhI07wP0xsEFBtjK+Pjnd3aFCMZI71FtsQ8ANq0PtOqQsr0dPoOivyR1M8M+rEhE6zMalnSbOtqmp5dnTybzVVDQIDAQAB",
+  "extensionId": "boalccknclijlfkpeaeohcpahidpchcf"
 }
